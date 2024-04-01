@@ -1,6 +1,6 @@
 # This workflow runs the 'Export label config' and 'Sync labels' actions and includes user input
 name: Label Manager
-run-name: Run label manager on ${{ github.event_name }}
+run-name: Run ${{ github.event.action || 'label manager' }} from ${{ github.event_name }}
 on: 
   repository_dispatch:
     types: [export-labels,sync-labels]
