@@ -33,6 +33,7 @@ github_username:  rwaight
 # example: https://github.com/thundergolfer/thundergolfer.github.io/blob/main/_config.yml
 
 # # Build settings
+# ### supported themes: https://pages.github.com/themes/
 # use the `dark` theme, per https://github.com/jekyll/minima/issues/717#issuecomment-1460912086
 # theme: minima
 # plugins:
