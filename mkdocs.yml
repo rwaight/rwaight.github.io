@@ -7,7 +7,7 @@ repo_name: rwaight/rwaight.github.io
 # https://www.mkdocs.org/user-guide/configuration/#nav
 nav:
   - 'index.md'
-  - 'setup-github-pages.md'
+  #- 'setup-github-pages.md'
   - Blog:
     - blog/index.md
 
@@ -20,6 +20,7 @@ theme:
     - header.autohide
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#setting-up-navigation
     - navigation.instant
+    - navigation.sections
     - navigation.tracking
     - navigation.tabs
   icon:
@@ -35,6 +36,25 @@ docs_dir: 'docs'
 
 # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
 edit_uri: edit/main/docs/
+
+markdown_extensions:
+  # not sure if 'pymdownx.github' works
+  #- pymdownx.github
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
+  #- def_list
+  # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#configuration
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # https://squidfunk.github.io/mkdocs-material/reference/lists/#using-task-lists
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tasklist
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      title: On this page
+      permalink: true
 
 # https://www.mkdocs.org/user-guide/configuration/#plugins
 plugins:
