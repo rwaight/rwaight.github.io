@@ -38,6 +38,10 @@ docs_dir: 'docs'
 edit_uri: edit/main/docs/
 
 markdown_extensions:
+  # # https://oprypin.github.io/markdown-callouts/index.html#markdown-callouts
+  # # will need to install with 'pip install markdown-callouts' in 'publish.yml'
+  # - callouts
+  ###
   # not sure if 'pymdownx.github' works
   #- pymdownx.github
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
