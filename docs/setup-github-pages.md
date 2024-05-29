@@ -1,4 +1,8 @@
-# GitHub Pages Setup
+---
+title: Setup GitHub Pages
+date: 2023-05-28
+---
+
 
 Resources:
 * [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
