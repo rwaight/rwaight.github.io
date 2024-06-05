@@ -38,6 +38,9 @@ docs_dir: 'docs'
 edit_uri: edit/main/docs/
 
 markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#betterem
+  # https://facelessuser.github.io/pymdown-extensions/extensions/betterem/
+  - pymdownx.betterem
   # # https://oprypin.github.io/markdown-callouts/index.html#markdown-callouts
   # # will need to install with 'pip install markdown-callouts' in 'publish.yml'
   # - callouts
