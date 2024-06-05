@@ -7,7 +7,7 @@ repo_name: rwaight/rwaight.github.io
 # https://www.mkdocs.org/user-guide/configuration/#nav
 nav:
   - 'index.md'
-  #- 'setup-github-pages.md'
+  - 'setup-github-pages.md'
   - Blog:
     - blog/index.md
 
