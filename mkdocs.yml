@@ -5,11 +5,13 @@ repo_url: https://github.com/rwaight/rwaight.github.io
 repo_name: rwaight/rwaight.github.io
 
 # https://www.mkdocs.org/user-guide/configuration/#nav
+# https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 nav:
-  - 'index.md'
-  - 'setup-github-pages.md'
+  - Home: 'index.md'
   - Blog:
     - blog/index.md
+  - Guides:
+    - 'setup-github-pages.md'
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
