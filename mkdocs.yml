@@ -4,19 +4,23 @@ site_url: https://rwaight.github.io/
 repo_url: https://github.com/rwaight/rwaight.github.io
 repo_name: rwaight/rwaight.github.io
 
-# https://www.mkdocs.org/user-guide/configuration/#nav
-# https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
-nav:
-  - Home: 'index.md'
-  - Blog:
-    - blog/index.md
-    # If you do have a navigation defined then you need to add the blog index page only to it.
-    # You need not and should not add the individual blog posts.
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#built-in-blog-plugin
-  - Guides:
-    - guides/
-  - Random:
-    - random/
+## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
+## the plugin won't do anything if `mkdocs.yml` defines a `nav` or `pages` entry
+## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
+# # https://www.mkdocs.org/user-guide/configuration/#nav
+# # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
+# nav:
+#   - Home: 'index.md'
+#   - Blog:
+#     - blog/index.md
+#     # If you do have a navigation defined then you need to add the blog index page only to it.
+#     # You need not and should not add the individual blog posts.
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#built-in-blog-plugin
+#   - Guides:
+#     - guides/
+#   - Random:
+#     - random/
+## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
@@ -88,3 +92,7 @@ plugins:
       blog_dir: blog
       blog_toc: true
       # https://squidfunk.github.io/mkdocs-material/plugins/blog/#posts
+  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - awesome-pages
+  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
+  - search

@@ -53,6 +53,10 @@ jobs:
       - name: Install mkdocs-material
         run: pip install mkdocs-material
 
+      - name: Install mkdocs-awesome-pages-plugin
+        # https://www.mkdocs.org/dev-guide/plugins/#installing-plugins
+        run: pip install mkdocs-awesome-pages-plugin
+
       - name: Run mkdocs gh-deploy
         run: mkdocs gh-deploy --force
 
