@@ -33,8 +33,13 @@ theme:
     - navigation.tracking
     - navigation.tabs
   icon:
+    # # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/?h=icon#favicon
+    # favicon: 
+    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/?h=icon#logo
+    logo: simple/github
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
     repo: fontawesome/brands/git-alt
+    #repo: octicons/mark-github-24
   language: en    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language
   palette:
     # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette
