@@ -6,6 +6,7 @@ repo_name: rwaight/rwaight.github.io
 
 ## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
 ## the plugin won't do anything if `mkdocs.yml` defines a `nav` or `pages` entry
+## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
 ## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
 # # https://www.mkdocs.org/user-guide/configuration/#nav
 # # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
@@ -21,6 +22,7 @@ repo_name: rwaight/rwaight.github.io
 #   - Random:
 #     - random/
 ## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
+## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
@@ -85,6 +87,9 @@ markdown_extensions:
 plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/#built-in-privacy-plugin
   - privacy
+  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - awesome-pages
+  - search
   # https://squidfunk.github.io/mkdocs-material/plugins/blog/
   - blog:
       # https://squidfunk.github.io/mkdocs-material/plugins/blog/#general
@@ -92,7 +97,4 @@ plugins:
       blog_dir: blog
       blog_toc: true
       # https://squidfunk.github.io/mkdocs-material/plugins/blog/#posts
-  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-  - awesome-pages
-  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
-  - search
+
