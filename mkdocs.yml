@@ -10,8 +10,7 @@ nav:
   - Home: 'index.md'
   - Blog:
     - blog/index.md
-  - Guides:
-    - 'setup-github-pages.md'
+  - Guides: '/guides/'
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
