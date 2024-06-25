@@ -1,6 +1,11 @@
 ---
 title: Setup GitHub Pages
-date: 2023-05-28
+date:
+  created: 2023-05-28
+  updated: 2024-06-25
+authors:
+  - rwaight
+#slug: setup-github-pages
 ---
 
 
