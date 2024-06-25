@@ -23,6 +23,8 @@ theme:
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#automatic-hiding
     - header.autohide
+    # https://squidfunk.github.io/mkdocs-material/plugins/blog/#navigation
+    - navigation.indexes
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#setting-up-navigation
     - navigation.instant
     - navigation.sections
