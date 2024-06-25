@@ -11,6 +11,7 @@ nav:
   - Blog:
     - blog/index.md
   - Guides: '/guides/'
+  - Random: '/random/'
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
