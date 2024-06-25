@@ -100,8 +100,9 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/
   - tags:
       enabled: true
-      # # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_file
-      # tags_file: tags.md
+      # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_file
+      # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/issues/102
+      tags_file: plugins/tags.md
       # # https://squidfunk.github.io/mkdocs-material/plugins/tags/?h=tags+allowed#config.tags_allowed
       # # 'tags_allowed' is for sponsors only
       # tags_allowed:
