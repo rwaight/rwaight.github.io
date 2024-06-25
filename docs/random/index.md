@@ -1,3 +1,10 @@
+---
+title: Random pages index page
+date:
+  created: 2024-06-25
+  updated: 2024-06-25
+---
+
 # Random pages index page
 
 ### Random GitHub Notes
