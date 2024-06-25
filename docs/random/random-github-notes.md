@@ -1,3 +1,15 @@
+---
+title: Random GitHub notes
+date:
+  created: 2023-05-28
+  updated: 2024-06-25
+authors:
+  - rwaight
+#slug: random-github-notes
+tags:
+  - GitHub
+---
+
 # Random GitHub notes
 
 

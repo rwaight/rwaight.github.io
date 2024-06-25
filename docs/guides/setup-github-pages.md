@@ -6,16 +6,22 @@ date:
 authors:
   - rwaight
 #slug: setup-github-pages
+tags:
+  - GitHub
+  - MkDocs
+  - Jekyll
 ---
 
 
 Resources:
+
 * [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 
 ## MkDocs
 
 Resources:
+
 * [Getting Started with MkDocs](https://www.mkdocs.org/getting-started/)
 * [Deploying your docs to GitHub Pages](https://www.mkdocs.org/user-guide/deploying-your-docs/#github-pages)
 * [`squidfunk/mkdocs-material` on GitHub](https://github.com/squidfunk/mkdocs-material)

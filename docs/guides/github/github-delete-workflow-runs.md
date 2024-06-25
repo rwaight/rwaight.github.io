@@ -7,6 +7,8 @@ date:
 #  - rwaight
 #slug: delete-workflow-runs
 # from https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/
+tags:
+  - GitHub
 ---
 
 From https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/
