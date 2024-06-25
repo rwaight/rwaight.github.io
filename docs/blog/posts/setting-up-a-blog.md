@@ -1,3 +1,16 @@
+---
+draft: false 
+date:
+  created: 2024-05-28
+  updated: 2024-06-25
+authors:
+  - rwaight
+categories:
+  - MkDocs
+  - Test
+slug: setting-up-a-blog
+---
+
 # Setting up a blog
 
 From https://squidfunk.github.io/mkdocs-material/plugins/blog/
