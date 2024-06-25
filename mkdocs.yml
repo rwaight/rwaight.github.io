@@ -102,11 +102,18 @@ plugins:
       enabled: true
       # # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_file
       # tags_file: tags.md
-      tags_allowed:
-        - GitHub
-        - MkDocs
-        - Jekyll
-      tags_hierarchy: true
+      # # https://squidfunk.github.io/mkdocs-material/plugins/tags/?h=tags+allowed#config.tags_allowed
+      # # 'tags_allowed' is for sponsors only
+      # tags_allowed:
+      #   - GitHub
+      #   - Jekyll
+      #   - Linux
+      #   - MacOS
+      #   - MkDocs
+      #   - Virtualization
+      # # https://squidfunk.github.io/mkdocs-material/plugins/tags/?h=tags+allowed#config.tags_hierarchy
+      # # 'tags_hierarchy' is for sponsors only
+      # tags_hierarchy: true
       # By default, tags are separated by a forward slash `/`, but you can change this to any string, e.g., `.`
       # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_hierarchy_separator
 
