@@ -9,4 +9,4 @@ date:
 
 ### Random GitHub Notes
 
-See the [random GitHub notes page](random-github-notes.md) for some random info.
+See the [random GitHub notes page](github/random-github-notes.md) for some random info.
