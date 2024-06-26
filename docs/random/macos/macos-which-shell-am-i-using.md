@@ -18,10 +18,6 @@ From [https://www.moncefbelyamani.com/which-shell-am-i-using-how-can-i-switch/](
 
 # Which Shell Am I Using? How Can I Switch?
 
-Updated Mar 13, 2022
-
-
-
 * [mac](https://www.moncefbelyamani.com/tags/mac/)
 *  [terminal](https://www.moncefbelyamani.com/tags/terminal/)
 *  [zsh](https://www.moncefbelyamani.com/tags/zsh/)
@@ -40,60 +36,60 @@ In `zsh`, the configuration file is `~/.zshrc`. In `bash`, it’s `~/.bash_profi
 
 If you’re not sure which shell you’re using, there are a couple of ways to find out. One is to run this command:
 ```bash
-
+echo $0
 ```
 
 It works in `bash` and `zsh`, but not in `fish`. Here’s a trick I use that should work in all shells. Type any bogus command that you know doesn’t exist, for example:
 ```bash
-
+monfresh
 ```
 
 The first word in the error message should be the name of the shell. In bash, you would see this:
 ```bash
-
+bash: monfresh: command not found
 ```
 
 In zsh:
 ```bash
-
+zsh: monfresh: command not found
 ```
 
 And in fish:
 ```bash
-
+fish: Unknown command: monfresh
 ```
 
 
-## **Changing shells**
+## Changing shells
 
 If you want to switch between shells to explore the differences, or because you know you want one or the other, use these commands:
 
 
-### **Switch to bash**
+### Switch to bash
 
 ```bash
-
+chsh -s $(which bash)
 ```
 
-### **Switch to zsh**
+### Switch to zsh
 
 ```bash
-
+chsh -s $(which zsh)
 ```
 
-_What the <code>$()</code> syntax does is it runs what’s inside the parentheses (such as <code>which bash</code>), saves the output, and passes it to <code>chsh -s</code>. This is convenient when you don’t know the exact path to the <code>bash</code> or <code>zsh</code> command.</em>
+> **Note**: What the `$()` syntax does is it runs what’s inside the parentheses (such as `which bash`), saves the output, and passes it to `chsh -s`. This is convenient when you don’t know the exact path to the `bash` or `zsh` command.
 
 This will prompt you for your macOS password. For the change to take effect, you need to open a new terminal tab, or quit and restart your terminal app.
 
 
-### **Important Note**
+### Important Note
 
 When you switch shells, if you expect to have the same configuration, make sure to copy the contents of `~/.bash_profile` into `~/.zshrc` or vice versa. Also look out for any code that is not compatible with both shells.
 
 If you’re not sure how to open and edit dotfiles, or hidden files (those with filenames that start with a period, like `.zshrc`), read my [guide on opening hidden files on your Mac](https://www.moncefbelyamani.com/5-ways-to-open-hidden-files-on-your-mac/).
 
 
-#### **Possible error scenario**
+#### Possible error scenario
 
 If you get a message about a `non-standard shell`, that means that your shell is not listed in `/etc/shells`. This can happen after installing a shell with Homebrew, which is a reasonable thing to do because you can get a newer version than the one that came with macOS.
 
@@ -101,18 +97,18 @@ To make macOS aware of the Homebrew version of a shell, it needs to be added to 
 
 Find the path of the Homebrew `zsh`:
 ```bash
-
+which zsh
 ```
 
 Open `/etc/shells` in Sublime Text, or another code editor, but not TextEdit:
 ```bash
-
+open /etc/shells -a "Sublime Text"
 ```
 
 Copy and paste the output of `which zsh` at the bottom of `/etc/shells` and save the file. This will prompt you for your macOS password. Run the `chsh -s` command again, and this time it should not complain. Remember to open a new tab to see the new shell.
 
 
-## **Alternative**
+## Alternative
 
 Another way to change shells is via the Terminal app preferences, by selecting the “Command (complete path)” radio button in the “Shells open with:” section as shown in the screenshot below:
 
@@ -124,22 +120,22 @@ Note that this does not change your default login shell, which you can check by 
 
 Set your login shell to `zsh`:
 ```bash
-
+chsh -s $(which zsh)
 ```
 
 At the top of your `~/.zshrc`, add this line:
 ```bash
-
+echo "hello from zsh"
 ```
 
 At the top of your `~/.bash_profile`, add this line:
 ```bash
-
+echo "hello from bash"
 ```
 
 If the file doesn’t exist, you can create it with `touch`:
 ```bash
-
+touch ~/.bash_profile
 ```
 
 Update your Terminal preferences to open the shell with the command `/bin/bash`, as shown in the screenshot above.
