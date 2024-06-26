@@ -14,7 +14,7 @@ tags:
   - Virtualization
 ---
 
-From https://nathanchance.dev/posts/github-actions-fedora-libvirt/
+From [https://nathanchance.dev/posts/github-actions-fedora-libvirt/](https://nathanchance.dev/posts/github-actions-fedora-libvirt/)
 
 Recently, I started exploring setting up [a self-hosted GitHub Actions runner](https://docs.github.com/en/actions/hosting-your-own-runners) for the work-in-progress LLVM builds that ClangBuiltLinux is looking to distribute on kernel.org, as GitHub Actions hosted runners are pretty underwhelming in terms of performance and we want to soup these builds up with Profile Guided Optimization. Additionallly, GitHub Actions does not have a hosted arm64 Linux option, which is becoming increasingly important with chips such as Apple's M1 getting strong mainline Linux support.
 
