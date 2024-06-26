@@ -14,7 +14,7 @@ tags:
 ### Short Rules Info
 
 The rules to the Munchkin Card Game in a shorter format than the original rules. Written in Markdown.
-- The short rules are from [https://github.com/andersfischernielsen/Munchkin-Short-Rules](https://github.com/andersfischernielsen/Munchkin-Short-Rules)
+The short rules are from [`andersfischernielsen/Munchkin-Short-Rules`](https://github.com/andersfischernielsen/Munchkin-Short-Rules).
 
 Official rules can be found [here](http://www.worldofmunchkin.com/rules/munchkin_rules.pdf).
 _No copyright infringement intended._
@@ -27,14 +27,16 @@ _Rights to the Munchkin logo belong to Steve Jackson Games._
 ## Setup
 
 - Divide the cards into a *treasure* stack and a *door* (AKA room) stack.
-- Give each player four cards from each stack. Give each player a level token. Everyone starts at level 1. 
+- Give each player four cards from each stack.
+- Give each player a level token.
+- Everyone starts at level 1.
 
 ### Cards
-- Item cards: Items have a price at the bottom of the card and "_+ some-number_" at the top of the card. 
-- Monster cards: Monster cards have a level and name at the top of the card and "_some-number Treasures_" at the bottom. 
-- Curse cards: Curse cards have "_Curse!_" at the top of the card.
-- Race cards: Race cards have "race" at the bottom of the card.
-- Class cards: Race cards have "class" at the bottom of the card.
+- **Item cards**: Items have a price at the bottom of the card and "_+ some-number_" at the top of the card. 
+- **Monster cards**: Monster cards have a level and name at the top of the card and "_some-number Treasures_" at the bottom. 
+- **Curse cards**: Curse cards have "_Curse!_" at the top of the card.
+- **Race cards**: Race cards have "race" at the bottom of the card.
+- **Class cards**: Race cards have "class" at the bottom of the card.
 
 ## Playing
 
@@ -74,7 +76,7 @@ When your turn ends, you must have no more than five cards in your hand. If you 
  - If you cannot defeat the monster(s), you both have to Run Away.
 
 ### Running Away
- - Roll the dice. If you get a 5 or more, you escape. If not, read the monster card and do what the "Bad Stuff" is. 
+ - Roll the dice. If you get a 5 or more, you escape. If not, read the monster card and do what the "**Bad Stuff**" is. 
  - You have to Run Away from each separate monster (roll for each monster).
 
 ## Items
@@ -96,13 +98,14 @@ When your turn ends, you must have no more than five cards in your hand. If you 
 
 ## General Rules
 
-- Cards in front of you are in play (race(s), class(es) curses, items etc.) When a card has been played it cannot be taken back into your hand.
+- Cards in front of you are in play (race(s), class(es) curses, items etc.) 
+    - When a card has been played it cannot be taken back into your hand.
 - You can **only** reach level 10 by killing a monster. 
 - You can never have a lower level than 1.
-- At any time you can: Discard a class or race, play a "Go Up a Level" card, Hireling or curse.
+- At any time you can: Discard a class or race, play a "**Go Up a Level**" card, Hireling or curse.
 - If you are not in combat, you are able to: Trade items, change equipped items, play a card you just received.
 - On your turn you can: Play a new class or race card (any time), sell items for levels (except when you are in combat) and play items.  
 - Super Munchkin and Half-Breeds do not suffer penalties for either race/class they are. 
 - Treasure cards cannot be played during combat, unless the card(s) says so.
-- "Go Up A Level" cards can be used on any player.
+- "**Go Up A Level**" cards can be used on any player.
 - If an undead monster is in battle, any player can add another undead monster to the battle.
