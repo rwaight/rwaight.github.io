@@ -1,8 +1,9 @@
 ---
-title: Which Shell Am I Using? How Can I Switch?
+#title: Which Shell Am I Using? How Can I Switch?
+title: Which Shell Am I Using?
 date:
   created: 2022-03-13
-  updated: 2024-06-25
+  updated: 2024-06-26
 #authors:
 #  - rwaight
 #slug: macos-which-shell-am-i-using
