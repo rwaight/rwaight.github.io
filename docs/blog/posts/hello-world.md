@@ -1,13 +1,13 @@
 ---
-draft: false 
+title: Hello world!
+draft: false
 date:
   created: 2024-06-25
-  updated: 2024-06-25
+  updated: 2024-06-26
 authors:
   - rwaight
 categories:
-  - Hello
-  - World
+  - Hello World
 slug: hello-world
 ---
 
