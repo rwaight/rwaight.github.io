@@ -1,14 +1,18 @@
 ---
-draft: false 
+title: Setting up a blog
+draft: false
 date:
   created: 2024-05-28
-  updated: 2024-06-25
-authors:
-  - rwaight
+  updated: 2024-06-26
+description: >
+  Use the Material for MkDocs built-in blog plugin to add a blog to your site.
+authors: [rwaight]
 categories:
   - MkDocs
   - Test
 slug: setting-up-a-blog
+tags:
+  - MkDocs
 ---
 
 # Setting up a blog
