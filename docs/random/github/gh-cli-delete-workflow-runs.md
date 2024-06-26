@@ -9,9 +9,10 @@ date:
 # from https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/
 tags:
   - GitHub
+  - GitHub/cli
 ---
 
-From https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/
+From [https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/](https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/)
 
 Hello, future me. This is for you next time you want to do this.
 
