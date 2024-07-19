@@ -82,6 +82,14 @@ markdown_extensions:
   - toc:
       title: On this page
       permalink: true
+  # https://squidfunk.github.io/mkdocs-material/reference/formatting/#configuration
+  # support for sub and superscripts
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
 
 # https://www.mkdocs.org/user-guide/configuration/#plugins
 plugins:
