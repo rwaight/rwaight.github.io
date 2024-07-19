@@ -23,7 +23,7 @@ rundll32 sysdm.cpl,EditEnvironmentVariables
 
 ### Question details
 
-From https://superuser.com/q/25037
+From [https://superuser.com/q/25037](https://superuser.com/q/25037)
 
 > When clicking on "Advanced system settings", I need to login as the administrator and hence only edit _the administrators environment variables_ (in addition to the machine wide ones). **How do I edit the environment variables of a standard user?**
 
@@ -38,7 +38,7 @@ From https://superuser.com/q/25037
 
 ### Answer details
 
-From https://superuser.com/a/25038
+From [https://superuser.com/a/25038](https://superuser.com/a/25038)
 
 > Just type “environment” into the start menu (or press `Win` + `S` in Windows 10 and search for _“Edit environment variables for your account”_).
 >
