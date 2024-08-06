@@ -25,6 +25,12 @@ tags:
 ## Clean up commits
 
 This section is related to commands used to clean up commits.
+<!--- review the following links as well:
+
+https://stackoverflow.com/questions/8225125/remove-last-commit-from-remote-git-repository
+
+
+--->
 
 ### Uncommit but keep changes
 
