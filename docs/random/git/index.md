@@ -27,7 +27,9 @@ tags:
 This section is related to commands used to clean up commits.
 <!--- review the following links as well:
 
-https://stackoverflow.com/questions/8225125/remove-last-commit-from-remote-git-repository
+* https://stackoverflow.com/questions/8225125/remove-last-commit-from-remote-git-repository
+* https://stackoverflow.com/questions/3882583/how-to-discard-local-commits-in-git
+* https://stackoverflow.com/questions/5097456/throw-away-local-commits-in-git
 
 
 --->
