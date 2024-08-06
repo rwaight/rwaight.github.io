@@ -23,6 +23,15 @@ tags:
 * https://stackoverflow.com/questions/63440623/no-gpg-passphrase-prompt-in-visual-studio-code-on-windows-10-for-signed-git-comm
 
 
+##### GPG key setup with GitHub
+
+* https://docs.github.com/en/authentication/managing-commit-signature-verification
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account#adding-a-gpg-key
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+
+
 ##### gpg-agent
 
 * https://petrmanek.cz/blog/2022/unlocking-gpg-agent/
