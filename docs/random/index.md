@@ -2,10 +2,19 @@
 title: Random pages index page
 date:
   created: 2024-06-25
-  updated: 2024-06-25
+  updated: 2024-08-08
 ---
 
 # Random pages index page
+
+### Dark mode in chromium browsers
+
+If you love dark mode for everything... you can enable **Auto Dark Mode for Web Contents**. In `chrome://flags/`, search for **Dark Mode**.
+
+Referenced from [How do I set Google Calendar to Dark Mode?](https://support.google.com/calendar/thread/9762643?hl=en&msgid=37038653)
+> turn on the flag **Force Dark Mode for Web Contents**
+> you can do this by going to `chrome://flags/` and searching for it
+
 
 ### Random GitHub Notes
 
