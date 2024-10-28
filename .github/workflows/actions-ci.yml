@@ -1,6 +1,6 @@
 # attempt to adhere to a commit convention - https://commitlint.js.org/
 # from https://commitlint.js.org/guides/ci-setup.html#github-actions
-# This file is sourced from 'infra/assets/gh_workflows'
+# This file is sourced from the 'infra' repo, the file location is: 'infra/assets/gh_workflows/actions-ci.yml'
 name: Commit manager
 run-name: Check commit conventions on ${{ github.event_name }}
 
