@@ -1,5 +1,5 @@
 # This workflow runs the 'Export label config' and 'Sync labels' actions and includes user input
-# This file is sourced from 'infra/assets/gh_workflows'
+# This file is sourced from the 'infra' repo, the file location is: 'infra/assets/gh_workflows/label-manager.yml'
 name: Label Manager
 run-name: Run ${{ github.event.action || 'label manager' }} from ${{ github.event_name }}
 on: 
