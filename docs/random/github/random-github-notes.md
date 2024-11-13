@@ -2,7 +2,7 @@
 title: Random GitHub notes
 date:
   created: 2023-05-28
-  updated: 2024-11-04
+  updated: 2024-11-13
 authors:
   - rwaight
 #slug: random-github-notes
@@ -12,6 +12,24 @@ tags:
 
 # Random GitHub notes
 
+### Marking all PR files as viewed using Refined GitHub
+
+If you use [refined-github](https://github.com/refined-github/refined-github), you can batch mark files as viewed by using `Shift + click`, as shown in [refined-github#3007](https://github.com/refined-github/refined-github/pull/3007):
+
+![batch-mark-files-as-viewed](./batch-mark-files-as-viewed.gif)
+
+The sequence is:
+1. Click on first item
+2. Hold shift
+3. Click on other item
+4. Release shift
+
+**Note**: Steps 2-4 can be repeated to continue the selection
+
+##### Related issues
+
+* https://github.com/refined-github/refined-github/issues/2444
+* https://github.com/refined-github/refined-github/issues/5880
 
 ### Marking all PR files as viewed in the GitHub Web UI
 
