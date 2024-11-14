@@ -7,6 +7,8 @@
 ##       has been migrated to the new label, across all repos,
 ##       it can then be deleted in this file.
 #
+# This file is sourced from the 'infra' repo, the file location is: 'infra/assets/labels/my-labels-core.yml'
+#
 ##### default GitHub labels
 # The following labels were part of GitHub repos by default
 -
@@ -106,6 +108,11 @@
   name: 'impacts:examples'
   color: '5F9188'
   description: 'Impacting example actions and/or workflows'
+  aliases: []
+-
+  name: 'impacts:infra'
+  color: '5F9188'
+  description: 'Impacting the ''infra'' directory'
   aliases: []
 -
   name: 'impacts:repo'

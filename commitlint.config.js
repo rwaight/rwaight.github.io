@@ -1,11 +1,17 @@
 module.exports = {
+    // This file is sourced from the 'infra' repo, the file location is: 'infra/assets/repo_root/commitlint.config.js'
     extends: [
         '@commitlint/config-conventional'
     ],
     /*
     * Ignore dependabot commit messages until https://github.com/dependabot/dependabot-core/issues/2445 is fixed.
     */
-    ignores: [(msg) => /Signed-off-by: dependabot\[bot\]/m.test(msg)],
+    ignores: [
+        (msg) => /Signed-off-by: dependabot\[bot\]/m.test(msg),
+        // // https://stackoverflow.com/questions/60194822/how-do-you-configure-commitlint-to-ignore-certain-commit-messages-such-as-any-th#60195181
+        (message) => message.includes('WIP'),
+        message => /\bWIP\b/i.test(message)
+    ],
 
     rules: {
         // consider adding the 'body-case', 'body-max-line-length', and 'header-max-length' in the future
@@ -38,4 +44,5 @@ module.exports = {
     },
 
     helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint'
+    // helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint'
 };

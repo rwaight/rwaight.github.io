@@ -1,0 +1,103 @@
+# This configuration is used in the 'label-manager' workflow
+# Examples from https://github.com/actions/labeler?tab=readme-ov-file#basic-examples
+# This file is sourced from the 'infra' repo, the file location is: 'infra/assets/dot_gh/labeler.yml'
+
+actions:autorelease:
+- any:
+  - head-branch: ['^autorelease','autorelease']
+
+actions:dependabot:
+- any:
+  - head-branch: ['^dependabot','dependabot']
+
+# Add 'documentation' label to any file changes within 'docs' or 'examples' folders
+documentation:
+- all:
+  - changed-files:
+    - any-glob-to-any-file: ['**/*.md','**/docs/*','docs/**','examples/**']
+    - all-globs-to-all-files: '!CHANGELOG.md'
+
+# Add 'group:builders' label to any file changes within the 'builders' folder
+group:builders:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'builders/**'
+
+# Add 'group:chatops' label to any file changes within the 'chatops' folder
+group:chatops:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'chatops/**'
+
+# Add 'group:composite' label to any file changes within the 'composite' folder
+group:composite:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'composite/**'
+
+# Add 'group:git' label to any file changes within the 'git' folder
+group:git:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'git/**'
+
+# Add 'group:github' label to any file changes within the 'github' folder
+group:github:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'github/**'
+
+# Add 'group:releases' label to any file changes within the 'releases' folder
+group:releases:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'releases/**'
+
+# Add 'group:test' label to any file changes within the 'test' folder
+group:test:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'test/**'
+
+# Add 'group:utilities' label to any file changes within the 'utilities' folder
+group:utilities:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'utilities/**'
+
+# Add 'impacts:actions' label to any file changes within the grouped actions folders
+impacts:actions:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: ['builders/**', 'chatops/**', 'composite/**', 'git/**', 'github/**', 'releases/**', 'utilities/**']
+
+# Add 'impacts:assets' label to any file changes within the 'assets' folder or 'infra/assets' folder
+impacts:assets:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: ['assets/**', 'infra/assets/**']
+
+# Add 'impacts:examples' label to any file changes within the 'examples' folder
+impacts:examples:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'examples/**'
+
+# Add 'impacts:infra' label to any file changes within the 'infra' folder
+impacts:infra:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: 'infra/**'
+
+# Add 'impacts:repo' label to file changes within the '.github' folder EXCEPT for the workflows sub-folder
+impacts:repo:
+- all:
+  - changed-files:
+    - any-glob-to-any-file: '.github/**'
+    - all-globs-to-all-files: '!.github/workflows/**'
+
+# Add 'impacts:workflows' label to any file changes within the '.github/workflows' folder
+impacts:workflows:
+- any:
+  - changed-files:
+    - any-glob-to-any-file: '.github/workflows/**'

@@ -1,0 +1,467 @@
+# This workflow currently runs the 'pr-labeler' action
+# This file is sourced from the 'infra' repo, the file location is: 'infra/assets/gh_workflows/pr-labeler.yml'
+
+name: PR Labeler
+run-name: Label PR ${{ github.event.number }} on ${{ github.head_ref || github.ref_name }}
+on:
+  pull_request:
+    # 'on pull_request' is used by: 'pr-labeler'
+    branches: [main]
+    types:
+      - opened
+      - reopened
+      - labeled
+      - unlabeled
+      - ready_for_review
+      - review_requested
+  # workflow_dispatch:
+  #   inputs:
+  #     verbose_output:
+  #       description: 'Verbose output'
+  #       required: true
+  #       default: false
+  #       type: boolean
+
+env:
+  VERBOSE_WORKFLOW: ${{ inputs.verbose_output || 'true' }}
+  # the bot name without the '[bot]' suffix
+  GH_LOCAL_BOT_NAME: 'rw-actions-bot'
+  # the owner of the repo, used in conditionals below
+  GH_OWNER: rwaight
+
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
+concurrency:
+  # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
+  group: ${{ github.workflow }}-${{ github.ref }}
+  #cancel-in-progress: true
+  # to-do: use 'GH_LOCAL_BOT_NAME' ##cancel-in-progress: ${{ github.actor != '${{ env.GH_LOCAL_BOT_NAME }}[bot]' }}
+  cancel-in-progress: ${{ github.actor != 'rw-actions-bot[bot]' }}
+  #https://docs.github.com/en/actions/using-jobs/using-concurrency#example-only-cancel-in-progress-jobs-on-specific-branches
+  #cancel-in-progress: ${{ !contains(github.ref, 'release/')}}
+
+jobs:
+  pr-labeler:
+    #name: Label pull request ${{ github.event.number }}
+    runs-on: ubuntu-latest
+    # the 'if' statement below is not needed at this time, but would be if the 'on' section above changes
+    if: github.event_name == 'pull_request'
+    permissions:
+      # the `actions: write` permission might need to be added if
+      #   the `gh run cancel` does not work
+      # OR might need to include `gh run watch ${{ github.run_id }}` 
+      #   if issuing `gh run cancel` does not exit the workflow
+      actions: write
+      contents: read
+      issues: write
+      pull-requests: write
+    # # https://docs.github.com/en/actions/using-jobs/using-concurrency
+    # # can also configure concurrency within the job
+    # concurrency:
+    #   # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
+    #   group: ${{ github.workflow }}-${{ github.ref }}
+    #   cancel-in-progress: true
+    steps:
+
+      - name: Exit workflow in forked repo
+        id: check-repo-owner
+        if: ${{ github.repository_owner != env.GH_OWNER }}
+        # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-error-message
+        run: |
+          echo "This workflow was run in a forked repo. Unless this file is updated, none of the jobs will run. "
+          echo "This workflow will now fail and exit. "
+          echo "::error title=⛔ error in the '${{ github.workflow }}' workflow hint::This workflow was run in a forked repo"
+          exit 1
+
+      - name: Show GitHub runner context
+        id: show-runner-context
+        ## The 'runner.*' and 'RUNNER_*' variables are not available in the WORKFLOW env context or the top-level JOB context, but are available in the STEP env context
+        env:
+          FOOBAR: ${{ runner.debug == '1' && 'foo' || 'bar' }}
+          # https://github.com/actions/runner/issues/2204#issuecomment-1287947031
+          # https://github.com/orgs/community/discussions/27627#discussioncomment-3302259
+          GH_RUNNER_LOG: "${{ runner.debug == '1' && 'INFO' || 'ERROR' }}"
+          GH_VAR_RUNNER_DEBUG1: ${{ runner.debug }}
+          GH_VAR_RUNNER_DEBUG2: ${{ env.RUNNER_DEBUG }}
+          GH_VAR_RUNNER_OS1: ${{ runner.os }}
+          GH_VAR_RUNNER_OS2: ${{ env.RUNNER_OS }}
+          GH_VAR_RUNNER_ARCH1: ${{ runner.arch }}
+          GH_VAR_RUNNER_ARCH2: ${{ env.RUNNER_ARCH }}
+        run: |
+          echo "FOOBAR is ${FOOBAR}"
+          echo "GH_RUNNER_LOG is ${GH_RUNNER_LOG}"
+          echo "GH_VAR_RUNNER_DEBUG1 is ${GH_VAR_RUNNER_DEBUG1}"
+          echo "GH_VAR_RUNNER_DEBUG2 is ${GH_VAR_RUNNER_DEBUG2}"
+          echo "GH_VAR_RUNNER_OS1 is ${GH_VAR_RUNNER_OS1}"
+          echo "GH_VAR_RUNNER_OS2 is ${GH_VAR_RUNNER_OS2}"
+          echo "GH_VAR_RUNNER_ARCH1 is ${GH_VAR_RUNNER_ARCH1}"
+          echo "GH_VAR_RUNNER_ARCH2 is ${GH_VAR_RUNNER_ARCH2}"
+        ## The 'runner.*' and 'RUNNER_*' variables are not available in the WORKFLOW env context or the top-level JOB context, but are available in the STEP env context
+
+      # # Save this in case we want to exit the workflow if it is called by '${{ env.GH_LOCAL_BOT_NAME }}[bot]'
+      # - name: Exit workflow if called by '${{ env.GH_LOCAL_BOT_NAME }}[bot]'
+      #   id: check-actions-bot
+      #   if: ${{ github.actor == '${{ env.GH_LOCAL_BOT_NAME }}[bot]' }}
+      #   run: |
+      #     echo "This workflow was called by the '${{ env.GH_LOCAL_BOT_NAME }}[bot]' but should not run. "
+      #     echo "  if the workflow actually runs, then the 'exit 0' below will need to be changed to a non-zero. "
+      #     gh run cancel ${{ github.run_id }}
+      #     echo "The 'check-actions-bot' step is finishing and this workflow will now exit. "
+      #     gh run watch ${{ github.run_id }}
+      #     exit 1
+      #     exit 0
+      #   # might need to include `gh run watch ${{ github.run_id }}` if 'gh run cancel' does not exit the workflow
+      #   env:
+      #     GH_TOKEN: ${{ github.token }}
+
+      - name: Check to see if any labels have been set
+        id: check-for-any-labels
+        #if: github.event.issue.labels.length == 0
+        if: github.event.pull_request.labels.length == 0
+        run: |
+          echo "At the time this step has started, no labels have been set in the PR. "
+          echo "Might consider reducing how often this workflow is called... "
+          echo "the github.event.pull_request.labels.length is ${{ github.event.pull_request.labels.length }} "
+          echo ""
+          echo "The 'check-for-any-labels' step has completed. "
+
+      - name: Autorelease | Set the label scope to 'version' for semver checking
+        #name: Autorelease | Check 'autorelease' branch
+        id: set-label-scope-semver
+        # use startsWith instead of contains ##if: ${{ contains('refs/heads/autorelease', github.ref) }}
+        if: startsWith(github.event.pull_request.head.ref, 'autorelease')
+        run: |
+          ## the double number signs below are for line spacing and readability only
+          ##
+          echo "Setting GHA_LABEL_SCOPE to 'version' ... "
+          echo "GHA_LABEL_SCOPE=version" >> $GITHUB_ENV
+          ##
+          ## The head branch should be named autorelease/<version>
+          if ! [[ "${{ github.event.pull_request.head.ref }}" =~ ^autorelease\/[A-Za-z0-9.+-]+$ ]]; then
+            echo "::error::Invalid autorelease branch '${{ github.event.pull_request.head.ref }}'"
+            exit 1
+          fi
+          VERSION=$(echo "${{ github.event.pull_request.head.ref }}" | awk -F/ '{print $2}')
+          echo "VERSION=$VERSION"
+          ## Ensure the version number in the branch name is in a valid format
+          RE='^[vV]?([0-9]+)[.]([0-9]+)[.]([0-9]+)(-[0-9A-Za-z.+-]*)?'
+          if [[ $VERSION =~ $RE ]]; then
+            MAJOR="${BASH_REMATCH[1]}"
+            MINOR="${BASH_REMATCH[2]}"
+            PATCH="${BASH_REMATCH[3]}"
+            PRERELEASE="${BASH_REMATCH[4]}"
+          else
+            echo "::error::Version '$VERSION' is not in a valid format" && exit 1
+          fi
+          echo "The 'set-label-scope-semver' step has completed. "
+
+      - name: Autorelease | parse the branch name
+        id: autorelease-parse-branch-name
+        if: startsWith(github.event.pull_request.head.ref, 'autorelease')
+        run: |
+          echo "starting the 'autorelease-parse-branch-name' step. "
+          echo "this means that 'github.event.pull_request.head.ref' starts with 'autorelease' (single quotes) "
+          echo ""
+          echo "event pr head ref:  ${{ github.event.pull_request.head.ref }}"
+          HEAD_REF="${{ github.event.pull_request.head.ref }}"
+          ##  
+          RE_AUTO='^(autorelease)\/([vV]?(([0-9]+)[.]([0-9]+)[.]([0-9]+)(-[0-9A-Za-z.+-]*)?))'
+          if [[ $HEAD_REF =~ $RE_AUTO ]]; then
+              AUTO_NAME="${BASH_REMATCH[1]}"
+              FULL_VER="${BASH_REMATCH[2]}"
+              VER_NO_V="${BASH_REMATCH[3]}"
+              MAJOR="${BASH_REMATCH[4]}"
+              MINOR="${BASH_REMATCH[5]}"
+              PATCH="${BASH_REMATCH[6]}"
+              PRERELEASE="${BASH_REMATCH[7]}"
+              ##
+              if [ 'true' == 'true' ]; then
+                  echo "HEAD_REF is: $HEAD_REF "
+                  echo "RE_AUTO is : $RE_AUTO "
+                  echo ""
+                  echo "AUTO_NAME is: $AUTO_NAME "
+                  echo "FULL_VER is : $FULL_VER "
+                  echo "VER_NO_V is : $VER_NO_V "
+                  echo ""
+                  echo "MAJOR is  : $MAJOR "
+                  echo "MINOR is  : $MINOR "
+                  echo "PATCH is  : $PATCH "
+                  echo "PRERELEASE: $PRERELEASE"
+              fi
+              ##
+              echo "next thing to do is to output whichever match group, so it can be tested... "
+          else
+              echo "the head ref did not match the regex, but the branch name starts with 'autorelease'."
+              ## use the warning below once the 'autorelease' startsWith conditionals are working
+              echo "::warning file=pr-labeler,title=autorelease-parse-branch-name::the head ref did not match the regex, but the branch name starts with 'autorelease'."
+          fi
+          ##
+          echo "completing the 'autorelease-parse-branch-name' step. "
+
+      - name: Set the label scope to 'type'
+        id: set-label-scope-type
+        # use startsWith instead of contains ##if: ${{ ! contains('refs/heads/autorelease', github.ref) }}
+        if: ${{ ! startsWith(github.event.pull_request.head.ref, 'autorelease') }}
+        run: |
+          ## the double number signs below are for line spacing and readability only
+          ##
+          echo "Setting GHA_LABEL_SCOPE to 'type' ... "
+          echo "GHA_LABEL_SCOPE=type" >> $GITHUB_ENV
+          ##
+          echo "This branch is not an 'autorelease' branch, skipping the autorelease steps. "
+          echo "The 'set-label-scope-type' step has completed. "
+
+      - name: Ensure the label scope has been determined
+        id: check-label-scope
+        run: |
+          ## the double number signs below are for line spacing and readability only
+          ##
+          if [ '${{ env.GHA_LABEL_SCOPE }}' == 'version' ]; then
+              echo "The label scope is 'version'. "
+          ##
+          elif [ '${{ env.GHA_LABEL_SCOPE }}' == 'type' ]; then
+              echo "The label scope is 'type'. "
+          else
+              echo "::error::The label scope was not determined for PR ${{ github.event.number }}, exiting. "
+              exit 1
+          fi
+          echo "The 'check-label-scope' step has completed. "
+
+      - name: Check to see if any '${{ env.GHA_LABEL_SCOPE }}:' labels have been set
+        id: check-for-scope-labels
+        #if: ${{ !contains(github.event.issue.labels.*.name, '${{ env.GHA_LABEL_SCOPE }}:') }}
+        if: ${{ !contains(github.event.pull_request.labels.*.name, '${{ env.GHA_LABEL_SCOPE }}:') }}
+        run: |
+          echo "At the time this step has started, no '${{ env.GHA_LABEL_SCOPE }}' labels have been added to the PR"
+          echo "The 'check-for-scope-labels' step has completed. "
+
+      - name: Create an App Token
+        # Verified creator: https://github.com/marketplace/actions/create-github-app-token
+        # GitHub Action for creating a GitHub App installation access token.
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+        id: app-token
+        # Skip running on forks or Dependabot since neither has access to secrets
+        if: |
+          (github.actor != 'dependabot[bot]' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot') == false)
+        with:
+          # required
+          app-id: ${{ secrets.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_KEY }}
+          # create a token for all repositories in the current owner's installation
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout files from commit tree
+        # Verified creator: https://github.com/marketplace/actions/checkout
+        # GitHub Action for checking out a repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        id: checkout
+        # Skip running on forks or Dependabot since neither has access to secrets
+        if: steps.app-token.outcome != 'skipped'
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Configure Git Credentials
+        id: configure-git
+        #if: ${{ steps.app-token.outputs.token }}
+        # Skip running on forks or Dependabot since neither has access to secrets
+        if: steps.app-token.outcome != 'skipped'
+        run: |
+          ## Configure git to login as the '${{ env.GH_LOCAL_BOT_NAME }}' Bot.
+          ## Ensure the bot is installed at: https://github.com/settings/installations
+          git config user.name ${{ env.GH_LOCAL_BOT_NAME }}[bot]
+          git config user.email ${{ secrets.GH_APP_BOT_UID }}+${{ env.GH_LOCAL_BOT_NAME }}[bot]@users.noreply.github.com
+          echo "the 'configure-git' step has completed. "
+
+      - name: Checkout files from commit tree for dependabot
+        # Verified creator: https://github.com/marketplace/actions/checkout
+        # GitHub Action for checking out a repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        id: checkout-dependabot
+        # Run for Dependabot with the default token
+        if: |
+          (github.actor == 'dependabot[bot]' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot') == true)
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git Credentials for github-actions bot
+        id: configure-dependabot-git
+        # user: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+        # Run for Dependabot with the default token
+        if: steps.checkout-dependabot.outcome != 'skipped'
+        run: |
+          ##
+          ## Configure git to login as the GitHub Actions Bot.
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          echo "the 'configure-dependabot-git' step has completed. "
+
+      - name: Apply non-versioning labels
+        # Verified creator: https://github.com/marketplace/actions/labeler
+        # An action for automatically labelling pull requests
+        uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9 # v5.0.0
+        id: label-pull-request
+        with:
+          repo-token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+
+      - name: Autorelease | Check for semantic version labels
+        uses: rwaight/actions/test/check-semver-labels@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        id: check-version-labels
+        # use startsWith instead of contains ##if: ${{ ! contains('refs/heads/autorelease', github.ref) }}
+        if: startsWith(github.event.pull_request.head.ref, 'autorelease')
+        with:
+          gh-token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          allow-failure: true
+          #allow-failure: false
+          semver-fallback: 'triage:version-needed'
+          semver-prefix: 'version:'
+          my_action_debug: true
+
+      - name: Check for type labels
+        uses: rwaight/actions/github/label-checker@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        id: check-type-labels
+        # use startsWith instead of contains ##if: ${{ ! contains('refs/heads/autorelease', github.ref) }}
+        if: ${{ ! startsWith(github.event.pull_request.head.ref, 'autorelease') }}
+        with:
+          allow_failure: true
+          prefix_mode: true
+          #any_of: 'group:'
+          # allow 'version:' labels if it is needed to overwrite what is set in the release template
+          #none_of: 'version:'
+          one_of: 'type:'
+          repo_token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+
+      - name: Write the check-${{ env.GHA_LABEL_SCOPE }}-labels results to the environment
+        # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+        id: write-results
+        ## Skip running on forks or Dependabot since neither has access to secrets
+        ##if: steps.app-token.outcome != 'skipped'
+        run: |
+          ## the double number signs below are for line spacing and readability only
+          ##
+          echo "Running the 'write-results' step. "
+          ##
+          test_name=check-${{ env.GHA_LABEL_SCOPE }}-labels
+          echo "test_name=check-${{ env.GHA_LABEL_SCOPE }}-labels" >> $GITHUB_ENV
+          echo "test_name=check-${{ env.GHA_LABEL_SCOPE }}-labels" >> "$GITHUB_OUTPUT"
+          ##
+          if [ '${{ env.GHA_LABEL_SCOPE }}' == 'version' ]; then
+              echo "The label scope is '${{ env.GHA_LABEL_SCOPE }}' (should be 'version'). "
+              label_check=${{ steps.check-version-labels.outputs.semver-check-results }}
+              echo "label_check=${{ steps.check-version-labels.outputs.semver-check-results }}" >> $GITHUB_ENV
+              echo "label_check=${{ steps.check-version-labels.outputs.semver-check-results }}" >> "$GITHUB_OUTPUT"
+              step_outcome=${{ steps.check-version-labels.outcome }}
+              echo "step_outcome=${{ steps.check-version-labels.outcome }}" >> $GITHUB_ENV
+              echo "step_outcome=${{ steps.check-version-labels.outcome }}" >> "$GITHUB_OUTPUT"
+          ##
+          elif [ '${{ env.GHA_LABEL_SCOPE }}' == 'type' ]; then
+              echo "The label scope is '${{ env.GHA_LABEL_SCOPE }}' (should be 'type'). "
+              label_check=${{ steps.check-type-labels.outputs.label_check }}
+              echo "label_check=${{ steps.check-type-labels.outputs.label_check }}" >> $GITHUB_ENV
+              echo "label_check=${{ steps.check-type-labels.outputs.label_check }}" >> "$GITHUB_OUTPUT"
+              step_outcome=${{ steps.check-type-labels.outcome }}
+              echo "step_outcome=${{ steps.check-type-labels.outcome }}" >> $GITHUB_ENV
+              echo "step_outcome=${{ steps.check-type-labels.outcome }}" >> "$GITHUB_OUTPUT"
+          else
+              echo "::error::Unable to set 'label_check' and 'step_outcome' variables, exiting. "
+              exit 1
+          fi
+          ##
+          if [ 'true' == 'true' ]; then
+              echo "verbose info... "
+              echo ""
+              echo "the '${{ env.test_name }}' step info... "
+              echo "  label_check:  ${{ env.label_check }} "
+              echo "  step_outcome: ${{ env.step_outcome }} "
+              echo ""
+              echo "going to evaluate the outcome of the check labels steps..."
+              echo "learn more at: "
+              echo "https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context"
+              echo ""
+          fi
+          ##
+          echo "checking if the head.ref startsWith autorelease ..."
+          echo "${{ startsWith(github.event.pull_request.head.ref, 'autorelease') }} "
+          echo "look above, what is that?"
+          echo ""
+          echo "checking if the head.ref NOT startsWith autorelease ..."
+          echo "${{ ! startsWith(github.event.pull_request.head.ref, 'autorelease') }} "
+          echo "look above, what is that?"
+          echo ""
+          ##
+          echo "The 'write-results' step has finished. "
+
+      - name: Look for a comment
+        uses: rwaight/actions/chatops/find-comment@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        id: find-comment
+        if: steps.write-results.outcome != 'skipped'
+        #continue-on-error: true
+        with:
+          #issue-number: ${{ github.event.number }}
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: '${{ env.GH_LOCAL_BOT_NAME }}[bot]'
+          body-includes: The PR labeler checks
+
+      - name: Verbose | Output comment ID from the 'find-comment' step
+        if: ${{ steps.find-comment.outputs.comment-id }}
+        run: |
+          echo "Comment ID - ${{ steps.find-comment.outputs.comment-id }}"
+
+      - name: Generate comment template
+        id: comment-template
+        uses: rwaight/actions/utilities/render-template@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        # old if was very noisy, always adds a comment## #if: steps.write-results.outcome != 'skipped'
+        # updated 'if' to run if 'label_check: failure' or if 'comment-id' is found
+        # this should mean a comment is only added if there is a label check failure, otherwise update a comment
+        #   if it exists, to replace a label check failure comment with a success comment
+        if: ${{ steps.find-comment.outputs.comment-id || steps.write-results.outputs.label_check == 'failure' }}
+        #ran when success# #if: ${{ steps.find-comment.outputs.comment-id }} || ${{ steps.write-results.outputs.label_check == 'failure' }}
+        #ran when success# #if: |
+        #ran when success# #  (steps.write-results.outputs.step_outcome != 'skipped' && steps.write-results.outputs.label_check == 'failure') ||
+        #ran when success# #  ${{ steps.find-comment.outputs.comment-id }}
+        with:
+          #idea #template: assets/pr-labeler/comment-checks-${{ steps.check-type-labels.outputs.label_check }}.md
+          #template: assets/pr-labeler/comment-checks-failure.md
+          # use the 'label_check' outputs ('success' or 'failure') to determine which file to use
+          template: assets/pr-labeler/comment-checks-${{ steps.write-results.outputs.label_check }}.md
+          vars: |
+            foo: this
+            bar: that
+            event_number: ${{ github.event.number }}
+            label_check: ${{ steps.write-results.outputs.label_check }}
+            label_scope: ${{ env.GHA_LABEL_SCOPE }}
+            step_outcome: ${{ steps.write-results.outputs.step_outcome }}
+            test_name: ${{ env.test_name }}
+
+      - name: Create or update comment
+        id: comment-on-pr
+        uses: rwaight/actions/chatops/create-or-update-comment@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        # old if was very noisy, always adds a comment## #if: steps.write-results.outcome != 'skipped'
+        # updated 'if' to run if 'label_check: failure' or if 'comment-id' is found
+        # this should mean a comment is only added if there is a label check failure, otherwise update a comment
+        #   if it exists, to replace a label check failure comment with a success comment
+        if: ${{ steps.find-comment.outputs.comment-id || steps.write-results.outputs.label_check == 'failure' }}
+        #ran when success# #if: ${{ steps.find-comment.outputs.comment-id }} || ${{ steps.write-results.outputs.label_check == 'failure' }}
+        #ran when success# #if: |
+        #ran when success# #  (steps.write-results.outputs.step_outcome != 'skipped' && steps.write-results.outputs.label_check == 'failure') ||
+        #ran when success# #  ${{ steps.find-comment.outputs.comment-id }}
+        with:
+          body: ${{ steps.comment-template.outputs.result }}
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
+          edit-mode: replace
+          issue-number: ${{ github.event.number }}
+          token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+
+      - name: Output comment ID
+        if: steps.comment-on-pr.outcome != 'skipped'
+        run: |
+          echo "Comment ID - ${{ steps.comment-on-pr.outputs.comment-id }}"
+
+      - name: Fail workflow if proper '${{ env.GHA_LABEL_SCOPE }}' label was not set
+        # https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+        if: |
+          steps.write-results.outputs.step_outcome != 'skipped' && 
+          steps.write-results.outputs.label_check != 'success'
+        run: |
+          echo "::error::Missing the proper '${{ env.GHA_LABEL_SCOPE }}' label in PR ${{ github.event.number }}"
+          exit 1

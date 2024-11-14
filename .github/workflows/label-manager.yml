@@ -1,10 +1,20 @@
 # This workflow runs the 'Export label config' and 'Sync labels' actions and includes user input
-name: Label Manager
+# This file is sourced from the 'infra' repo, the file location is: 'infra/assets/gh_workflows/label-manager.yml'
+
+name: Label manager
 run-name: Run ${{ github.event.action || 'label manager' }} from ${{ github.event_name }}
+
 on: 
+  # When any of the 'assets/labels/my-labels-*.yml' files are updated
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/labels/my-labels-*.yml'
+  # When called by a 'repository_dispatch' event
   repository_dispatch:
     types: [export-labels,sync-labels]
-  # You can run this with every event, but it's better to run it only when you actually need it.
+  # When called manually by a 'workflow_dispatch' event
   workflow_dispatch:
     inputs:
       export_labels:
@@ -22,130 +32,71 @@ on:
         required: true
         default: false
         type: boolean
+  # On a schedule: every six months, at 10:00 on the first of the month
   schedule:
-    - cron: '0 10 1 */6 *'  # once every six months, at 10:00 on the first of the month
+    - cron: '0 10 1 */6 *'  # export labels once every six months, at 10:00 on the first of the month
+
+env:
+  VERBOSE_WORKFLOW: ${{ inputs.verbose_output || 'true' }}
+  # the bot name without the '[bot]' suffix
+  GH_LOCAL_BOT_NAME: 'rw-actions-bot'
+  # the owner of the repo, used in conditionals below
+  GH_OWNER: rwaight
 
 jobs:
-  test-receiver:
-    runs-on: ubuntu-latest
-    if: github.event_name=='repository_dispatch'
-    env:
-      MY_WORKFLOW_DEBUG: ${{ inputs.debug_output || 'false' }}
-    steps:
-      - name: Exit workflow in forked repo
-        id: check-repo-owner
-        if: (github.repository_owner != 'rwaight')
-        run: |
-          echo "This workflow was run in a forked repo. Unless this file is updated, none of the jobs will run. "
-          echo "This workflow will now exit. "
-          exit 0
-
-      - name: An event was received
-        run: |
-          echo "a 'repository_dispatch' event was triggered .. "
-          echo ""
-          echo "the event 'action' value is: '${{ github.event.action }}'"
-          echo ""
-          echo "the 'client_payload' value of the 'export' key is: '${{ github.event.client_payload.export }}'"
-          echo "if the 'export' value above is empty, then look at the context below.. "
-
-      - name: Debug | Output the runner environment and GitHub context
-        #if: env.MY_WORKFLOW_DEBUG=='true'
-        run: | 
-          echo "::group::Runner Environment"
-          echo "## Runner Environment"
-          env | sort
-          echo "\n"
-          echo "::endgroup::"
-          echo ""
-          echo "::group::GitHub context"
-          echo "## GitHub context"
-          echo "$GITHUB_CONTEXT"
-          echo "\n"
-          echo "::endgroup::"
-          echo ""
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-
-      - name: README about GitHub Actions Contexts
-        #if: env.MY_WORKFLOW_DEBUG=='true'
-        run: | 
-          echo "For more information about GitHub Actions Contexts, see the docs that are located at: "
-          echo "https://docs.github.com/en/actions/learn-github-actions/contexts#github-context"
-
-      - name: README about GitHub Actions Inputs
-        #if: env.MY_WORKFLOW_DEBUG=='true'
-        run: |
-          echo "You should read this changelog from the GitHub blog about using inputs, "
-          echo "the link to the blog is: "
-          echo "https://github.blog/changelog/2022-06-10-github-actions-inputs-unified-across-manual-and-reusable-workflows/"
-          echo ""
-          echo "also review the using the inputs context in github actions docs, the link is: "
-          echo "https://docs.github.com/en/actions/learn-github-actions/contexts#inputs-context"
-          echo ""
-
-  # Run export-labels once every six months, at 10:00 on the first of the month
   export-and-sync-labels:
     name: Export and sync repo labels
-    #name: Export repo label configuration
     runs-on: ubuntu-latest
-    # if: | 
-    #   (github.event_name=='schedule' && github.event.schedule=='0 10 1 */6 *') || 
-    #   (github.event_name=='workflow_dispatch' && inputs.export_labels==true) || 
-    #   (github.event_name=='repository_dispatch' && github.event.client_payload.export=='true') || 
-    #   (github.event_name=='repository_dispatch' && github.event.action=='export-labels') || 
-    #   (github.event_name=='repository_dispatch' && github.event.action=='sync-labels') || 
-    #   (github.event_name=='workflow_dispatch' && inputs.sync_labels==true)
     env:
       MY_WORKFLOW_DEBUG: ${{ inputs.debug_output || 'false' }}
     permissions:
       contents: write
       issues: write
     steps:
+
       - name: Exit workflow in forked repo
         id: check-repo-owner
-        if: (github.repository_owner != 'rwaight')
+        if: ${{ github.repository_owner != env.GH_OWNER }}
+        # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-error-message
         run: |
           echo "This workflow was run in a forked repo. Unless this file is updated, none of the jobs will run. "
-          echo "This workflow will now exit. "
-          exit 0
+          echo "This workflow will now fail and exit. "
+          echo "::error title=⛔ error in the '${{ github.workflow }}' workflow hint::This workflow was run in a forked repo"
+          exit 1
 
-      # - name: Checkout files from commit tree
-      #   id: checkout-without-token
-      #   if: |
-      #     (github.event_name=='schedule' && github.event.schedule=='0 10 1 */6 *') || 
-      #     (github.event_name=='workflow_dispatch' && inputs.export_labels==true) || 
-      #     (github.event_name=='repository_dispatch' && github.event.action=='export-labels')
-      #   uses: actions/checkout@v4
-
+      # Create a GitHub App Token from actions/create-github-app-token
       # https://github.com/actions/create-github-app-token
-      - name: Create a GitHub App Token from actions/create-github-app-token
+      - name: Create an App Token for this job
         id: app-token
         if: | 
           (github.event_name=='repository_dispatch' && github.event.action=='sync-labels') || 
           (github.event_name=='workflow_dispatch' && inputs.sync_labels==true)
-        #uses: actions/create-github-app-token@v1
-        uses: actions/create-github-app-token@f2acddfb5195534d487896a656232b016a682f3c
+        # Verified creator: https://github.com/marketplace/actions/create-github-app-token
+        # GitHub Action for creating a GitHub App installation access token.
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
         with:
           # required
-          app-id: ${{ secrets.RW_ACTIONS_APP_ID }}
-          private-key: ${{ secrets.RW_ACTIONS_APP_KEY }}
+          app-id: ${{ secrets.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_KEY }}
           # create a token for all repositories in the current owner's installation
           owner: ${{ github.repository_owner }}
 
       - name: Checkout files from commit tree
-        uses: actions/checkout@v4
+        # Verified creator: https://github.com/marketplace/actions/checkout
+        # GitHub Action for checking out a repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
 
-      # - name: Checkout files from commit tree
-      #   id: checkout-with-token
-      #   if: | 
-      #     (github.event_name=='repository_dispatch' && github.event.action=='sync-labels') || 
-      #     (github.event_name=='workflow_dispatch' && inputs.sync_labels==true)
-      #   uses: actions/checkout@v4
-      #   with:
-      #     token: ${{ steps.app-token.outputs.token }}
+      - name: Configure Git Credentials if using the app token
+        id: configure-git
+        if: ${{ steps.app-token.outputs.token }}
+        run: |
+          ## Configure git to login as the '${{ env.GH_LOCAL_BOT_NAME }}' Bot.
+          ## Ensure the bot is installed at: https://github.com/settings/installations
+          git config user.name ${{ env.GH_LOCAL_BOT_NAME }}[bot]
+          git config user.email ${{ secrets.GH_APP_BOT_UID }}+${{ env.GH_LOCAL_BOT_NAME }}[bot]@users.noreply.github.com
+          echo "the 'configure-git' step has completed. "
 
       - name: Export label config using rwaight/actions/github/export-label-config
         id: export-label-config
@@ -154,13 +105,14 @@ jobs:
           (github.event_name=='workflow_dispatch' && inputs.export_labels==true) || 
           (github.event_name=='repository_dispatch' && github.event.action=='export-labels') ||
           (github.event_name=='repository_dispatch' && github.event.action=='sync-labels') || 
-          (github.event_name=='workflow_dispatch' && inputs.sync_labels==true)
-        #uses: rwaight/actions/github/export-label-config@v1   # can use version specific or main
-        uses: rwaight/actions/github/export-label-config@main  # can use version specific or main
+          (github.event_name=='workflow_dispatch' && inputs.sync_labels==true) ||
+          (github.event_name=='push' && github.ref_name=='main') 
+        uses: rwaight/actions/github/export-label-config@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        #uses: rwaight/actions/github/export-label-config@v0.1.26
+        #uses: rwaight/actions/github/export-label-config@main
         with:
           # This is needed if you're dealing with private repos.
-          #token: ${{ secrets.MY_ACTIONS_TOKEN }}
-          #token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
           # Set 'raw-result' to `true` if you want to get the raw API reponse. Defaults to `false`.
           raw-result: false
           # By default every label entry will have an `aliases` property set to an empty array.
@@ -172,30 +124,29 @@ jobs:
         if: | 
           steps.export-label-config.outcome == 'success' && (
           (github.event_name=='repository_dispatch' && github.event.action=='sync-labels') || 
-          (github.event_name=='workflow_dispatch' && inputs.sync_labels==true)
+          (github.event_name=='workflow_dispatch' && inputs.sync_labels==true) ||
+          (github.event_name=='push' && github.ref_name=='main') 
           )
-        #uses: rwaight/actions/github/label-sync@v1 # can use version specific or main
-        uses: rwaight/actions/github/label-sync@main # can use version specific or main
+        uses: rwaight/actions/github/label-sync@b7d72b3dabc4bbcbc82070c52cec93a4657e3d8a # v0.1.41
+        #uses: rwaight/actions/github/label-sync@v0.1.26
+        #uses: rwaight/actions/github/label-sync@main
         with:
           config-file: |
-            https://raw.githubusercontent.com/rwaight/actions/main/assets/my-labels-core.yml
-            https://raw.githubusercontent.com/rwaight/actions/main/assets/my-labels-versioning.yml
-          ##  automations/my-labels-core.yml
-          ##  automations/my-labels-versioning.yml
-          #
-          # The 'request-token' parameter is needed so the remote config-file values can be accessed
-          #request-token: ${{ secrets.MY_ACTIONS_TOKEN }}
-          #request-token: ${{ secrets.GITHUB_TOKEN }}
-          #request-token: ${{ steps.app-token.outputs.token }}
-          request-token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+            assets/labels/my-labels-core.yml
+            assets/labels/my-labels-actions.yml
+            assets/labels/my-labels-versioning.yml
+          ## use the repo's local labels in the 'assets/' directory
+          ##  https://raw.githubusercontent.com/rwaight/actions/main/assets/my-labels-core.yml
+          ##  https://raw.githubusercontent.com/rwaight/actions/main/assets/my-labels-actions.yml
+          ##  https://raw.githubusercontent.com/rwaight/actions/main/assets/my-labels-versioning.yml
+          ## #
+          ## # The 'request-token' parameter is needed so the remote config-file values can be accessed
+          ## request-token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
           # If you want to delete any additional label, set this to true
           delete-other-labels: true
           # If you want the action just to show you the preview of the changes, without actually editing the labels, set this to true
           dry-run: false
           # You can change the token used to change the labels, this is the default one
-          #token: ${{ secrets.MY_ACTIONS_TOKEN }}
-          #token: ${{ secrets.GITHUB_TOKEN }}
-          #token: ${{ steps.app-token.outputs.token }}
           token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
 
       - name: Run workflow debug
