@@ -1,0 +1,2268 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rwaight.github.io/random/github/random-github-notes/">
+      
+      
+        <link rel="prev" href="../google-apps-and-github-actions/">
+      
+      
+        <link rel="next" href="../../macos/macos-which-shell-am-i-using/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Random GitHub notes - rwaight on GitHub pages</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#random-github-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rwaight on GitHub pages
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Random GitHub notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rwaight/rwaight.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rwaight/rwaight.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/" class="md-tabs__link">
+          
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Random
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../test/" class="md-tabs__link">
+          
+  
+    
+  
+  Other
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+    </a>
+    rwaight on GitHub pages
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rwaight/rwaight.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rwaight/rwaight.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hello-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/setup-github-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/munchkin-short-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Munchkin Short Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Random
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Random
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../git/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GitHub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gh-cli-delete-workflow-runs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Delete GitHub workflow runs using the gh cli
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions-fedora-libvirt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions-nested-virtualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nested Virtualization with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes about GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-ops-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Ops Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-apps-and-github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Google Apps Script with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Random GitHub notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Random GitHub notes
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#marking-all-pr-files-as-viewed-using-refined-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marking all PR files as viewed using Refined GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marking all PR files as viewed using Refined GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marking-all-pr-files-as-viewed-in-the-github-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marking all PR files as viewed in the GitHub Web UI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marking all PR files as viewed in the GitHub Web UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      screenshot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-github-secrets-in-multiple-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing GitHub Secrets in multiple repos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing GitHub Secrets in multiple repos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-github-secrets-with-the-github-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing GitHub Secrets with the GitHub CLI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing GitHub Secrets with the GitHub CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing secrets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-bash-to-update-repos-in-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using bash to update repos in bulk
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-github-secrets-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing GitHub Secrets with GitHub Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing GitHub Secrets with GitHub Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    MacOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            MacOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macos/macos-which-shell-am-i-using/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Which Shell Am I Using?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../check-epoch-date/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Check epoch date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image-builder-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Builder Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Gpt and copilot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Gpt and copilot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formal Ricotta Cheese
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Packer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Packer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packer/using-packer-with-vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Packer with Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/build-win10-with-github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Windows 10 with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/random-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random Windows Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/windows-change-env-vars-as-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change environment variables as standard user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#marking-all-pr-files-as-viewed-using-refined-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marking all PR files as viewed using Refined GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marking all PR files as viewed using Refined GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marking-all-pr-files-as-viewed-in-the-github-web-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marking all PR files as viewed in the GitHub Web UI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marking all PR files as viewed in the GitHub Web UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      screenshot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-github-secrets-in-multiple-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing GitHub Secrets in multiple repos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing GitHub Secrets in multiple repos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-github-secrets-with-the-github-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing GitHub Secrets with the GitHub CLI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing GitHub Secrets with the GitHub CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing secrets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-bash-to-update-repos-in-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using bash to update repos in bulk
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-github-secrets-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing GitHub Secrets with GitHub Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing GitHub Secrets with GitHub Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#github" class="md-tag">GitHub</a>
+    
+  
+</nav>
+
+
+  
+  
+
+
+<h1 id="random-github-notes">Random GitHub notes<a class="headerlink" href="#random-github-notes" title="Permanent link">&para;</a></h1>
+<h3 id="marking-all-pr-files-as-viewed-using-refined-github">Marking all PR files as viewed using Refined GitHub<a class="headerlink" href="#marking-all-pr-files-as-viewed-using-refined-github" title="Permanent link">&para;</a></h3>
+<p>If you use <a href="https://github.com/refined-github/refined-github">refined-github</a>, you can batch mark files as viewed by using <code>Shift + click</code>, as shown in <a href="https://github.com/refined-github/refined-github/pull/3007">refined-github#3007</a>:</p>
+<p><img alt="batch-mark-files-as-viewed" src="../batch-mark-files-as-viewed.gif" /></p>
+<p>The sequence is:
+1. Click on first item
+2. Hold shift
+3. Click on other item
+4. Release shift</p>
+<p><strong>Note</strong>: Steps 2-4 can be repeated to continue the selection</p>
+<h5 id="related-issues">Related issues<a class="headerlink" href="#related-issues" title="Permanent link">&para;</a></h5>
+<ul>
+<li>https://github.com/refined-github/refined-github/issues/2444</li>
+<li>https://github.com/refined-github/refined-github/issues/5880</li>
+</ul>
+<h3 id="marking-all-pr-files-as-viewed-in-the-github-web-ui">Marking all PR files as viewed in the GitHub Web UI<a class="headerlink" href="#marking-all-pr-files-as-viewed-in-the-github-web-ui" title="Permanent link">&para;</a></h3>
+<p>The "marking all files as viewed" might be fixed in <a href="https://github.com/refined-github/refined-github/issues/3043">https://github.com/refined-github/refined-github/issues/3043</a></p>
+<p>From <a href="https://github.com/refined-github/refined-github/issues/2444#issuecomment-613557336">https://github.com/refined-github/refined-github/issues/2444#issuecomment-613557336</a></p>
+<blockquote>
+<p>FYI: I've been using a <a href="chrome://settings/searchEngines">custom search engine in Google Chrome</a> to mark all files as read/unread, switch to the rich diffs, etc.; this could be modified to use <code>%s</code> in the search URL to take "arguments" to a "Mark all as viewed" function to match file names or contents of files (you'd have to modify the script to detect such, etc.)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Search engine</th>
+<th>Keyword</th>
+<th>Query URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub: Display all rich diffs</td>
+<td>ghrd</td>
+<td><code>javascript: document.querySelectorAll('.js-rendered').forEach(button =&gt; button.click());</code></td>
+</tr>
+<tr>
+<td>GitHub: Display all source diffs</td>
+<td>ghsd</td>
+<td><code>javascript: document.querySelectorAll('.js-source').forEach(button =&gt; button.click());</code></td>
+</tr>
+<tr>
+<td>GitHub: Mark all as not viewed</td>
+<td>gh-v</td>
+<td><code>javascript: document.querySelectorAll('.js-reviewed-checkbox').forEach(input =&gt; !input.checked \|\| input.click());</code></td>
+</tr>
+<tr>
+<td>GitHub: Mark all as viewed</td>
+<td>gh+v</td>
+<td><code>javascript: document.querySelectorAll('.js-reviewed-checkbox').forEach(input =&gt; input.checked \|\| input.click());</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Originally posted by @mfulton26 in <a href="https://github.com/refined-github/refined-github/issues/2444#issuecomment-613557336">https://github.com/refined-github/refined-github/issues/2444#issuecomment-613557336</a></em></p>
+<h4 id="screenshot">screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h4>
+<p><img alt="mark-pr-files-viewed-image" src="../mark-pr-files-viewed-image.png" /></p>
+<h2 id="managing-github-secrets-in-multiple-repos">Managing GitHub Secrets in multiple repos<a class="headerlink" href="#managing-github-secrets-in-multiple-repos" title="Permanent link">&para;</a></h2>
+<h3 id="managing-github-secrets-with-the-github-cli">Managing GitHub Secrets with the GitHub CLI<a class="headerlink" href="#managing-github-secrets-with-the-github-cli" title="Permanent link">&para;</a></h3>
+<p><strong>GitHub CLI docs</strong>:
+- https://cli.github.com/manual/gh_secret
+- https://cli.github.com/manual/gh_secret_list
+- https://cli.github.com/manual/gh_secret_set
+- https://cli.github.com/manual/gh_secret_delete</p>
+<h4 id="listing-secrets">Listing secrets<a class="headerlink" href="#listing-secrets" title="Permanent link">&para;</a></h4>
+<p>List secret keys for the current repository:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>list
+</code></pre></div></p>
+<p>List secret keys for a specific organization:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--org<span class="w"> </span>organization
+</code></pre></div></p>
+<p>List secret keys for a specific repository:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--repo<span class="w"> </span>owner/repository
+</code></pre></div></p>
+<h4 id="setting-secrets">Setting secrets<a class="headerlink" href="#setting-secrets" title="Permanent link">&para;</a></h4>
+<p>Set a secret for the current repository (user will be prompted for the value):
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name
+</code></pre></div></p>
+<p>Set a secret from a file for the current repository:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span>&lt;<span class="w"> </span>/path/to/file
+</code></pre></div></p>
+<p>Set an organization secret for specific repositories:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span>--org<span class="w"> </span>organization<span class="w"> </span>--repos<span class="w"> </span>repository1,repository2
+</code></pre></div></p>
+<h4 id="removing-secrets">Removing secrets<a class="headerlink" href="#removing-secrets" title="Permanent link">&para;</a></h4>
+<p>Remove a secret for the current repository:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>remove<span class="w"> </span>name
+</code></pre></div></p>
+<p>Remove a secret for a specific organization:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>remove<span class="w"> </span>name<span class="w"> </span>--org<span class="w"> </span>organization
+</code></pre></div></p>
+<h3 id="using-bash-to-update-repos-in-bulk">Using bash to update repos in bulk<a class="headerlink" href="#using-bash-to-update-repos-in-bulk" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span><span class="s2">&quot;rwaight/actions&quot;</span><span class="w"> </span><span class="s2">&quot;rwaight/test-actions&quot;</span><span class="w"> </span><span class="s2">&quot;rwaight/rwaight.github.io&quot;</span><span class="o">)</span>
+<span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span>
+<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;rwaight/actions&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">&quot;rwaight/test-actions&quot;</span>
+<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;rwaight/rwaight.github.io&quot;</span>
+<span class="o">)</span>
+<span class="k">for</span><span class="w"> </span>str<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is </span><span class="nv">$str</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<span class="c1">#secretName=&quot;SECRET_NAME_HERE&quot;</span>
+<span class="c1">#tempSecretNameValue=&quot;VALUE_FOR_SECRET_HERE&quot;</span>
+
+<span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span>
+<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;actions&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">&quot;test-actions&quot;</span>
+<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;rwaight.github.io&quot;</span>
+<span class="o">)</span>
+
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is rwaight/</span><span class="nv">$i</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+
+<span class="c1">## now loop through the above array</span>
+<span class="k">for</span><span class="w"> </span>repo<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">do</span>
+<span class="w">   </span><span class="c1">#echo &quot;updating secret ${secretName} in repo ${repo}&quot;</span>
+<span class="w">   </span><span class="c1"># or do whatever with individual element of the array</span>
+<span class="w">   </span><span class="c1">#gh secret set ${secretName} --repo ${repo} --body &quot;${tempSecretNameValue}&quot;</span>
+<span class="w">   </span><span class="c1">#</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;updating secrets in repo </span><span class="si">${</span><span class="nv">repo</span><span class="si">}</span><span class="s2"> using the .env file &quot;</span>
+<span class="w">   </span><span class="c1"># use the &#39;.env&#39; file instead</span>
+<span class="w">   </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span>--repo<span class="w"> </span><span class="si">${</span><span class="nv">repo</span><span class="si">}</span>
+
+<span class="k">done</span>
+</code></pre></div>
+<h2 id="managing-github-secrets-with-github-actions">Managing GitHub Secrets with GitHub Actions<a class="headerlink" href="#managing-github-secrets-with-github-actions" title="Permanent link">&para;</a></h2>
+<p>To add a GitHub secret to another repository using GitHub Actions, you'll need to follow these steps:</p>
+<ol>
+<li><strong>Create a secret in the source repository</strong>: Go to your source repository's Settings &gt; Secrets &gt; Actions and create a new secret with a name and value. This secret will be used to authenticate and authorize the addition of the target repository's secret.</li>
+<li>
+<p><strong>Use the <code>gh</code> CLI command</strong>: In your GitHub Actions workflow, use the <code>gh</code> CLI command to list the secrets in the target repository. You can do this using the following syntax:
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">List secrets in target repository</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">gh secret list --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt;</span>
+</code></pre></div>
+Replace <code>&lt;target-repo-owner&gt;</code> and <code>&lt;target-repo-name&gt;</code> with the actual owner and name of the target repository.</p>
+</li>
+<li>
+<p><strong>Add the secret to the target repository</strong>: Use the <code>gh</code> CLI command again to add the secret to the target repository. You'll need to specify the secret name, value, and repository owner/name. Here's an example:
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add secret to target repository</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">gh secret set --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt; --name &lt;secret-name&gt; --value &lt;secret-value&gt;</span>
+</code></pre></div>
+Replace <code>&lt;secret-name&gt;</code> and <code>&lt;secret-value&gt;</code> with the actual name and value of the secret you created in step 1.</p>
+</li>
+<li>
+<p><strong>Authorize the addition using the source repository's secret</strong>: To authenticate and authorize the addition of the target repository's secret, you'll need to pass the source repository's secret as an environment variable or as a workflow input. For example:
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add secret to target repository (authorized)</span>
+<span class="w">  </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">SOURCE_REPO_SECRET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.SOURCE_REPO_SECRET }}</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">gh secret set --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt; --name &lt;secret-name&gt; --value &lt;secret-value&gt; --auth-token $SOURCE_REPO_SECRET</span>
+</code></pre></div>
+Make sure to replace <code>SOURCE_REPO_SECRET</code> with the actual name of the secret you created in step 1.</p>
+</li>
+<li>
+<p><strong>Verify the secret addition</strong>: After running the workflow, verify that the secret has been successfully added to the target repository by checking the repository's settings or using the <code>gh</code> CLI command again.</p>
+</li>
+</ol>
+<p><strong>Important notes</strong>:</p>
+<ul>
+<li>Make sure you have the necessary permissions to access and modify secrets in both the source and target repositories.</li>
+<li>Be cautious when handling sensitive information, such as secrets, in your GitHub Actions workflows.</li>
+<li>Consider using a more secure approach, such as using an environment variable or a secure storage service, to store and retrieve secrets instead of hardcoding them in your workflow.</li>
+</ul>
+<p>By following these steps, you should be able to add a GitHub secret to another repository using GitHub Actions.</p>
+<h4 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h4>
+<ul>
+<li>https://docs.github.com/en/rest/actions/secrets</li>
+<li>https://commandmasters.com/commands/gh-secret-common/</li>
+<li>https://www.thegeekdiary.com/gh-secret-manage-github-secrets-from-the-command-line/</li>
+<li>https://search.brave.com/search?q=github+actions+add+github+secret+to+another+repo&amp;source=desktop&amp;summary=1&amp;summary_og=435276404feb91a25d24ce&amp;conversation=32051c881907ea91873353</li>
+<li>https://octopus.com/blog/githubactions-secrets</li>
+<li>https://stackoverflow.com/questions/73667886/how-read-the-secrets-from-another-repo-to-my-repo-using-github-actions</li>
+<li>https://kinsta.com/blog/github-actions-secret/</li>
+<li>https://github.com/marketplace/actions/secrets-sync-action</li>
+<li>https://www.techielass.com/github-actions-secrets/</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

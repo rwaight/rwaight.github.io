@@ -1,0 +1,2130 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rwaight.github.io/random/github/github-actions-fedora-libvirt/">
+      
+      
+        <link rel="prev" href="../gh-cli-delete-workflow-runs/">
+      
+      
+        <link rel="next" href="../github-actions-nested-virtualization/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt - rwaight on GitHub pages</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#set-up-libvirt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rwaight on GitHub pages
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rwaight/rwaight.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rwaight/rwaight.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/" class="md-tabs__link">
+          
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Random
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../test/" class="md-tabs__link">
+          
+  
+    
+  
+  Other
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+    </a>
+    rwaight on GitHub pages
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rwaight/rwaight.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rwaight/rwaight.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hello-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/setup-github-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/munchkin-short-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Munchkin Short Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Random
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Random
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../git/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GitHub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gh-cli-delete-workflow-runs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Delete GitHub workflow runs using the gh cli
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-libvirt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up libvirt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-set-up-fedora-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create and set up Fedora virtual machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create and set up Fedora virtual machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-virt-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running virt-install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-fedora-using-anacondas-text-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Fedora using Anaconda's text mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-fedora-for-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Fedora for GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up GitHub Actions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions-nested-virtualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nested Virtualization with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes about GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-ops-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Ops Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-apps-and-github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Google Apps Script with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random-github-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random GitHub notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    MacOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            MacOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macos/macos-which-shell-am-i-using/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Which Shell Am I Using?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../check-epoch-date/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Check epoch date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image-builder-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Builder Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Gpt and copilot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Gpt and copilot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formal Ricotta Cheese
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Packer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Packer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packer/using-packer-with-vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Packer with Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/build-win10-with-github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Windows 10 with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/random-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random Windows Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/windows-change-env-vars-as-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change environment variables as standard user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-libvirt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up libvirt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-set-up-fedora-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create and set up Fedora virtual machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create and set up Fedora virtual machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-virt-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running virt-install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-fedora-using-anacondas-text-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Fedora using Anaconda's text mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-fedora-for-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Fedora for GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up GitHub Actions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#github" class="md-tag">GitHub</a>
+    
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#githubactions" class="md-tag">GitHub/Actions</a>
+    
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#virtualization" class="md-tag">Virtualization</a>
+    
+  
+</nav>
+
+
+  
+  
+
+
+  <h1>Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt</h1>
+
+<p>From <a href="https://nathanchance.dev/posts/github-actions-fedora-libvirt/">https://nathanchance.dev/posts/github-actions-fedora-libvirt/</a></p>
+<p>Recently, I started exploring setting up <a href="https://docs.github.com/en/actions/hosting-your-own-runners">a self-hosted GitHub Actions runner</a> for the work-in-progress LLVM builds that ClangBuiltLinux is looking to distribute on kernel.org, as GitHub Actions hosted runners are pretty underwhelming in terms of performance and we want to soup these builds up with Profile Guided Optimization. Additionallly, GitHub Actions does not have a hosted arm64 Linux option, which is becoming increasingly important with chips such as Apple's M1 getting strong mainline Linux support.</p>
+<p>In this guide, I'll go over how I set up a Fedora virtual machine using <a href="https://libvirt.org/">libvirt</a> to run GitHub Actions workflows, including some of the oddities I ran into. This is not intended to be an end all be all guide but I believe it is important to share knowledge, as I am unlikely to be the last person looking to do this.</p>
+<h2 id="set-up-libvirt">Set up libvirt<a class="headerlink" href="#set-up-libvirt" title="Permanent link">&para;</a></h2>
+<p>I recommend running GitHub Actions in a virtual machine, which ensures that if you ever mess up a workflow or command, you are not risking damaging your host operating system. libvirt seems to be one of the most popular and well supported virtualization solutions on Linux so that is what I went with for this project.</p>
+<p>Getting libvirt installed and configured varies by distribution, so I cannot really get too specific here. There are guides for <a href="https://wiki.archlinux.org/title/Libvirt">Arch Linux</a>, <a href="https://wiki.debian.org/libvirt">Debian</a>, and <a href="https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/">Fedora</a>. The important steps are making sure that the <code>libvirtd</code> service is enabled and started and your user is a part of the <code>libvirt</code> group (or whatever the <code>libvirt</code> specific group is on your distribution).</p>
+<p>A few notes of issues/quirks I ran into:</p>
+<ol>
+<li>
+<p>libvirt has <a href="https://wiki.libvirt.org/page/FAQ#What_is_the_difference_between_qemu:.2F.2F.2Fsystem_and_qemu:.2F.2F.2Fsession.3F_Which_one_should_I_use.3F">different URIs (system and session), which have different permissions</a>. I hate using <code>sudo</code> if I do not have to ensure I am not messing my system up unnecessarily. By default, without root, you are in a user session, which only has access to QEMU's user networking mode, instead of the default network, which is faster. Additionally, autostarting virtual machines on boot (which we want for a runner, which should be as available for jobs as possible) is only available for system URIs. If you are part of the <code>libvirt</code> group, you can access <code>qemu:///system</code> without root but you have to specifically request it via the <code>--connect</code> parameter to <code>virsh</code> and <code>virt-install</code>. To avoid doing that for every single command, you can the <code>LIBVIRT_DEFAULT_URI</code> environment variable to <code>qemu:///session</code> in your shell start up file (<a href="https://github.com/nathanchance/env/commit/5ec0146072da4bd8ba75017fc2ec4e41f2521a50">example for fish</a>). This will make <code>virsh</code> and <code>virt-install</code> use the system URI by default so that everything "just works TM".</p>
+</li>
+<li>
+<p>The default network uses network address translation (NAT) via <code>iptables</code> to route traffic to and from the virtual machine. As a result, the virtual machine is not accessible to the network, which is just fine for our use case. If you need more flexibility, check out the <a href="https://jamielinux.com/docs/libvirt-networking-handbook/index.html">libvirt Networking Handbook</a>, which was very informative. I will be concerned with the default network for the rest of this guide.</p>
+</li>
+<li>
+<p>If you are starting virtual machines on boot and you have set the machine to use KVM, the KVM modules must be in your initrd so that they are loaded before init starts, otherwise you might see an error like <code>"unsupported configuration: Domain requires KVM, but it is not available. Check that virtualization is enabled in the host BIOS, and host configuration is setup to load the kvm modules."</code>. Again, this varies by distribution; for Arch Linux, you can add your vendor module (<code>kvm_amd</code> or <code>kvm_intel</code>) to the <code>MODULES</code> array in <code>/etc/mkinitcpio.conf</code> and regenerate all initrds with <code>mkinitcpio -P</code>.</p>
+</li>
+</ol>
+<p>Once it is installed, make sure that the default network is set to automatically start on boot:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virsh<span class="w"> </span>net-autostart<span class="w"> </span>default
+</code></pre></div>
+<p>Make sure that the default network is currently started:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virsh<span class="w"> </span>net-start<span class="w"> </span>default
+</code></pre></div>
+<p>If it fails saying it is already started, that is obviously fine.</p>
+<h2 id="create-and-set-up-fedora-virtual-machine">Create and set up Fedora virtual machine<a class="headerlink" href="#create-and-set-up-fedora-virtual-machine" title="Permanent link">&para;</a></h2>
+<p>GitHub Actions supports <a href="https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners">a few different distributions</a> for the self-hosted runner application. I prefer Fedora as it is stable while still having up to date packages in its repositories so that is what this guide is going to cover but you can use a different operating system if you prefer; you're just on your own for figuring out how to install the virtual machine using <code>virt-install</code> :)</p>
+<p><code>virt-install</code> is the command line tool for creating virtual machine and <code>virsh</code> is the command line tool for managing them. <code>virt-manager</code> is a graphical user interface that helps create and manage virtual machines. I use all of my Linux machines completely headless so this part of the guide is going to cover using the first two tools.</p>
+<p><code>virt-install</code> has a ton of different options, see <a href="https://linux.die.net/man/1/virt-install">the man page</a> for a full explanation of what they do.</p>
+<h3 id="running-virt-install">Running <code>virt-install</code><a class="headerlink" href="#running-virt-install" title="Permanent link">&para;</a></h3>
+<p>My comnmand on an <code>x86_64</code> host looks like:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virt-install<span class="w"> </span><span class="se">\</span>
+--name<span class="w"> </span>fedora<span class="w"> </span><span class="se">\</span>
+--vcpus<span class="w"> </span><span class="k">$(</span>math<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span><span class="w"> </span>/<span class="w"> </span><span class="m">2</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+--memory<span class="w"> </span><span class="k">$(</span>math<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span><span class="w"> </span>x<span class="w"> </span><span class="m">1024</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+--cpu<span class="w"> </span>host<span class="w"> </span><span class="se">\</span>
+--network<span class="w"> </span><span class="nv">network</span><span class="o">=</span>default<span class="w"> </span><span class="se">\</span>
+--boot<span class="w"> </span>uefi<span class="w"> </span><span class="se">\</span>
+--location<span class="w"> </span>https://download.fedoraproject.org/pub/fedora/linux/releases/36/Server/<span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span>/os<span class="w"> </span><span class="se">\</span>
+--disk<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">50</span>,format<span class="o">=</span>qcow2<span class="w"> </span><span class="se">\</span>
+--virt-type<span class="w"> </span>kvm<span class="w"> </span><span class="se">\</span>
+--console<span class="w"> </span>pty,target_type<span class="o">=</span>serial<span class="w"> </span><span class="se">\</span>
+--extra-args<span class="w"> </span><span class="s2">&quot;console=ttyS0,115200n8&quot;</span><span class="w"> </span><span class="se">\</span>
+--graphics<span class="w"> </span>none
+</code></pre></div>
+<p>The <code>vcpus</code>, <code>memory</code>, and <code>disk</code> options will vary. The <a href="https://fishshell.com/docs/current/cmds/math.html"><code>math</code> command</a> is specific to <a href="https://fishshell.com"><code>fish</code></a> so you will need to supply actual numbers or use <code>$(( $(nproc) / 2 ))</code>/<code>$(( $(nproc) * 2))</code> for <code>bash</code>/<code>zsh</code>. For my use case, I allocated half of the threads/cores of the host system to the virtual machine, 2GB of memory for each vCPU, and a 50GB disk image. The <code>memory</code> parameter is in <code>MiB</code>, so multiply how many gigabytes of memory you want by 1024.</p>
+<p>The <code>console</code>, <code>extra-args</code>, and <code>graphics</code> values are due to running this machine headless; a graphical install might want something different, at which point I would probably just recommend using <code>virt-manager</code>.</p>
+<p>For an <code>aarch64</code> host, the command is almost the same:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virt-install<span class="w"> </span><span class="se">\</span>
+--name<span class="w"> </span>fedora<span class="w"> </span><span class="se">\</span>
+--vcpus<span class="w"> </span><span class="k">$(</span>math<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span><span class="w"> </span>/<span class="w"> </span><span class="m">2</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+--memory<span class="w"> </span><span class="k">$(</span>math<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span><span class="w"> </span>x<span class="w"> </span><span class="m">1024</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+--cpu<span class="w"> </span>host-passthrough<span class="w"> </span><span class="se">\</span>
+--network<span class="w"> </span><span class="nv">network</span><span class="o">=</span>default<span class="w"> </span><span class="se">\</span>
+--boot<span class="w"> </span>uefi<span class="w"> </span><span class="se">\</span>
+--location<span class="w"> </span>https://download.fedoraproject.org/pub/fedora/linux/releases/36/Server/<span class="s2">&quot;</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">&quot;</span>/os<span class="w"> </span><span class="se">\</span>
+--disk<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">50</span>,format<span class="o">=</span>qcow2<span class="w"> </span><span class="se">\</span>
+--virt-type<span class="w"> </span>kvm<span class="w"> </span><span class="se">\</span>
+--console<span class="w"> </span>pty,target_type<span class="o">=</span>serial<span class="w"> </span><span class="se">\</span>
+--extra-args<span class="w"> </span><span class="s2">&quot;console=ttyAMA0,115200&quot;</span><span class="w"> </span><span class="se">\</span>
+--graphics<span class="w"> </span>none
+</code></pre></div>
+<ul>
+<li>
+<p><code>--cpu host-passthrough</code> instead of <code>--cpu host</code> due to <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1531076">this bug</a>.</p>
+</li>
+<li>
+<p>The <code>extra-args</code> <code>console=</code> value is different.</p>
+</li>
+</ul>
+<h3 id="install-fedora-using-anacondas-text-mode">Install Fedora using Anaconda's text mode<a class="headerlink" href="#install-fedora-using-anacondas-text-mode" title="Permanent link">&para;</a></h3>
+<p>After running the <code>virt-install</code> command, you should see a bunch of kernel and systemd output then you should see the Anaconda installation page asking if you want to use VNC or the text based installer. I have not messed around with the VNC option, the text installer works fine in my experience.</p>
+<p>Once the installer is loaded, move through each of the options. Here are some of my recommendations:</p>
+<ul>
+<li>Customize the language and time zone to how you see fit. I set the NTP server to <code>time.google.com</code>.</li>
+<li>The installation location should be set to the URL of <code>--location</code>; I did not bother selecting any of the package groups they offered because I wanted to keep the runner environment as simple as possible.</li>
+<li>I always stick with the default partition (and I'll go more into that later).</li>
+<li>In the networking options, I recommend setting the hostname to something unique so that you can potentially add multiple runners in the future (I used <code>fedora-github-action-runner-&lt;arch&gt;-&lt;num&gt;</code>, like <code>fedora-github-actions-runner-x86_64-1</code>).</li>
+<li>I set the root password to something strong and added a user account called <code>runner</code> that was not an administrator with no password so that the <code>runner</code> account was completely unpriviledged and it will be easy to log into the <code>runner</code> account for future configuration. Doing system administration will happen only under the <code>root</code> account.</li>
+</ul>
+<p>After everything is configured, run the installer by pressing <code>b</code>; after a while, you will see the installation completed and press Enter to reboot the virtual machine.</p>
+<h3 id="configuring-fedora-for-github-actions">Configuring Fedora for GitHub Actions<a class="headerlink" href="#configuring-fedora-for-github-actions" title="Permanent link">&para;</a></h3>
+<p>Once you are at the login screen, log into the <code>root</code> account. We are going change a few <code>sshd</code> configuration options to allow us to log into the virtual machine via <code>ssh</code> for administration, as the serial console is not so nice to work with.</p>
+<p>We need to change the setting of logging into the <code>root</code> account via <code>ssh</code>. To start, we will allow logging into the <code>root</code> account via either password or private key:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sed -i &#39;s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g&#39; /etc/ssh/sshd_config</span>
+<span class="c1"># systemctl restart sshd</span>
+</code></pre></div>
+<p>To get the virtual machine's IP address, use <code>virsh net-dhcp-leases default</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virsh<span class="w"> </span>net-dhcp-leases<span class="w"> </span>default
+<span class="w"> </span>Expiry<span class="w"> </span>Time<span class="w">           </span>MAC<span class="w"> </span>address<span class="w">         </span>Protocol<span class="w">   </span>IP<span class="w"> </span>address<span class="w">           </span>Hostname<span class="w">                   </span>Client<span class="w"> </span>ID<span class="w"> </span>or<span class="w"> </span>DUID
+----------------------------------------------------------------------------------------------------------------------------
+<span class="w"> </span><span class="m">2022</span>-05-27<span class="w"> </span><span class="m">15</span>:58:37<span class="w">   </span><span class="m">52</span>:54:00:5c:24:6c<span class="w">   </span>ipv4<span class="w">       </span><span class="m">192</span>.168.122.104/24<span class="w">   </span>fedora-github-actions-vm<span class="w">   </span><span class="m">01</span>:52:54:00:5c:24:6c
+</code></pre></div>
+<p>If you have a private <code>ssh</code> key, you can now use <code>ssh-copy-id</code> to add your key to <code>authorized_keys</code> then change the <code>PermitRootLogin</code> value to <code>prohibit-password</code>. Otherwise, ignore this step and just rely on logging in via the <code>root</code> password.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sed -i &#39;s/PermitRootLogin yes/PermitRootLogin prohibit-password/g&#39; /etc/ssh/sshd_config</span>
+<span class="c1"># systemctl restart sshd</span>
+</code></pre></div>
+<p>Now you can press <code>Ctrl + ]</code> to exit the <code>virsh</code> console and log into the virtual machine via <code>ssh</code>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>root@...
+</code></pre></div>
+<p>If you did not assign a password to your <code>runner</code> account, you need to allow logging in no password via <code>ssh</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sed -i &#39;s/^#PermitEmptyPasswords no/PermitEmptyPasswords yes/g&#39; /etc/ssh/sshd_config</span>
+<span class="c1"># systemctl restart sshd</span>
+</code></pre></div>
+<p>If you have a private <code>ssh</code> key, you can now authorize it via <code>ssh-copy-id</code> to the <code>runner</code> account then flip the value you changed above; otherwise, ignore this step.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sed -i &#39;s/^PermitEmptyPasswords yes/#PermitEmptyPasswords yes/g&#39; /etc/ssh/sshd_config</span>
+<span class="c1"># systemctl restart sshd</span>
+</code></pre></div>
+<p>If you stuck with the default partitioning scheme during setup, we need to expand the root partition of our virtual machine, as for some reason, <a href="https://unix.stackexchange.com/questions/616780/fedora-server-32-install-does-not-claim-full-disk">the Fedora Server installer only allocates 15GB</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># dev_mapper=$(df -H | grep /dev/mapper/ | cut -d &#39; &#39; -f 1)</span>
+<span class="c1"># lvextend -l +100%FREE &quot;$dev_mapper&quot;</span>
+<span class="c1"># xfs_growfs &quot;$dev_mapper&quot;</span>
+</code></pre></div>
+<p>To use actions that use Docker containers, we need to actually install and configure Docker:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo</span>
+<span class="c1"># dnf install -y \</span>
+containerd.io<span class="w"> </span><span class="se">\</span>
+docker-ce<span class="w"> </span><span class="se">\</span>
+docker-ce-cli<span class="w"> </span><span class="se">\</span>
+docker-compose-plugin
+<span class="c1"># usermod -aG docker runner</span>
+<span class="c1"># systemctl enable --now docker</span>
+</code></pre></div>
+<p>I would recommend installing <code>git</code> to ensure you do not use the REST API to download repositories:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># dnf install -y git</span>
+</code></pre></div>
+<p>After this, we are done configuring in the <code>root</code> account. Log into the <code>runner</code> account via <code>ssh</code> and make sure that Docker actually works:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>runner@...
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>hello-world
+</code></pre></div>
+<h2 id="setting-up-github-actions">Setting up GitHub Actions<a class="headerlink" href="#setting-up-github-actions" title="Permanent link">&para;</a></h2>
+<p>Once that works, go to the repository that you want to add the runner to, click on the Setting tab, click on the Actions option in the sidebar, click on Runners, and finally click on the green button "New self-hosted runner". Click "Linux" and select the correct architecture of the virtual machine.</p>
+<p>Follow the Download instructions (they are copy and paste). The validation step has <code>shasum -a 256</code>, I had to change that to <code>sha256sum</code> on Fedora.</p>
+<p>Run the first step under the "Configure" section:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./config.sh<span class="w"> </span>--url<span class="w"> </span>...<span class="w"> </span>--token<span class="w"> </span>...
+</code></pre></div>
+<p>For the second step, we are not going to use <code>./run.sh</code>; instead, we are going to configure the systemd service that is generated from the <code>./config.sh</code> step.</p>
+<p>First, we need to install the service. I am assuming that you did not add the <code>runner</code> account to the <code>wheel</code> group so <code>sudo</code> will not work; we will use <code>su -c</code> + the <code>root</code> password instead, as this is a one-time setup steup.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;./svc.sh install runner&quot;</span>
+</code></pre></div>
+<p>Next, I recommend <a href="https://docs.github.com/en/actions/hosting-your-own-runners/running-scripts-before-or-after-a-job">installing a "clean up" script</a> to match the hosted GitHub Actions workflow, where every workflow run is completely clean. We do this before the service is actually started to ensure the variable is added to the environment.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt;&#39;EOF&#39; &gt;&quot;$HOME&quot;/cleanup.sh</span>
+<span class="s">#!/usr/bin/env bash</span>
+
+<span class="s">rm -frv &quot;${GITHUB_WORKSPACE%/*}&quot;</span>
+<span class="s">EOF</span>
+$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/cleanup.sh
+</code></pre></div>
+<p>SELinux is enabled on Fedora, which makes the GitHub Actions service <a href="https://github.com/actions/runner/issues/1606">unhappy</a>; this impact this script as well, since it is running under the GitHub Actions service context.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;semanage fcontext --add --type initrc_exec_t </span><span class="nv">$HOME</span><span class="s2">/cleanup.sh&quot;</span>
+$<span class="w"> </span>restorecon<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/cleanup.sh
+</code></pre></div>
+<p>Add the script to the environment of the runner:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ACTIONS_RUNNER_HOOK_JOB_COMPLETED=</span><span class="nv">$HOME</span><span class="s2">/cleanup.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/actions-runner/.env
+</code></pre></div>
+<p>We need to do the same SELinux workaround for the service script:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;semanage fcontext --add --type initrc_exec_t </span><span class="nv">$HOME</span><span class="s2">/actions-runner/runsvc.sh&quot;</span>
+$<span class="w"> </span>restorecon<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/actions-runner/runsvc.sh
+</code></pre></div>
+<p>Finally, we start the runner!</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;./svc.sh start&quot;</span>
+</code></pre></div>
+<p>With any luck, you will now see the service started and you should be able to refresh the Runner setup screen on GitHub to see your runner in an idle status.</p>
+<p>At this point, if you want your runner to be available after a reboot of the host machine, mark it for autostart:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virsh<span class="w"> </span>autostart<span class="w"> </span>fedora
+Domain<span class="w"> </span><span class="s1">&#39;fedora&#39;</span><span class="w"> </span>marked<span class="w"> </span>as<span class="w"> </span>autostarted
+
+
+$<span class="w"> </span>virsh<span class="w"> </span>dominfo<span class="w"> </span>fedora
+Id:<span class="w">             </span><span class="m">1</span>
+Name:<span class="w">           </span>fedora
+UUID:<span class="w">           </span>9385d2f8-2785-4aaf-8581-9d09f0d7a533
+OS<span class="w"> </span>Type:<span class="w">        </span>hvm
+State:<span class="w">          </span>running
+CPU<span class="o">(</span>s<span class="o">)</span>:<span class="w">         </span><span class="m">24</span>
+CPU<span class="w"> </span>time:<span class="w">       </span><span class="m">51390</span>.2s
+Max<span class="w"> </span>memory:<span class="w">     </span><span class="m">50331648</span><span class="w"> </span>KiB
+Used<span class="w"> </span>memory:<span class="w">    </span><span class="m">50331648</span><span class="w"> </span>KiB
+Persistent:<span class="w">     </span>yes
+Autostart:<span class="w">      </span><span class="nb">enable</span>
+Managed<span class="w"> </span>save:<span class="w">   </span>no
+Security<span class="w"> </span>model:<span class="w"> </span>none
+Security<span class="w"> </span>DOI:<span class="w">   </span><span class="m">0</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
