@@ -58,6 +58,9 @@ docs_dir: 'docs'
 edit_uri: edit/main/docs/
 
 markdown_extensions:
+  # https://python-markdown.github.io/extensions/attr_list/
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
+  - attr_list
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#betterem
   # https://facelessuser.github.io/pymdown-extensions/extensions/betterem/
   - pymdownx.betterem
