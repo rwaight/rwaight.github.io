@@ -1,6 +1,6 @@
 # from https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
 name: Publish site
-run-name: Deploy mkdocs
+run-name: Deploy MkDocs to GitHub Pages
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
     paths:
       - 'docs/**'
       - 'mkdocs.yml'
-      - '.github/workflows/publish.yml'
+      - '.github/workflows/publish-pages.yml'
 
 permissions:
   contents: write
@@ -24,7 +24,14 @@ jobs:
       - name: Checkout files from commit tree
         # Verified creator: https://github.com/marketplace/actions/checkout
         # GitHub Action for checking out a repo
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          # 'sparse-checkout' includes all files in the root directory, so we do not need to specify 'mkdocs.yml'
+          # https://squidfunk.github.io/mkdocs-material/blog/2023/09/22/using-git-sparse-checkout-for-faster-documentation-builds/#github-actions
+          sparse-checkout: |
+            docs
+            includes
 
       - name: Configure Git Credentials for github-actions bot
         run: |
@@ -34,7 +41,7 @@ jobs:
       - name: Set up Python
         # Verified creator: https://github.com/marketplace/actions/setup-python
         # Set up your GitHub Actions workflow with a specific version of Python
-        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5.1.0
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
         with:
           python-version: 3.x
 
@@ -57,6 +64,24 @@ jobs:
         # https://www.mkdocs.org/dev-guide/plugins/#installing-plugins
         run: pip install mkdocs-awesome-pages-plugin
 
+      # Reserved for future use, see https://backstage.github.io/mkdocs-monorepo-plugin/
+      # - name: Install mkdocs-monorepo-plugin
+      #   # https://www.mkdocs.org/dev-guide/plugins/#installing-plugins
+      #   # https://backstage.github.io/mkdocs-monorepo-plugin/
+      #   run: pip install mkdocs-monorepo-plugin
+
+      # Reserved for future use, see https://guts.github.io/mkdocs-rss-plugin/
+      # - name: Install mkdocs-rss-plugin
+      #   # https://www.mkdocs.org/dev-guide/plugins/#installing-plugins
+      #   # https://guts.github.io/mkdocs-rss-plugin/
+      #   run: pip install mkdocs-rss-plugin
+
+      # Reserved for future use, see https://mkdocs-macros-plugin.readthedocs.io/
+      # - name: Install mkdocs-macros-plugin
+      #   # https://www.mkdocs.org/dev-guide/plugins/#installing-plugins
+      #   # https://mkdocs-macros-plugin.readthedocs.io/
+      #   run: pip install mkdocs-macros-plugin
+
       - name: Run mkdocs gh-deploy
         run: mkdocs gh-deploy --force
 
@@ -71,7 +96,7 @@ jobs:
       - name: Checkout files from commit tree
         # Verified creator: https://github.com/marketplace/actions/checkout
         # GitHub Action for checking out a repo
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           ref: gh-pages
 
