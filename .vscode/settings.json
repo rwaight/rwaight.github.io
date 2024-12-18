@@ -1,0 +1,9 @@
+{
+    "files.eol": "\n",
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+      },
+    "markdown-pdf.breaks": true,
+    "markdown-pdf.convertOnSave": false,
+    "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js"
+}
