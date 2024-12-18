@@ -1,6 +1,8 @@
+# Note for future reference... CAN NOT deploy GitHub Pages in a **personal account** for a **private repo** without paying for the account upgrade, which is $48 per year.
 # https://www.mkdocs.org/user-guide/configuration/
 site_name: rwaight on GitHub pages
 site_url: https://rwaight.github.io/
+site_author: rwaight
 repo_url: https://github.com/rwaight/rwaight.github.io
 repo_name: rwaight/rwaight.github.io
 
