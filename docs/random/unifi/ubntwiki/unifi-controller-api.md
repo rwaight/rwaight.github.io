@@ -67,13 +67,13 @@ These are REST calls that can be made without a site context.  I do not believe 
 | Path                 | Method  | Notes |
 |:---------------------|:--------|:------|
 | status               | GET     | Returns some very basic server information - This appears to be the only endpoint that can be reached without an authentication       |
-| <code> { "data" : [ ] , "meta" : { "rc" : "ok" , "server_version" : "5.7.23" , "up" : true , "uuid" : "0e727580-ffff-ffff-ffff-403dcd5a7bd4"}}  </code>                                                                        |||
+| <code> { "data" : [ ] , "meta" : { "rc" : "ok" , "server_version" : "5.7.23" , "up" : true , "uuid" : "0e727580-ffff-ffff-ffff-403dcd5a7bd4"}}  </code>         |||
 | api/login            | POST    | requires dict of username, password, and optionally remember=true for long-running sessions.  Returns 200 for success and a cookie that is your session. **NOTE:** On UDM Pros this is api/auth/login.  |
-| api/logout           | POST    | destroys the sever side session id which will make future attempts with that cookie fail                    |
-| api/self             | GET     | Logged in user **NOTE:** On UDM Pros this is api/users/self.                                                |
-| api/self/sites       | GET     | Get basic information for all sites on this controller                                                      |
-| api/stat/sites       | GET     | Same as above with an additional information on health and new alerts for each site                         |
-| api/stat/admin       | GET     | List administrators and permissions for all sites                                                           |
+| api/logout           | POST    | destroys the sever side session id which will make future attempts with that cookie fail |
+| api/self             | GET     | Logged in user **NOTE:** On UDM Pros this is api/users/self.    |
+| api/self/sites       | GET     | Get basic information for all sites on this controller          |
+| api/stat/sites       | GET     | Same as above with an additional information on health and new alerts for each site      |
+| api/stat/admin       | GET     | List administrators and permissions for all sites               |
 | api/system/poweroff  | POST    | Turns off the UDM **NOTE:** X-CSRF-Token header required (from e.g. the login response) + Super Admin access rights        |
 | api/system/reboot    | POST    | Reboot the UDM **NOTE:** X-CSRF-Token header required (from e.g. the login response) + Super Admin access rights           |
 
@@ -83,42 +83,42 @@ All commands are presumed to be prefixed with `api/s/{site}`
 
 | Path                           | Method        | Notes |
 |:-------------------------------|:--------------|:------|
-| stat/health                    | GET           | Health status of the site                                                                                                                                       |
-| self                           | GET           | Logged in user       |
-| stat/ccode                     | GET           | List of country codes|
-| stat/current-channel           | GET           | List of all RF channels based on the site country code                                                                                                          |
-| stat/sysinfo                   | GET           | Some high-level information about the controller                                                                                                                |
-| stat/event                     | GET           | List site events by most recent first, 3000 result limit                                                                                                        |
-| rest/event                     | GET           | List site events by oldest, no limit? (api.err.NotFound per controller version 7.1.66)                                                                          |
-| stat/alarm                     | GET           | List alarms by most recent, 3000 result limit?                                                                                                                  |
-| rest/alarm                     | GET           | List alarms by oldest, no limit? (api.err.NotFound per controller version 7.1.66)                                                                               |
-| stat/sta                       | GET           | List of all _active_ clients on the site                                                                                                                        |
-| rest/user                      | GET/POST/PUT  | List of all configured/known clients on the site                                                                                                                |
-| stat/device-basic              | GET           | List of site devices with only 'adopted', 'disabled', 'mac', 'state', 'type' keys, useful for filtering on type                                                 |
-| stat/device                    | GET/POST      | Detailed list of all devices on site.  (**Controller only**) Can be filtered by POSTing `{"macs": ["mac1", ... ]}`                                              |
-| stat/device/{mac}              | GET           | (**UDM only**) Detailed list of device filtered by mac address                                                                                                  |
-| rest/device/{_id}              | PUT           | Updates to devices get PUT here, why?                                                                                                                           |
-| rest/setting                   | GET/PUT       | Detailed site settings, updating requires adding key and _id to path for PUT ../setting/{key}/{_id}                                                             |
-| stat/routing                   | GET           | All active routes on the device                                                                                                                                 |
-| rest/routing                   | GET/PUT       | User defined routes (HTTP response 500 per controller version 7.1.66)                                                                                           |
-| rest/firewallrule              | GET/PUT       | User defined firewall rules.  This does not show auto-generated rules                                                                                           |
-| rest/firewallgroup             | GET/PUT       | ​User defined firewall groups.                                                                                                                                  |
-| rest/wlanconf                  | GET/PUT       | List WLANs, edit current WLANs and create new WLANs                                                                                                             |
-| rest/wlanconf/{_id}            | PUT           | Update configuration of current WLAN designated by '_id'                                                                                                        |
-| rest/tag                       | GET/PUT?      | Tagged macs (api.err.Invalid per controller version 7.1.66)                                                                                                     |
-| stat/rogueap                   | GET/POST      | Neighboring APs optional json post 'within' = seen in the last x hours                                                                                          |
-| stat/sitedpi                   | GET/POST      | DPI stats requires type="by_app" or "by_cat"                                                                                                                    |
-| stat/stadpi                    | GET/POST      | DPI stats requires type="by_app" or "by_cat" optionally filtered macs=[..., ]                                                                                   |
-| stat/dynamicdns                | GET           | DynamicDNS information and status like current ip, last changed, and status                                                                                     |
-| rest/dynamicdns                | GET/PUT       | DynamicDNS configuration                                                                                                                                        |
-| rest/portconf                  | GET           | Switch port profiles |
-| stat/spectrumscan              | GET           | Get RF scan results, can be for a specific mac by appending to endpoint                                                                                         |
-| rest/radiusprofile             | GET/POST/PUT  | Radius profiles      |
-| rest/account                   | GET/POST/PUT  | Radius accounts      |
-| rest/portforward               | GET           | List all port forwards configured on the site                                                                                                                   |
+| stat/health                    | GET           | Health status of the site   |
+| self                           | GET           | Logged in user              |
+| stat/ccode                     | GET           | List of country codes       |
+| stat/current-channel           | GET           | List of all RF channels based on the site country code                  |
+| stat/sysinfo                   | GET           | Some high-level information about the controller                        |
+| stat/event                     | GET           | List site events by most recent first, 3000 result limit                |
+| rest/event                     | GET           | List site events by oldest, no limit? (api.err.NotFound per controller version 7.1.66)  |
+| stat/alarm                     | GET           | List alarms by most recent, 3000 result limit?                          |
+| rest/alarm                     | GET           | List alarms by oldest, no limit? (api.err.NotFound per controller version 7.1.66)       |
+| stat/sta                       | GET           | List of all _active_ clients on the site                                |
+| rest/user                      | GET/POST/PUT  | List of all configured/known clients on the site                        |
+| stat/device-basic              | GET           | List of site devices with only 'adopted', 'disabled', 'mac', 'state', 'type' keys, useful for filtering on type     |
+| stat/device                    | GET/POST      | Detailed list of all devices on site.  (**Controller only**) Can be filtered by POSTing `{"macs": ["mac1", ... ]}`  |
+| stat/device/{mac}              | GET           | (**UDM only**) Detailed list of device filtered by mac address          |
+| rest/device/{_id}              | PUT           | Updates to devices get PUT here, why?                                   |
+| rest/setting                   | GET/PUT       | Detailed site settings, updating requires adding key and _id to path for PUT ../setting/{key}/{_id}                 |
+| stat/routing                   | GET           | All active routes on the device                                         |
+| rest/routing                   | GET/PUT       | User defined routes (HTTP response 500 per controller version 7.1.66)   |
+| rest/firewallrule              | GET/PUT       | User defined firewall rules.  This does not show auto-generated rules   |
+| rest/firewallgroup             | GET/PUT       | ​User defined firewall groups.                                           |
+| rest/wlanconf                  | GET/PUT       | List WLANs, edit current WLANs and create new WLANs                     |
+| rest/wlanconf/{_id}            | PUT           | Update configuration of current WLAN designated by '_id'                |
+| rest/tag                       | GET/PUT?      | Tagged macs (api.err.Invalid per controller version 7.1.66)             |
+| stat/rogueap                   | GET/POST      | Neighboring APs optional json post 'within' = seen in the last x hours  |
+| stat/sitedpi                   | GET/POST      | DPI stats requires type="by_app" or "by_cat"                            |
+| stat/stadpi                    | GET/POST      | DPI stats requires type="by_app" or "by_cat" optionally filtered macs=[..., ]     |
+| stat/dynamicdns                | GET           | DynamicDNS information and status like current ip, last changed, and status       |
+| rest/dynamicdns                | GET/PUT       | DynamicDNS configuration    |
+| rest/portconf                  | GET           | Switch port profiles        |
+| stat/spectrumscan              | GET           | Get RF scan results, can be for a specific mac by appending to endpoint |
+| rest/radiusprofile             | GET/POST/PUT  | Radius profiles             |
+| rest/account                   | GET/POST/PUT  | Radius accounts             |
+| rest/portforward               | GET           | List all port forwards configured on the site                           |
 | stat/report/{interval}.{type}  | POST          | Intervals are '5minutes', 'hourly', and 'daily'.  Report types are 'site', 'user', and 'ap'.  Must specify attributes to be returned 'bytes', 'wan-tx_bytes', 'wan-rx_bytes', 'wlan_bytes', 'num_sta', 'lan-num_sta', 'wlan-num_sta', 'time', 'rx_bytes', 'tx_bytes'.  Can be filtered with 'macs': [...]  |
-| stat/authorization             | POST          | JSON as "%%{"start": "START TIMESTAMP", "end": "END TIMESTAMP"}%%" and you will get the code that have been used between the Timestams    NOTE: X-CSRF-Token header required (from e.g. the login response) for UDM                                                                                        |
-| stat/sdn                       | GET           | Return values as if the site is connected with the Unifi Cloud or the SSO                                                                                       |
+| stat/authorization             | POST          | JSON as "%%{"start": "START TIMESTAMP", "end": "END TIMESTAMP"}%%" and you will get the code that have been used between the Timestams    NOTE: X-CSRF-Token header required (from e.g. the login response) for UDM|
+| stat/sdn                       | GET           | Return values as if the site is connected with the Unifi Cloud or the SSO         |
 
 ### Callable commands
 
@@ -127,35 +127,35 @@ Posting to the endpoint `api/s/{site}/cmd/<manager>` with the `{"cmd": "command"
 
 | Manager  | Call                | Notes |
 |:---------|:--------------------|:------|
-| evtmgt   | archive-all-alarms  |                                                                                          |
-| sitemgr  | add-site            | desc = Descriptive name ( required ), name = shortname ( in the URL )                    |
-| sitemgr  | delete-site         | name = short name ( required )                                                           |
-| sitemgr  | update-site         | desc = Descriptive name ( required )                                                     |
-| sitemgr  | get-admins          | List all administrators and permission for this site                                     |
-| sitemgr  | move-device         | mac = device mac ( required ), site_id = 24 digit id ( required )                        |
-| sitemgr  | delete-device       | mac = device mac ( required )                                                            |
-| stamgr   | block-sta           | mac = client mac ( required )                                                            |
-| stamgr   | unblock-sta         | mac = client mac ( required )                                                            |
-| stamgr   | kick-sta            | Disconnect: mac = client mac (required )                                                 |
-| stamgr   | forget-sta          | Forget a client ( controller 5.9.x only )                                                |
-| stamgr   | unauthorize-guest   | Unauthorize a client device, mac = client mac (required)                                 |
-| devmgr   | adopt               | mac = device mac ( required )                                                            |
-| devmgr   | restart             | mac = device mac ( required )                                                            |
-| devmgr   | force-provision     | mac = device mac ( required )                                                            |
+| evtmgt   | archive-all-alarms  |       |
+| sitemgr  | add-site            | desc = Descriptive name ( required ), name = shortname ( in the URL ) |
+| sitemgr  | delete-site         | name = short name ( required )               |
+| sitemgr  | update-site         | desc = Descriptive name ( required )         |
+| sitemgr  | get-admins          | List all administrators and permission for this site   |
+| sitemgr  | move-device         | mac = device mac ( required ), site_id = 24 digit id ( required )     |
+| sitemgr  | delete-device       | mac = device mac ( required )                |
+| stamgr   | block-sta           | mac = client mac ( required )                |
+| stamgr   | unblock-sta         | mac = client mac ( required )                |
+| stamgr   | kick-sta            | Disconnect: mac = client mac (required )     |
+| stamgr   | forget-sta          | Forget a client ( controller 5.9.x only )    |
+| stamgr   | unauthorize-guest   | Unauthorize a client device, mac = client mac (required)              |
+| devmgr   | adopt               | mac = device mac ( required )                |
+| devmgr   | restart             | mac = device mac ( required )                |
+| devmgr   | force-provision     | mac = device mac ( required )                |
 | devmgr   | power-cycle         | mac = switch mac ( required ), port_idx = PoE port to cycle ( required )                 |
-| devmgr   | speedtest           | Start a speed test                                                                       |
-| devmgr   | speedtest-status    | get the current state of the speed test                                                  |
-| devmgr   | set-locate          | mac = device mac ( required ) blink unit to locate                                       |
-| devmgr   | unset-locate        | mac = device mac ( required ) led to normal state                                        |
-| devmgr   | upgrade             | mac = device mac ( required ) upgrade firmware                                           |
-| devmgr   | upgrade-external    | mac = device mac ( required ), url = firmware URL ( required )                           |
+| devmgr   | speedtest           | Start a speed test                           |
+| devmgr   | speedtest-status    | get the current state of the speed test      |
+| devmgr   | set-locate          | mac = device mac ( required ) blink unit to locate     |
+| devmgr   | unset-locate        | mac = device mac ( required ) led to normal state      |
+| devmgr   | upgrade             | mac = device mac ( required ) upgrade firmware         |
+| devmgr   | upgrade-external    | mac = device mac ( required ), url = firmware URL ( required )        |
 | devmgr   | migrate             | mac = device mac ( required ), inform_url = New Inform URL to push to device (required)  |
-| devmgr   | cancel-migrate      | mac = device mac ( required )                                                            |
-| devmgr   | spectrum-scan       | mac = device mac ( ap only, required ) trigger RF scan                                   |
-| backup   | list-backups        | list of autobackup files                                                                 |
-| backup   | delete-backup       | filename ( required )                                                                    |
+| devmgr   | cancel-migrate      | mac = device mac ( required )                |
+| devmgr   | spectrum-scan       | mac = device mac ( ap only, required ) trigger RF scan |
+| backup   | list-backups        | list of autobackup files                     |
+| backup   | delete-backup       | filename ( required )                        |
 | system   | backup              | create a backup.  This appears to backup to a fixed location in the filesystem           |
-| stat     | clear-dpi           | resets the site wide DPI counters                                                        |
+| stat     | clear-dpi           | resets the site wide DPI counters            |
 
 
 #### Data Tables
