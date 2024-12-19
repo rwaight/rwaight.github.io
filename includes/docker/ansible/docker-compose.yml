@@ -1,0 +1,29 @@
+version: '3.8'
+
+# option 2 is for MacOS and Windows
+networks:
+  ansible_net:
+    driver: bridge
+
+services:
+  ansible:
+    build: .
+    container_name: ansible-controller
+    networks:
+      - ansible_net
+    # option 1 is for Linux systems, not MacOS or Windows
+    # option 1 #network_mode: "host"  # Use the host's network stack
+    volumes:
+      # specific files mapped to the '/ansible' directory
+      - ./ansible.cfg:/ansible/ansible.cfg:ro
+      - ./playbooks/playbook-inventory.yml:/ansible/playbook-inventory.yml:ro
+      - ./vault.yml:/ansible/vault.yml:rw
+      # specific subdirectories mapped to the '/ansible' directory
+      - ./backup:/ansible/backup:rw
+      - ./group_vars:/ansible/group_vars:ro
+      - ./inventory:/ansible/inventory
+      - ./roles:/ansible/roles:ro
+    working_dir: /ansible
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
