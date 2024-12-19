@@ -1,0 +1,3978 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="rwaight">
+      
+      
+        <link rel="canonical" href="https://rwaight.github.io/random/unifi/ubntwiki/unifi-controller-api/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../unifi-controller-management/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Ubiquiti Community Wiki UniFi Controller API docs - rwaight on GitHub pages</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unifi-controller-api-docs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rwaight on GitHub pages
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ubiquiti Community Wiki UniFi Controller API docs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rwaight/rwaight.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rwaight/rwaight.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../guides/" class="md-tabs__link">
+          
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Random
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-tabs__link">
+        
+  
+    
+  
+  MkDocs-Material
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../test/" class="md-tabs__link">
+          
+  
+    
+  
+  Other
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+
+    </a>
+    rwaight on GitHub pages
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rwaight/rwaight.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rwaight/rwaight.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/hello-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/category/test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/setup-github-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/munchkin-short-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Munchkin Short Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Random
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Random
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../git/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../github/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GitHub
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GitHub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/gh-cli-delete-workflow-runs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Delete GitHub workflow runs using the gh cli
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/github-actions-fedora-libvirt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up a self-hosted GitHub Actions runner in a Fedora virtual machine using libvirt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/github-actions-nested-virtualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nested Virtualization with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/github-actions-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes about GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/github-ops-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Ops Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/google-apps-and-github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Google Apps Script with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/random-github-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random GitHub notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Macos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Macos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../macos/macos-which-shell-am-i-using/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Which Shell Am I Using?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../windows/build-win10-with-github-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Windows 10 with GitHub Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../windows/random-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random Windows Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../windows/windows-change-env-vars-as-user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change environment variables as standard user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    UniFi
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            UniFi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Unifi
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Unifi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_1_2" id="__nav_4_5_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ubiquiti Community Wiki
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Ubiquiti Community Wiki
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1_2_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ubntwiki
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5_1_2_1" id="__nav_4_5_1_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_4_5_1_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ubntwiki
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ubiquiti Community Wiki UniFi Controller API docs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ubiquiti Community Wiki UniFi Controller API docs
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#udm-pro-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDM Pro API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDM Pro API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Site Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Site Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callable-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callable commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callable commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Tables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpi-category-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPI Category Codes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncategorized" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncategorized
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-of-port-forward-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update of Port Forward Rules
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unifi-controller-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UniFi Controller Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Test
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test-page-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Other
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../check-epoch-date/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Check epoch date
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../image-builder-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Builder Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_3" id="__nav_4_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gpt and copilot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Gpt and copilot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formal Ricotta Cheese
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_4" id="__nav_4_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Packer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Packer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packer/using-packer-with-vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Packer with Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs-Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#udm-pro-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDM Pro API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDM Pro API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Site Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Site Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callable-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callable commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callable commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Tables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpi-category-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPI Category Codes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncategorized" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncategorized
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-of-port-forward-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update of Port Forward Rules
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="unifi-controller-api-docs">UniFi Controller API docs<a class="headerlink" href="#unifi-controller-api-docs" title="Permanent link">&para;</a></h1>
+<p>from https://ubntwiki.com/products/software/unifi-controller/api</p>
+<p>Documentation of API endpoints on the UniFi controller software.  This is a reverse engineering project that is based on browser captures, jar dumps, and reviewing other software that has been written to work with the controller.  It's received minimal testing.</p>
+<p>There are two main types of calls.  One would be the REST-like which provide get/post/put/delete where post is to the base and put/delete are often tied to the _id of the object that you are working with.  The second major type of web interface provided is an agent/call based system where you pass a command to an agent to perform an action.  Both use application/json formatting for all data transfer.  When updating a specific object you must use PUT or else a new object will be created.</p>
+<p><strong>NOTE: All calls are relative to the base controller URL</strong></p>
+<p>Calls return both a web status as well as JSON formatted output.  200 codes indicate a successful call and other indicate errors. I am using the placeholder <code>{site}</code> for the site name which for many installations will be <code>default</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="err">Logi</span><span class="kc">n</span><span class="w"> </span><span class="err">required</span>
+<span class="p">{</span><span class="w"> </span><span class="nt">&quot;data&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;meta&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;msg&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;api.err.LoginRequired&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;rc&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">}}</span>
+<span class="err">#</span><span class="w"> </span><span class="err">Call</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">bu</span><span class="kc">t</span><span class="w"> </span><span class="err">re</span><span class="kc">turne</span><span class="err">d</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="w"> </span><span class="err">values</span>
+<span class="p">{</span><span class="w"> </span><span class="nt">&quot;data&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;meta&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;rc&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="p">}}</span>
+<span class="err">#</span><span class="w"> </span><span class="err">NOTE</span><span class="p">:</span><span class="w"> </span><span class="err">I</span><span class="kc">f</span><span class="w"> </span><span class="err">me</span><span class="kc">ta</span><span class="w"> </span><span class="err">co</span><span class="kc">nta</span><span class="err">i</span><span class="kc">ns</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">cou</span><span class="kc">nt</span><span class="w"> </span><span class="err">i</span><span class="kc">t</span><span class="err">&#39;s</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="w"> </span><span class="err">values</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">bee</span><span class="kc">n</span><span class="w"> </span><span class="kc">trun</span><span class="err">ca</span><span class="kc">te</span><span class="err">d</span>
+<span class="err">&#39;me</span><span class="kc">ta</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&#39;cou</span><span class="kc">nt</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">4818</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;rc&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;ok&#39;</span><span class="p">}</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="kc">fr</span><span class="err">om</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">api/s/</span><span class="p">{</span><span class="err">si</span><span class="kc">te</span><span class="p">}</span><span class="err">/s</span><span class="kc">tat</span><span class="err">/eve</span><span class="kc">nt</span><span class="w"> </span><span class="err">e</span><span class="kc">n</span><span class="err">dpoi</span><span class="kc">nt</span>
+</code></pre></div>
+<h2 id="udm-pro-api">UDM Pro API<a class="headerlink" href="#udm-pro-api" title="Permanent link">&para;</a></h2>
+<p><strong>NOTE:</strong> There are two critical differences between Unifi controllers and the UDM Pro's API:</p>
+<ul>
+<li>The login endpoint is `/api/auth/login``</li>
+<li>All API endpoints need to be prefixed with <code>/proxy/network</code> (e.g. <code>https://192.168.0.1/proxy/network/api/s/default/self</code>)</li>
+</ul>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<!--- <accordion collapsed="true"> --->
+
+<div class="highlight"><pre><span></span><code><span class="c1"># authenticate and save the cookie contents in local file cookie.txt with switch &#39;-c&#39;</span>
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;username&quot;: &quot;usr&quot;, &quot;password&quot;: &quot;$pw&quot;}&#39;</span><span class="w"> </span>--header<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>-c<span class="w"> </span>cookie.txt<span class="w"> </span>https://udmp:443/api/auth/login
+<span class="c1"># responds with json data</span>
+
+<span class="c1"># pass the local file cookie.txt with switch &#39;-b&#39;</span>
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>-b<span class="w"> </span>cookie.txt<span class="w"> </span>https://udmp/proxy/network/api/s/default/self
+<span class="c1"># responds with proper json</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.packages.urllib3.exceptions</span> <span class="kn">import</span> <span class="n">InsecureRequestWarning</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;usr&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;pw&#39;</span><span class="p">}</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;https://udmp:443/api/auth/login&#39;</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span>  <span class="n">json</span> <span class="o">=</span> <span class="n">data</span> <span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://udmp/proxy/network/api/s/default/self&#39;</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="controller-endpoints">Controller Endpoints<a class="headerlink" href="#controller-endpoints" title="Permanent link">&para;</a></h2>
+<p>These are REST calls that can be made without a site context.  I do not believe any updates ( PUT ) can be called on these endpoints.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Path</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Returns some very basic server information - This appears to be the only endpoint that can be reached without an authentication</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code> { "data" : [ ] , "meta" : { "rc" : "ok" , "server_version" : "5.7.23" , "up" : true , "uuid" : "0e727580-ffff-ffff-ffff-403dcd5a7bd4"}}  </code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">api/login</td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">requires dict of username, password, and optionally remember=true for long-running sessions.  Returns 200 for success and a cookie that is your session. <strong>NOTE:</strong> On UDM Pros this is api/auth/login.</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/logout</td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">destroys the sever side session id which will make future attempts with that cookie fail</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/self</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Logged in user <strong>NOTE:</strong> On UDM Pros this is api/users/self.</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/self/sites</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Get basic information for all sites on this controller</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/stat/sites</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Same as above with an additional information on health and new alerts for each site</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/stat/admin</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List administrators and permissions for all sites</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/system/poweroff</td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">Turns off the UDM <strong>NOTE:</strong> X-CSRF-Token header required (from e.g. the login response) + Super Admin access rights</td>
+</tr>
+<tr>
+<td style="text-align: left;">api/system/reboot</td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">Reboot the UDM <strong>NOTE:</strong> X-CSRF-Token header required (from e.g. the login response) + Super Admin access rights</td>
+</tr>
+</tbody>
+</table>
+<h2 id="site-endpoints">Site Endpoints<a class="headerlink" href="#site-endpoints" title="Permanent link">&para;</a></h2>
+<p>All commands are presumed to be prefixed with <code>api/s/{site}</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Path</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">stat/health</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Health status of the site</td>
+</tr>
+<tr>
+<td style="text-align: left;">self</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Logged in user</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/ccode</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List of country codes</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/current-channel</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List of all RF channels based on the site country code</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/sysinfo</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Some high-level information about the controller</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/event</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List site events by most recent first, 3000 result limit</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/event</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List site events by oldest, no limit? (api.err.NotFound per controller version 7.1.66)</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/alarm</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List alarms by most recent, 3000 result limit?</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/alarm</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List alarms by oldest, no limit? (api.err.NotFound per controller version 7.1.66)</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/sta</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List of all <em>active</em> clients on the site</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/user</td>
+<td style="text-align: left;">GET/POST/PUT</td>
+<td style="text-align: left;">List of all configured/known clients on the site</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/device-basic</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List of site devices with only 'adopted', 'disabled', 'mac', 'state', 'type' keys, useful for filtering on type</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/device</td>
+<td style="text-align: left;">GET/POST</td>
+<td style="text-align: left;">Detailed list of all devices on site.  (<strong>Controller only</strong>) Can be filtered by POSTing <code>{"macs": ["mac1", ... ]}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/device/{mac}</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">(<strong>UDM only</strong>) Detailed list of device filtered by mac address</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/device/{_id}</td>
+<td style="text-align: left;">PUT</td>
+<td style="text-align: left;">Updates to devices get PUT here, why?</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/setting</td>
+<td style="text-align: left;">GET/PUT</td>
+<td style="text-align: left;">Detailed site settings, updating requires adding key and _id to path for PUT ../setting/{key}/{_id}</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/routing</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">All active routes on the device</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/routing</td>
+<td style="text-align: left;">GET/PUT</td>
+<td style="text-align: left;">User defined routes (HTTP response 500 per controller version 7.1.66)</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/firewallrule</td>
+<td style="text-align: left;">GET/PUT</td>
+<td style="text-align: left;">User defined firewall rules.  This does not show auto-generated rules</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/firewallgroup</td>
+<td style="text-align: left;">GET/PUT</td>
+<td style="text-align: left;">​User defined firewall groups.</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/wlanconf</td>
+<td style="text-align: left;">GET/PUT</td>
+<td style="text-align: left;">List WLANs, edit current WLANs and create new WLANs</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/wlanconf/{_id}</td>
+<td style="text-align: left;">PUT</td>
+<td style="text-align: left;">Update configuration of current WLAN designated by '_id'</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/tag</td>
+<td style="text-align: left;">GET/PUT?</td>
+<td style="text-align: left;">Tagged macs (api.err.Invalid per controller version 7.1.66)</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/rogueap</td>
+<td style="text-align: left;">GET/POST</td>
+<td style="text-align: left;">Neighboring APs optional json post 'within' = seen in the last x hours</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/sitedpi</td>
+<td style="text-align: left;">GET/POST</td>
+<td style="text-align: left;">DPI stats requires type="by_app" or "by_cat"</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/stadpi</td>
+<td style="text-align: left;">GET/POST</td>
+<td style="text-align: left;">DPI stats requires type="by_app" or "by_cat" optionally filtered macs=[..., ]</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/dynamicdns</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">DynamicDNS information and status like current ip, last changed, and status</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/dynamicdns</td>
+<td style="text-align: left;">GET/PUT</td>
+<td style="text-align: left;">DynamicDNS configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/portconf</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Switch port profiles</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/spectrumscan</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Get RF scan results, can be for a specific mac by appending to endpoint</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/radiusprofile</td>
+<td style="text-align: left;">GET/POST/PUT</td>
+<td style="text-align: left;">Radius profiles</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/account</td>
+<td style="text-align: left;">GET/POST/PUT</td>
+<td style="text-align: left;">Radius accounts</td>
+</tr>
+<tr>
+<td style="text-align: left;">rest/portforward</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">List all port forwards configured on the site</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/report/{interval}.{type}</td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">Intervals are '5minutes', 'hourly', and 'daily'.  Report types are 'site', 'user', and 'ap'.  Must specify attributes to be returned 'bytes', 'wan-tx_bytes', 'wan-rx_bytes', 'wlan_bytes', 'num_sta', 'lan-num_sta', 'wlan-num_sta', 'time', 'rx_bytes', 'tx_bytes'.  Can be filtered with 'macs': [...]</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/authorization</td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">JSON as "%%{"start": "START TIMESTAMP", "end": "END TIMESTAMP"}%%" and you will get the code that have been used between the Timestams    NOTE: X-CSRF-Token header required (from e.g. the login response) for UDM</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat/sdn</td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">Return values as if the site is connected with the Unifi Cloud or the SSO</td>
+</tr>
+</tbody>
+</table>
+<h3 id="callable-commands">Callable commands<a class="headerlink" href="#callable-commands" title="Permanent link">&para;</a></h3>
+<!--- the '`{"cmd": "command"}`' in the next line was '`json {"cmd": "command"}`' --->
+<p>Posting to the endpoint <code>api/s/{site}/cmd/&lt;manager&gt;</code> with the <code>{"cmd": "command"}</code> you can invoke commands on the controller.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Manager</th>
+<th style="text-align: left;">Call</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">evtmgt</td>
+<td style="text-align: left;">archive-all-alarms</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">sitemgr</td>
+<td style="text-align: left;">add-site</td>
+<td style="text-align: left;">desc = Descriptive name ( required ), name = shortname ( in the URL )</td>
+</tr>
+<tr>
+<td style="text-align: left;">sitemgr</td>
+<td style="text-align: left;">delete-site</td>
+<td style="text-align: left;">name = short name ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">sitemgr</td>
+<td style="text-align: left;">update-site</td>
+<td style="text-align: left;">desc = Descriptive name ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">sitemgr</td>
+<td style="text-align: left;">get-admins</td>
+<td style="text-align: left;">List all administrators and permission for this site</td>
+</tr>
+<tr>
+<td style="text-align: left;">sitemgr</td>
+<td style="text-align: left;">move-device</td>
+<td style="text-align: left;">mac = device mac ( required ), site_id = 24 digit id ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">sitemgr</td>
+<td style="text-align: left;">delete-device</td>
+<td style="text-align: left;">mac = device mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">stamgr</td>
+<td style="text-align: left;">block-sta</td>
+<td style="text-align: left;">mac = client mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">stamgr</td>
+<td style="text-align: left;">unblock-sta</td>
+<td style="text-align: left;">mac = client mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">stamgr</td>
+<td style="text-align: left;">kick-sta</td>
+<td style="text-align: left;">Disconnect: mac = client mac (required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">stamgr</td>
+<td style="text-align: left;">forget-sta</td>
+<td style="text-align: left;">Forget a client ( controller 5.9.x only )</td>
+</tr>
+<tr>
+<td style="text-align: left;">stamgr</td>
+<td style="text-align: left;">unauthorize-guest</td>
+<td style="text-align: left;">Unauthorize a client device, mac = client mac (required)</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">adopt</td>
+<td style="text-align: left;">mac = device mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">restart</td>
+<td style="text-align: left;">mac = device mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">force-provision</td>
+<td style="text-align: left;">mac = device mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">power-cycle</td>
+<td style="text-align: left;">mac = switch mac ( required ), port_idx = PoE port to cycle ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">speedtest</td>
+<td style="text-align: left;">Start a speed test</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">speedtest-status</td>
+<td style="text-align: left;">get the current state of the speed test</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">set-locate</td>
+<td style="text-align: left;">mac = device mac ( required ) blink unit to locate</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">unset-locate</td>
+<td style="text-align: left;">mac = device mac ( required ) led to normal state</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">upgrade</td>
+<td style="text-align: left;">mac = device mac ( required ) upgrade firmware</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">upgrade-external</td>
+<td style="text-align: left;">mac = device mac ( required ), url = firmware URL ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">migrate</td>
+<td style="text-align: left;">mac = device mac ( required ), inform_url = New Inform URL to push to device (required)</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">cancel-migrate</td>
+<td style="text-align: left;">mac = device mac ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">devmgr</td>
+<td style="text-align: left;">spectrum-scan</td>
+<td style="text-align: left;">mac = device mac ( ap only, required ) trigger RF scan</td>
+</tr>
+<tr>
+<td style="text-align: left;">backup</td>
+<td style="text-align: left;">list-backups</td>
+<td style="text-align: left;">list of autobackup files</td>
+</tr>
+<tr>
+<td style="text-align: left;">backup</td>
+<td style="text-align: left;">delete-backup</td>
+<td style="text-align: left;">filename ( required )</td>
+</tr>
+<tr>
+<td style="text-align: left;">system</td>
+<td style="text-align: left;">backup</td>
+<td style="text-align: left;">create a backup.  This appears to backup to a fixed location in the filesystem</td>
+</tr>
+<tr>
+<td style="text-align: left;">stat</td>
+<td style="text-align: left;">clear-dpi</td>
+<td style="text-align: left;">resets the site wide DPI counters</td>
+</tr>
+</tbody>
+</table>
+<h4 id="data-tables">Data Tables<a class="headerlink" href="#data-tables" title="Permanent link">&para;</a></h4>
+<p>This data was extracted from the javascript of the site.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">SKU</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BZ2</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP</td>
+<td style="text-align: left;">Access Point</td>
+</tr>
+<tr>
+<td style="text-align: left;">BZ2LR</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-LR</td>
+<td style="text-align: left;">Access Point Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">S216150</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-16-150W</td>
+<td style="text-align: left;">Switch 16 PoE (150 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">S224250</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-24-250W</td>
+<td style="text-align: left;">Switch 24 PoE (250 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">S224500</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-24-500W</td>
+<td style="text-align: left;">Switch 24 PoE (500 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">S248500</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-48-500W</td>
+<td style="text-align: left;">Switch 48 PoE (500 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">S248750</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-48-750W</td>
+<td style="text-align: left;">Switch 48 PoE (750 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">S28150</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8-150W</td>
+<td style="text-align: left;">Switch 8 PoE (150 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2HSR</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-Outdoor+</td>
+<td style="text-align: left;">Access Point Outdoor+</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2IW</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-IW</td>
+<td style="text-align: left;">Access Point In-Wall</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2L48</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-LR</td>
+<td style="text-align: left;">Access Point Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2Lv2</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-LRv2</td>
+<td style="text-align: left;">Access Point Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2M</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-Mini</td>
+<td style="text-align: left;">Access Point Mini</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2O</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-Outdoor</td>
+<td style="text-align: left;">Access Point Outdoor</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2S48</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP</td>
+<td style="text-align: left;">Access Point</td>
+</tr>
+<tr>
+<td style="text-align: left;">U2Sv2</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAPv2</td>
+<td style="text-align: left;">Access Point</td>
+</tr>
+<tr>
+<td style="text-align: left;">U5O</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-Outdoor5</td>
+<td style="text-align: left;">Access Point Outdoor 5</td>
+</tr>
+<tr>
+<td style="text-align: left;">U6ENT</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Enterprise</td>
+<td style="text-align: left;">Access Point WiFi 6 Enterprise</td>
+</tr>
+<tr>
+<td style="text-align: left;">U6EXT</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Extender</td>
+<td style="text-align: left;">Access Point WiFi 6 Extender</td>
+</tr>
+<tr>
+<td style="text-align: left;">U6IW</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-IW</td>
+<td style="text-align: left;">Access Point WiFi 6 In-Wall</td>
+</tr>
+<tr>
+<td style="text-align: left;">U6M</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Mesh</td>
+<td style="text-align: left;">Access Point WiFi 6 Mesh</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7E</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC</td>
+<td style="text-align: left;">Access Point AC</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7EDU</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-EDU</td>
+<td style="text-align: left;">Access Point AC EDU</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7Ev2</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC</td>
+<td style="text-align: left;">Access Point AC</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7HD</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-HD</td>
+<td style="text-align: left;">Access Point AC HD</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7IW</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-IW</td>
+<td style="text-align: left;">Access Point AC In-Wall</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7IWP</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-IW-Pro</td>
+<td style="text-align: left;">Access Point AC In-Wall Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7LR</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-LR</td>
+<td style="text-align: left;">Access Point AC Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7LT</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-Lite</td>
+<td style="text-align: left;">Access Point AC Lite</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7MP</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-M-Pro</td>
+<td style="text-align: left;">Access Point AC Mesh Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7MSH</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-M</td>
+<td style="text-align: left;">Access Point AC Mesh</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7NHD</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-nanoHD</td>
+<td style="text-align: left;">Access Point nanoHD</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7O</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-Outdoor</td>
+<td style="text-align: left;">Access Point AC Outdoor</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7P</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-Pro</td>
+<td style="text-align: left;">Access Point AC Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7PG2</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-Pro</td>
+<td style="text-align: left;">Access Point AC Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">U7SHD</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-AC-SHD</td>
+<td style="text-align: left;">Access Point AC SHD</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAE6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Extender-EA</td>
+<td style="text-align: left;">Access Point WiFi 6 Extender</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAIW6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-IW-EA</td>
+<td style="text-align: left;">Access Point WiFi 6 In-Wall</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAL6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Lite</td>
+<td style="text-align: left;">Access Point WiFi 6 Lite</td>
+</tr>
+<tr>
+<td style="text-align: left;">UALR6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-LR-EA</td>
+<td style="text-align: left;">Access Point WiFi 6 Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">UALR6v2</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-LR</td>
+<td style="text-align: left;">Access Point WiFi 6 Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">UALR6v3</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-LR</td>
+<td style="text-align: left;">Access Point WiFi 6 Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAM6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Mesh-EA</td>
+<td style="text-align: left;">Access Point WiFi 6 Mesh</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAP6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-LR</td>
+<td style="text-align: left;">Access Point WiFi 6 Long-Range</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAP6MP</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U6-Pro</td>
+<td style="text-align: left;">Access Point WiFi 6 Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">UASXG</td>
+<td style="text-align: left;">uas</td>
+<td style="text-align: left;">UAS-XG</td>
+<td style="text-align: left;">Application Server XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">UBB</td>
+<td style="text-align: left;">ubb</td>
+<td style="text-align: left;">UBB</td>
+<td style="text-align: left;">Building-to-Building Bridge</td>
+</tr>
+<tr>
+<td style="text-align: left;">UBBXG</td>
+<td style="text-align: left;">ubb</td>
+<td style="text-align: left;">UBB-XG</td>
+<td style="text-align: left;">Building-to-Building Bridge XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCK</td>
+<td style="text-align: left;">uck</td>
+<td style="text-align: left;">UCK</td>
+<td style="text-align: left;">Cloud Key</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCK-v2</td>
+<td style="text-align: left;">uck</td>
+<td style="text-align: left;">UCK</td>
+<td style="text-align: left;">Cloud Key</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCK-v3</td>
+<td style="text-align: left;">uck</td>
+<td style="text-align: left;">UCK</td>
+<td style="text-align: left;">Cloud Key</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCKG2</td>
+<td style="text-align: left;">uck</td>
+<td style="text-align: left;">UCK-G2</td>
+<td style="text-align: left;">Cloud Key Gen2</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCKP</td>
+<td style="text-align: left;">uck</td>
+<td style="text-align: left;">UCK-G2-Plus</td>
+<td style="text-align: left;">Cloud Key Gen2 Plus</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCMSH</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-XG-Mesh</td>
+<td style="text-align: left;">Access Point Mesh XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">UCXG</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-XG</td>
+<td style="text-align: left;">Access Point XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDC48X6</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Leaf</td>
+<td style="text-align: left;">Switch Leaf</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDM</td>
+<td style="text-align: left;">udm</td>
+<td style="text-align: left;">UDM</td>
+<td style="text-align: left;">Dream Machine</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDMB</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-BeaconHD</td>
+<td style="text-align: left;">Access Point BeaconHD</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDMPRO</td>
+<td style="text-align: left;">udm</td>
+<td style="text-align: left;">UDM-Pro</td>
+<td style="text-align: left;">Dream Machine Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDMPROSE</td>
+<td style="text-align: left;">udm</td>
+<td style="text-align: left;">UDM-SE</td>
+<td style="text-align: left;">Dream Machine Special Edition</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDR</td>
+<td style="text-align: left;">udm</td>
+<td style="text-align: left;">UDR</td>
+<td style="text-align: left;">Dream Router</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDW</td>
+<td style="text-align: left;">udm</td>
+<td style="text-align: left;">UDW</td>
+<td style="text-align: left;">Dream Wall</td>
+</tr>
+<tr>
+<td style="text-align: left;">UDWPRO</td>
+<td style="text-align: left;">udm</td>
+<td style="text-align: left;">UDWPRO</td>
+<td style="text-align: left;">Dream Wall Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">UFLHD</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-FlexHD</td>
+<td style="text-align: left;">Access Point FlexHD</td>
+</tr>
+<tr>
+<td style="text-align: left;">UGW3</td>
+<td style="text-align: left;">ugw</td>
+<td style="text-align: left;">USG-3P</td>
+<td style="text-align: left;">Security Gateway</td>
+</tr>
+<tr>
+<td style="text-align: left;">UGW4</td>
+<td style="text-align: left;">ugw</td>
+<td style="text-align: left;">USG-Pro-4</td>
+<td style="text-align: left;">Security Gateway Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">UGWHD4</td>
+<td style="text-align: left;">ugw</td>
+<td style="text-align: left;">USG</td>
+<td style="text-align: left;">Security Gateway</td>
+</tr>
+<tr>
+<td style="text-align: left;">UGWXG</td>
+<td style="text-align: left;">ugw</td>
+<td style="text-align: left;">USG-XG-8</td>
+<td style="text-align: left;">Security Gateway XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">UHDIW</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UAP-IW-HD</td>
+<td style="text-align: left;">Access Point In-Wall HD</td>
+</tr>
+<tr>
+<td style="text-align: left;">ULTE</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U-LTE</td>
+<td style="text-align: left;">UniFi LTE</td>
+</tr>
+<tr>
+<td style="text-align: left;">ULTEPEU</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U-LTE-Pro</td>
+<td style="text-align: left;">UniFi LTE Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">ULTEPUS</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">U-LTE-Pro</td>
+<td style="text-align: left;">UniFi LTE Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP1</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">USP-Plug</td>
+<td style="text-align: left;">SmartPower Plug</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP4</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP-X</td>
+<td style="text-align: left;">Phone</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP5</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP</td>
+<td style="text-align: left;">Phone</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP5c</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP</td>
+<td style="text-align: left;">Phone</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP5t</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP-Pro</td>
+<td style="text-align: left;">Phone Professional</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP5tc</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP-Pro</td>
+<td style="text-align: left;">Phone Professional</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP6</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">USP-Strip</td>
+<td style="text-align: left;">SmartPower Strip (6 ports)</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP7</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP-Executive</td>
+<td style="text-align: left;">Phone Executive</td>
+</tr>
+<tr>
+<td style="text-align: left;">UP7c</td>
+<td style="text-align: left;">uph</td>
+<td style="text-align: left;">UVP-Executive</td>
+<td style="text-align: left;">Phone Executive</td>
+</tr>
+<tr>
+<td style="text-align: left;">US16P150</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-16-150W</td>
+<td style="text-align: left;">Switch 16 PoE (150 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">US24</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-24-G1</td>
+<td style="text-align: left;">Switch 24</td>
+</tr>
+<tr>
+<td style="text-align: left;">US24P250</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-24-250W</td>
+<td style="text-align: left;">Switch 24 PoE (250 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">US24P500</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-24-500W</td>
+<td style="text-align: left;">Switch 24 PoE (500 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">US24PL2</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-L2-24-PoE</td>
+<td style="text-align: left;">Switch 24 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US24PRO</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Pro-24-PoE</td>
+<td style="text-align: left;">Switch Pro 24 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US24PRO2</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Pro-24</td>
+<td style="text-align: left;">Switch Pro 24</td>
+</tr>
+<tr>
+<td style="text-align: left;">US48</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-48-G1</td>
+<td style="text-align: left;">Switch 48</td>
+</tr>
+<tr>
+<td style="text-align: left;">US48P500</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-48-500W</td>
+<td style="text-align: left;">Switch 48 PoE (500 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">US48P750</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-48-750W</td>
+<td style="text-align: left;">Switch 48 PoE (750 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">US48PL2</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-L2-48-PoE</td>
+<td style="text-align: left;">Switch 48 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US48PRO</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Pro-48-PoE</td>
+<td style="text-align: left;">Switch Pro 48 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US48PRO2</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Pro-48</td>
+<td style="text-align: left;">Switch Pro 48</td>
+</tr>
+<tr>
+<td style="text-align: left;">US624P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Enterprise-24-PoE</td>
+<td style="text-align: left;">Switch Enterprise 24 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US648P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Enterprise-48-PoE</td>
+<td style="text-align: left;">Switch Enterprise 48 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US68P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Enterprise-8-PoE</td>
+<td style="text-align: left;">Switch Enterprise 8 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US6XG150</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-XG-6PoE</td>
+<td style="text-align: left;">Switch 6 XG PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">US8</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8</td>
+<td style="text-align: left;">Switch 8</td>
+</tr>
+<tr>
+<td style="text-align: left;">US8P150</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8-150W</td>
+<td style="text-align: left;">Switch 8 PoE (150 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">US8P60</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8-60W</td>
+<td style="text-align: left;">Switch 8 (60 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">USAGGPRO</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Pro-Aggregation</td>
+<td style="text-align: left;">Switch Aggregation Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">USC8</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8</td>
+<td style="text-align: left;">Switch 8</td>
+</tr>
+<tr>
+<td style="text-align: left;">USC8P150</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8-150W</td>
+<td style="text-align: left;">Switch 8 PoE (150 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">USC8P450</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Industrial</td>
+<td style="text-align: left;">Switch Industrial</td>
+</tr>
+<tr>
+<td style="text-align: left;">USC8P60</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-8-60W</td>
+<td style="text-align: left;">Switch 8 (60 W)</td>
+</tr>
+<tr>
+<td style="text-align: left;">USF5P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Flex</td>
+<td style="text-align: left;">Switch Flex</td>
+</tr>
+<tr>
+<td style="text-align: left;">USFXG</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Flex-XG</td>
+<td style="text-align: left;">Switch Flex XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL16LP</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Lite-16-PoE</td>
+<td style="text-align: left;">Switch Lite 16 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL16P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-16-PoE</td>
+<td style="text-align: left;">Switch 16 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL24</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-24-G2</td>
+<td style="text-align: left;">Switch 24</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL24P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-24-PoE</td>
+<td style="text-align: left;">Switch 24 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL48</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-48-G2</td>
+<td style="text-align: left;">Switch 48</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL48P</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-48-PoE</td>
+<td style="text-align: left;">Switch 48 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL8A</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Aggregation</td>
+<td style="text-align: left;">Switch Aggregation</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL8LP</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Lite-8-PoE</td>
+<td style="text-align: left;">Switch Lite 8 PoE</td>
+</tr>
+<tr>
+<td style="text-align: left;">USL8MP</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Mission-Critical</td>
+<td style="text-align: left;">Switch Mission Critical</td>
+</tr>
+<tr>
+<td style="text-align: left;">USMINI</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-Flex-Mini</td>
+<td style="text-align: left;">Switch Flex Mini</td>
+</tr>
+<tr>
+<td style="text-align: left;">USPPDUP</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USP-PDU-Pro</td>
+<td style="text-align: left;">SmartPower PDU Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">USPRPS</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USP-RPS</td>
+<td style="text-align: left;">SmartPower Redundant Power System</td>
+</tr>
+<tr>
+<td style="text-align: left;">USXG</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">US-16-XG</td>
+<td style="text-align: left;">Switch XG 16</td>
+</tr>
+<tr>
+<td style="text-align: left;">USXG24</td>
+<td style="text-align: left;">usw</td>
+<td style="text-align: left;">USW-EnterpriseXG-24</td>
+<td style="text-align: left;">Switch Enterprise XG 24</td>
+</tr>
+<tr>
+<td style="text-align: left;">UXBSDM</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UWB-XG-BK</td>
+<td style="text-align: left;">WiFi BaseStation XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">UXGPRO</td>
+<td style="text-align: left;">uxg</td>
+<td style="text-align: left;">UXG-Pro</td>
+<td style="text-align: left;">Next-Generation Gateway Pro</td>
+</tr>
+<tr>
+<td style="text-align: left;">UXSDM</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">UWB-XG</td>
+<td style="text-align: left;">WiFi BaseStation XG</td>
+</tr>
+<tr>
+<td style="text-align: left;">p2N</td>
+<td style="text-align: left;">uap</td>
+<td style="text-align: left;">PICOM2HP</td>
+<td style="text-align: left;">PicoStation M2 HP</td>
+</tr>
+</tbody>
+</table>
+<h5 id="dpi-category-codes">DPI Category Codes<a class="headerlink" href="#dpi-category-codes" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">DPI Category Code</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Instant messaging</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">P2P</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">File Transfer</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Streaming Media</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Mail and Collaboration</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Voice over IP</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Database</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Games</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Network Management</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Remote Access Terminals</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Bypass Proxies and Tunnels</td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Stock Market</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Web</td>
+</tr>
+<tr>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Security Update</td>
+</tr>
+<tr>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Web IM</td>
+</tr>
+<tr>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Business</td>
+</tr>
+<tr>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Network Protocols</td>
+</tr>
+<tr>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Network Protocols</td>
+</tr>
+<tr>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Network Protocols</td>
+</tr>
+<tr>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">Private Protocol</td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Social Network</td>
+</tr>
+<tr>
+<td style="text-align: left;">255</td>
+<td style="text-align: left;">Unknown</td>
+</tr>
+</tbody>
+</table>
+<p>There are 2,213 named applications in the javascript <strong>dynamic.dpi.js</strong>.  See extracted [[products:software:unifi-controller:api:cat_app_json|cat_app.json]] to include for lookups and example usage.</p>
+<p>The application id is a compound id using bitwise shift left on the category id + application id sent from the api using <code>list_dpi_stats_filtered</code>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">compoundId</span><span class="p">(</span><span class="nx">$cat</span><span class="p">,</span><span class="w"> </span><span class="nx">$app</span><span class="p">){</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">intval</span><span class="p">(</span><span class="nx">$cat</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">16</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">intval</span><span class="p">(</span><span class="nx">$app</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="uncategorized">Uncategorized<a class="headerlink" href="#uncategorized" title="Permanent link">&para;</a></h3>
+<p>Dump of found endpoints waiting for documentation</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># logged in user</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/self
+
+<span class="c1"># Country codes</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/ccode
+<span class="c1"># Availible WiFi channels</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/current-channel
+
+<span class="c1"># Dashboard health</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/health
+
+<span class="c1"># Active client devices</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/sta
+<span class="c1"># Configured clients</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/user
+
+<span class="c1"># Devices</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/device-basic<span class="w"> </span>-<span class="w"> </span>mac,<span class="w"> </span><span class="nb">type</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/device<span class="w"> </span>-<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>filtered<span class="w"> </span>with<span class="w"> </span>macs:<span class="w"> </span><span class="o">[</span><span class="w"> </span>...,<span class="w"> </span>...<span class="w"> </span><span class="o">]</span>
+
+<span class="c1"># Detailed site settings</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/sysinfo
+
+<span class="c1"># /rest/ endpoints also have a /cnt/ which returns the count for the data portion</span>
+<span class="c1"># can be used for any but seems targeted towards alarms</span>
+
+<span class="c1"># Site settings</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/setting<span class="w"> </span>-<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>big<span class="w"> </span>one<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>weird<span class="w"> </span>mechanism<span class="w"> </span><span class="k">for</span><span class="w"> </span>updating
+
+<span class="c1"># Firewall rules</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/firewallrule<span class="w"> </span>-<span class="w"> </span>only<span class="w"> </span>lists<span class="w"> </span>user-defined<span class="w"> </span>rules
+
+<span class="c1"># Firewall groups</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/firewallgroup
+
+<span class="c1"># routes</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/routing
+
+<span class="c1"># Alarms</span>
+<span class="c1"># List of alarms</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/alarm
+<span class="c1"># list of unarchived alarms</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/alarm?archived<span class="o">=</span><span class="nb">false</span>
+
+<span class="c1"># User groups - bandwith settings</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/usergroup
+
+<span class="c1"># ?</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/wlangroup
+
+<span class="c1"># Wireless networks</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/wlanconf
+
+<span class="c1"># ?</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/tag
+
+<span class="c1"># Site networks</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/networkconf
+
+<span class="c1"># example backup path</span>
+dl/autobackup/autobackup_5.7.23_20180513_0000_1526169600008.unf
+
+<span class="c1"># Insights - sessions</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/session?type<span class="o">=</span>all<span class="p">&amp;</span><span class="nv">start</span><span class="o">=</span><span class="m">1526515200</span><span class="p">&amp;</span><span class="nv">end</span><span class="o">=</span><span class="m">1526688000</span>
+
+<span class="c1"># Insights - EDU streams</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/stream
+
+<span class="c1"># Switch port conf?</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/rest/portconf
+
+<span class="c1"># Configured port forwards and uPNP - transfer bytes is listed but doesn&#39;t appear populated</span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/stat/portforward
+
+<span class="c1"># Update User (User are the clients)  </span>
+api/s/<span class="o">{</span>site<span class="o">}</span>/upd/user/<span class="o">{</span>UserId<span class="o">}</span>
+you<span class="w"> </span>can<span class="w"> </span>get<span class="w"> </span>the<span class="w"> </span>users<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>userid<span class="w"> </span>from<span class="w"> </span><span class="s2">&quot;/api/s/{SiteId}/stat/alluser&quot;</span><span class="w"> </span><span class="o">(</span>All<span class="w"> </span>Clients<span class="o">)</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;/api/s/{SiteId}/stat/sta&quot;</span><span class="w"> </span><span class="o">(</span>Active<span class="w"> </span>Clients<span class="o">)</span><span class="w"> </span>which<span class="w"> </span>contains<span class="w"> </span>the<span class="w"> </span>client<span class="w"> </span>id<span class="w"> </span><span class="o">(</span>_id<span class="o">)</span>.
+example:<span class="w"> </span>change<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>user<span class="w"> </span>with<span class="w"> </span>clientid<span class="w"> </span>5aca464bb79fc60200460394<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;test-raw&#39;</span>:
+<span class="si">${</span><span class="nv">curl_cmd</span><span class="si">}</span><span class="w"> </span>--data<span class="w"> </span><span class="s2">&quot;json={&#39;name&#39;:&#39;test-raw&#39;}&quot;</span><span class="w"> </span><span class="nv">$baseurl</span>/api/s/<span class="nv">$site</span>/upd/user/5aca464bb79fc60200460394
+
+<span class="c1"># Get Hotspot Configuration</span>
+guest/s/<span class="o">{</span>site<span class="o">}</span>/hotspotconfig
+You<span class="w"> </span>will<span class="w"> </span>get<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;auth&quot;</span><span class="w"> </span>the<span class="w"> </span>value<span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>activated,<span class="w"> </span><span class="k">if</span><span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>activated<span class="w"> </span>you<span class="w"> </span>will<span class="w"> </span>get<span class="w"> </span><span class="k">for</span><span class="w"> </span>exemple<span class="w"> </span><span class="s2">&quot;hotspot&quot;</span><span class="w"> </span>and<span class="w"> </span>many<span class="w"> </span>other<span class="w"> </span>values<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>design<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>page.
+
+<span class="c1"># Get Hotspot Packages</span>
+guest/s/<span class="o">{</span>site<span class="o">}</span>/hotspotpackages
+<span class="w"> </span>??
+
+<span class="c1"># Get trafficrules</span>
+v2/api/site/<span class="o">{</span>site<span class="o">}</span>/trafficrules
+also<span class="w"> </span>possible<span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>new<span class="w"> </span>rule<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>POST<span class="w"> </span>request.
+
+<span class="c1"># Edit trafficrules</span>
+v2/api/site/<span class="o">{</span>site<span class="o">}</span>/trafficrules/<span class="o">{</span>id<span class="o">}</span>/
+PUT<span class="w"> </span>or<span class="w"> </span>DELETE<span class="w"> </span>request<span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>or<span class="w"> </span>delete<span class="w"> </span>traffic<span class="w"> </span>rule
+GET<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>allowed<span class="w"> </span>on<span class="w"> </span>specific<span class="w"> </span>trafficrules.
+With<span class="w"> </span>PUT<span class="w"> </span>the<span class="w"> </span>result<span class="w"> </span>code<span class="w"> </span>is<span class="w"> </span><span class="m">201</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>successful<span class="w"> </span>change.
+
+
+<span class="c1"># Possible list of all callable managers</span>
+system
+devmgr
+stamgr
+evtmgr
+cfgmgr
+hotspot
+sitemgr
+streammgr
+backup
+throughput
+stat
+firmware
+firewall
+elite
+</code></pre></div>
+<h2 id="update-of-port-forward-rules">Update of Port Forward Rules<a class="headerlink" href="#update-of-port-forward-rules" title="Permanent link">&para;</a></h2>
+<p>This may apply to other configurations, but initial testing shows that port forward rules can be enabled/disabled using PUT against the endpoint /api/s/{site}/rest/portforward/{rule-id} with a body such as:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The rule ID can be retrieved using the above described port forwarding GET request and is found in the "_id" key.</p>
+<p>New rules can be created using POST, but be aware that there seems to be very little validation (it's possible to create entries with no information other than the fact that they're enabled, for example).</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
