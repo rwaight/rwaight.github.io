@@ -98,6 +98,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
+  - pymdownx.snippets
 
 
 # https://www.mkdocs.org/user-guide/configuration/#plugins
