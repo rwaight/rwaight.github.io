@@ -4,6 +4,14 @@ nav:
     - index.md
     - Git: git
     - GitHub: github
-    - MacOS: macos
+    - OS: 
+        - macos
+        - windows
+    - UniFi: 
+        - unifi
+    - Random: 
+        - ... | random-*.md
+    - Test: 
+        - ... | test-*.md
     - Other: 
         - ...
