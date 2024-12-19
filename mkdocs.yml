@@ -134,4 +134,7 @@ plugins:
       # tags_hierarchy: true
       # By default, tags are separated by a forward slash `/`, but you can change this to any string, e.g., `.`
       # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_hierarchy_separator
+  - macros:
+      # https://mkdocs-macros-plugin.readthedocs.io/en/stable/
+      include_dir: includes
 
