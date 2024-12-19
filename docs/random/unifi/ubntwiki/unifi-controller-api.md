@@ -31,8 +31,8 @@ Calls return both a web status as well as JSON formatted output.  200 codes indi
 
 **NOTE:** There are two critical differences between Unifi controllers and the UDM Pro's API:
 
-  * The login endpoint is **''/api/auth/login''**
-  * All API endpoints need to be prefixed with **''/proxy/network''** (e.g. ''%%https://192.168.0.1/proxy/network/api/s/default/self%%'')
+  * The login endpoint is `/api/auth/login``
+  * All API endpoints need to be prefixed with `/proxy/network` (e.g. `https://192.168.0.1/proxy/network/api/s/default/self`)
 
 ### Examples
 
@@ -79,7 +79,7 @@ These are REST calls that can be made without a site context.  I do not believe 
 
 ## Site Endpoints
 
-All commands are presumed to be prefixed with ''%%api/s/{site}%%''
+All commands are presumed to be prefixed with `api/s/{site}`
 
 | Path                           | Method        | Notes |
 |:-------------------------------|:--------------|:------|
@@ -95,7 +95,7 @@ All commands are presumed to be prefixed with ''%%api/s/{site}%%''
 | stat/sta                       | GET           | List of all _active_ clients on the site                                                                                                                        |
 | rest/user                      | GET/POST/PUT  | List of all configured/known clients on the site                                                                                                                |
 | stat/device-basic              | GET           | List of site devices with only 'adopted', 'disabled', 'mac', 'state', 'type' keys, useful for filtering on type                                                 |
-| stat/device                    | GET/POST      | Detailed list of all devices on site.  (**Controller only**) Can be filtered by POSTing ''%%{"macs": ["mac1", ... ]}%%''                                        |
+| stat/device                    | GET/POST      | Detailed list of all devices on site.  (**Controller only**) Can be filtered by POSTing `{"macs": ["mac1", ... ]}`                                              |
 | stat/device/{mac}              | GET           | (**UDM only**) Detailed list of device filtered by mac address                                                                                                  |
 | rest/device/{_id}              | PUT           | Updates to devices get PUT here, why?                                                                                                                           |
 | rest/setting                   | GET/PUT       | Detailed site settings, updating requires adding key and _id to path for PUT ../setting/{key}/{_id}                                                             |
@@ -122,7 +122,8 @@ All commands are presumed to be prefixed with ''%%api/s/{site}%%''
 
 ### Callable commands
 
-Posting to the endpoint ''%%api/s/{site}/cmd/<manager>%%'' with the ''%%json {"cmd": "command"}%%'' you can invoke commands on the controller.
+<!--- the '`{"cmd": "command"}`' in the next line was '`json {"cmd": "command"}`' --->
+Posting to the endpoint `api/s/{site}/cmd/<manager>` with the `{"cmd": "command"}` you can invoke commands on the controller.
 
 | Manager  | Call                | Notes |
 |:---------|:--------------------|:------|
@@ -319,7 +320,7 @@ This data was extracted from the javascript of the site.
 
 There are 2,213 named applications in the javascript **dynamic.dpi.js**.  See extracted [[products:software:unifi-controller:api:cat_app_json|cat_app.json]] to include for lookups and example usage.
 
-The application id is a compound id using bitwise shift left on the category id + application id sent from the api using ''%%list_dpi_stats_filtered%%''
+The application id is a compound id using bitwise shift left on the category id + application id sent from the api using `list_dpi_stats_filtered`
 ```js
 function compoundId($cat, $app){
   return (intval($cat) << 16) + intval($app);
