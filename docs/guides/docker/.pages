@@ -2,6 +2,5 @@
 ## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
 nav:
     - index.md
-    - ... | setup-*.md
-    - docker
+    - ... | container-*.md
     - ...
