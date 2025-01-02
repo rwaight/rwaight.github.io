@@ -443,6 +443,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -488,11 +492,57 @@
   
   
     <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
   </span>
   
 
@@ -649,9 +699,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-the-github-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the GitHub CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approving-and-merging-multiple-pull-requests-using-the-gh-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approving and merging multiple pull requests using the gh cli
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       Hello world!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-github-workflow-runs-using-the-gh-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete GitHub workflow runs using the gh cli
     </span>
   </a>
   
@@ -1148,8 +1225,6 @@
       
         
       
-        
-      
     
     
       
@@ -1191,27 +1266,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../random/github/gh-cli-delete-workflow-runs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Delete GitHub workflow runs using the gh cli
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -2342,9 +2396,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-the-github-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the GitHub CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approving-and-merging-multiple-pull-requests-using-the-gh-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approving and merging multiple pull requests using the gh cli
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       Hello world!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-github-workflow-runs-using-the-gh-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete GitHub workflow runs using the gh cli
     </span>
   </a>
   
@@ -2364,6 +2445,163 @@
       <header class="md-typeset">
         <h1 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-01-02 00:00:00+00:00">January 2, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">GitHub</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="using-the-github-cli"><a class="toclink" href="../../2025/01/02/using-the-github-cli/">Using the GitHub CLI</a></h2>
+<p>The <a href="https://cli.github.com/">GitHub CLI</a>, or <code>gh</code>, is a command-line interface to GitHub for use in your terminal or your scripts.
+- <a href="https://github.com/cli/cli#installation">View the GitHub CLI installation instructions</a></p>
+<h5 id="configuration"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#configuration">Configuration</a></h5>
+<p>Run <a href="https://cli.github.com/manual/gh_auth_login"><code>gh auth login</code></a> to authenticate with your GitHub account. Alternatively, <code>gh</code> will respect the <code>GITHUB_TOKEN</code> <a href="https://cli.github.com/manual/gh_help_environment">environment variable</a>.</p>
+<p>To set your preferred editor, use <code>gh config set editor &lt;editor&gt;</code>. Read more about <a href="https://cli.github.com/manual/gh_config"><code>gh config</code></a> and <a href="https://cli.github.com/manual/gh_help_environment">environment variables</a>.</p>
+<p>Declare your aliases for often-used commands with <a href="https://cli.github.com/manual/gh_alias_set"><code>gh alias set</code></a>.</p>
+<h4 id="sign-in-to-github"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#sign-in-to-github">Sign in to GitHub</a></h4>
+<p>Follow these steps once you have followed <a href="https://github.com/cli/cli#installation">the GitHub CLI installation instructions</a></p>
+<ol>
+<li>In your terminal, issue <code>gh auth login</code> and follow the prompts
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>auth<span class="w"> </span>status
+</code></pre></div></li>
+</ol>
+<h4 id="verify-you-are-signed-in-to-github"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#verify-you-are-signed-in-to-github">Verify you are signed in to GitHub</a></h4>
+<p>Ensure you are signed in to GitHub with the CLI using <code>gh auth status</code></p>
+<ol>
+<li>
+<p>Check the GH authentication status with
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>auth<span class="w"> </span>status
+</code></pre></div></p>
+</li>
+<li>
+<p>Ensure the output shows
+<div class="highlight"><pre><span></span><code>github.com
+<span class="w">  </span>✓<span class="w"> </span>Logged<span class="w"> </span><span class="k">in</span><span class="w"> </span>to<span class="w"> </span>github.com<span class="w"> </span>as<span class="w"> </span>GH_USERNAME<span class="w"> </span><span class="o">(</span>/home/USER/.config/gh/hosts.yml<span class="o">)</span>
+<span class="w">  </span>✓<span class="w"> </span>Git<span class="w"> </span>operations<span class="w"> </span><span class="k">for</span><span class="w"> </span>github.com<span class="w"> </span>configured<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>https<span class="w"> </span>protocol.
+<span class="w">  </span>✓<span class="w"> </span>Token:<span class="w"> </span>*******************
+</code></pre></div></p>
+</li>
+<li>
+<p>If needed, login to GitHub with <code>gh auth login</code> and follow the prompts</p>
+</li>
+</ol>
+<h3 id="next-steps"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#next-steps">Next steps</a></h3>
+<p>Read through the <a href="https://cli.github.com/manual/">GitHub CLI manual</a> to learn more.
+- <a href="https://cli.github.com/manual/gh">Available commands</a>
+- <a href="https://cli.github.com/manual/examples">Usage examples</a>
+- <a href="https://github.com/topics/gh-extension">Community extensions</a></p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-08 00:00:00+00:00">November 8, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">GitHub</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="approving-and-merging-multiple-pull-requests-using-the-gh-cli"><a class="toclink" href="../../2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/">Approving and merging multiple pull requests using the gh cli</a></h2>
+<!--- ## Approving and merging multiple PRs --->
+
+<p>You can use the <strong>GitHub CLI</strong> with <strong>PowerShell</strong> or <strong>bash</strong> to approve and merge multiple pull requests.  </p>
+<h4 id="merging-multiple-prs-with-bash"><a class="toclink" href="../../2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/#merging-multiple-prs-with-bash">Merging multiple PRs with bash</a></h4>
+<p>The Bash example is:
+<div class="highlight"><pre><span></span><code><span class="c1"># create the array</span>
+<span class="nv">pr_array</span><span class="o">=(</span>
+<span class="s2">&quot;https://github.com/rwaight/actions/pull/36&quot;</span>
+<span class="s2">&quot;https://github.com/rwaight/test-actions/pull/43&quot;</span>
+<span class="s2">&quot;https://github.com/rwaight/rwaight.github.io/pull/20&quot;</span>
+<span class="o">)</span>
+
+<span class="k">for</span><span class="w"> </span>pr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">pr_array</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Processing PR </span><span class="nv">$pr</span><span class="s2"> ... &quot;</span>
+<span class="w">  </span>gh<span class="w"> </span>pr<span class="w"> </span>review<span class="w"> </span>--approve<span class="w"> </span><span class="nv">$pr</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;    PR approved ... &quot;</span>
+<span class="w">  </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;    Press enter to continue ... &quot;</span>
+<span class="w">  </span>gh<span class="w"> </span>pr<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>-d<span class="w"> </span><span class="nv">$pr</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;    PR merged ... &quot;</span>
+<span class="w">  </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;    Press enter to continue ... &quot;</span>
+<span class="k">done</span>
+</code></pre></div></p>
+<h4 id="merging-multiple-prs-with-powershell"><a class="toclink" href="../../2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/#merging-multiple-prs-with-powershell">Merging multiple PRs with PowerShell</a></h4>
+<p>The PowerShell example is:
+<div class="highlight"><pre><span></span><code><span class="c"># create the array</span>
+<span class="nv">$pr_array</span> <span class="p">=</span> <span class="p">@(</span>
+<span class="s2">&quot;https://github.com/rwaight/actions/pull/36&quot;</span><span class="p">,</span>
+<span class="s2">&quot;https://github.com/rwaight/test-actions/pull/43&quot;</span><span class="p">,</span>
+<span class="s2">&quot;https://github.com/rwaight/rwaight.github.io/pull/20&quot;</span>
+<span class="p">)</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$pr</span> <span class="k">in</span> <span class="nv">$pr_array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Write-Host</span> <span class="s2">&quot;Processing PR $pr ... &quot;</span>
+  <span class="n">gh</span> <span class="n">pr</span> <span class="n">review</span> <span class="p">-</span><span class="n">-approve</span> <span class="nv">$pr</span>
+  <span class="nb">Write-Host</span> <span class="s2">&quot;    PR approved ... &quot;</span> <span class="n">-NoNewLine</span>
+  <span class="n">Pause</span>
+  <span class="n">gh</span> <span class="n">pr</span> <span class="n">merge</span> <span class="n">-s</span> <span class="n">-d</span> <span class="nv">$pr</span>
+  <span class="nb">Write-Host</span> <span class="s2">&quot;    PR merged ... &quot;</span> <span class="n">-NoNewLine</span>
+  <span class="n">Pause</span>
+<span class="p">}</span>
+</code></pre></div></p>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -2411,6 +2649,67 @@ massa, nec semper lorem quam in massa.</p>
           Continue reading
         </a>
       </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2022-09-22 00:00:00+00:00">September 22, 2022</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">GitHub</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="delete-github-workflow-runs-using-the-gh-cli"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/">Delete GitHub workflow runs using the gh cli</a></h2>
+<h4 id="finding-the-workflow-runs-by-id"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#finding-the-workflow-runs-by-id">Finding the workflow runs by ID</a></h4>
+<p>You can use the <code>gh</code> command line interface to list the workflow runs by ID:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
+</code></pre></div></p>
+<h5 id="workflow-runs-by-id-for-a-specific-workflow"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#workflow-runs-by-id-for-a-specific-workflow">Workflow runs by ID for a specific workflow</a></h5>
+<p>You can also filter the workflow runs to a specific workflow using the <code>-w myworkflow.yml</code>, which would only list the workflow runs for the <code>.github/workflows/myworkflow.yml</code> workflow:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-w<span class="w"> </span>myworkflow.yml<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
+</code></pre></div></p>
+<h3 id="using-bash-or-zsh"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#using-bash-or-zsh">Using bash or zsh</a></h3>
+<p>From <a href="https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/">https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/</a></p>
+<p>Hello, future me. This is for you next time you want to do this.</p>
+<p>When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span><span class="w"> </span><span class="p">|</span>
+<span class="w">  </span>xargs<span class="w"> </span>-IID<span class="w"> </span>gh<span class="w"> </span>api<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;repos/</span><span class="k">$(</span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--json<span class="w"> </span>nameWithOwner<span class="w"> </span>-q<span class="w"> </span>.nameWithOwner<span class="k">)</span><span class="s2">/actions/runs/ID&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-X<span class="w"> </span>DELETE
+</code></pre></div></p>
+<p>This will delete <em>all</em> (well, up to 20, or whatever you set in <code>--limit</code>) your workflow runs. You can add flags to <code>gh run list</code> to filter runs by workflow or by triggering user.</p>
+<h3 id="using-powershell"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#using-powershell">Using PowerShell</a></h3>
+<p>The same command as above, but in PowerShell</p>
+<div class="highlight"><pre><span></span><code><span class="n">gh</span> <span class="n">run</span> <span class="n">list</span> <span class="p">-</span><span class="n">-json</span> <span class="n">databaseId</span> <span class="n">-q</span> <span class="s1">&#39;.[].databaseId&#39;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">gh</span> <span class="n">api</span> <span class="s2">&quot;repos/</span><span class="p">$(</span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="p">-</span><span class="n">-json</span> <span class="n">nameWithOwner</span> <span class="n">-q</span> <span class="p">.</span><span class="n">nameWithOwner</span><span class="p">)</span><span class="s2">/actions/runs/$_&quot;</span> <span class="n">-X</span> <span class="n">DELETE</span> <span class="p">}</span>
+</code></pre></div>
     
   </div>
 </article>

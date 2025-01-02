@@ -10,13 +10,13 @@
         <meta name="author" content="rwaight">
       
       
-        <link rel="canonical" href="https://rwaight.github.io/blog/2024/06/25/hello-world/">
+        <link rel="canonical" href="https://rwaight.github.io/blog/2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/">
       
       
-        <link rel="prev" href="../../../05/28/setting-up-a-blog/">
+        <link rel="prev" href="../../../06/25/hello-world/">
       
       
-        <link rel="next" href="../../../11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/">
+        <link rel="next" href="../../../../2025/01/02/using-the-github-cli/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Hello world! - rwaight on GitHub pages</title>
+        <title>Approving and merging multiple pull requests using the gh cli - rwaight on GitHub pages</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hello-world" class="md-skip">
+        <a href="#merging-multiple-prs-with-bash" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hello world!
+              Approving and merging multiple pull requests using the gh cli
             
           </span>
         </div>
@@ -2308,8 +2308,32 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#merging-multiple-prs-with-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging multiple PRs with bash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-multiple-prs-with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging multiple PRs with PowerShell
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2365,14 +2389,14 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-06-25 00:00:00+00:00" class="md-ellipsis">June 25, 2024</time>
+                        <time datetime="2024-11-08 00:00:00+00:00" class="md-ellipsis">November 8, 2024</time>
                       </div>
                     </li>
                     
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2024-06-25 00:00:00+00:00" class="md-ellipsis">June 25, 2024</time>
+                          <time datetime="2024-12-18 00:00:00+00:00" class="md-ellipsis">December 18, 2024</time>
                         </div>
                       </li>
                     
@@ -2383,8 +2407,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/github/">GitHub</a>, 
-                              <a href="../../../../category/github-actions/">GitHub Actions</a></span>
+                              <a href="../../../../category/github/">GitHub</a></span>
                         </div>
                       </li>
                     
@@ -2427,7 +2450,19 @@
     
     
     
-      <a href="../../../../../plugins/tags/#githubactions" class="md-tag">GitHub/Actions</a>
+      <a href="../../../../../plugins/tags/#githubcli" class="md-tag">GitHub/CLI</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../plugins/tags/#automation" class="md-tag">Automation</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../plugins/tags/#needtostandardizetags" class="md-tag">NeedToStandardizeTags</a>
     
   
 </nav>
@@ -2437,13 +2472,49 @@
   
 
 
-<h1 id="hello-world">Hello world!<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.</p>
-<!-- more -->
+  <h1>Approving and merging multiple pull requests using the gh cli</h1>
 
-<p>...</p>
+<!--- ## Approving and merging multiple PRs --->
+
+<p>You can use the <strong>GitHub CLI</strong> with <strong>PowerShell</strong> or <strong>bash</strong> to approve and merge multiple pull requests.  </p>
+<h3 id="merging-multiple-prs-with-bash">Merging multiple PRs with bash<a class="headerlink" href="#merging-multiple-prs-with-bash" title="Permanent link">&para;</a></h3>
+<p>The Bash example is:
+<div class="highlight"><pre><span></span><code><span class="c1"># create the array</span>
+<span class="nv">pr_array</span><span class="o">=(</span>
+<span class="s2">&quot;https://github.com/rwaight/actions/pull/36&quot;</span>
+<span class="s2">&quot;https://github.com/rwaight/test-actions/pull/43&quot;</span>
+<span class="s2">&quot;https://github.com/rwaight/rwaight.github.io/pull/20&quot;</span>
+<span class="o">)</span>
+
+<span class="k">for</span><span class="w"> </span>pr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">pr_array</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Processing PR </span><span class="nv">$pr</span><span class="s2"> ... &quot;</span>
+<span class="w">  </span>gh<span class="w"> </span>pr<span class="w"> </span>review<span class="w"> </span>--approve<span class="w"> </span><span class="nv">$pr</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;    PR approved ... &quot;</span>
+<span class="w">  </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;    Press enter to continue ... &quot;</span>
+<span class="w">  </span>gh<span class="w"> </span>pr<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>-d<span class="w"> </span><span class="nv">$pr</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;    PR merged ... &quot;</span>
+<span class="w">  </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;    Press enter to continue ... &quot;</span>
+<span class="k">done</span>
+</code></pre></div></p>
+<h3 id="merging-multiple-prs-with-powershell">Merging multiple PRs with PowerShell<a class="headerlink" href="#merging-multiple-prs-with-powershell" title="Permanent link">&para;</a></h3>
+<p>The PowerShell example is:
+<div class="highlight"><pre><span></span><code><span class="c"># create the array</span>
+<span class="nv">$pr_array</span> <span class="p">=</span> <span class="p">@(</span>
+<span class="s2">&quot;https://github.com/rwaight/actions/pull/36&quot;</span><span class="p">,</span>
+<span class="s2">&quot;https://github.com/rwaight/test-actions/pull/43&quot;</span><span class="p">,</span>
+<span class="s2">&quot;https://github.com/rwaight/rwaight.github.io/pull/20&quot;</span>
+<span class="p">)</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$pr</span> <span class="k">in</span> <span class="nv">$pr_array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Write-Host</span> <span class="s2">&quot;Processing PR $pr ... &quot;</span>
+  <span class="n">gh</span> <span class="n">pr</span> <span class="n">review</span> <span class="p">-</span><span class="n">-approve</span> <span class="nv">$pr</span>
+  <span class="nb">Write-Host</span> <span class="s2">&quot;    PR approved ... &quot;</span> <span class="n">-NoNewLine</span>
+  <span class="n">Pause</span>
+  <span class="n">gh</span> <span class="n">pr</span> <span class="n">merge</span> <span class="n">-s</span> <span class="n">-d</span> <span class="nv">$pr</span>
+  <span class="nb">Write-Host</span> <span class="s2">&quot;    PR merged ... &quot;</span> <span class="n">-NoNewLine</span>
+  <span class="n">Pause</span>
+<span class="p">}</span>
+</code></pre></div></p>
 
 
 
