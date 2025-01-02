@@ -3,14 +3,15 @@ title: Delete GitHub workflow runs using the gh cli
 date:
   created: 2022-09-22
   updated: 2024-06-25
-#authors:
-#  - rwaight
-#slug: delete-workflow-runs
-# the bash section is from https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/
+authors:
+  - rwaight
+categories:
+  - GitHub
 tags:
   - GitHub
-  - GitHub/Actions
-  - GitHub/cli
+  - GitHub/CLI
+  - Automation
+  - NeedToStandardizeTags
 ---
 
 # Delete GitHub workflow runs using the gh cli
