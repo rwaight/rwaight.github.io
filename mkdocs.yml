@@ -139,4 +139,12 @@ plugins:
   - macros:
       # https://mkdocs-macros-plugin.readthedocs.io/en/stable/
       include_dir: includes
+  - git-revision-date-localized:
+      # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/index.html
+      # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/options/
+      enable_creation_date: true
+      # type: iso_datetime              # default is 'date'
+      exclude:
+        - index.md
+      fallback_to_build_date: true
 
