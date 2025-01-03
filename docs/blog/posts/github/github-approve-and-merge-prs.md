@@ -13,6 +13,7 @@ tags:
   - GitHub/CLI
   - Automation
   - NeedToStandardizeTags
+  - ShouldBeInGuides
 ---
 
 <!--- ## Approving and merging multiple PRs --->

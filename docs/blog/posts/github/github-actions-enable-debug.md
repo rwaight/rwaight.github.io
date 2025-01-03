@@ -10,8 +10,7 @@ categories:
   - GitHub Actions
 #slug: github-actions-nested-virtualization
 tags:
-  - GitHub
-  - GitHub/Actions
+  - Test
 ---
 
 # Hello world!
