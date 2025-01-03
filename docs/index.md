@@ -5,7 +5,7 @@ date:
   updated: 2024-12-16
 ---
 
-I'm hosted with GitHub Pages using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/){:target="_blank"}. The `frontmatter` is used for [YAML style meta-data](https://www.mkdocs.org/user-guide/writing-your-docs/#yaml-style-meta-data){:target="_blank"}.
+This site is a _work in progress_...
 
 ### Blog
 
