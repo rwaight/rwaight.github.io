@@ -12,6 +12,7 @@ categories:
 slug: embed-pdf-in-mkdocs
 tags:
   - MkDocs
+  - MkDocs/Examples
   - ShouldBeInGuides
 ---
 
@@ -20,10 +21,9 @@ From https://fabacademy.org/2022/labs/kannai/Instruction/tips/embed_pdf/
 ## Embed PDF in Mkdocs
 
 ```shell
-.
-├── blog
-│   └── posts
-│       ├── hello-world.md
+docs
+├── guides
+│   └── mkdocs
 │       ├── mkdocs-embed-google-docs.md
 │       └── mkdocs-embed-pdf.md
 ├── files
