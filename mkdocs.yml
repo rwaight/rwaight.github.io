@@ -5,6 +5,7 @@ site_url: https://rwaight.github.io/
 site_author: rwaight
 repo_url: https://github.com/rwaight/rwaight.github.io
 repo_name: rwaight/rwaight.github.io
+# make sure to update the `plugins:git-committers:repository` value to match the `repo_name` value
 
 ## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
 ## the plugin won't do anything if `mkdocs.yml` defines a `nav` or `pages` entry
@@ -154,4 +155,8 @@ plugins:
       exclude:
         - index.md
       fallback_to_build_date: true
+  # Reserved for future use, see https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#document-contributors
+  # - git-committers:
+  #     repository: rwaight/rwaight.github.io
+  #     branch: main
 
