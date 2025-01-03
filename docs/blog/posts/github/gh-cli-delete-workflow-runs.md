@@ -12,6 +12,7 @@ tags:
   - GitHub/CLI
   - Automation
   - NeedToStandardizeTags
+  - ShouldBeInGuides
 ---
 
 # Delete GitHub workflow runs using the gh cli

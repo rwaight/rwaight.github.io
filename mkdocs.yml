@@ -5,6 +5,7 @@ site_url: https://rwaight.github.io/
 site_author: rwaight
 repo_url: https://github.com/rwaight/rwaight.github.io
 repo_name: rwaight/rwaight.github.io
+# make sure to update the `plugins:git-committers:repository` value to match the `repo_name` value
 
 ## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
 ## the plugin won't do anything if `mkdocs.yml` defines a `nav` or `pages` entry
@@ -40,6 +41,9 @@ theme:
     - navigation.sections
     - navigation.tracking
     - navigation.tabs
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+    #
   icon:
     # # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/?h=icon#favicon
     # favicon: 
@@ -48,6 +52,10 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
     repo: fontawesome/brands/git-alt
     #repo: octicons/mark-github-24
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    edit: material/pencil 
+    view: material/eye
+    #
   language: en    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language
   palette:
     # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette
@@ -58,6 +66,20 @@ docs_dir: 'docs'
 
 # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
 edit_uri: edit/main/docs/
+
+# # Reserved for future use, see https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/
+# #                          and https://github.com/jimporter/mike#usage
+### WARNING: Implementing versioning will require a lot of extra work to get started using GitHub actions and workflows
+# extra:
+#   version:
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#configuration
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#usage
+#     provider: mike
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#version-warning
+#     # be sure to override the `outdated` block
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#setting-a-default-version
+### WARNING: Implementing versioning will require a lot of extra work to get started using GitHub actions and workflows
+
 
 markdown_extensions:
   # https://python-markdown.github.io/extensions/attr_list/
@@ -139,4 +161,16 @@ plugins:
   - macros:
       # https://mkdocs-macros-plugin.readthedocs.io/en/stable/
       include_dir: includes
+  - git-revision-date-localized:
+      # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/index.html
+      # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/options/
+      enable_creation_date: true
+      # type: iso_datetime              # default is 'date'
+      exclude:
+        - index.md
+      fallback_to_build_date: true
+  # Reserved for future use, see https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#document-contributors
+  # - git-committers:
+  #     repository: rwaight/rwaight.github.io
+  #     branch: main
 
