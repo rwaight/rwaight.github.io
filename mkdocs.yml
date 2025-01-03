@@ -67,6 +67,20 @@ docs_dir: 'docs'
 # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
 edit_uri: edit/main/docs/
 
+# # Reserved for future use, see https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/
+# #                          and https://github.com/jimporter/mike#usage
+### WARNING: Implementing versioning will require a lot of extra work to get started using GitHub actions and workflows
+# extra:
+#   version:
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#configuration
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#usage
+#     provider: mike
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#version-warning
+#     # be sure to override the `outdated` block
+#     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/#setting-a-default-version
+### WARNING: Implementing versioning will require a lot of extra work to get started using GitHub actions and workflows
+
+
 markdown_extensions:
   # https://python-markdown.github.io/extensions/attr_list/
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
