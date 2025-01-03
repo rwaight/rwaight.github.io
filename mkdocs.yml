@@ -161,6 +161,9 @@ plugins:
   - macros:
       # https://mkdocs-macros-plugin.readthedocs.io/en/stable/
       include_dir: includes
+      # 
+      # https://mkdocs-macros-plugin.readthedocs.io/en/latest/rendering/#solution-2-opt-in-specify-which-pages-must-be-rendered
+      render_by_default: false
   - git-revision-date-localized:
       # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/index.html
       # https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/options/
