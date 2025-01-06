@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://rwaight.github.io/guides/setup-github-pages/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../munchkin-short-rules/">
       
       
         <link rel="next" href="../docker/">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-rendering-error" class="md-skip">
+        <a href="#mkdocs" class="md-skip">
           Skip to content
         </a>
       
@@ -267,23 +267,6 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-tabs__link">
-        
-  
-    
-  
-  MkDocs-Material
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
     
     
       <li class="md-tabs__item">
@@ -297,6 +280,40 @@
         </a>
       </li>
     
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../test/" class="md-tabs__link">
+        
+  
+    
+  
+  Test page
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index-summary/" class="md-tabs__link">
+        
+  
+    
+  
+  Summary
+
+      </a>
+    </li>
   
 
       
@@ -438,10 +455,6 @@
       
         
       
-        
-      
-        
-      
     
     
       
@@ -484,57 +497,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/archive/2025/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2025
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
       <a href="../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     2024
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../blog/archive/2022/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2022
   </span>
   
 
@@ -590,10 +557,6 @@
       
         
       
-        
-      
-        
-      
     
     
       
@@ -626,52 +589,6 @@
             Categories
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../blog/category/github/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GitHub
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../blog/category/github-actions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GitHub Actions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -780,6 +697,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -830,6 +751,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../munchkin-short-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Munchkin Short Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -839,8 +781,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Setup GitHub Pages
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -851,6 +802,172 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-mkdocs-material-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install MkDocs Material with Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install MkDocs Material with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-plugins-to-the-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding plugins to the Docker image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-new-site-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a new site with Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-the-site-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish the site with GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jekyll
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jekyll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-jekyll-on-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Jekyll on macOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Jekyll on macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-macos-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported macOS versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-install-ruby-using-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Ruby using Homebrew
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Install Ruby using Homebrew">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-install-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1: Install Homebrew
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-install-chruby-and-the-latest-ruby-with-ruby-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2: Install chruby and the latest Ruby with ruby-install
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Install Jekyll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -887,7 +1004,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
           
@@ -903,14 +1020,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Docker
           </label>
@@ -953,12 +1070,65 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Github
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Github
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../google-meeting-notes/" class="md-nav__link">
+      <a href="../github/gh-cli-delete-workflow-runs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Google Workspace Meeting Notes
+    Delete GitHub workflow runs using the gh cli
   </span>
   
 
@@ -975,11 +1145,181 @@
   
   
     <li class="md-nav__item">
-      <a href="../munchkin-short-rules/" class="md-nav__link">
+      <a href="../github/github-actions-enable-debug/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Munchkin Short Rules
+    Hello world!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github/github-approve-and-merge-prs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approving and merging multiple pull requests using the gh cli
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github/github-use-gh-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the GitHub CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Mkdocs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Mkdocs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embed google docs in Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embed PDF in Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-meeting-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Workspace Meeting Notes
   </span>
   
 
@@ -2206,30 +2546,8 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MkDocs-Material
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
     
     
-      
-        
       
         
       
@@ -2245,10 +2563,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2259,8 +2577,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Other
           </label>
@@ -2287,8 +2605,15 @@
 
               
             
-              
-                
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
@@ -2306,11 +2631,23 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index-summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summary
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2334,8 +2671,161 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MkDocs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-mkdocs-material-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install MkDocs Material with Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install MkDocs Material with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-plugins-to-the-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding plugins to the Docker image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-new-site-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a new site with Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-the-site-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish the site with GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jekyll
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jekyll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-jekyll-on-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Jekyll on macOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Jekyll on macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-macos-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported macOS versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-install-ruby-using-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Ruby using Homebrew
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Install Ruby using Homebrew">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-install-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1: Install Homebrew
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-install-chruby-and-the-latest-ruby-with-ruby-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2: Install chruby and the latest Ruby with ruby-install
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Install Jekyll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2381,23 +2871,159 @@
   
 
 
-<h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">&para;</a></h1>
-<p><em>File</em>: <code>guides/setup-github-pages.md</code></p>
-<p><em>UndefinedError</em>: 'env' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/mkdocs_macros/plugin.py&quot;, line 688, in render
-    return md_template.render(**page_variables)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 1295, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 84, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: &#39;env&#39; is undefined
+  <h1>Setup GitHub Pages</h1>
+
+<p>Resources:</p>
+<ul>
+<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">Creating a GitHub Pages site</a></li>
+</ul>
+<h2 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
+<p>Resources:</p>
+<ul>
+<li><a href="https://www.mkdocs.org/getting-started/">Getting Started with MkDocs</a></li>
+<li><a href="https://www.mkdocs.org/user-guide/deploying-your-docs/#github-pages">Deploying your docs to GitHub Pages</a></li>
+<li><a href="https://github.com/squidfunk/mkdocs-material"><code>squidfunk/mkdocs-material</code> on GitHub</a><ul>
+<li>the <a href="https://hub.docker.com/r/squidfunk/mkdocs-material"><code>squidfunk/mkdocs-material</code> docker image</a></li>
+</ul>
+</li>
+<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">Creating a GitHub Pages site</a></li>
+</ul>
+<h3 id="install-mkdocs-material-with-docker">Install MkDocs Material with Docker<a class="headerlink" href="#install-mkdocs-material-with-docker" title="Permanent link">&para;</a></h3>
+<p>Here are the steps from the <a href="https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker">installing with Docker</a> guide:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># pull the image</span>
+docker<span class="w"> </span>pull<span class="w"> </span>squidfunk/mkdocs-material
+
+<span class="c1"># navigate to the root directory of the repo</span>
+<span class="nb">cd</span><span class="w"> </span>/path/to/root/of/repo
+
+<span class="c1"># run the container and attach the current directory to /docs</span>
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs<span class="w"> </span>squidfunk/mkdocs-material
 </code></pre></div>
+<h4 id="adding-plugins-to-the-docker-image">Adding plugins to the Docker image<a class="headerlink" href="#adding-plugins-to-the-docker-image" title="Permanent link">&para;</a></h4>
+<p>From https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker</p>
+<blockquote>
+<p>Material for MkDocs only bundles selected plugins in order to keep the size of the official image small. If the plugin you want to use is not included, create a new <code>Dockerfile</code> and extend the official Docker image:
+<div class="highlight"><pre><span></span><code>FROM<span class="w"> </span>squidfunk/mkdocs-material
+RUN<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>...
+</code></pre></div>
+Next, you can build the image with the following command:
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>.
+</code></pre></div>
+The new image can be used exactly like the official image.</p>
+</blockquote>
+<h3 id="creating-a-new-site-with-docker">Creating a new site with Docker<a class="headerlink" href="#creating-a-new-site-with-docker" title="Permanent link">&para;</a></h3>
+<p>After issuing the <code>docker run</code> command above, issue the following:
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>new<span class="w"> </span>.
+</code></pre></div></p>
+<h3 id="publish-the-site-with-github-actions">Publish the site with GitHub Actions<a class="headerlink" href="#publish-the-site-with-github-actions" title="Permanent link">&para;</a></h3>
+<p>From From https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker</p>
+<blockquote>
+<p>Using <a href="https://github.com/features/actions">GitHub Actions</a> you can automate the deployment of your project documentation. At the root of your repository, create a new GitHub Actions workflow, e.g. .github/workflows/ci.yml, and copy and paste the following contents:
+<div class="highlight"><pre><span></span><code>name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo &quot;cache_id=$(date --utc &#39;+%V&#39;)&quot; &gt;&gt; $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
+</code></pre></div>
+Now, when a new commit is pushed to either the <code>master</code> or <code>main</code> branches, the static site is automatically built and deployed. Push your changes to see the workflow in action.</p>
+</blockquote>
+<h2 id="jekyll">Jekyll<a class="headerlink" href="#jekyll" title="Permanent link">&para;</a></h2>
+<p>Resources:
+* <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">Creating a GitHub Pages site</a>
+* <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll?platform=mac">Creating a GitHub Pages site with Jekyll</a>
+    * <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll">Adding a theme to your GitHub Pages site using Jekyll</a></p>
+<h3 id="install-jekyll-on-macos">Install Jekyll on macOS<a class="headerlink" href="#install-jekyll-on-macos" title="Permanent link">&para;</a></h3>
+<p>Follow the <a href="https://jekyllrb.com/docs/installation/macos/">Jekyll on macOS</a> guide:</p>
+<ol>
+<li>Install Ruby using Homebrew<ol>
+<li>Install Homebrew</li>
+<li>Install chruby and the latest Ruby with ruby-install</li>
+</ol>
+</li>
+<li>Install Jekyll</li>
+</ol>
+<h4 id="supported-macos-versions">Supported macOS versions<a class="headerlink" href="#supported-macos-versions" title="Permanent link">&para;</a></h4>
+<p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#supported-macos-versions">Jekyll supported macOS versions</a></p>
+<ul>
+<li>Ventura (macOS 13)</li>
+<li>Monterey (macOS 12)</li>
+<li>Big Sur (macOS 11)</li>
+</ul>
+<blockquote>
+<p>Older macOS versions might work, but we don’t officially support them.</p>
+</blockquote>
+<h4 id="1-install-ruby-using-homebrew">1. Install Ruby using Homebrew<a class="headerlink" href="#1-install-ruby-using-homebrew" title="Permanent link">&para;</a></h4>
+<p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#install-ruby">Install Ruby</a></p>
+<blockquote>
+<p>To install Jekyll on macOS, you need a proper Ruby development environment. While macOS comes preinstalled with Ruby, we don’t recommend using that version to install Jekyll. This external article goes over the various reasons <a href="https://www.moncefbelyamani.com/why-you-shouldn-t-use-the-system-ruby-to-install-gems-on-a-mac/">why you shouldn’t use the system Ruby</a>.</p>
+<p>Instead, you’ll need to install a separate and newer version of Ruby using a version manager such as <a href="https://asdf-vm.com/">asdf</a>, <a href="https://github.com/postmodern/chruby">chruby</a>, <a href="https://github.com/rbenv/rbenv">rbenv</a>, or <a href="https://rvm.io/">rvm</a>. Version managers allow you to easily install multiple versions of Ruby, and switch between them.</p>
+<p>We recommend <code>chruby</code> because it’s the simplest and least likely to cause issues.</p>
+<p>The instructions below are an excerpt from this detailed external guide to <a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/">install Ruby on Mac</a>. They work best if you’re setting up development tools for the first time on your Mac. If you’ve already tried to install Ruby or Jekyll on your Mac, or if you run into any issues, read that guide.</p>
+</blockquote>
+<h5 id="11-install-homebrew">1.1: Install Homebrew<a class="headerlink" href="#11-install-homebrew" title="Permanent link">&para;</a></h5>
+<p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#step-1-install-homebrew">Step 1: Install Homebrew</a></p>
+<blockquote>
+<p><a href="https://brew.sh/">Homebrew</a> makes it easy to install development tools on a Mac.
+<div class="highlight"><pre><span></span><code>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div></p>
+</blockquote>
+<h5 id="12-install-chruby-and-the-latest-ruby-with-ruby-install">1.2: Install chruby and the latest Ruby with ruby-install<a class="headerlink" href="#12-install-chruby-and-the-latest-ruby-with-ruby-install" title="Permanent link">&para;</a></h5>
+<p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#step-2-install-chruby-and-the-latest-ruby-with-ruby-install">Step 2: Install chruby and the latest Ruby with ruby-install</a></p>
+<blockquote>
+<p>Install <code>chruby</code> and <code>ruby-install</code> with Homebrew:
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>chruby<span class="w"> </span>ruby-install<span class="w"> </span>xz
+</code></pre></div></p>
+<p>Install the latest stable version of Ruby (supported by Jekyll):
+<div class="highlight"><pre><span></span><code>ruby-install<span class="w"> </span>ruby<span class="w"> </span><span class="m">3</span>.1.3
+</code></pre></div></p>
+<p>This will take a few minutes, and once it’s done, configure your shell to automatically use <code>chruby</code>:
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/chruby/share/chruby/chruby.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/chruby/share/chruby/auto.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;chruby ruby-3.1.3&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># run &#39;chruby&#39; to see actual version</span>
+</code></pre></div></p>
+<p>If you’re using Bash, replace <code>.zshrc</code> with <code>.bash_profile</code>. If you’re not sure, read this external guide to <a href="https://www.moncefbelyamani.com/which-shell-am-i-using-how-can-i-switch/">find out which shell you’re using</a>.</p>
+<p>Quit and relaunch Terminal, then check that everything is working:
+<div class="highlight"><pre><span></span><code>ruby<span class="w"> </span>-v
+</code></pre></div></p>
+<p>It should show ruby 3.1.3p185 (2022-11-24 revision 1a6b16756e) or a newer version.</p>
+<p>Next, read that same external guide for important notes about <a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/#how-to-install-different-versions-of-ruby-and-switch-between-them">setting and switching between Ruby versions with chruby</a>.</p>
+</blockquote>
+<h4 id="2-install-jekyll">2. Install Jekyll<a class="headerlink" href="#2-install-jekyll" title="Permanent link">&para;</a></h4>
+<p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#install-jekyll">Install Jekyll</a></p>
+<blockquote>
+<p>After installing Ruby with chruby, install the latest Jekyll gem:
+<div class="highlight"><pre><span></span><code>gem<span class="w"> </span>install<span class="w"> </span>jekyll
+</code></pre></div></p>
+</blockquote>
+<h4 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h4>
+<p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#troubleshooting">Jekyll on macOS Troubleshooting</a></p>
+<blockquote>
+<p>See <a href="https://jekyllrb.com/docs/troubleshooting/">Troubleshooting</a> or <a href="https://talk.jekyllrb.com/">ask for help on our forum</a>.</p>
+</blockquote>
 
 
 

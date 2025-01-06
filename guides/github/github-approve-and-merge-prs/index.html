@@ -10,13 +10,13 @@
         <meta name="author" content="rwaight">
       
       
-        <link rel="canonical" href="https://rwaight.github.io/blog/category/github/">
+        <link rel="canonical" href="https://rwaight.github.io/guides/github/github-approve-and-merge-prs/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../github-actions-enable-debug/">
       
       
-        <link rel="next" href="../github-actions/">
+        <link rel="next" href="../github-use-gh-cli/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>GitHub - rwaight on GitHub pages</title>
+        <title>Approving and merging multiple pull requests using the gh cli - rwaight on GitHub pages</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github" class="md-skip">
+        <a href="#merging-multiple-prs-with-bash" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHub
+              Approving and merging multiple pull requests using the gh cli
             
           </span>
         </div>
@@ -204,13 +204,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
     
@@ -226,11 +224,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../guides/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -267,23 +267,6 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-tabs__link">
-        
-  
-    
-  
-  MkDocs-Material
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
     
     
       <li class="md-tabs__item">
@@ -297,6 +280,40 @@
         </a>
       </li>
     
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../test/" class="md-tabs__link">
+        
+  
+    
+  
+  Test page
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index-summary/" class="md-tabs__link">
+        
+  
+    
+  
+  Summary
+
+      </a>
+    </li>
   
 
       
@@ -369,8 +386,6 @@
       
   
   
-    
-  
   
   
     
@@ -387,24 +402,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -415,13 +427,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -443,29 +455,22 @@
       
         
       
-        
-      
-        
-      
     
     
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -492,30 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2025
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../archive/2024/" class="md-nav__link">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -538,30 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2022/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2022
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../archive/2018/" class="md-nav__link">
+      <a href="../../../blog/archive/2018/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -587,16 +546,10 @@
                 
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
       
         
       
@@ -608,21 +561,18 @@
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -633,7 +583,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Categories
@@ -644,138 +594,12 @@
                 
   
   
-    
-  
-  
-    
-      
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    GitHub
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    GitHub
-  </span>
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-github-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the GitHub CLI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#approving-and-merging-multiple-pull-requests-using-the-gh-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Approving and merging multiple pull requests using the gh cli
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hello-world" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hello world!
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-github-workflow-runs-using-the-gh-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Delete GitHub workflow runs using the gh cli
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
     
   
   
     <li class="md-nav__item">
-      <a href="../github-actions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GitHub Actions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../hello-world/" class="md-nav__link">
+      <a href="../../../blog/category/hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs/" class="md-nav__link">
+      <a href="../../../blog/category/mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test/" class="md-nav__link">
+      <a href="../../../blog/category/test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,6 +678,8 @@
       
   
   
+    
+  
   
   
     
@@ -871,24 +697,31 @@
       
         
       
+        
+      
+        
+      
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../guides/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -899,13 +732,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -921,7 +754,28 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/setup-github-pages/" class="md-nav__link">
+      <a href="../../munchkin-short-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Munchkin Short Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-github-pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -955,19 +809,22 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../guides/docker/" class="md-nav__link ">
+            <a href="../../docker/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -978,14 +835,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Docker
           </label>
@@ -1000,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/docker/container-ansible/" class="md-nav__link">
+      <a href="../../docker/container-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1026,14 +883,69 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Github
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Github
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/google-meeting-notes/" class="md-nav__link">
+      <a href="../gh-cli-delete-workflow-runs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Google Workspace Meeting Notes
+    Delete GitHub workflow runs using the gh cli
   </span>
   
 
@@ -1050,11 +962,237 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/munchkin-short-rules/" class="md-nav__link">
+      <a href="../github-actions-enable-debug/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Munchkin Short Rules
+    Hello world!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Approving and merging multiple pull requests using the gh cli
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Approving and merging multiple pull requests using the gh cli
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#merging-multiple-prs-with-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging multiple PRs with bash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-multiple-prs-with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging multiple PRs with PowerShell
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-use-gh-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the GitHub CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Mkdocs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Mkdocs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embed google docs in Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embed PDF in Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../google-meeting-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Workspace Meeting Notes
   </span>
   
 
@@ -2281,30 +2419,8 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MkDocs-Material
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
     
     
-      
-        
       
         
       
@@ -2320,10 +2436,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2334,8 +2450,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Other
           </label>
@@ -2362,8 +2478,15 @@
 
               
             
-              
-                
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
@@ -2381,11 +2504,23 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index-summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summary
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2409,8 +2544,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2419,36 +2552,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-github-cli" class="md-nav__link">
+  <a href="#merging-multiple-prs-with-bash" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the GitHub CLI
+      Merging multiple PRs with bash
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#approving-and-merging-multiple-pull-requests-using-the-gh-cli" class="md-nav__link">
+  <a href="#merging-multiple-prs-with-powershell" class="md-nav__link">
     <span class="md-ellipsis">
-      Approving and merging multiple pull requests using the gh cli
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hello-world" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hello world!
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-github-workflow-runs-using-the-gh-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Delete GitHub workflow runs using the gh cli
+      Merging multiple PRs with PowerShell
     </span>
   </a>
   
@@ -2463,128 +2578,61 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h1>
-      </header>
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#github" class="md-tag">GitHub</a>
+    
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#githubcli" class="md-tag">GitHub/CLI</a>
+    
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#automation" class="md-tag">Automation</a>
+    
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#needtostandardizetags" class="md-tag">NeedToStandardizeTags</a>
+    
+  
+    
+    
+    
+      <a href="../../../plugins/tags/#shouldbeinguides" class="md-tag">ShouldBeInGuides</a>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/rwaight/rwaight.github.io/edit/main/docs/guides/github/github-approve-and-merge-prs.md" title="Edit this page" class="md-content__button md-icon">
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-01-02 00:00:00+00:00">January 2, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">GitHub</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-the-github-cli"><a class="toclink" href="../../2025/01/02/using-the-github-cli/">Using the GitHub CLI</a></h2>
-<p>The <a href="https://cli.github.com/">GitHub CLI</a>, or <code>gh</code>, is a command-line interface to GitHub for use in your terminal or your scripts.
-- <a href="https://github.com/cli/cli#installation">View the GitHub CLI installation instructions</a></p>
-<h5 id="configuration"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#configuration">Configuration</a></h5>
-<p>Run <a href="https://cli.github.com/manual/gh_auth_login"><code>gh auth login</code></a> to authenticate with your GitHub account. Alternatively, <code>gh</code> will respect the <code>GITHUB_TOKEN</code> <a href="https://cli.github.com/manual/gh_help_environment">environment variable</a>.</p>
-<p>To set your preferred editor, use <code>gh config set editor &lt;editor&gt;</code>. Read more about <a href="https://cli.github.com/manual/gh_config"><code>gh config</code></a> and <a href="https://cli.github.com/manual/gh_help_environment">environment variables</a>.</p>
-<p>Declare your aliases for often-used commands with <a href="https://cli.github.com/manual/gh_alias_set"><code>gh alias set</code></a>.</p>
-<h4 id="sign-in-to-github"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#sign-in-to-github">Sign in to GitHub</a></h4>
-<p>Follow these steps once you have followed <a href="https://github.com/cli/cli#installation">the GitHub CLI installation instructions</a></p>
-<ol>
-<li>In your terminal, issue <code>gh auth login</code> and follow the prompts
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>auth<span class="w"> </span>status
-</code></pre></div></li>
-</ol>
-<h4 id="verify-you-are-signed-in-to-github"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#verify-you-are-signed-in-to-github">Verify you are signed in to GitHub</a></h4>
-<p>Ensure you are signed in to GitHub with the CLI using <code>gh auth status</code></p>
-<ol>
-<li>
-<p>Check the GH authentication status with
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>auth<span class="w"> </span>status
-</code></pre></div></p>
-</li>
-<li>
-<p>Ensure the output shows
-<div class="highlight"><pre><span></span><code>github.com
-<span class="w">  </span>✓<span class="w"> </span>Logged<span class="w"> </span><span class="k">in</span><span class="w"> </span>to<span class="w"> </span>github.com<span class="w"> </span>as<span class="w"> </span>GH_USERNAME<span class="w"> </span><span class="o">(</span>/home/USER/.config/gh/hosts.yml<span class="o">)</span>
-<span class="w">  </span>✓<span class="w"> </span>Git<span class="w"> </span>operations<span class="w"> </span><span class="k">for</span><span class="w"> </span>github.com<span class="w"> </span>configured<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>https<span class="w"> </span>protocol.
-<span class="w">  </span>✓<span class="w"> </span>Token:<span class="w"> </span>*******************
-</code></pre></div></p>
-</li>
-<li>
-<p>If needed, login to GitHub with <code>gh auth login</code> and follow the prompts</p>
-</li>
-</ol>
-<h3 id="next-steps"><a class="toclink" href="../../2025/01/02/using-the-github-cli/#next-steps">Next steps</a></h3>
-<p>Read through the <a href="https://cli.github.com/manual/">GitHub CLI manual</a> to learn more.
-- <a href="https://cli.github.com/manual/gh">Available commands</a>
-- <a href="https://cli.github.com/manual/examples">Usage examples</a>
-- <a href="https://github.com/topics/gh-extension">Community extensions</a></p>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-11-08 00:00:00+00:00">November 8, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">GitHub</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="approving-and-merging-multiple-pull-requests-using-the-gh-cli"><a class="toclink" href="../../2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/">Approving and merging multiple pull requests using the gh cli</a></h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Approving and merging multiple pull requests using the gh cli</h1>
+
 <!--- ## Approving and merging multiple PRs --->
 
 <p>You can use the <strong>GitHub CLI</strong> with <strong>PowerShell</strong> or <strong>bash</strong> to approve and merge multiple pull requests.  </p>
-<h4 id="merging-multiple-prs-with-bash"><a class="toclink" href="../../2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/#merging-multiple-prs-with-bash">Merging multiple PRs with bash</a></h4>
+<h3 id="merging-multiple-prs-with-bash">Merging multiple PRs with bash<a class="headerlink" href="#merging-multiple-prs-with-bash" title="Permanent link">&para;</a></h3>
 <p>The Bash example is:
 <div class="highlight"><pre><span></span><code><span class="c1"># create the array</span>
 <span class="nv">pr_array</span><span class="o">=(</span>
@@ -2603,7 +2651,7 @@
 <span class="w">  </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;    Press enter to continue ... &quot;</span>
 <span class="k">done</span>
 </code></pre></div></p>
-<h4 id="merging-multiple-prs-with-powershell"><a class="toclink" href="../../2024/11/08/approving-and-merging-multiple-pull-requests-using-the-gh-cli/#merging-multiple-prs-with-powershell">Merging multiple PRs with PowerShell</a></h4>
+<h3 id="merging-multiple-prs-with-powershell">Merging multiple PRs with PowerShell<a class="headerlink" href="#merging-multiple-prs-with-powershell" title="Permanent link">&para;</a></h3>
 <p>The PowerShell example is:
 <div class="highlight"><pre><span></span><code><span class="c"># create the array</span>
 <span class="nv">$pr_array</span> <span class="p">=</span> <span class="p">@(</span>
@@ -2622,135 +2670,54 @@
   <span class="n">Pause</span>
 <span class="p">}</span>
 </code></pre></div></p>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-06-25 00:00:00+00:00">June 25, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">GitHub</a>, 
-              <a href="../github-actions/" class="md-meta__link">GitHub Actions</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="hello-world"><a class="toclink" href="../../2024/06/25/hello-world/">Hello world!</a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2024/06/25/hello-world/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2022-09-22 00:00:00+00:00">September 22, 2022</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">GitHub</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="delete-github-workflow-runs-using-the-gh-cli"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/">Delete GitHub workflow runs using the gh cli</a></h2>
-<h4 id="finding-the-workflow-runs-by-id"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#finding-the-workflow-runs-by-id">Finding the workflow runs by ID</a></h4>
-<p>You can use the <code>gh</code> command line interface to list the workflow runs by ID:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
-</code></pre></div></p>
-<h5 id="workflow-runs-by-id-for-a-specific-workflow"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#workflow-runs-by-id-for-a-specific-workflow">Workflow runs by ID for a specific workflow</a></h5>
-<p>You can also filter the workflow runs to a specific workflow using the <code>-w myworkflow.yml</code>, which would only list the workflow runs for the <code>.github/workflows/myworkflow.yml</code> workflow:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-w<span class="w"> </span>myworkflow.yml<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
-</code></pre></div></p>
-<h3 id="using-bash-or-zsh"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#using-bash-or-zsh">Using bash or zsh</a></h3>
-<p>From <a href="https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/">https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/</a></p>
-<p>Hello, future me. This is for you next time you want to do this.</p>
-<p>When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span><span class="w"> </span><span class="p">|</span>
-<span class="w">  </span>xargs<span class="w"> </span>-IID<span class="w"> </span>gh<span class="w"> </span>api<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s2">&quot;repos/</span><span class="k">$(</span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--json<span class="w"> </span>nameWithOwner<span class="w"> </span>-q<span class="w"> </span>.nameWithOwner<span class="k">)</span><span class="s2">/actions/runs/ID&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>DELETE
-</code></pre></div></p>
-<p>This will delete <em>all</em> (well, up to 20, or whatever you set in <code>--limit</code>) your workflow runs. You can add flags to <code>gh run list</code> to filter runs by workflow or by triggering user.</p>
-<h3 id="using-powershell"><a class="toclink" href="../../2022/09/22/delete-github-workflow-runs-using-the-gh-cli/#using-powershell">Using PowerShell</a></h3>
-<p>The same command as above, but in PowerShell</p>
-<div class="highlight"><pre><span></span><code><span class="n">gh</span> <span class="n">run</span> <span class="n">list</span> <span class="p">-</span><span class="n">-json</span> <span class="n">databaseId</span> <span class="n">-q</span> <span class="s1">&#39;.[].databaseId&#39;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">gh</span> <span class="n">api</span> <span class="s2">&quot;repos/</span><span class="p">$(</span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="p">-</span><span class="n">-json</span> <span class="n">nameWithOwner</span> <span class="n">-q</span> <span class="p">.</span><span class="n">nameWithOwner</span><span class="p">)</span><span class="s2">/actions/runs/$_&quot;</span> <span class="n">-X</span> <span class="n">DELETE</span> <span class="p">}</span>
-</code></pre></div>
-    
-  </div>
-</article>
-      
-      
-        
-          
 
 
 
-<nav class="md-pagination">
+
+
+
+
   
-</nav>
-        
-      
-    </div>
-  </div>
+    
+  
+  
+    
+  
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 3, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 2, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
