@@ -13,6 +13,7 @@ slug: embed-google-docs-in-mkdocs
 tags:
   - Google Workspace
   - MkDocs
+  - MkDocs/Examples
   - ShouldBeInGuides
 ---
 

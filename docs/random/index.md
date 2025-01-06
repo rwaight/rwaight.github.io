@@ -2,7 +2,7 @@
 title: Random pages index page
 date:
   created: 2024-06-25
-  updated: 2024-09-05
+  updated: 2025-01-05
 ---
 
 # Random pages index page
@@ -73,3 +73,43 @@ delete flash:config.text.backup
 delete flash:config.text.old
 delete flash:*.old
 ```
+
+### Using SanDisk Sansa m260 with Windows 10
+
+The old Sansa MP3 players had two different USB modes, `MSC` and `MTP`
+- MSC mode requires using Windows Media Player to sync files
+- MTP mode allows access to the music directory on the devices internal drive
+
+On the Sansa m260, the internal drive was accessible in `MTP` mode.  The process to do this is:
+1. Turn off the Sansa m260 MP3 player
+2. Sliding the HOLD switch towards the headphone jack (orange showing)
+3. Press and hold the rewind button `|<<` while connecting the USB cable into the bottom of the player
+
+
+#### Old forum comments
+
+##### Sansa e250 in MTP mode
+
+From [https://forums.sandisk.com/t/my-computer-does-not-recognize-sansa-e250-in-msc-mode-but-will-in-mtp-mode/26263](https://forums.sandisk.com/t/my-computer-does-not-recognize-sansa-e250-in-msc-mode-but-will-in-mtp-mode/26263)
+
+> I can’t access my microsd card unless my player is in msc mode, which won’t work.  I have googled several sites, but none have helped.  I have tried that thing where you lock up the player, hold the middle button while plugging it in.
+
+**Response**:
+> If you have a v1 model (firmware vserion starts with a V01 on the INFO screen) that is the way it works. The card can only be accessed in MSC mode. It cannot be ‘synced’ or accessed in MTP mode. That’s why many veteren Sansa owners who started out with these devices exclusively use MSC mode and drag & drop file transfer method for both internal & external memory. It greatly simplifies things and reduces confusion. Files put on using MTP cannot be seen or accessed via your computer while connected in MSC mode and vice-versa.
+> 
+> And you have the “force MSC mode” procedure slightly off . . . after sliding the HOLD switch towards the headphone jack (orange showing), you press and hold the REW |<< button while connecting the cable into the bottom of the player, not the middle button. Make sure your player is OFF to begin with and it also helps to already have Windows Explorer (My Computer) open beforehand.
+
+##### Sansa e250 
+
+From [https://forums.sandisk.com/t/my-sansa-e250-does-not-have-usb-mode-on-its-setting-menu/26494](https://forums.sandisk.com/t/my-sansa-e250-does-not-have-usb-mode-on-its-setting-menu/26494)
+
+> my sansa e250 does not have usb mode on its setting menu… i’ve tried to look for usb mode on all menus but i can’t find it… and the computer cannot recognize the device… it also stops charging the battery even if the device displays it is connected to the computer…  how can i fix this?
+
+**Response**:
+> If your device isn’t being recognized in MTP mode, all you have to do is force an MSC connection:
+> Turn off the sansa v2.
+> Flip the LOCK / HOLD switch to the right (orange showing)
+> Hold down the << button while connecting.  An MSC connection should be established within 15 seconds or so, at the most, if the PC’s never sen the device in this mode.  Keep the << button depressed until it shows “connected” on the display.
+> 
+> At this point, you should see the little lightning bolt.
+
