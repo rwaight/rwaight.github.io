@@ -2,15 +2,14 @@
 ## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
 nav:
     - index.md
-    - Git: git
+    #- Git: git
+    - git
     - GitHub: github
     - OS: 
         - macos
         - windows
-    - UniFi: 
-        - unifi
-    - Random: 
-        - ... | random-*.md
+    #- UniFi: unifi
+    - unifi
     - Test: 
         - ... | test-*.md
     - Other: 
