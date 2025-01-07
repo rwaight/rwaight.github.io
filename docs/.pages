@@ -2,10 +2,9 @@
 ## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
 nav:
     - Home: 
-        - index.md
+        ... | flat | index-*.md
         - random
         - ...
-        - index-summary.md
     - Blog: blog
     # - Blog:
         # - blog/index.md
@@ -15,7 +14,7 @@ nav:
     - Guides: guides
     #- Random: random
     #- MkDocs-Material: https://squidfunk.github.io/mkdocs-material/
-    - Other: 
-        - something.md
+    #- Other: 
+    #    - something.md
     #- ...
     #- index-summary.md
