@@ -3,7 +3,7 @@ title: Embed PDF in Mkdocs
 draft: false
 date:
   created: 2025-01-03
-  updated: 2025-01-03
+  updated: 2025-01-08
 description: >
   Embed a PDF into MkDocs
 authors: [rwaight]
@@ -14,6 +14,8 @@ tags:
   - MkDocs
   - MkDocs/Examples
   - ShouldBeInGuides
+# https://mkdocs-macros-plugin.readthedocs.io/en/latest/rendering/#opt-in-with-the-markdown-pages-header
+render_macros: true
 ---
 
 From https://fabacademy.org/2022/labs/kannai/Instruction/tips/embed_pdf/
