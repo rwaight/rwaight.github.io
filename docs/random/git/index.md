@@ -2,7 +2,7 @@
 title: Random Git Notes
 date:
   created: 2023-10-02
-  updated: 2024-08-06
+  updated: 2025-01-08
 authors:
   - rwaight
 #slug: random-git-notes
@@ -11,6 +11,9 @@ tags:
 ---
 
 # Random Git Notes
+
+- [Learn Git Branching](https://learngitbranching.js.org/)
+    - [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
 
 ## References
 
