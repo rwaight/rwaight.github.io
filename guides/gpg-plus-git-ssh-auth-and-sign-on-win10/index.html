@@ -10,26 +10,26 @@
         <meta name="author" content="rwaight">
       
       
-        <link rel="canonical" href="https://rwaight.github.io/blog/2018/10/14/hello-world/">
+        <link rel="canonical" href="https://rwaight.github.io/guides/gpg-plus-git-ssh-auth-and-sign-on-win10/">
+      
+      
+        <link rel="prev" href="../google-meeting-notes/">
       
       
       
-        <link rel="next" href="../../../../2024/05/28/setting-up-a-blog/">
-      
-      
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Hello world! - rwaight on GitHub pages</title>
+        <title>GPG + Git SSH Authentication and Signing on Windows 10 - rwaight on GitHub pages</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -43,12 +43,12 @@
         
         
         
-        <link rel="stylesheet" href="../../../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hello-world" class="md-skip">
+        <a href="#gpg-git-ssh-authentication-and-signing-on-windows-10" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+    <a href="../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hello world!
+              GPG + Git SSH Authentication and Signing on Windows 10
             
           </span>
         </div>
@@ -189,12 +189,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../index-summary/" class="md-tabs__link">
+        <a href="../../index-summary/" class="md-tabs__link">
           
   
     
   
   Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
 
         </a>
       </li>
@@ -211,27 +231,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
-          
-  
-    
-  
-  Blog
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../../../guides/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -255,9 +255,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -268,7 +266,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+    <a href="../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -329,7 +327,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -360,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../index-summary/" class="md-nav__link">
+      <a href="../../index-summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -416,7 +414,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/" class="md-nav__link ">
+            <a href="../../random/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -472,7 +470,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/git/" class="md-nav__link ">
+            <a href="../../random/git/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -543,7 +541,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/github/" class="md-nav__link ">
+            <a href="../../random/github/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-actions-fedora-libvirt/" class="md-nav__link">
+      <a href="../../random/github/github-actions-fedora-libvirt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -597,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-actions-nested-virtualization/" class="md-nav__link">
+      <a href="../../random/github/github-actions-nested-virtualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -618,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-actions-notes/" class="md-nav__link">
+      <a href="../../random/github/github-actions-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-ops-notes/" class="md-nav__link">
+      <a href="../../random/github/github-ops-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/google-apps-and-github-actions/" class="md-nav__link">
+      <a href="../../random/github/google-apps-and-github-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/random-github-notes/" class="md-nav__link">
+      <a href="../../random/github/random-github-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/macos/macos-which-shell-am-i-using/" class="md-nav__link">
+      <a href="../../random/macos/macos-which-shell-am-i-using/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -877,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/windows/build-win10-with-github-actions/" class="md-nav__link">
+      <a href="../../random/windows/build-win10-with-github-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -898,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/windows/random-windows/" class="md-nav__link">
+      <a href="../../random/windows/random-windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -919,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/windows/windows-change-env-vars-as-user/" class="md-nav__link">
+      <a href="../../random/windows/windows-change-env-vars-as-user/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -983,7 +981,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/unifi/" class="md-nav__link ">
+            <a href="../../random/unifi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1085,7 +1083,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/unifi/ubntwiki/" class="md-nav__link ">
+            <a href="../../random/unifi/ubntwiki/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1118,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/unifi/ubntwiki/unifi-controller-api/" class="md-nav__link">
+      <a href="../../random/unifi/ubntwiki/unifi-controller-api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1155,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/unifi/unifi-controller-management/" class="md-nav__link">
+      <a href="../../random/unifi/unifi-controller-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1228,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/test-page-1/" class="md-nav__link">
+      <a href="../../random/test-page-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/check-epoch-date/" class="md-nav__link">
+      <a href="../../random/check-epoch-date/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/google-docs-from-markdown/" class="md-nav__link">
+      <a href="../../random/google-docs-from-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/image-builder-notes/" class="md-nav__link">
+      <a href="../../random/image-builder-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
+      <a href="../../random/gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1489,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/packer/using-packer-with-vault/" class="md-nav__link">
+      <a href="../../random/packer/using-packer-with-vault/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../something/" class="md-nav__link">
+      <a href="../../something/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1557,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../test/" class="md-nav__link">
+      <a href="../../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1582,8 +1580,6 @@
       
   
   
-    
-  
   
   
     
@@ -1600,24 +1596,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1628,13 +1621,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -1661,20 +1654,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1701,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2024/" class="md-nav__link">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2018/" class="md-nav__link">
+      <a href="../../blog/archive/2018/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1766,20 +1756,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1806,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/hello-world/" class="md-nav__link">
+      <a href="../../blog/category/hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1829,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/mkdocs/" class="md-nav__link">
+      <a href="../../blog/category/mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1852,7 +1839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/test/" class="md-nav__link">
+      <a href="../../blog/category/test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1885,6 +1872,8 @@
       
   
   
+    
+  
   
   
     
@@ -1911,21 +1900,24 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../guides/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1936,13 +1928,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -1958,7 +1950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/munchkin-short-rules/" class="md-nav__link">
+      <a href="../munchkin-short-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/setup-github-pages/" class="md-nav__link">
+      <a href="../setup-github-pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2013,10 +2005,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2025,7 +2020,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../guides/docker/" class="md-nav__link ">
+            <a href="../docker/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2036,7 +2031,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2058,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/docker/container-ansible/" class="md-nav__link">
+      <a href="../docker/container-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2102,17 +2097,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2137,7 +2135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/gh-cli-delete-workflow-runs/" class="md-nav__link">
+      <a href="../github/gh-cli-delete-workflow-runs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2158,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/github-actions-enable-debug/" class="md-nav__link">
+      <a href="../github/github-actions-enable-debug/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/github-approve-and-merge-prs/" class="md-nav__link">
+      <a href="../github/github-approve-and-merge-prs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/github-use-gh-cli/" class="md-nav__link">
+      <a href="../github/github-use-gh-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2244,17 +2242,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2279,7 +2280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
+      <a href="../mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2300,7 +2301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
+      <a href="../mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2321,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-embed-youtube/" class="md-nav__link">
+      <a href="../mkdocs/mkdocs-embed-youtube/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2342,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-iframe-full-width/" class="md-nav__link">
+      <a href="../mkdocs/mkdocs-iframe-full-width/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2371,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/google-meeting-notes/" class="md-nav__link">
+      <a href="../google-meeting-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2389,10 +2390,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../guides/gpg-plus-git-ssh-auth-and-sign-on-win10/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GPG + Git SSH Authentication and Signing on Windows 10
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2401,6 +2422,136 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software needed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-or-import-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create or import a key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-gpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure GPG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-control-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH control file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restart the agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-agent-on-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the agent on startup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wsl-ssh-pageant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup wsl-ssh-pageant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check your SSH keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-with-github-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use with GitHub (Authentication)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-with-github-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use with GitHub (Signing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-with-windows-subsystem-for-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use with Windows Subsystem for Linux
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2421,8 +2572,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2437,6 +2586,122 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software needed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-or-import-a-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create or import a key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-gpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure GPG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-control-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH control file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restart the agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-agent-on-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the agent on startup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wsl-ssh-pageant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup wsl-ssh-pageant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check your SSH keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-with-github-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use with GitHub (Authentication)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-with-github-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use with GitHub (Signing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-with-windows-subsystem-for-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use with Windows Subsystem for Linux
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2444,103 +2709,48 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    Back to index
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="../../../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          Rob Waight
-                        
-                      </strong>
-                      <br>
-                      Creator
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    Metadata
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2018-10-14 00:00:00+00:00" class="md-ellipsis">October 14, 2018</time>
-                      </div>
-                    </li>
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2024-06-26 00:00:00+00:00" class="md-ellipsis">June 26, 2024</time>
-                        </div>
-                      </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/hello-world/">Hello World</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              1 min read
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../plugins/tags/#authentication" class="md-tag">Authentication</a>
+    
+  
+    
+    
+    
+      <a href="../../plugins/tags/#gpg" class="md-tag">GPG</a>
+    
+  
+    
+    
+    
+      <a href="../../plugins/tags/#git" class="md-tag">Git</a>
+    
+  
+    
+    
+    
+      <a href="../../plugins/tags/#ssh" class="md-tag">SSH</a>
+    
+  
+    
+    
+    
+      <a href="../../plugins/tags/#windows" class="md-tag">Windows</a>
+    
+  
+</nav>
+
 
   
-    <a href="https://github.com/rwaight/rwaight.github.io/edit/main/docs/blog/posts/hello-world.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/rwaight/rwaight.github.io/edit/main/docs/guides/gpg-plus-git-ssh-auth-and-sign-on-win10.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2548,12 +2758,134 @@
   
 
 
-<h1 id="hello-world">Hello world!<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h1>
-<p>I'm hosted with GitHub Pages.  You can create your own GitHub pages site by following <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">the GitHub Pages documentation</a>.</p>
-<p>You can also read through my <a href="https://rwaight.github.io/guides/setup-github-pages/">GitHub Pages setup guide</a>, which has information about using either <a href="https://rwaight.github.io/guides/setup-github-pages/#mkdocs">MkDocs Material</a> or <a href="https://rwaight.github.io/guides/setup-github-pages/#jekyll">Jekyll</a> with GitHub Pages.</p>
-<!-- more -->
+<p>From <a href="https://gist.github.com/matusnovak/302c7b003043849337f94518a71df777">https://gist.github.com/matusnovak/302c7b003043849337f94518a71df777</a></p>
+<h1 id="gpg-git-ssh-authentication-and-signing-on-windows-10">GPG + Git SSH Authentication and Signing on Windows 10<a class="headerlink" href="#gpg-git-ssh-authentication-and-signing-on-windows-10" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>This simple Gist will explain how to settup your GPG key to work for SSH authentication (with Git) and Git commit signing on Windows 10.
+This may seem straightforward on Linux, but there are certain tweaks needed on Windows.</p>
+<p><strong>No Cygwin, no MinGW, no Git Bash</strong> or any other Linux emulated environment. This works in pure Windows 10.</p>
+<h2 id="software-needed">Software needed<a class="headerlink" href="#software-needed" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://git-scm.com/download/win">Git for Windows</a></li>
+<li><a href="https://www.gpg4win.org/">Gpg4win</a></li>
+<li><a href="https://github.com/PowerShell/Win32-OpenSSH/releases">OpenSSH Win64</a></li>
+<li><a href="https://github.com/benpye/wsl-ssh-pageant/releases">benpye/wsl-ssh-pageant</a> (not on Chocolately)</li>
+</ul>
+<p>If you prefer chocolately: <code>choco install git gpg4win openssh</code></p>
+<p>If you have the latest version of Windows 10, the OpenSSH is installed in <code>System32/OpenSSH</code> folder.</p>
+<p>Make sure that your system's PATH environment variable contains <code>C:\Program Files (x86)\GnuPG\bin</code>.</p>
+<h2 id="create-or-import-a-key">Create or import a key<a class="headerlink" href="#create-or-import-a-key" title="Permanent link">&para;</a></h2>
+<p>You will have to create a new GPG key or import an existing one. There are plenty of tutorials to walk you through it on the internet.
+You must make sure that your key has signing and authenticating subkeys!</p>
+<p>You can import an existing key with <code>gpg --import key.gpg</code></p>
+<p>To list the keys use <code>gpg -k --with-keygrip</code>, example below.</p>
+<div class="highlight"><pre><span></span><code>&gt; gpg -k --with-keygrip
+C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
+------------------------------------------------
+pub   rsa4096 2019-10-28 [SC] [expires: 2021-10-25]
+      9B0069EA5619486EB2A7E44392FC071FF37A93E5
+      Keygrip = 496F3C43AB7D195624832E0E3BF4FF9B531D2DB8
+uid           [ultimate] Matus Novak &lt;email@matusnovak.com&gt;
+sub   rsa4096 2019-10-28 [E] [expires: 2021-10-25]
+      Keygrip = EE087ED74ED6F7843D397825CFB7D9EDD79F73BF
+sub   rsa4096 2019-10-28 [A] [expires: 2021-10-25]
+      Keygrip = 0B60893C664F965058DFDE93F34199566A12C39A
+sub   rsa4096 2019-10-28 [S] [expires: 2021-10-25]
+      Keygrip = BC0EC1D2E8E8B24405519823D51AFC4A05DF5E05
+</code></pre></div>
+<p>This key has three subkeys, one for [A]authentication, one for [S]igning, and one for [E]ncryption. We will need the [S] and [A].</p>
+<h2 id="configure-gpg">Configure GPG<a class="headerlink" href="#configure-gpg" title="Permanent link">&para;</a></h2>
+<p><strong>WARNING:</strong> Don't use CRLF newlines! You must switch to using LF only!</p>
+<p>First, create a file <code>C:\Users\USER\AppData\Roaming\gnupg\gpg.conf</code> with the following contents. No new lines at the end.</p>
+<div class="highlight"><pre><span></span><code>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\gpg.conf
+use-agent
+</code></pre></div>
+<p>Next, create another file <code>C:\Users\USER\AppData\Roaming\gnupg\gpg-agent.conf</code> with the following contents. No new lines at the end.</p>
+<div class="highlight"><pre><span></span><code>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\gpg-agent.conf
+enable-ssh-support
+enable-putty-support
+</code></pre></div>
+<h2 id="ssh-control-file">SSH control file<a class="headerlink" href="#ssh-control-file" title="Permanent link">&para;</a></h2>
+<p>There is one more file, the <code>C:\Users\USER\AppData\Roaming\gnupg\sshcontrol</code>. This file may already exist in your <code>gnupg</code> folder. If not, create it.</p>
+<p>Add your authenticating subkey (the keygrip ID) into this file. <strong>There must be a single newline at the end! You must use LF line endings, not CRLF!.</strong> Otherwise the key won't be recognised. Example below.</p>
+<div class="highlight"><pre><span></span><code>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\sshcontrol
+0B60893C664F965058DFDE93F34199566A12C39A
+</code></pre></div>
+<h2 id="restart-the-agent">Restart the agent<a class="headerlink" href="#restart-the-agent" title="Permanent link">&para;</a></h2>
+<p>Every time you change your configuration, you must restart the agent using the <code>gpg-connect-agent killagent /bye</code> and <code>gpg-connect-agent /bye</code>. Example below.</p>
+<div class="highlight"><pre><span></span><code>&gt; gpg-connect-agent killagent /bye
+OK closing connection
 
-<p>...</p>
+&gt; gpg-connect-agent /bye
+gpg-connect-agent: no running gpg-agent - starting &#39;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin\gpg-agent.exe&#39;
+gpg-connect-agent: waiting for the agent to come up ... (5s)
+gpg-connect-agent: connection to agent established
+</code></pre></div>
+<h2 id="start-the-agent-on-startup">Start the agent on startup<a class="headerlink" href="#start-the-agent-on-startup" title="Permanent link">&para;</a></h2>
+<p>Make sure that the gpg agent starts on the startup. There are multiple ways to do that. The most simple solution is to create a shortcut of <code>C:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe</code> inside of <code>C:\Users\USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code>. Modify the shortcut, so that the "Target" ends with <code>/bye</code>, such as: <code>"C:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe" /bye</code>.</p>
+<p>The <code>/bye</code> is a necessary argument so that the command starts the agent and exits afterwards.</p>
+<h2 id="setup-wsl-ssh-pageant">Setup wsl-ssh-pageant<a class="headerlink" href="#setup-wsl-ssh-pageant" title="Permanent link">&para;</a></h2>
+<p>By default the Gpg4Win does not work with OpenSSH out of the box. It works with Putty, but if you want to use <code>ssh</code> command from your terminal, or use Visual Studio Code remote connection, you must do this step.</p>
+<p>Download the <code>wsl-ssh-pageant-amd64-gui.exe</code> from <a href="https://github.com/benpye/wsl-ssh-pageant/releases">benpye/wsl-ssh-pageant releases</a>. (It's not a GUI, it only acts as one so you don't get a terminal window).</p>
+<p>There is no install wizard for this application. Simply create a folder <code>C:\wsl-ssh-pageant</code> and put the <code>wsl-ssh-pageant-amd64-gui.exe</code> inside of it. The location does not matter.</p>
+<p>Next, create a shortcut of <code>C:\wsl-ssh-pageant\wsl-ssh-pageant-amd64-gui.exe</code> inside of <code>C:\Users\USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code>. Modify the shortcut, adding some command line arguments, so that the "Target" looks like the following: </p>
+<div class="highlight"><pre><span></span><code>C:\wsl-ssh-pageant\wsl-ssh-pageant-amd64-gui.exe --wsl C:\wsl-ssh-pageant\ssh-agent.sock --winssh ssh-pageant --systray
+</code></pre></div>
+<p>The <code>--wsl</code> will create a socket for you to use inside of Windows Subsystem for Linux. The <code>--winssh</code> will create a named pipe for OpenSSH on your host (Windows).</p>
+<p><strong>Finally, double click the shortcut.</strong> You should see a new icon for wsl-ssh-pageant in your system tray.</p>
+<h2 id="check-your-ssh-keys">Check your SSH keys<a class="headerlink" href="#check-your-ssh-keys" title="Permanent link">&para;</a></h2>
+<p>Run the following command:</p>
+<div class="highlight"><pre><span></span><code>&gt; ssh-add -L
+ssh-rsa AAAAB3NzaC1yc2EA[...]
+</code></pre></div>
+<p>This will print out all of the available keys that can be used by your ssh. You need to double check that one of the printed keys is actually coming from the GPG. Use the <code>gpg --export-ssh-key YOUR_KEY_ID</code> command to print the public part of your ssh key from the GPG. The <code>YOUR_KEY_ID</code> is the ID of your key, not an ID of your subkey! Example below.</p>
+<div class="highlight"><pre><span></span><code>&gt; gpg -k
+C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
+------------------------------------------------
+pub   rsa4096 2019-10-28 [SC] [expires: 2021-10-25]
+      9B0069EA5619486EB2A7E44392FC071FF37A93E5
+      [...]
+
+&gt; gpg --export-ssh-key 9B0069EA5619486EB2A7E44392FC071FF37A93E5
+ssh-rsa AAAAB3NzaC1yc2EA[...]
+</code></pre></div>
+<p>If this matches your <code>ssh-add -L</code> then everything works fine for your OpenSSH!.</p>
+<h2 id="use-with-github-authentication">Use with GitHub (Authentication)<a class="headerlink" href="#use-with-github-authentication" title="Permanent link">&para;</a></h2>
+<p>Go to <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and add the exported ssh key (the key from <code>gpg --export-ssh-key</code>).</p>
+<p>Finally, test it out by connecting to <code>github.com</code> with <code>-T</code> using <code>ssh</code> as the <code>git</code> user. Example below.</p>
+<div class="highlight"><pre><span></span><code>&gt; ssh -T git@github.com
+Hi matusnovak! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre></div>
+<h2 id="use-with-github-signing">Use with GitHub (Signing)<a class="headerlink" href="#use-with-github-signing" title="Permanent link">&para;</a></h2>
+<p>First, list your GPG key with the long format:</p>
+<div class="highlight"><pre><span></span><code>&gt; gpg --list-secret-keys --keyid-format LONG
+C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
+------------------------------------------------
+sec#  rsa4096/92FC071FF37A93E5 2019-10-28 [SC] [expires: 2021-10-25]
+      9B0069EA5619486EB2A7E44392FC071FF37A93E5
+uid                 [ultimate] Matus Novak &lt;email@matusnovak.com&gt;
+ssb   rsa4096/272F40FED5170F30 2019-10-28 [E] [expires: 2021-10-25]
+ssb   rsa4096/FDB2A5741F89F17B 2019-10-28 [A] [expires: 2021-10-25]
+ssb   rsa4096/8DDB99690FB73F0A 2019-10-28 [S] [expires: 2021-10-25]
+</code></pre></div>
+<p>Next, export the [S]igning key in a readable format.</p>
+<div class="highlight"><pre><span></span><code>&gt; gpg --armor --export 8DDB99690FB73F0A
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQINBF23fjMBEACy3dCCEIM9JxbIBhpciMPullyjiZAnWILbrB9jpLf1mUzo9l5U
+[...]
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre></div>
+<p>Copy the output, including the <code>-----BEGIN ...</code> until the very end. Go to <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and add this public GPG key.</p>
+<p>Finally, tell your Git about the signing key. Use the ID of the master secret key, the line that starts with <code>sec</code> (in the long format).</p>
+<div class="highlight"><pre><span></span><code>&gt; git config --global user.signingkey 92FC071FF37A93E5
+</code></pre></div>
+<p>And configure git to auto-sign your commits.</p>
+<div class="highlight"><pre><span></span><code>&gt; git config --global commit.gpgsign true
+</code></pre></div>
+<h2 id="use-with-windows-subsystem-for-linux">Use with Windows Subsystem for Linux<a class="headerlink" href="#use-with-windows-subsystem-for-linux" title="Permanent link">&para;</a></h2>
+<p>All you have to do is to add <code>export SSH_AUTH_SOCK=/mnt/c/wsl-ssh-pageant/ssh-agent.sock</code> into your <code>~/.bashrc</code> file. As long as the <code>wsl-ssh-pageant</code> is running you can use this socket.</p>
+<p>Running <code>ssh-add -L</code> will print out the same SSH key as on your host Windows.</p>
 
 
 
@@ -2576,7 +2908,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
   </span>
 
     
@@ -2586,7 +2918,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
   </span>
 
     
@@ -2596,14 +2928,12 @@
 
 
 
-  
 
 
-
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -2634,10 +2964,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
