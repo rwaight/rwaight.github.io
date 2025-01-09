@@ -8,6 +8,7 @@ authors:
 #slug: setup-github-pages
 tags:
   - GitHub
+  - GitHub Pages
   - MkDocs
   - Jekyll
 ---
