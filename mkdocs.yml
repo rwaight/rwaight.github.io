@@ -95,7 +95,8 @@ markdown_extensions:
   # not sure if 'pymdownx.github' works
   #- pymdownx.github
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
-  #- def_list
+  - def_list
+    # https://squidfunk.github.io/mkdocs-material/reference/lists/#configuration
   # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#configuration
   - pymdownx.superfences:
       custom_fences:
