@@ -34,9 +34,9 @@ docs
 ```
 
 ```markdown
-<embed src="../../files/example.pdf" type="application/pdf" width="100%" height=800>
+<embed src="../../../files/example.pdf" type="application/pdf" width="100%" height=800>
 ```
 
 The PDF is from [https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf](https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf)
 
-<embed src="../../files/example.pdf" type="application/pdf" width="100%" height=800>
+<embed src="../../../files/example.pdf" type="application/pdf" width="100%" height=800>
