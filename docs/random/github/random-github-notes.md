@@ -2,7 +2,7 @@
 title: Random GitHub notes
 date:
   created: 2023-05-28
-  updated: 2024-11-13
+  updated: 2025-01-28
 authors:
   - rwaight
 #slug: random-github-notes
@@ -57,6 +57,7 @@ _Originally posted by @mfulton26 in [https://github.com/refined-github/refined-g
 ### Managing GitHub Secrets with the GitHub CLI
 
 **GitHub CLI docs**:
+
 - https://cli.github.com/manual/gh_secret
 - https://cli.github.com/manual/gh_secret_list
 - https://cli.github.com/manual/gh_secret_set

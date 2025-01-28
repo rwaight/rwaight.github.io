@@ -2,7 +2,7 @@
 title: GitHub Ops Notes
 date:
   created: 2023-10-03
-  updated: 2024-06-25
+  updated: 2025-01-28
 authors:
   - rwaight
 #slug: github-ops-notes
@@ -22,6 +22,7 @@ https://docs.github.com/en/actions/managing-workflow-runs/deleting-a-workflow-ru
 using the command line, `cd` to the repo folder, then issue `gh run list` to see the last 20 workflows
 
 Also the following:
+
 - See a specific workflow: `gh run list -w workflow_file.yml`
 - Specific workflow, date, and event: 
     - `gh run list -w pk-ami-builder.yml --created 2023-10-02 -e pull_request`
@@ -98,6 +99,7 @@ jobs:
 ```
 
 Option 2:
+
 - See https://github.com/actions/github-script/issues/220#issuecomment-1045972871
 
 ```yaml

@@ -2,7 +2,7 @@
 title: Using Google Apps Script with GitHub Actions
 date:
   created: 2023-10-24
-  updated: 2024-06-25
+  updated: 2025-01-28
 authors:
   - rwaight
 #slug: github-ops-notes
@@ -22,9 +22,11 @@ https://github.com/google/clasp - Command Line Apps Script Projects
 #### Use python to interact with Google App Script
 
 Links:
+
 - https://developers.google.com/apps-script/api/quickstart/python
 
 Other links:
+
 - https://www.google.com/search?q=python+connect+to+google+app+script
 - https://www.xlwings.org/blog/python-for-google-sheets
 
@@ -99,6 +101,7 @@ except errors.HttpError as error:
 - https://github.com/ericanastas/deploy-google-app-script-action
 
 Other links:
+
 - https://gist.github.com/NikitaAvvakumov/10cad2fef7d5ae303b2ba92c0fffec2d
 - https://codenotary.com/blog/use-google-sheets-apps-script-to-track-open-source-github-and-docker-statistics
 - https://ramblings.mcpher.com/drive-sdk-and-github/getting-your-apps-scripts-to-github/

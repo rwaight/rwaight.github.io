@@ -2,7 +2,7 @@
 title: Docker index page
 date:
   created: 2024-12-19
-  updated: 2025-01-08
+  updated: 2025-01-28
 ---
 
 # Docker index page
@@ -12,6 +12,7 @@ This 'docker' section should have information about creating and/or running Dock
 #### Running Ansible in a container
 
 Links from web searches:
+
 - [https://github.com/ansible/awx-ee](https://github.com/ansible/awx-ee)
 - [https://hub.docker.com/r/geerlingguy/docker-ubuntu2404-ansible](https://hub.docker.com/r/geerlingguy/docker-ubuntu2404-ansible)
     - [https://www.ansiblefordevops.com/](https://www.ansiblefordevops.com/)
