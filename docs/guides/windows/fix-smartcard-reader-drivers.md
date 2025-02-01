@@ -3,6 +3,12 @@ title: Fix Smartcard Reader Drivers
 date:
   created: 2025-02-01
   updated: 2025-02-01
+categories:
+  - Windows
+tags:
+  - Windows
+  - Smartcard
+  - NeedToStandardizeTags
 # https://mkdocs-macros-plugin.readthedocs.io/en/latest/rendering/#opt-in-with-the-markdown-pages-header
 render_macros: true
 ---
