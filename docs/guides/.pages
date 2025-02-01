@@ -5,14 +5,15 @@ nav:
     - munchkin-short-rules.md
     - ... | setup-*.md
     - docker
-    - GitHub: 
-        - github/overview.md
-        - ... | github
-    #- github
+    #this did not work#- GitHub: 
+    #this did not work#    - github/overview.md
+    #this did not work#    - ... | github
+    - github
     - mkdocs
+    - windows
     #- ...
-    - Windows:
-        - windows/overview.md
-        - ... | windows
+    #this did not work#- Windows:
+    #this did not work#    - windows/overview.md
+    #this did not work#    - ... | windows
     - Not categorized:
         - ...
