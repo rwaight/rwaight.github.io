@@ -2,7 +2,7 @@
 title: Delete GitHub workflow runs using the gh cli
 date:
   created: 2022-09-22
-  updated: 2024-06-25
+  updated: 2025-02-01
 authors:
   - rwaight
 categories:
@@ -12,7 +12,6 @@ tags:
   - GitHub/CLI
   - Automation
   - NeedToStandardizeTags
-  - ShouldBeInGuides
 ---
 
 # Delete GitHub workflow runs using the gh cli

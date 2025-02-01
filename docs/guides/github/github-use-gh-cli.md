@@ -3,7 +3,7 @@ title: Using the GitHub CLI
 draft: false 
 date:
   created: 2025-01-02
-  updated: 2025-01-02
+  updated: 2025-02-01
 authors:
   - rwaight
 categories:
@@ -13,7 +13,6 @@ tags:
   - GitHub/CLI
   - Automation
   - NeedToStandardizeTags
-  - ShouldBeInGuides
 ---
 
 The [GitHub CLI](https://cli.github.com/), or `gh`, is a command-line interface to GitHub for use in your terminal or your scripts.

@@ -3,7 +3,7 @@ title: Approving and merging multiple pull requests using the gh cli
 draft: false 
 date:
   created: 2024-11-08
-  updated: 2024-12-18
+  updated: 2025-02-01
 authors:
   - rwaight
 categories:
@@ -13,7 +13,6 @@ tags:
   - GitHub/CLI
   - Automation
   - NeedToStandardizeTags
-  - ShouldBeInGuides
 ---
 
 <!--- ## Approving and merging multiple PRs --->
