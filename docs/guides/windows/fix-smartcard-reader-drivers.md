@@ -55,3 +55,34 @@ Here is an example of the **RetryDeviceInitialize** registry key:
 
 
 <!--- Test including external pages in files from https://mkdocs-macros-plugin.readthedocs.io/en/stable/advanced/#including-external-files-in-pages --->
+
+- - -
+
+## IOGEAR Smartcard Readers
+
+Local notes from the [IOGEAR Product Knowledge Site](https://iogear.custhelp.com/) about their smartcard reader devices.
+
+### Why does my GSR202/GSR205/GSR212 not work with my smart card and my Windows Computer?
+
+!!! note "Important"
+
+    In order to get the GSR202/GSR205/GSR212 device to work, the **code 31** error had to be resolved first.
+
+- - -
+
+> This section is from [https://iogear.custhelp.com/app/answers/detail/a_id/2931/](https://iogear.custhelp.com/app/answers/detail/a_id/2931/)
+
+<!--- from https://iogear.custhelp.com/app/answers/detail/a_id/2931/ --->
+
+The Driver on the GSR202 / GSR205 / GSR212 should be plug and play on Windows 10 and 11. 
+
+However, sometimes it can help to reinstall the driver. 
+
+*Do this without the card inserted*
+
+You can double check and ensure that Windows installed the correct driver by going into Device Manager > locate the smart card readers category and expand > double click the entry in that category > Driver > Update driver > Browse my computer Let me pick from a list of available drivers. Microsoft usbccid smart card reader (WUDF).
+
+Once the driver is installed, try rebooting and attempt to use the reader again. This would be the only thing to check on regarding drivers for this unit.
+You can then go back into Device Manager and try inserting your card. Upon inserting, there should now see a new category named, "Smart Cards" which means that the PC is ackowledging a card being inserted to the reader.
+
+- - -
