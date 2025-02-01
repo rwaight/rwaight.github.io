@@ -11,5 +11,8 @@ nav:
     #- github
     - mkdocs
     #- ...
+    - Windows:
+        - windows/overview.md
+        - ... | windows
     - Not categorized:
         - ...
