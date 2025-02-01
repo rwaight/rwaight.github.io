@@ -1,17 +1,22 @@
 ---
+title: Incomplete page
 draft: false 
 date:
   created: 2024-06-25
-  updated: 2024-06-25
+  updated: 2025-02-01
 authors:
   - rwaight
 categories:
   - GitHub
-  - GitHub Actions
-#slug: github-actions-nested-virtualization
+#slug: github-actions-enable-debug
 tags:
-  - Test
+  - GitHub
+  - GitHub/Actions
+  - Automation
+  - NeedToStandardizeTags
 ---
+
+This page is supposed to be `github-actions-enable-debug`
 
 # Hello world!
 

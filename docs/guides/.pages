@@ -5,6 +5,14 @@ nav:
     - munchkin-short-rules.md
     - ... | setup-*.md
     - docker
-    - github
+    - GitHub: 
+        - github/overview.md
+        - ... | github
+    #- github
     - mkdocs
-    - ...
+    #- ...
+    - Windows:
+        - windows/overview.md
+        - ... | windows
+    - Not categorized:
+        - ...

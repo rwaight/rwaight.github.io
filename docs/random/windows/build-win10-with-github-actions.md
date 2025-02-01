@@ -2,7 +2,7 @@
 title: Building Windows 10 with GitHub Actions
 date:
   created: 2024-02-13
-  updated: 2024-06-26
+  updated: 2025-01-28
 authors:
   - rwaight
 slug: building-windows-10-with-github-actions
@@ -38,6 +38,7 @@ Add `-serial file:./qemu-output.log` to the `qemu_args` or to the command.
 Otherwise, add `-D qemu-debug.log` to the `qemu_args` or to the command.
 
 References:
+
 - https://en.wikibooks.org/wiki/QEMU/Monitor#log
 - https://stackoverflow.com/questions/72375049/logging-as-many-info-as-possible-using-qemu-system
 - https://askubuntu.com/questions/1393012/ubuntu-qemu-display-output-to-logfile
@@ -128,18 +129,21 @@ When attempting to run `qemu-system-x86_64 -m 512M -cdrom ./virtio-win-0.1.248.i
 ```
 
 Issues related to the `gtk initialization failed` error:
+
 - https://discuss.hashicorp.com/t/qemu-gtk-initialization-error-ubuntu-22-04/39397
 - https://github.com/hashicorp/packer/issues/10211
 - https://github.com/sickcodes/Docker-OSX/issues/445
 - https://github.com/sickcodes/Docker-OSX/issues/517
 
 Other links about the `gtk initialization failed` error:
+
 - https://forum.osdev.org/viewtopic.php?f=13&t=56325
 
 
 ## Other links
 
 QEMU documentation:
+
 - https://web.archive.org/web/20200304204518/https://qemu.weilnetz.de/doc/qemu-doc.html
 - https://www.qemu.org/docs/master/system/bootindex.html
 - https://wiki.gentoo.org/wiki/QEMU/Options
