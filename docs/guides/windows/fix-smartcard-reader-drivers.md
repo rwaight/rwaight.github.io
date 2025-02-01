@@ -49,8 +49,8 @@ To ensure a successful driver initialization, add the **RetryDeviceInitialize** 
 #### Registry Key Example
 
 Here is an example of the **RetryDeviceInitialize** registry key: 
-```
-{% include 'windows/Win11-Registry-RetryDeviceInitialize.reg' %}
+```PowerShell
+{% include 'windows/win-registry-RetryDeviceInitialize' %}
 ```
 
 
