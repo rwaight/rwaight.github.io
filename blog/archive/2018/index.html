@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1742,6 +1742,8 @@
       
         
       
+        
+      
     
     
       
@@ -1778,6 +1780,30 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1864,6 +1890,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bash-timezone-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bash timezone checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       Hello world!
@@ -1897,6 +1932,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1940,6 +1979,30 @@
             Categories
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2003,6 +2066,30 @@
   
   <span class="md-ellipsis">
     Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bash
     
   </span>
   
@@ -2808,6 +2895,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bash-timezone-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bash timezone checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       Hello world!
@@ -2830,6 +2926,69 @@
       <header class="md-typeset">
         <h1 id="2018">2018<a class="headerlink" href="#2018" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2018-10-14 00:00:00+00:00">October 14, 2018</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/bash/" class="md-meta__link">bash</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="bash-timezone-checks"><a class="toclink" href="../../2018/10/14/bash-timezone-checks/">Bash timezone checks</a></h2>
+<p>If you try to build an over-complicated scheduler using <code>bash</code>, you may run into issues when it comes to Daylight Saving Time.  While it is a good idea to use Coordinated Universal Time (UTC), you might want to make sure you do not run into issues.  The examples will use the <code>date</code> with the <code>+"%H:%M"</code> format.</p>
+<p>Using <code>date</code> with the <code>-u</code> option:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+<span class="m">03</span>:59
+</code></pre></div></p>
+<p>Using <code>date</code> after specifying the timezone with <code>TZ=</code>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+<span class="m">03</span>:59
+</code></pre></div></p>
+<p>Here is a way to ensure you include the appropriate Daylight Saving Time and its dates of applicability. The example is from the <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html#TZ-Variable">21.5.6 Specifying the Time Zone with <code>TZ</code></a> page.</p>
+<p>In North American Eastern Standard Time (EST) and Eastern Daylight Time (EDT), the normal offset from UTC is 5 hours; since this is west of the prime meridian, the sign is positive. Summer time begins on March’s second Sunday at 2:00am, and ends on November’s first Sunday at 2:00am.</p>
+<blockquote>
+<p><code>EST+5EDT</code></p>
+</blockquote>
+<p>Here are some examples using <code>date +"%H:%M"</code> for timezones in the continental United States:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:EST+5EDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+<span class="m">22</span>:59
+$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:CST+6CDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+<span class="m">21</span>:59
+$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:MST+7MDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+<span class="m">20</span>:59
+$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:PST+8PDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+<span class="m">19</span>:59
+</code></pre></div></p>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -2926,7 +3085,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5090c770.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
     
   </body>
