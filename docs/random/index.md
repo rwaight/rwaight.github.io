@@ -2,7 +2,7 @@
 title: Random pages index page
 date:
   created: 2024-06-25
-  updated: 2025-01-05
+  updated: 2025-02-16
 ---
 
 # Random pages index page
@@ -76,11 +76,13 @@ delete flash:*.old
 
 ### Using SanDisk Sansa m260 with Windows 10
 
-The old Sansa MP3 players had two different USB modes, `MSC` and `MTP`
+The old Sansa MP3 players had two different USB modes, `MSC` and `MTP`:
+
 - MSC mode requires using Windows Media Player to sync files
 - MTP mode allows access to the music directory on the devices internal drive
 
 On the Sansa m260, the internal drive was accessible in `MTP` mode.  The process to do this is:
+
 1. Turn off the Sansa m260 MP3 player
 2. Sliding the HOLD switch towards the headphone jack (orange showing)
 3. Press and hold the rewind button `|<<` while connecting the USB cable into the bottom of the player
