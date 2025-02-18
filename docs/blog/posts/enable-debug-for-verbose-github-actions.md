@@ -3,7 +3,9 @@ title: Enable debug for verbose GitHub Actions
 draft: false 
 date:
   created: 2024-06-25
-  updated: 2025-02-16
+  updated: 2025-02-18
+description: >
+  Enable debug for verbose GitHub Actions.
 authors:
   - rwaight
 categories:
@@ -16,7 +18,9 @@ tags:
   - NeedToStandardizeTags
 ---
 
-**This post is incomplete and will be updated in the future**
+!!!? info
+
+    This post is incomplete and will be updated in the future.
 
 If you are using composite actions that support their own **verbose mode**, you may find you only want to enable **verbose mode** when the GitHub runner is in **debug mode**.  The variable we need to know is `runner.debug`, which is also stored as `RUNNER_DEBUG`.
 
