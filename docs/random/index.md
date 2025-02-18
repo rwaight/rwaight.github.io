@@ -7,8 +7,9 @@ date:
 
 # Random pages index page
 
-### Dark mode in chromium browsers
+<!--- the '### Dark mode in chromium browsers' section was MOVED to a 'blog' on 2025-02-18 --->
 <!--- this section was created on 2024-09-05 --->
+<!---- 
 
 #### Setting dark mode for everything
 
@@ -22,6 +23,10 @@ Referenced from [How do I set Google Calendar to Dark Mode?](https://support.goo
 
 * [Dark Reader](https://darkreader.org/)
     * [`darkreader/darkreader` on GitHub](https://github.com/darkreader/darkreader)
+
+
+ ---->
+<!--- the '### Dark mode in chromium browsers' section was MOVED to a 'blog' on 2025-02-18 --->
 
 ### Difference between 'git pull' and 'git fetch' 
 <!--- this section was created on 2024-08-08 --->
