@@ -3,7 +3,7 @@ title: Using Scrumban in a distributed team
 draft: false
 date:
   created: 2025-02-04
-  updated: 2025-02-06
+  updated: 2025-02-18
 authors:
   - rwaight
 categories:
@@ -15,10 +15,10 @@ tags:
   - Scrum
 ---
 
-**Note**: While this document is ***not in draft mode*** it is definitely not complete...
 
+???+ note
 
-# Using Scrumban in a distributed team
+    While this document is ***not in draft mode*** it is definitely not complete...
 
 Being flexible and efficient can make working in a distributed team a great experience; sometimes though, you have to be the agent of change to help your team get there.  While trying to understand what Scrumban actually is, it seemed best to type it up myself to reinforce what I have learned so far.
 
