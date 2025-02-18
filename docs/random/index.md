@@ -2,12 +2,13 @@
 title: Random pages index page
 date:
   created: 2024-06-25
-  updated: 2025-02-16
+  updated: 2025-02-18
 ---
 
 # Random pages index page
 
 ### Dark mode in chromium browsers
+<!--- this section was created on 2024-09-05 --->
 
 #### Setting dark mode for everything
 
@@ -23,6 +24,7 @@ Referenced from [How do I set Google Calendar to Dark Mode?](https://support.goo
     * [`darkreader/darkreader` on GitHub](https://github.com/darkreader/darkreader)
 
 ### Difference between 'git pull' and 'git fetch' 
+<!--- this section was created on 2024-08-08 --->
 
 From [https://stackoverflow.com/a/292359](https://stackoverflow.com/a/292359):
 > In the simplest terms, [`git pull`](http://git-scm.com/docs/git-pull) does a [`git fetch`](http://git-scm.com/docs/git-fetch) followed by a [`git merge`](http://git-scm.com/docs/git-merge).
@@ -36,11 +38,13 @@ From [https://stackoverflow.com/a/292359](https://stackoverflow.com/a/292359):
 
 
 ### Random GitHub Notes
+<!--- this section was created on 2023-05-28 --->
 
 See the [random GitHub notes page](github/random-github-notes.md) for some random info.
 
 
 ### Running an Ubuntu container to test bash commands
+<!--- this section was created on 2024-06-25 --->
 
 If you want to use a specific version of Linux to run `bash`, you can create a container (for example, ubuntu) using:
 ```bash
@@ -53,6 +57,7 @@ docker exec -it ubuntu-temp /bin/bash
 ```
 
 ### Reset a Cisco Switch
+<!--- this section was created on 2024-09-05 --->
 
 Here is a summary of the commands needed to [reset Cisco Catalyst Switches to factory defaults](https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html):
 ```shell
@@ -75,6 +80,7 @@ delete flash:*.old
 ```
 
 ### Using SanDisk Sansa m260 with Windows 10
+<!--- this section was created on 2025-01-06 --->
 
 The old Sansa MP3 players had two different USB modes, `MSC` and `MTP`:
 
