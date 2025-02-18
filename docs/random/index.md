@@ -61,9 +61,10 @@ Then you can access `bash` in the ubuntu container using:
 docker exec -it ubuntu-temp /bin/bash
 ```
 
-### Reset a Cisco Switch
+<!--- the '### Reset a Cisco Switch' section was MOVED to a 'blog' on 2025-02-18 --->
 <!--- this section was created on 2024-09-05 --->
 
+<!---- 
 Here is a summary of the commands needed to [reset Cisco Catalyst Switches to factory defaults](https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html):
 ```shell
 # enter configuration mode
@@ -83,6 +84,9 @@ delete flash:config.text.backup
 delete flash:config.text.old
 delete flash:*.old
 ```
+ ---->
+<!--- the '### Reset a Cisco Switch' section was MOVED to a 'blog' on 2025-02-18 --->
+
 
 ### Using SanDisk Sansa m260 with Windows 10
 <!--- this section was created on 2025-01-06 --->
