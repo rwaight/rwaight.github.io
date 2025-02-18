@@ -55,6 +55,8 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     edit: material/pencil 
     view: material/eye
+    # https://squidfunk.github.io/mkdocs-material/reference/annotations/#annotation-icons
+    annotation: material/plus-circle-outline
     #
   language: en    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language
   palette:
@@ -83,7 +85,9 @@ edit_uri: edit/main/docs/
 
 markdown_extensions:
   # https://python-markdown.github.io/extensions/attr_list/
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
+  # `attr_list` use: 'attr_list'
+  #    # setup
+  #    # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists
   - attr_list
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#betterem
   # https://facelessuser.github.io/pymdown-extensions/extensions/betterem/
@@ -94,7 +98,10 @@ markdown_extensions:
   ###
   # not sure if 'pymdownx.github' works
   #- pymdownx.github
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
+  # https://squidfunk.github.io/mkdocs-material/reference/lists/
+  # `lists` use: 'def_list' and 'pymdownx.tasklist' ('custom_checkbox: true' within 'pymdownx.tasklist')
+  #    # setup
+  #    # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
   - def_list
     # https://squidfunk.github.io/mkdocs-material/reference/lists/#configuration
   # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#configuration
@@ -106,6 +113,7 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/reference/lists/#using-task-lists
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tasklist
   - pymdownx.tasklist:
+      # 'custom_checkbox: true' is used with 'lists'
       custom_checkbox: true
   - toc:
       title: On this page
@@ -118,9 +126,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   # https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  # `admonitions` use: 'admonition', 'pymdownx.details', and 'pymdownx.superfences'
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  # https://squidfunk.github.io/mkdocs-material/reference/annotations/
+  # `annotations` use: 'attr_list', 'md_in_html', and 'pymdownx.superfences'
+  - md_in_html
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
   - pymdownx.snippets
 
