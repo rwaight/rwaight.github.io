@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://rwaight.github.io/blog/category/github/">
       
       
-        <link rel="prev" href="../agile/">
+        <link rel="prev" href="../browsers/">
       
       
-        <link rel="next" href="../hello-world/">
+        <link rel="next" href="../hardware/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -34,6 +34,12 @@
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4z"/></svg>');}</style>
 
 
     
@@ -1742,6 +1748,8 @@
       
         
       
+        
+      
     
     
       
@@ -1836,6 +1844,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../../archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../archive/2018/" class="md-nav__link">
         
   
@@ -1869,6 +1901,8 @@
   
     
     
+      
+        
       
         
       
@@ -1933,6 +1967,30 @@
   
   <span class="md-ellipsis">
     Agile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../browsers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browsers
     
   </span>
   
@@ -2030,6 +2088,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../hello-world/" class="md-nav__link">
         
   
@@ -2059,30 +2141,6 @@
   
   <span class="md-ellipsis">
     MkDocs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../test/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Test
     
   </span>
   
@@ -2970,7 +3028,9 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="enable-debug-for-verbose-github-actions"><a class="toclink" href="../../2024/06/25/enable-debug-for-verbose-github-actions/">Enable debug for verbose GitHub Actions</a></h2>
-<p><strong>This post is incomplete and will be updated in the future</strong></p>
+<p>!!!? info</p>
+<pre><code>This post is incomplete and will be updated in the future.
+</code></pre>
 <p>If you are using composite actions that support their own <strong>verbose mode</strong>, you may find you only want to enable <strong>verbose mode</strong> when the GitHub runner is in <strong>debug mode</strong>.  The variable we need to know is <code>runner.debug</code>, which is also stored as <code>RUNNER_DEBUG</code>.</p>
 <h4 id="understanding-when-variables-are-available"><a class="toclink" href="../../2024/06/25/enable-debug-for-verbose-github-actions/#understanding-when-variables-are-available">Understanding when variables are available</a></h4>
 <p>In a GitHub workflow there are three different situations where different environmental variables are available, GitHub calls this "context".  There is <code>workflow</code> context, <code>job</code> context, and <code>step</code> context.  The <code>runner.*</code> and <code>RUNNER_*</code> variables are available in the <code>STEP</code> environmental context, <strong>but not</strong> in the <code>workflow</code> or <code>job</code> environmental context.</p>

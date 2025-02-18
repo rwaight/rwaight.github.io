@@ -35,6 +35,12 @@
       
       
 
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4z"/></svg>');}</style>
+
 
     
     
@@ -1742,6 +1748,8 @@
       
         
       
+        
+      
     
     
       
@@ -1836,6 +1844,30 @@
   
   
     <li class="md-nav__item">
+      <a href="archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="archive/2018/" class="md-nav__link">
         
   
@@ -1867,6 +1899,8 @@
   
     
     
+      
+        
       
         
       
@@ -1950,11 +1984,59 @@
   
   
     <li class="md-nav__item">
+      <a href="category/browsers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browsers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="category/github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
     
   </span>
   
@@ -2003,30 +2085,6 @@
   
   <span class="md-ellipsis">
     MkDocs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="category/test/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Test
     
   </span>
   
@@ -2856,9 +2914,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#blog-post-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blog post template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-scrumban-in-a-distributed-team" class="md-nav__link">
     <span class="md-ellipsis">
       Using Scrumban in a distributed team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dark-mode-in-chromium-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dark mode in chromium browsers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-a-cisco-catalyst-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset a Cisco Catalyst Switch
     </span>
   </a>
   
@@ -2929,6 +3014,114 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2025-02-18 00:00:00+00:00">February 18, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/mkdocs/" class="md-meta__link">MkDocs</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="blog-post-template"><a class="toclink" href="2025/02/18/blog-post-template/">Blog post template</a></h2>
+<!---  # Blog post template  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
+<p>This is a template file for blog posts in MkDocs.  In order to keep it simple to create new posts, the template file should have the following:</p>
+<!--- 
+- The page **front-matter** section, which includes:
+    - Page configuration
+    - Page metadata
+- Standard category (or categories)
+- Standard tag(s)
+ --->
+
+<h4 id="page-configuration"><a class="toclink" href="2025/02/18/blog-post-template/#page-configuration">Page configuration</a></h4>
+<p>When creating a new blog post, determine the following <a href="https://squidfunk.github.io/mkdocs-material/reference/">page configuration</a> options:</p>
+<ul>
+<li>the page <a href="https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-title"><code>title</code></a></li>
+<li>the page <a href="https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-description"><code>description</code></a> (<strong>optional</strong>)</li>
+<li>the page <a href="https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-icon"><code>icon</code></a> (<strong>optional</strong>)</li>
+<li>the page <a href="https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-status"><code>status</code></a> (<strong>optional</strong>)</li>
+<li>the page <a href="https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-subtitle"><code>subtitle</code></a> (<strong>optional</strong>)</li>
+<li>the page <a href="https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-template"><code>template</code></a> (<strong>optional</strong>)</li>
+</ul>
+<h4 id="page-metadata"><a class="toclink" href="2025/02/18/blog-post-template/#page-metadata">Page metadata</a></h4>
+<p>When creating a new blog post, determine the following <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#metadata">page metadata</a>:</p>
+<ul>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.draft"><code>draft</code> option</a></li>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date"><code>date</code></a><ul>
+<li>can be just <code>date: 2025-02-18</code></li>
+<li>can also include <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date-update-date"><strong>date created</strong> and <strong>date updated</strong></a></li>
+</ul>
+</li>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors"><code>authors</code></a></li>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.categories"><code>categories</code></a></li>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.slug"><code>slug</code></a></li>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags"><code>tags</code></a></li>
+</ul>
+<h3 id="putting-it-all-together"><a class="toclink" href="2025/02/18/blog-post-template/#putting-it-all-together">Putting it all together</a></h3>
+<h4 id="front-matter"><a class="toclink" href="2025/02/18/blog-post-template/#front-matter">Front-matter</a></h4>
+<p>The front-matter consists of <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#yaml-style-meta-data">YAML Style Meta-Data</a> to define the <a href="https://squidfunk.github.io/mkdocs-material/reference/">page configuration settings</a>:
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># page configuration</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Blog post template</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">  </span><span class="no">This is a template file for blog posts in MkDocs.</span>
+<span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/repo-template-24</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new</span>
+<span class="c1"># page metadata</span>
+<span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">date</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-18</span>
+<span class="w">  </span><span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-18</span>
+<span class="nt">authors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rwaight</span>
+<span class="nt">categories</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkDocs</span>
+<span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog-post-template</span>
+<span class="nt">tags</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkDocs</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
+<span class="nn">---</span>
+</code></pre></div></p>
+<h3 id="example-section"><a class="toclink" href="2025/02/18/blog-post-template/#example-section">Example section</a></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.</p>
+<!--  example comment here  -->
+<!--- another example comment --->
+
+<!---  ...  --->
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2025-02-04 00:00:00+00:00">February 4, 2025</time></li>
         
           <li class="md-meta__item">
@@ -2950,8 +3143,10 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="using-scrumban-in-a-distributed-team"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/">Using Scrumban in a distributed team</a></h2>
-<p><strong>Note</strong>: While this document is <strong><em>not in draft mode</em></strong> it is definitely not complete...</p>
-<h2 id="using-scrumban-in-a-distributed-team_1"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#using-scrumban-in-a-distributed-team_1">Using Scrumban in a distributed team</a></h2>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>While this document is <strong><em>not in draft mode</em></strong> it is definitely not complete...</p>
+</details>
 <p>Being flexible and efficient can make working in a distributed team a great experience; sometimes though, you have to be the agent of change to help your team get there.  While trying to understand what Scrumban actually is, it seemed best to type it up myself to reinforce what I have learned so far.</p>
 <p>Scrumban combines two leading Agile methodologies—Scrum and Kanban—into a single process for getting work done. But what is scrumban? And why should you consider its unique approach?</p>
 <p>These are notes based on the following resources:
@@ -3022,6 +3217,192 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2024-09-05 00:00:00+00:00">September 5, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/browsers/" class="md-meta__link">Browsers</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="dark-mode-in-chromium-browsers"><a class="toclink" href="2024/09/05/dark-mode-in-chromium-browsers/">Dark mode in chromium browsers</a></h2>
+<!---  # Dark mode in chromium browsers  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
+<p>If you use a chromium browser and love dark mode, then keep reading.</p>
+<!--- this section was created on 2024-09-05 --->
+
+<h3 id="setting-dark-mode-for-everything"><a class="toclink" href="2024/09/05/dark-mode-in-chromium-browsers/#setting-dark-mode-for-everything">Setting dark mode for everything</a></h3>
+<p>If you love dark mode for everything... you can enable <strong>Auto Dark Mode for Web Contents</strong> by setting <code>chrome://flags/#enable-force-dark</code>. If that does not work, then go to <code>chrome://flags/</code> and search for <strong>Dark Mode</strong>.</p>
+<p>Referenced from <a href="https://support.google.com/calendar/thread/9762643?hl=en&amp;msgid=37038653">How do I set Google Calendar to Dark Mode?</a></p>
+<blockquote>
+<p>turn on the flag <strong>Force Dark Mode for Web Contents</strong>
+you can do this by going to <code>chrome://flags/</code> and searching for it</p>
+</blockquote>
+<h4 id="browser-dark-mode-extensions"><a class="toclink" href="2024/09/05/dark-mode-in-chromium-browsers/#browser-dark-mode-extensions">Browser dark mode extensions</a></h4>
+<ul>
+<li><a href="https://darkreader.org/">Dark Reader</a><ul>
+<li><a href="https://github.com/darkreader/darkreader"><code>darkreader/darkreader</code> on GitHub</a></li>
+</ul>
+</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-09-05 00:00:00+00:00">September 5, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/hardware/" class="md-meta__link">Hardware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="reset-a-cisco-catalyst-switch"><a class="toclink" href="2024/09/05/reset-a-cisco-catalyst-switch/">Reset a Cisco Catalyst Switch</a></h2>
+<!---  ### Reset a Cisco Switch  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+<!--- this section was created on 2024-09-05 --->
+
+<p>Here is a summary of the commands needed to <a href="https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html">reset Cisco Catalyst Switches to factory defaults</a>:
+<div class="highlight"><pre><span></span><code><span class="c1"># enter configuration mode</span>
+<span class="nb">enable</span>
+<span class="c1"># remove the startup configuration file</span>
+write<span class="w"> </span>erase
+<span class="c1"># remove the VLAN configuration</span>
+delete<span class="w"> </span>flash:vlan.dat
+<span class="c1"># then reboot the switch</span>
+reload
+</code></pre></div></p>
+<p>If there are other files that need to be deleted, run the following <strong>before</strong> issuing the <code>reload</code> command:
+<div class="highlight"><pre><span></span><code>show<span class="w"> </span>file<span class="w"> </span>information<span class="w"> </span>flash:?
+delete<span class="w"> </span>flash:config.text.backup
+delete<span class="w"> </span>flash:config.text.old
+delete<span class="w"> </span>flash:*.old
+</code></pre></div></p>
+<!---  below are notes from the Cisco support docs:  https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html  --->
+<!--- 
+## Reset Catalyst Switches with Cisco IOS Software
+
+### Reset Switch Configuration
+ --->
+<!--- from https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html#toc-hId-1031752778 --->
+<!---
+To reset the switch to factory default, issue the `erase startup-config` or `write erase` command. This command does not clear the boot variables, such as config-register and boot system settings.
+
+You can alter the boot system parameters with the `boot` command. In Catalyst 4500/4000 and 6500/6000 series switches which run Cisco IOS Software, you can change the configuration register value with the `config-register`  command.
+
+This example shows how to reset a switch which runs Cisco IOS Software to factory defaults with the `write erase` command:
+<div class="highlight"><pre><span></span><code>Cat2950#<span class="w"> </span>write<span class="w"> </span>erase
+Erasing<span class="w"> </span>the<span class="w"> </span>nvram<span class="w"> </span>filesystem<span class="w"> </span>will<span class="w"> </span>remove<span class="w"> </span>all<span class="w"> </span>files!<span class="w"> </span>Continue?<span class="w"> </span><span class="o">[</span>confirm<span class="o">]</span>y<span class="o">[</span>OK<span class="o">]</span>
+Erase<span class="w"> </span>of<span class="w"> </span>nvram:<span class="w"> </span><span class="nb">complete</span>
+Cat2950#
+Cat2950#<span class="w"> </span>reload
+
+System<span class="w"> </span>configuration<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>modified.<span class="w"> </span>Save?<span class="w"> </span><span class="o">[</span>yes/no<span class="o">]</span>:<span class="w"> </span>n<span class="w">    </span>
+
+!---<span class="w"> </span>Do<span class="w"> </span>not<span class="w"> </span>save<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>at<span class="w"> </span>this<span class="w"> </span>prompt.<span class="w"> </span>Otherwise,<span class="w"> </span>the<span class="w"> </span>switch<span class="w"> </span>!---<span class="w"> </span>reloads<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>running<span class="w"> </span>configuration<span class="w"> </span>and<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>reset<span class="w"> </span>to<span class="w"> </span>default.<span class="w"> </span>
+
+Proceed<span class="w"> </span>with<span class="w"> </span>reload?<span class="w"> </span><span class="o">[</span>confirm<span class="o">]</span>y<span class="w">                              </span>
+
+2w0d:<span class="w"> </span>%SYS-5-RELOAD:<span class="w"> </span>Reload<span class="w"> </span>requested
+
+C2950<span class="w"> </span>Boot<span class="w"> </span>Loader<span class="w"> </span><span class="o">(</span>C2950-HBOOT-M<span class="o">)</span><span class="w"> </span>Version<span class="w"> </span><span class="m">12</span>.1<span class="o">(</span>11r<span class="o">)</span>EA1,<span class="w"> </span>RELEASE<span class="w"> </span>SOFTWARE<span class="w"> </span><span class="o">(</span>fc1<span class="o">)</span>
+Compiled<span class="w"> </span>Mon<span class="w"> </span><span class="m">22</span>-Jul-02<span class="w"> </span><span class="m">18</span>:57<span class="w"> </span>by<span class="w"> </span>antonino
+WS-C2950G-12-EI<span class="w"> </span>starting...
+
+
+!---<span class="w"> </span>Output<span class="w"> </span>suppressed.<span class="w"> </span>
+
+
+32K<span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>flash-simulated<span class="w"> </span>non-volatile<span class="w"> </span>configuration<span class="w"> </span>memory.
+Base<span class="w"> </span>ethernet<span class="w"> </span>MAC<span class="w"> </span>Address:<span class="w"> </span><span class="m">00</span>:05:DC:C9:79:00
+Motherboard<span class="w"> </span>assembly<span class="w"> </span>number:<span class="w"> </span><span class="m">73</span>-5781-08
+Motherboard<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span>FAB0515A069
+Model<span class="w"> </span>revision<span class="w"> </span>number:<span class="w"> </span><span class="m">02</span>
+Model<span class="w"> </span>number:<span class="w"> </span>WS-C2950-24
+System<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span>FAB0517Q00B
+
+---<span class="w"> </span>System<span class="w"> </span>Configuration<span class="w"> </span>Dialog<span class="w"> </span>---
+
+Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span>initial<span class="w"> </span>configuration<span class="w"> </span>dialog?<span class="w"> </span><span class="o">[</span>yes/no<span class="o">]</span>:n<span class="w"> </span>
+<span class="m">00</span>:00:16:<span class="w"> </span>%SPANTREE-5-EXTENDED_SYSID:<span class="w"> </span>Extended<span class="w"> </span>SysId<span class="w"> </span>enabled<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span>vlan
+<span class="m">00</span>:00:21:<span class="w"> </span>%SYS-5-RESTART:<span class="w"> </span>System<span class="w"> </span>restarted<span class="w"> </span>--
+Cisco<span class="w"> </span>Internetwork<span class="w"> </span>Operating<span class="w"> </span>System<span class="w"> </span>Software<span class="w"> </span>
+Cisco<span class="w"> </span>IOS<span class="w"> </span><span class="o">(</span>tm<span class="o">)</span><span class="w"> </span>C2950<span class="w"> </span>Software<span class="o">(</span>C2950-I6Q4L2-M<span class="o">)</span>Version<span class="w"> </span><span class="m">12</span>.1<span class="o">(</span><span class="m">19</span><span class="o">)</span>EA1,<span class="w"> </span>RELEASE<span class="w"> </span>SOFTWARE<span class="w"> </span><span class="o">(</span>fc1<span class="o">)</span>
+Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">1986</span>-2003<span class="w"> </span>by<span class="w"> </span>cisco<span class="w"> </span>Systems,<span class="w"> </span>Inc.
+Compiled<span class="w"> </span>Tue<span class="w"> </span><span class="m">09</span>-Dec-03<span class="w"> </span><span class="m">00</span>:12<span class="w"> </span>by<span class="w"> </span>yenanh
+
+Press<span class="w"> </span>RETURN<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>started!
+
+<span class="m">00</span>:00:37:<span class="w"> </span>%LINK-5-CHANGED:<span class="w"> </span>Interface<span class="w"> </span>Vlan1,<span class="w"> </span>changed<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>administratively<span class="w"> </span>down
+<span class="m">00</span>:00:38:<span class="w"> </span>%LINEPROTO-5-UPDOWN:<span class="w"> </span>Line<span class="w"> </span>protocol<span class="w"> </span>on<span class="w"> </span>Interface<span class="w"> </span>Vlan1,<span class="w"> </span>changed<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>down
+Switch&gt;
+Switch&gt;
+</code></pre></div>
+
+At this stage, the switch configuration has reset to the factory defaults, with the exclusion of the VLAN information.
+
+ --->
+<!--- 
+### Reset VLAN Information
+ --->
+<!--- from https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html#toc-hId--775701685 --->
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2024-06-25 00:00:00+00:00">June 25, 2024</time></li>
         
           <li class="md-meta__item">
@@ -3043,7 +3424,9 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="enable-debug-for-verbose-github-actions"><a class="toclink" href="2024/06/25/enable-debug-for-verbose-github-actions/">Enable debug for verbose GitHub Actions</a></h2>
-<p><strong>This post is incomplete and will be updated in the future</strong></p>
+<p>!!!? info</p>
+<pre><code>This post is incomplete and will be updated in the future.
+</code></pre>
 <p>If you are using composite actions that support their own <strong>verbose mode</strong>, you may find you only want to enable <strong>verbose mode</strong> when the GitHub runner is in <strong>debug mode</strong>.  The variable we need to know is <code>runner.debug</code>, which is also stored as <code>RUNNER_DEBUG</code>.</p>
 <h4 id="understanding-when-variables-are-available"><a class="toclink" href="2024/06/25/enable-debug-for-verbose-github-actions/#understanding-when-variables-are-available">Understanding when variables are available</a></h4>
 <p>In a GitHub workflow there are three different situations where different environmental variables are available, GitHub calls this "context".  There is <code>workflow</code> context, <code>job</code> context, and <code>step</code> context.  The <code>runner.*</code> and <code>RUNNER_*</code> variables are available in the <code>STEP</code> environmental context, <strong>but not</strong> in the <code>workflow</code> or <code>job</code> environmental context.</p>
@@ -3129,8 +3512,7 @@ jobs:
           <li class="md-meta__item">
             in
             
-              <a href="category/mkdocs/" class="md-meta__link">MkDocs</a>, 
-              <a href="category/test/" class="md-meta__link">Test</a></li>
+              <a href="category/mkdocs/" class="md-meta__link">MkDocs</a></li>
         
         
           
@@ -3146,6 +3528,8 @@ jobs:
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="setting-up-a-blog"><a class="toclink" href="2024/05/28/setting-up-a-blog/">Setting up a blog</a></h2>
+<!--- # Setting up a blog --->
+
 <p>From https://squidfunk.github.io/mkdocs-material/plugins/blog/</p>
 <blockquote>
 <p>Material for MkDocs makes it very easy to build a blog, either as a sidecar to your documentation or standalone. Focus on your content while the engine does all the heavy lifting, automatically generating archive and category indexes, post slugs, configurable pagination and more.</p>
@@ -3169,7 +3553,7 @@ jobs:
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2018-10-14 00:00:00+00:00">October 14, 2018</time></li>
+          <time datetime="2019-10-14 00:00:00+00:00">October 14, 2019</time></li>
         
           <li class="md-meta__item">
             in
@@ -3189,7 +3573,7 @@ jobs:
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="bash-timezone-checks"><a class="toclink" href="2018/10/14/bash-timezone-checks/">Bash timezone checks</a></h2>
+    <h2 id="bash-timezone-checks"><a class="toclink" href="2019/10/14/bash-timezone-checks/">Bash timezone checks</a></h2>
 <p>If you try to build an over-complicated scheduler using <code>bash</code>, you may run into issues when it comes to Daylight Saving Time.  While it is a good idea to use Coordinated Universal Time (UTC), you might want to make sure you do not run into issues.  The examples will use the <code>date</code> with the <code>+"%H:%M"</code> format.</p>
 <p>Using <code>date</code> with the <code>-u</code> option:
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
@@ -3253,7 +3637,9 @@ $<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="hello-world"><a class="toclink" href="2018/10/14/hello-world/">Hello world!</a></h2>
-<p>I'm hosted with GitHub Pages.  You can create your own GitHub pages site by following <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">the GitHub Pages documentation</a>.</p>
+<!---  # Hello world!  --->
+
+<p>I'm hosted with <a href="https://docs.github.com/en/pages">GitHub Pages</a>.  You can create your own GitHub Pages site by following <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">the GitHub Pages documentation</a>.</p>
 <p>You can also read through my <a href="https://rwaight.github.io/guides/setup-github-pages/">GitHub Pages setup guide</a>, which has information about using either <a href="https://rwaight.github.io/guides/setup-github-pages/#mkdocs">MkDocs Material</a> or <a href="https://rwaight.github.io/guides/setup-github-pages/#jekyll">Jekyll</a> with GitHub Pages.</p>
 
     

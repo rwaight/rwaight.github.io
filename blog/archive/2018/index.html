@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://rwaight.github.io/blog/archive/2018/">
       
       
-        <link rel="prev" href="../2024/">
+        <link rel="prev" href="../2019/">
       
       
         <link rel="next" href="../../../guides/">
@@ -34,6 +34,12 @@
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4z"/></svg>');}</style>
 
 
     
@@ -1744,6 +1750,8 @@
       
         
       
+        
+      
     
     
       
@@ -1833,6 +1841,30 @@
                 
   
   
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1890,15 +1922,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bash-timezone-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bash timezone checks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       Hello world!
@@ -1932,6 +1955,8 @@
   
     
     
+      
+        
       
         
       
@@ -2015,11 +2040,59 @@
   
   
     <li class="md-nav__item">
+      <a href="../../category/browsers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browsers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../category/github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
     
   </span>
   
@@ -2068,30 +2141,6 @@
   
   <span class="md-ellipsis">
     MkDocs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../category/test/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Test
     
   </span>
   
@@ -2921,15 +2970,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bash-timezone-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bash timezone checks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       Hello world!
@@ -2972,69 +3012,6 @@
           <li class="md-meta__item">
             in
             
-              <a href="../../category/bash/" class="md-meta__link">bash</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="bash-timezone-checks"><a class="toclink" href="../../2018/10/14/bash-timezone-checks/">Bash timezone checks</a></h2>
-<p>If you try to build an over-complicated scheduler using <code>bash</code>, you may run into issues when it comes to Daylight Saving Time.  While it is a good idea to use Coordinated Universal Time (UTC), you might want to make sure you do not run into issues.  The examples will use the <code>date</code> with the <code>+"%H:%M"</code> format.</p>
-<p>Using <code>date</code> with the <code>-u</code> option:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">03</span>:59
-</code></pre></div></p>
-<p>Using <code>date</code> after specifying the timezone with <code>TZ=</code>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">03</span>:59
-</code></pre></div></p>
-<p>Here is a way to ensure you include the appropriate Daylight Saving Time and its dates of applicability. The example is from the <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html#TZ-Variable">21.5.6 Specifying the Time Zone with <code>TZ</code></a> page.</p>
-<p>In North American Eastern Standard Time (EST) and Eastern Daylight Time (EDT), the normal offset from UTC is 5 hours; since this is west of the prime meridian, the sign is positive. Summer time begins on March’s second Sunday at 2:00am, and ends on November’s first Sunday at 2:00am.</p>
-<blockquote>
-<p><code>EST+5EDT</code></p>
-</blockquote>
-<p>Here are some examples using <code>date +"%H:%M"</code> for timezones in the continental United States:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:EST+5EDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">22</span>:59
-$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:CST+6CDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">21</span>:59
-$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:MST+7MDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">20</span>:59
-$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:PST+8PDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">19</span>:59
-</code></pre></div></p>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2018-10-14 00:00:00+00:00">October 14, 2018</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
               <a href="../../category/hello-world/" class="md-meta__link">Hello World</a></li>
         
         
@@ -3051,7 +3028,9 @@ $<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="hello-world"><a class="toclink" href="../../2018/10/14/hello-world/">Hello world!</a></h2>
-<p>I'm hosted with GitHub Pages.  You can create your own GitHub pages site by following <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">the GitHub Pages documentation</a>.</p>
+<!---  # Hello world!  --->
+
+<p>I'm hosted with <a href="https://docs.github.com/en/pages">GitHub Pages</a>.  You can create your own GitHub Pages site by following <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">the GitHub Pages documentation</a>.</p>
 <p>You can also read through my <a href="https://rwaight.github.io/guides/setup-github-pages/">GitHub Pages setup guide</a>, which has information about using either <a href="https://rwaight.github.io/guides/setup-github-pages/#mkdocs">MkDocs Material</a> or <a href="https://rwaight.github.io/guides/setup-github-pages/#jekyll">Jekyll</a> with GitHub Pages.</p>
 
     
