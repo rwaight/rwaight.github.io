@@ -2,7 +2,7 @@
 title: Bash timezone checks
 draft: false
 date:
-  created: 2018-10-14
+  created: 2019-10-14
   updated: 2025-02-04
 authors:
   - rwaight
