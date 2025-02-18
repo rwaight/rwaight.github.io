@@ -124,6 +124,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   # https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  # `admonitions` use: 'admonition', 'pymdownx.details', and 'pymdownx.superfences'
   - admonition
   - pymdownx.details
   - pymdownx.superfences
