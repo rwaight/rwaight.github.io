@@ -128,6 +128,9 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  # https://squidfunk.github.io/mkdocs-material/reference/annotations/
+  # `annotations` use: 'attr_list', 'md_in_html', and 'pymdownx.superfences'
+  - md_in_html
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
   - pymdownx.snippets
 
