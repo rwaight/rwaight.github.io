@@ -10,22 +10,28 @@
         <meta name="author" content="rwaight">
       
       
+        <link rel="canonical" href="https://rwaight.github.io/blog/2024/06/25/enable-debug-for-verbose-github-actions/">
       
       
+        <link rel="prev" href="../../../05/28/setting-up-a-blog/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="../../../../2025/02/04/using-scrumban-in-a-distributed-team/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
-        <title>rwaight on GitHub pages</title>
+        <title>Enable debug for verbose GitHub Actions - rwaight on GitHub pages</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -39,12 +45,12 @@
         
         
         
-        <link rel="stylesheet" href="/assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../../../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#understanding-when-variables-are-available" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -77,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+    <a href="../../../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -97,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Enable debug for verbose GitHub Actions
             
           </span>
         </div>
@@ -180,7 +191,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/index-summary/" class="md-tabs__link">
+        <a href="../../../../../index-summary/" class="md-tabs__link">
           
   
     
@@ -196,11 +207,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/blog/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
           
   
     
@@ -220,7 +233,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/guides/" class="md-tabs__link">
+        <a href="../../../../../guides/" class="md-tabs__link">
           
   
     
@@ -244,7 +257,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -255,7 +270,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+    <a href="../../../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -316,7 +331,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/." class="md-nav__link ">
+            <a href="../../../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -348,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index-summary/" class="md-nav__link">
+      <a href="../../../../../index-summary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -405,7 +420,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/random/" class="md-nav__link ">
+            <a href="../../../../../random/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -462,7 +477,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/random/git/" class="md-nav__link ">
+            <a href="../../../../../random/git/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -534,7 +549,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/random/github/" class="md-nav__link ">
+            <a href="../../../../../random/github/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -568,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/github/github-actions-fedora-libvirt/" class="md-nav__link">
+      <a href="../../../../../random/github/github-actions-fedora-libvirt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -590,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/github/github-actions-nested-virtualization/" class="md-nav__link">
+      <a href="../../../../../random/github/github-actions-nested-virtualization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/github/github-actions-notes/" class="md-nav__link">
+      <a href="../../../../../random/github/github-actions-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/github/github-ops-notes/" class="md-nav__link">
+      <a href="../../../../../random/github/github-ops-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/github/google-apps-and-github-actions/" class="md-nav__link">
+      <a href="../../../../../random/github/google-apps-and-github-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -678,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/github/random-github-notes/" class="md-nav__link">
+      <a href="../../../../../random/github/random-github-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/macos/macos-which-shell-am-i-using/" class="md-nav__link">
+      <a href="../../../../../random/macos/macos-which-shell-am-i-using/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/windows/build-win10-with-github-actions/" class="md-nav__link">
+      <a href="../../../../../random/windows/build-win10-with-github-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -901,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/windows/random-windows/" class="md-nav__link">
+      <a href="../../../../../random/windows/random-windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -923,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/windows/windows-change-env-vars-as-user/" class="md-nav__link">
+      <a href="../../../../../random/windows/windows-change-env-vars-as-user/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -988,7 +1003,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/random/unifi/" class="md-nav__link ">
+            <a href="../../../../../random/unifi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1092,7 +1107,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/random/unifi/ubntwiki/" class="md-nav__link ">
+            <a href="../../../../../random/unifi/ubntwiki/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1126,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/unifi/ubntwiki/unifi-controller-api/" class="md-nav__link">
+      <a href="../../../../../random/unifi/ubntwiki/unifi-controller-api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/unifi/unifi-controller-management/" class="md-nav__link">
+      <a href="../../../../../random/unifi/unifi-controller-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1239,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/test-page-1/" class="md-nav__link">
+      <a href="../../../../../random/test-page-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1326,7 +1341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/check-epoch-date/" class="md-nav__link">
+      <a href="../../../../../random/check-epoch-date/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/google-docs-from-markdown/" class="md-nav__link">
+      <a href="../../../../../random/google-docs-from-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1370,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/image-builder-notes/" class="md-nav__link">
+      <a href="../../../../../random/image-builder-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1392,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/notes-network-packets/" class="md-nav__link">
+      <a href="../../../../../random/notes-network-packets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1414,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/notes-truenas/" class="md-nav__link">
+      <a href="../../../../../random/notes-truenas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1481,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
+      <a href="../../../../../random/gpt-and-copilot/formal-ricotta-cheese/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/random/packer/using-packer-with-vault/" class="md-nav__link">
+      <a href="../../../../../random/packer/using-packer-with-vault/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/something/" class="md-nav__link">
+      <a href="../../../../../something/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1626,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/test/" class="md-nav__link">
+      <a href="../../../../../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,6 +1667,8 @@
       
   
   
+    
+  
   
   
     
@@ -1668,21 +1685,24 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/blog/" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1694,13 +1714,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -1729,17 +1749,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1767,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/archive/2025/" class="md-nav__link">
+      <a href="../../../../archive/2025/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1791,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/archive/2024/" class="md-nav__link">
+      <a href="../../../../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1815,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/archive/2018/" class="md-nav__link">
+      <a href="../../../../archive/2018/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1864,17 +1887,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1902,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/agile/" class="md-nav__link">
+      <a href="../../../../category/agile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1926,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/github/" class="md-nav__link">
+      <a href="../../../../category/github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1950,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/hello-world/" class="md-nav__link">
+      <a href="../../../../category/hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1974,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/mkdocs/" class="md-nav__link">
+      <a href="../../../../category/mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/test/" class="md-nav__link">
+      <a href="../../../../category/test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2022,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/category/bash/" class="md-nav__link">
+      <a href="../../../../category/bash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2098,7 +2124,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/guides/" class="md-nav__link ">
+            <a href="../../../../../guides/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2132,7 +2158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/munchkin-short-rules/" class="md-nav__link">
+      <a href="../../../../../guides/munchkin-short-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2154,7 +2180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/setup-auth-with-github-pages/" class="md-nav__link">
+      <a href="../../../../../guides/setup-auth-with-github-pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2176,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/setup-github-pages/" class="md-nav__link">
+      <a href="../../../../../guides/setup-github-pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2223,7 +2249,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/guides/docker/" class="md-nav__link ">
+            <a href="../../../../../guides/docker/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2257,7 +2283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/docker/container-ansible/" class="md-nav__link">
+      <a href="../../../../../guides/docker/container-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2340,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/github/overview/" class="md-nav__link">
+      <a href="../../../../../guides/github/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2362,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/github/gh-cli-delete-workflow-runs/" class="md-nav__link">
+      <a href="../../../../../guides/github/gh-cli-delete-workflow-runs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2384,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/github/github-actions-enable-debug/" class="md-nav__link">
+      <a href="../../../../../guides/github/github-actions-enable-debug/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2406,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/github/github-approve-and-merge-prs/" class="md-nav__link">
+      <a href="../../../../../guides/github/github-approve-and-merge-prs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2428,7 +2454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/github/github-use-gh-cli/" class="md-nav__link">
+      <a href="../../../../../guides/github/github-use-gh-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2509,7 +2535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
+      <a href="../../../../../guides/mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2531,7 +2557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
+      <a href="../../../../../guides/mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2553,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/mkdocs/mkdocs-embed-youtube/" class="md-nav__link">
+      <a href="../../../../../guides/mkdocs/mkdocs-embed-youtube/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2575,7 +2601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/mkdocs/mkdocs-iframe-full-width/" class="md-nav__link">
+      <a href="../../../../../guides/mkdocs/mkdocs-iframe-full-width/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2652,7 +2678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/windows/overview/" class="md-nav__link">
+      <a href="../../../../../guides/windows/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2674,7 +2700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/windows/fix-smartcard-reader-drivers/" class="md-nav__link">
+      <a href="../../../../../guides/windows/fix-smartcard-reader-drivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2751,7 +2777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/google-meeting-notes/" class="md-nav__link">
+      <a href="../../../../../guides/google-meeting-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2773,7 +2799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/guides/gpg-plus-git-ssh-auth-and-sign-on-win10/" class="md-nav__link">
+      <a href="../../../../../guides/gpg-plus-git-ssh-auth-and-sign-on-win10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2811,6 +2837,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2823,6 +2851,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-when-variables-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding when variables are available
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow-using-debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example workflow using debug mode
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2830,14 +2884,285 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-  <h1>404 - Not found</h1>
-
-              </article>
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
             </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="../../../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Rob Waight
+                        
+                      </strong>
+                      <br>
+                      Creator
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-06-25 00:00:00+00:00" class="md-ellipsis">June 25, 2024</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-02-16 00:00:00+00:00" class="md-ellipsis">February 16, 2025</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/github/">GitHub</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              2 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../../../../plugins/test1-tags/#tag:automation" class="md-tag">Automation</a>
+      
+    
+      
+      
+      
+        <a href="../../../../../plugins/test1-tags/#tag:github" class="md-tag">GitHub</a>
+      
+    
+      
+      
+      
+        <a href="../../../../../plugins/test1-tags/#tag:githubactions" class="md-tag">GitHub/Actions</a>
+      
+    
+      
+      
+      
+        <a href="../../../../../plugins/test1-tags/#tag:needtostandardizetags" class="md-tag">NeedToStandardizeTags</a>
+      
+    
+  </nav>
+
+
+  
+    <a href="https://github.com/rwaight/rwaight.github.io/edit/main/docs/blog/posts/enable-debug-for-verbose-github-actions.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Enable debug for verbose GitHub Actions</h1>
+
+<p><strong>This post is incomplete and will be updated in the future</strong></p>
+<p>If you are using composite actions that support their own <strong>verbose mode</strong>, you may find you only want to enable <strong>verbose mode</strong> when the GitHub runner is in <strong>debug mode</strong>.  The variable we need to know is <code>runner.debug</code>, which is also stored as <code>RUNNER_DEBUG</code>.</p>
+<h3 id="understanding-when-variables-are-available">Understanding when variables are available<a class="headerlink" href="#understanding-when-variables-are-available" title="Permanent link">&para;</a></h3>
+<p>In a GitHub workflow there are three different situations where different environmental variables are available, GitHub calls this "context".  There is <code>workflow</code> context, <code>job</code> context, and <code>step</code> context.  The <code>runner.*</code> and <code>RUNNER_*</code> variables are available in the <code>STEP</code> environmental context, <strong>but not</strong> in the <code>workflow</code> or <code>job</code> environmental context.</p>
+<h3 id="example-workflow-using-debug-mode">Example workflow using debug mode<a class="headerlink" href="#example-workflow-using-debug-mode" title="Permanent link">&para;</a></h3>
+<p>What this means is that in order to find out what the <code>runner.debug</code> variable is set to, you <strong>must</strong> check for the variable in a <code>step</code>.  Here is an example workflow that will run <strong>only</strong> when the GitHub runner is in <strong>debug mode</strong>:
+<div class="highlight"><pre><span></span><code>name: Print information only in runner debug
+
+on:
+  push:
+    branches:
+      - &#39;main&#39;
+    # ignore changes to .md files and the entire .github directory
+    paths-ignore:
+      - &#39;**.md&#39;
+      - &#39;.github/**&#39;
+
+jobs:
+
+  runner-debug:
+    runs-on: ubuntu-latest
+    name: Print info in runner debug mode
+    steps:
+
+      - name: GitHub Runner Debug Mode
+        if: ${{ runner.debug == &#39;1&#39; }}
+        # to do:  run this if either the verbose input is true or the runner.debug is true
+        id: runner-debug-mode
+        ## The &#39;runner.*&#39; and &#39;RUNNER_*&#39; variables are not available in the WORKFLOW env context or the top-level JOB context, but are available in the STEP env context
+        shell: bash
+        env:
+            EVAL_GH_VAR_RUNNER_DEBUG_EQ0: ${{ runner.debug == &#39;0&#39; }}
+            EVAL_GH_VAR_RUNNER_DEBUG_EQ1: ${{ runner.debug == &#39;1&#39; }}
+            FOOBAR: ${{ runner.debug == &#39;1&#39; &amp;&amp; &#39;foo&#39; || &#39;bar&#39; }}
+            # https://github.com/actions/runner/issues/2204#issuecomment-1287947031
+            # https://github.com/orgs/community/discussions/27627#discussioncomment-3302259
+            GH_RUNNER_LOG: &quot;${{ runner.debug == &#39;1&#39; &amp;&amp; &#39;INFO&#39; || &#39;ERROR&#39; }}&quot;
+            GH_VAR_RUNNER_DEBUG1: ${{ runner.debug }}
+            GH_VAR_RUNNER_DEBUG2: ${{ env.RUNNER_DEBUG }}
+        run: |
+            echo &quot;::group::starting the &#39;print-runner-context&#39; step... &quot;
+            echo &quot;&quot;
+            echo &quot;NOTE: The &#39;runner.*&#39; and &#39;RUNNER_*&#39; variables are not available in the WORKFLOW env context or the top-level JOB context, but are available in the STEP env context &quot;
+            echo &quot;&quot;
+            echo &quot;eval if the &#39;runner.debug&#39; is set to either &#39;0&#39; or &#39;1&#39; &quot;
+            echo &quot;     runner.debug equal 0:  ${EVAL_GH_VAR_RUNNER_DEBUG_EQ0} &quot;
+            echo &quot;     runner.debug equal 1:  ${EVAL_GH_VAR_RUNNER_DEBUG_EQ1} &quot;
+            echo &quot;&quot;
+            echo &quot;set FOOBAR to &#39;foo&#39; if &#39;runner.debug&#39; is &#39;1&#39;; otherwise set FOOBAR to &#39;bar&#39; &quot;
+            echo &quot;    FOOBAR:  ${FOOBAR} &quot;
+            echo &quot;&quot;
+            echo &quot;set GH_RUNNER_LOG to &#39;INFO&#39; if &#39;runner.debug&#39; is &#39;1&#39;; otherwise set GH_RUNNER_LOG to &#39;ERROR&#39; &quot;
+            echo &quot;    GH_RUNNER_LOG:  ${GH_RUNNER_LOG} &quot;
+            echo &quot;&quot;
+            echo &quot;the values of &#39;runner.debug&#39; and &#39;env.RUNNER_DEBUG&#39;: &quot;
+            echo &quot;    GH_VAR_RUNNER_DEBUG1:  ${GH_VAR_RUNNER_DEBUG1} &quot;
+            echo &quot;    GH_VAR_RUNNER_DEBUG2:  ${GH_VAR_RUNNER_DEBUG2} &quot;
+            echo &quot;&quot;
+            echo &quot;finishing the &#39;print-runner-context&#39; step... &quot;
+            ##
+            echo &quot;::endgroup::&quot;
+        ## The &#39;runner.*&#39; and &#39;RUNNER_*&#39; variables are not available in the WORKFLOW env context or the top-level JOB context, but are available in the STEP env context
+</code></pre></div></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2025</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/rwaight" class="md-author" title="@rwaight">
+          
+          <img src="../../../../../assets/external/avatars.githubusercontent.com/u/43173714.fe356448.jpg" alt="rwaight">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="../../../../../assets/external/avatars.githubusercontent.com/u/19864447.fe356448.png" alt="web-flow">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -2868,10 +3193,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "/assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
     
   </body>
