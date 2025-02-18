@@ -181,3 +181,8 @@ plugins:
       exclude:
         - index.md
         - test-*.md
+  - meta:
+      # https://squidfunk.github.io/mkdocs-material/plugins/meta/
+      # settings: https://squidfunk.github.io/mkdocs-material/plugins/meta/#general
+      enabled: true
+      #meta_file: .meta.yml
