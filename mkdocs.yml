@@ -55,6 +55,8 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     edit: material/pencil 
     view: material/eye
+    # https://squidfunk.github.io/mkdocs-material/reference/annotations/#annotation-icons
+    annotation: material/plus-circle-outline
     #
   language: en    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language
   palette:
