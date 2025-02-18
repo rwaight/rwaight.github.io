@@ -3,19 +3,19 @@ title: Setting up a blog
 draft: false
 date:
   created: 2024-05-28
-  updated: 2024-06-26
+  updated: 2025-02-18
 description: >
   Use the Material for MkDocs built-in blog plugin to add a blog to your site.
 authors: [rwaight]
 categories:
   - MkDocs
-  - Test
+  #- Test
 slug: setting-up-a-blog
 tags:
   - MkDocs
 ---
 
-# Setting up a blog
+<!--- # Setting up a blog --->
 
 From https://squidfunk.github.io/mkdocs-material/plugins/blog/
 
