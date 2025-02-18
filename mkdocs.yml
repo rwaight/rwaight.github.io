@@ -96,7 +96,10 @@ markdown_extensions:
   ###
   # not sure if 'pymdownx.github' works
   #- pymdownx.github
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
+  # https://squidfunk.github.io/mkdocs-material/reference/lists/
+  # `lists` use: 'def_list' and 'pymdownx.tasklist' ('custom_checkbox: true' within 'pymdownx.tasklist')
+  #    # setup
+  #    # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#definition-lists
   - def_list
     # https://squidfunk.github.io/mkdocs-material/reference/lists/#configuration
   # https://squidfunk.github.io/mkdocs-material/reference/diagrams/#configuration
@@ -108,6 +111,7 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/reference/lists/#using-task-lists
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tasklist
   - pymdownx.tasklist:
+      # 'custom_checkbox: true' is used with 'lists'
       custom_checkbox: true
   - toc:
       title: On this page
