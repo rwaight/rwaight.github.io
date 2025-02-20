@@ -30,6 +30,13 @@ Network ports
 - [What network ports are used by Synology services?](https://www.synology.com/en-us/knowledgebase/DSM/tutorial/General/What_network_ports_are_used_by_Synology_services)
 
 
+### Networking Issues
+
+- Error: `Please make sure the ip address of the synology NAS is correct`
+    - [troubleshoot NAS connection problems](https://kb.synology.com/en-global/DSM/tutorial/What_can_I_do_to_troubleshoot_NAS_connection_problems)
+- Error `connection failed`
+    - [why connection failed?](https://kb.synology.com/en-us/DSM/tutorial/DSM_update_why_connection_failed)
+
 
 ## DS Audio
 
