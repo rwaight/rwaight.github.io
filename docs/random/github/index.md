@@ -81,6 +81,7 @@ https://github.com/search?q=committer-name:NAME&type=commits
 → Simply replace NAME with the specific committer name you are looking for.
 
 the above is from https://stackoverflow.com/questions/33926874/in-github-is-there-a-way-to-see-all-recent-commits-on-all-branches
+
 - https://stackoverflow.com/a/76342801
 
 
@@ -92,10 +93,12 @@ https://github.com/<repository_name>/commits/<branch_name>?author=<user_name>
 ```
 
 eg.
+
 - Repository: langchain-ai/langchain
 - Branch: master
 - Author: sepiatone
 - https://github.com/langchain-ai/langchain/commits/master?author=sepiatone
 
 the above is from https://stackoverflow.com/questions/33926874/in-github-is-there-a-way-to-see-all-recent-commits-on-all-branches
+
 - https://stackoverflow.com/a/78091633

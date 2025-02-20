@@ -30,10 +30,12 @@ tags:
 ## References
 
 #### Git Basics - Tagging
+
 - https://git-scm.com/book/en/v2/Git-Basics-Tagging
 
 
 #### Git Branching - Rebasing
+
 - https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 
 
@@ -102,10 +104,12 @@ git push origin -f
 ## Releases and Tags
 
 ### GitHub Tagging
+
 - https://www.google.com/search?q=github+create+tag+without+release
 - https://stackoverflow.com/questions/18216991/create-a-tag-in-a-github-repository
 
 ### Show latest releases with git
+
 - https://unix.stackexchange.com/questions/502939/how-to-show-latest-releases-git-tag-with-message
 - https://stackoverflow.com/questions/1404796/how-can-i-get-the-latest-tag-name-in-current-branch-in-git
 - https://github.com/orgs/community/discussions/25199
