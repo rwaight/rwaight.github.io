@@ -1,16 +1,28 @@
 ---
 title: Random Git Notes
+description: >
+  This page has random Git notes that need to be organized.
+#icon: octicons/repo-template-24
+#status: new
+# page metadata
+draft: false
 date:
   created: 2023-10-02
-  updated: 2025-01-08
+  updated: 2025-02-20
 authors:
   - rwaight
+categories:
+  - Git
 #slug: random-git-notes
 tags:
   - Git
+  - Random
+  - Need to organize
 ---
 
-# Random Git Notes
+<!---  # Random Git Notes  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
 
 - [Learn Git Branching](https://learngitbranching.js.org/)
     - [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
