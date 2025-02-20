@@ -12,6 +12,7 @@ nav:
     - windows
     #- UniFi: unifi
     - unifi
+    - synology
     - Test: 
         - ... | test-*.md
     - Other: 
