@@ -5,6 +5,7 @@ nav:
     #- Git: git
     - git
     - GitHub: github
+    - linux
     #- OS: 
     #    - macos
     #    - windows
