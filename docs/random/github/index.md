@@ -1,16 +1,27 @@
 ---
 title: Random GitHub Notes
+description: >
+  This page has random GitHub notes that need to be organized.
+#icon: octicons/repo-template-24
+#status: new
+# page metadata
+draft: false
 date:
   created: 2024-10-25
-  updated: 2024-10-25
+  updated: 2025-02-20
 authors:
   - rwaight
+categories:
+  - GitHub
 #slug: random-github-notes
 tags:
   - GitHub
+  - Random
+  - Need to organize
 ---
 
-# Random GitHub Notes
+<!---  # Random GitHub Notes  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
 
 ## References
 
