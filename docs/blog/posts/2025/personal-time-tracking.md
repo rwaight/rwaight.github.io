@@ -8,7 +8,7 @@ status: new
 draft: false
 date:
   created: 2025-02-13
-  updated: 2025-02-26
+  updated: 2025-02-28
 authors:
   - rwaight
 categories:
@@ -146,4 +146,21 @@ function logAcceptedEvents() {
   });
 }
 ```
+
+- Update the `CALENDAR_ID` with your email address
+- Update the `START_DATE` to the first day you want to get calendar entries for
+- Update the `END_DATE` to the date **AFTER** you want to search through
+    - Example: if you want to search **through** `2025-03-01`, then enter `2025-03-02`
+- Save the changes to the `CalendarEntries` file
+
+
+#### Running the listCalendarEntries function
+
+Once you have stored your email address in the `CALENDAR_ID` and updated the `START_DATE` and `END_DATE` variables, now you can run the **listCalendarEntries** function:
+
+- Confirm the variables have been set correctly
+- Select the `listCalendarEntries` in the drop down menu
+- Select the **Run** option in the menu
+
+![google-apps-script-select-function](202502-google-apps-script-select-function.png)
 
