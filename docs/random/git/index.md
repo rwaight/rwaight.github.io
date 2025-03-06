@@ -1,16 +1,28 @@
 ---
 title: Random Git Notes
+description: >
+  This page has random Git notes that need to be organized.
+#icon: octicons/repo-template-24
+#status: new
+# page metadata
+draft: false
 date:
   created: 2023-10-02
-  updated: 2025-01-08
+  updated: 2025-02-20
 authors:
   - rwaight
+categories:
+  - Git
 #slug: random-git-notes
 tags:
   - Git
+  - Random
+  - Need to organize
 ---
 
-# Random Git Notes
+<!---  # Random Git Notes  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
 
 - [Learn Git Branching](https://learngitbranching.js.org/)
     - [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
@@ -18,10 +30,12 @@ tags:
 ## References
 
 #### Git Basics - Tagging
+
 - https://git-scm.com/book/en/v2/Git-Basics-Tagging
 
 
 #### Git Branching - Rebasing
+
 - https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 
 
@@ -90,10 +104,12 @@ git push origin -f
 ## Releases and Tags
 
 ### GitHub Tagging
+
 - https://www.google.com/search?q=github+create+tag+without+release
 - https://stackoverflow.com/questions/18216991/create-a-tag-in-a-github-repository
 
 ### Show latest releases with git
+
 - https://unix.stackexchange.com/questions/502939/how-to-show-latest-releases-git-tag-with-message
 - https://stackoverflow.com/questions/1404796/how-can-i-get-the-latest-tag-name-in-current-branch-in-git
 - https://github.com/orgs/community/discussions/25199

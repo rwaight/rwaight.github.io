@@ -2,10 +2,15 @@
 title: Random pages index page
 date:
   created: 2024-06-25
-  updated: 2025-02-18
+  updated: 2025-02-20
 ---
 
 # Random pages index page
+
+**Anti-glare film**:
+
+- Reddit
+    - [Any experience with anti glare film?](https://www.reddit.com/r/TheFrame/comments/tyie5j/any_experience_with_anti_glare_film/)
 
 <!--- the '### Dark mode in chromium browsers' section was MOVED to a 'blog' on 2025-02-18 --->
 <!--- this section was created on 2024-09-05 --->

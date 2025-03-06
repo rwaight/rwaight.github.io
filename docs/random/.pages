@@ -5,11 +5,15 @@ nav:
     #- Git: git
     - git
     - GitHub: github
-    - OS: 
-        - macos
-        - windows
+    - linux
+    #- OS: 
+    #    - macos
+    #    - windows
+    - macos
+    - windows
     #- UniFi: unifi
     - unifi
+    - synology
     - Test: 
         - ... | test-*.md
     - Other: 
