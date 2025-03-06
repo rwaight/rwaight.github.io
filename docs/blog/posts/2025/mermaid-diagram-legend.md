@@ -79,6 +79,9 @@ flowchart LR
 
 This is from [mermaid-js/mermaid#2110 comment 2696764562](https://github.com/mermaid-js/mermaid/issues/2110#issuecomment-2696764562):
 
+The diagram was commented out due to an error...
+
+<!--- 
 
 ```mermaid
     subgraph B[ ]
@@ -94,6 +97,8 @@ This is from [mermaid-js/mermaid#2110 comment 2696764562](https://github.com/mer
         style weeks fill:#7c2ea3,stroke-width:0px
     end
 ```
+
+ --->
 
 <!--  example comment here  -->
 <!--- another example comment --->
