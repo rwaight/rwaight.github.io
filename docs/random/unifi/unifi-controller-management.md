@@ -10,9 +10,17 @@ date:
 
 UniFi Local Management: https://help.ui.com/hc/en-us/articles/28457353760919-UniFi-Local-Management
 
+Documentation about local management:
+- https://ubntwiki.com/products/software/unifi-controller/api
+- PHP API library: https://github.com/Art-of-WiFi/UniFi-API-client
+- Python API library: https://unificontrol.readthedocs.io/en/latest/introduction.html
+
+
 ### Local APIs
 
 UniFi Controller API: https://ubntwiki.com/products/software/unifi-controller/api
+UniFi Controller Python Interface: https://unificontrol.readthedocs.io/en/latest/introduction.html
+- GitHub: https://github.com/nickovs/unificontrol
 
 #### UniFi API resources
 
@@ -28,7 +36,7 @@ Resources to access the UniFi API
             - Archived August 2022
             - from https://community.ui.com/questions/Unifi-Python-API/4c58d69c-3278-4b61-86fd-7b497c70c102
         - UniFi API: https://github.com/brontide/unifiapi
-        - unifcontrol: https://github.com/nickovs/unificontrol
+        - unificontrol: https://github.com/nickovs/unificontrol
         - aiounifi: https://github.com/Kane610/aiounifi
     - Websocket
         - UniFi Websocket Interface: https://github.com/NickWaterton/Unifi-websocket-interface/
