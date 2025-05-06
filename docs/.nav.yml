@@ -6,6 +6,7 @@ nav:
         - "index-*.md"
         - random
         #old#- ...
+        # group the remainding '*.md' files using the glob pattern
         - "*.md"
     - Blog: blog
     # - Blog:

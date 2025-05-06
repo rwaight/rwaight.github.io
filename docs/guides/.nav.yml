@@ -17,4 +17,5 @@ nav:
     #this did not work#    - windows/overview.md
     #this did not work#    - ... | windows
     - Not categorized:
-        - ...
+        # group the remainding '*.md' files using the glob pattern
+        - "*.md"

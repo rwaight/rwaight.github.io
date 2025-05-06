@@ -4,4 +4,5 @@ nav:
     - index.md
     - Ubiquiti Community Wiki:
         - ubntwiki
-    - ...
+    # group the remainding '*.md' files using the glob pattern
+    - "*.md"
