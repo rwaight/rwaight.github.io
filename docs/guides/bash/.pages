@@ -1,4 +1,4 @@
-## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
+## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
 ## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
 nav:
     - index.md
