@@ -1,0 +1,8 @@
+# General
+.DS_Store
+
+# directories used when running MkDocs locally
+.cache/plugin/
+
+# files generated when running MkDocs locally
+docs/blog/index.md
