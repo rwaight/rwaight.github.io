@@ -141,7 +141,7 @@ markdown_extensions:
 plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/#built-in-privacy-plugin
   - privacy
-  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  # https://github.com/lukasgeiter/mkdocs-awesome-nav
   - awesome-nav
   - search
   # https://squidfunk.github.io/mkdocs-material/plugins/blog/
@@ -155,7 +155,7 @@ plugins:
   - tags:
       enabled: true
       # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_file
-      # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/issues/102
+      # https://github.com/lukasgeiter/mkdocs-awesome-nav/issues/102
       tags_file: plugins/tags.md
       # # https://squidfunk.github.io/mkdocs-material/plugins/tags/?h=tags+allowed#config.tags_allowed
       # # 'tags_allowed' is for sponsors only
