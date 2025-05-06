@@ -15,6 +15,7 @@ nav:
     - unifi
     - synology
     - Test: 
-        - ... | test-*.md
+        - "test-*.md"
     - Other: 
-        - ...
+        # group the remainding '*.md' files using the glob pattern
+        - "*.md"
