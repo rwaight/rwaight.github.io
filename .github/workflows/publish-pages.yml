@@ -66,6 +66,8 @@ jobs:
 
       - name: Install mkdocs-awesome-nav
         # https://www.mkdocs.org/dev-guide/plugins/#installing-plugins
+        # https://lukasgeiter.github.io/mkdocs-awesome-nav/#installation
+        # https://github.com/lukasgeiter/mkdocs-awesome-nav
         run: pip install mkdocs-awesome-nav
 
       # Reserved for future use, see https://backstage.github.io/mkdocs-monorepo-plugin/
