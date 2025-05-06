@@ -1,10 +1,13 @@
-## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
-## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
+## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
+## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - Home: 
-        - ... | flat | index-*.md
+        #old#- ... | flat | index-*.md
+        - "index-*.md"
         - random
-        - ...
+        #old#- ...
+        # group the remainding '*.md' files using the glob pattern
+        - "*.md"
     - Blog: blog
     # - Blog:
         # - blog/index.md
@@ -18,3 +21,5 @@ nav:
     #    - something.md
     #- ...
     #- index-summary.md
+
+flatten_single_child_sections: true

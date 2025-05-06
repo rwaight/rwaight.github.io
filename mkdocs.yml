@@ -7,10 +7,10 @@ repo_url: https://github.com/rwaight/rwaight.github.io
 repo_name: rwaight/rwaight.github.io
 # make sure to update the `plugins:git-committers:repository` value to match the `repo_name` value
 
-## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
+## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
 ## the plugin won't do anything if `mkdocs.yml` defines a `nav` or `pages` entry
-## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
-## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
+## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
+## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
 # # https://www.mkdocs.org/user-guide/configuration/#nav
 # # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 # nav:
@@ -24,8 +24,8 @@ repo_name: rwaight/rwaight.github.io
 #     - guides/
 #   - Random:
 #     - random/
-## use https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin for navigation
-## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
+## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
+## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
@@ -141,8 +141,8 @@ markdown_extensions:
 plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/#built-in-privacy-plugin
   - privacy
-  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-  - awesome-pages
+  # https://github.com/lukasgeiter/mkdocs-awesome-nav
+  - awesome-nav
   - search
   # https://squidfunk.github.io/mkdocs-material/plugins/blog/
   - blog:
@@ -155,7 +155,7 @@ plugins:
   - tags:
       enabled: true
       # https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_file
-      # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/issues/102
+      # https://github.com/lukasgeiter/mkdocs-awesome-nav/issues/102
       tags_file: plugins/tags.md
       # # https://squidfunk.github.io/mkdocs-material/plugins/tags/?h=tags+allowed#config.tags_allowed
       # # 'tags_allowed' is for sponsors only
