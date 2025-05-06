@@ -2,9 +2,11 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - Home: 
-        - ... | flat | index-*.md
+        #old#- ... | flat | index-*.md
+        - "index-*.md"
         - random
-        - ...
+        #old#- ...
+        - "*.md"
     - Blog: blog
     # - Blog:
         # - blog/index.md
@@ -18,3 +20,5 @@ nav:
     #    - something.md
     #- ...
     #- index-summary.md
+
+flatten_single_child_sections: true
