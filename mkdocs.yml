@@ -142,7 +142,7 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/#built-in-privacy-plugin
   - privacy
   # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-  - awesome-pages
+  - awesome-nav
   - search
   # https://squidfunk.github.io/mkdocs-material/plugins/blog/
   - blog:
