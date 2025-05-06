@@ -9,7 +9,7 @@ repo_name: rwaight/rwaight.github.io
 
 ## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
 ## the plugin won't do anything if `mkdocs.yml` defines a `nav` or `pages` entry
-## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
+## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 ## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
 # # https://www.mkdocs.org/user-guide/configuration/#nav
 # # https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
@@ -25,7 +25,7 @@ repo_name: rwaight/rwaight.github.io
 #   - Random:
 #     - random/
 ## use https://github.com/lukasgeiter/mkdocs-awesome-nav for navigation
-## https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin?tab=readme-ov-file#customize-navigation
+## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 
 # https://www.mkdocs.org/user-guide/configuration/#theme
 theme:
