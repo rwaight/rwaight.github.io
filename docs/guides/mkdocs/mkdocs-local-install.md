@@ -1,0 +1,99 @@
+---
+title: Local installation
+description: Local installation of MkDocs
+date:
+  created: 2024-05-28
+  updated: 2025-05-06
+authors: [rwaight]
+categories:
+  - MkDocs
+tags:
+  - MkDocs
+  - MkDocs/Examples
+  - NeedToStandardizeTags
+---
+
+
+
+!!! warning
+
+    As mentioned in the [Material for MkDocs "getting started with docker" guide](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}, the Docker container is intended for local previewing purposes only and is not suitable for deployment. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
+
+## Install with docker
+
+<!--- The content from this section is directly from 
+ https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/docs/getting-started.md
+ --->
+
+The official [Docker image] is a great way to get up and running in a few
+minutes, as it comes with all dependencies pre-installed. Open up a terminal
+and pull the image with:
+
+=== "Latest"
+
+    ```shell
+    docker pull squidfunk/mkdocs-material
+    ```
+
+=== "9.x"
+
+    ```shell
+    docker pull squidfunk/mkdocs-material:9
+    ```
+
+The `mkdocs` executable is provided as an entry point and `serve` is the
+default command. If you're not familiar with Docker don't worry, we have you
+covered in the following sections.
+
+The following plugins are bundled with the Docker image:
+
+- [mkdocs-minify-plugin]
+- [mkdocs-redirects]
+
+  [Docker image]: https://hub.docker.com/r/squidfunk/mkdocs-material/
+  [mkdocs-minify-plugin]: https://github.com/byrnereese/mkdocs-minify-plugin
+  [mkdocs-redirects]: https://github.com/datarobot/mkdocs-redirects
+
+???+ warning
+
+    The Docker container is intended for local previewing purposes only and
+    is not suitable for deployment. This is because the web server used by
+    MkDocs for live previews is not designed for production use and may have
+    security vulnerabilities.
+
+??? question "How to add plugins to the Docker image?"
+
+    Material for MkDocs only bundles selected plugins in order to keep the size
+    of the official image small. If the plugin you want to use is not included,
+    you can add them easily:
+
+    === "Material for MkDocs"
+
+        Create a `Dockerfile` and extend the official image:
+
+        ``` Dockerfile title="Dockerfile"
+        FROM squidfunk/mkdocs-material
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-glightbox
+        ```
+
+    === "Insiders"
+
+        Clone or fork the Insiders repository, and create a file called
+        `user-requirements.txt` in the root of the repository. Then, add the
+        plugins that should be installed to the file, e.g.:
+
+        ``` txt title="user-requirements.txt"
+        mkdocs-macros-plugin
+        mkdocs-glightbox
+        ```
+
+    Next, build the image with the following command:
+
+    ```shell
+    docker build -t squidfunk/mkdocs-material .
+    ```
+
+    The new image will have additional packages installed and can be used
+    exactly like the official image.
+
