@@ -3,7 +3,7 @@ title: Local installation
 description: Local installation of MkDocs
 date:
   created: 2024-05-28
-  updated: 2025-05-06
+  updated: 2025-05-07
 authors: [rwaight]
 categories:
   - MkDocs
@@ -11,13 +11,17 @@ tags:
   - MkDocs
   - MkDocs/Examples
   - NeedToStandardizeTags
+# https://mkdocs-macros-plugin.readthedocs.io/en/latest/rendering/#opt-in-with-the-markdown-pages-header
+render_macros: true
 ---
 
+In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-you-write), you will need to [run MkDocs locally with Docker](#install-with-docker) first.
 
 
 !!! warning
 
     As mentioned in the [Material for MkDocs "getting started with docker" guide](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}, the Docker container is intended for local previewing purposes only and is not suitable for deployment. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
+
 
 ## Install with docker
 
@@ -71,10 +75,18 @@ The following plugins are bundled with the Docker image:
 
         Create a `Dockerfile` and extend the official image:
 
+<!--- the below code block is from the MkDocs guide --->
+<!--- 
         ``` Dockerfile title="Dockerfile"
         FROM squidfunk/mkdocs-material
         RUN pip install mkdocs-macros-plugin
         RUN pip install mkdocs-glightbox
+        ```
+ --->
+
+ <!--- the below code block is from this repo --->
+        ```Dockerfile title="Dockerfile"
+        {% include 'docker/mkdocs/Dockerfile' %}
         ```
 
     === "Insiders"
