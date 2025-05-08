@@ -2157,6 +2157,8 @@
       
         
       
+        
+      
     
     
     
@@ -2215,6 +2217,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2836,36 +2861,36 @@
 <h3 id="uncommit-but-keep-changes">Uncommit but keep changes<a class="headerlink" href="#uncommit-but-keep-changes" title="Permanent link">&para;</a></h3>
 <p><a href="https://gist.github.com/CrookedNumber/8964442">credit to this gist from <code>CrookedNumber</code></a>.</p>
 <p>To "uncommit" the last commit from git, but keep the changes, run:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>HEAD^
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^
+</span></code></pre></div></p>
 <p>This command will "evict" the commits from the branch and from the index, but leave the working tree around.</p>
 <p>If you want to save the commits on a new branch name, then run <code>git branch newbranchname</code> before doing the git reset.</p>
 <h3 id="remove-the-last-commit">Remove the last commit<a class="headerlink" href="#remove-the-last-commit" title="Permanent link">&para;</a></h3>
 <p>To remove the last commit from git, run:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
+</span></code></pre></div></p>
 <h3 id="remove-the-last-n-commits">Remove the last n commits<a class="headerlink" href="#remove-the-last-n-commits" title="Permanent link">&para;</a></h3>
 <p>If you are removing multiple commits from the top, run:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~n
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~n
+</span></code></pre></div></p>
 <blockquote>
 <p>Where <code>n</code> is the number of commits to remove.</p>
 </blockquote>
 <p>Example to remove the last two commits:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~2
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~2
+</span></code></pre></div></p>
 <h3 id="remove-the-last-n-commits-on-local-and-remote">Remove the last n commits on local and remote<a class="headerlink" href="#remove-the-last-n-commits-on-local-and-remote" title="Permanent link">&para;</a></h3>
 <p>To remove the last commit from git, run:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~n
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-f
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~n
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-f
+</span></code></pre></div></p>
 <blockquote>
 <p>Where <code>n</code> is the number of commits to remove.</p>
 </blockquote>
 <p>Example to remove the last two commits on local <strong>and remote</strong>:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~2
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-f
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~2
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-f
+</span></code></pre></div></p>
 <h2 id="releases-and-tags">Releases and Tags<a class="headerlink" href="#releases-and-tags" title="Permanent link">&para;</a></h2>
 <h3 id="github-tagging">GitHub Tagging<a class="headerlink" href="#github-tagging" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2956,6 +2981,8 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2987,7 +3014,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>

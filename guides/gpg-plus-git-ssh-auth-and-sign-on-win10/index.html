@@ -2001,6 +2001,8 @@
       
         
       
+        
+      
     
     
     
@@ -2062,6 +2064,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2835,48 +2860,48 @@ This may seem straightforward on Linux, but there are certain tweaks needed on W
 You must make sure that your key has signing and authenticating subkeys!</p>
 <p>You can import an existing key with <code>gpg --import key.gpg</code></p>
 <p>To list the keys use <code>gpg -k --with-keygrip</code>, example below.</p>
-<div class="highlight"><pre><span></span><code>&gt; gpg -k --with-keygrip
-C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
-------------------------------------------------
-pub   rsa4096 2019-10-28 [SC] [expires: 2021-10-25]
-      9B0069EA5619486EB2A7E44392FC071FF37A93E5
-      Keygrip = 496F3C43AB7D195624832E0E3BF4FF9B531D2DB8
-uid           [ultimate] Matus Novak &lt;email@matusnovak.com&gt;
-sub   rsa4096 2019-10-28 [E] [expires: 2021-10-25]
-      Keygrip = EE087ED74ED6F7843D397825CFB7D9EDD79F73BF
-sub   rsa4096 2019-10-28 [A] [expires: 2021-10-25]
-      Keygrip = 0B60893C664F965058DFDE93F34199566A12C39A
-sub   rsa4096 2019-10-28 [S] [expires: 2021-10-25]
-      Keygrip = BC0EC1D2E8E8B24405519823D51AFC4A05DF5E05
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt; gpg -k --with-keygrip
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>------------------------------------------------
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pub   rsa4096 2019-10-28 [SC] [expires: 2021-10-25]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      9B0069EA5619486EB2A7E44392FC071FF37A93E5
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      Keygrip = 496F3C43AB7D195624832E0E3BF4FF9B531D2DB8
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>uid           [ultimate] Matus Novak &lt;email@matusnovak.com&gt;
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sub   rsa4096 2019-10-28 [E] [expires: 2021-10-25]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>      Keygrip = EE087ED74ED6F7843D397825CFB7D9EDD79F73BF
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>sub   rsa4096 2019-10-28 [A] [expires: 2021-10-25]
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>      Keygrip = 0B60893C664F965058DFDE93F34199566A12C39A
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>sub   rsa4096 2019-10-28 [S] [expires: 2021-10-25]
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>      Keygrip = BC0EC1D2E8E8B24405519823D51AFC4A05DF5E05
+</span></code></pre></div>
 <p>This key has three subkeys, one for [A]authentication, one for [S]igning, and one for [E]ncryption. We will need the [S] and [A].</p>
 <h2 id="configure-gpg">Configure GPG<a class="headerlink" href="#configure-gpg" title="Permanent link">&para;</a></h2>
 <p><strong>WARNING:</strong> Don't use CRLF newlines! You must switch to using LF only!</p>
 <p>First, create a file <code>C:\Users\USER\AppData\Roaming\gnupg\gpg.conf</code> with the following contents. No new lines at the end.</p>
-<div class="highlight"><pre><span></span><code>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\gpg.conf
-use-agent
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\gpg.conf
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>use-agent
+</span></code></pre></div>
 <p>Next, create another file <code>C:\Users\USER\AppData\Roaming\gnupg\gpg-agent.conf</code> with the following contents. No new lines at the end.</p>
-<div class="highlight"><pre><span></span><code>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\gpg-agent.conf
-enable-ssh-support
-enable-putty-support
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\gpg-agent.conf
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>enable-ssh-support
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>enable-putty-support
+</span></code></pre></div>
 <h2 id="ssh-control-file">SSH control file<a class="headerlink" href="#ssh-control-file" title="Permanent link">&para;</a></h2>
 <p>There is one more file, the <code>C:\Users\USER\AppData\Roaming\gnupg\sshcontrol</code>. This file may already exist in your <code>gnupg</code> folder. If not, create it.</p>
 <p>Add your authenticating subkey (the keygrip ID) into this file. <strong>There must be a single newline at the end! You must use LF line endings, not CRLF!.</strong> Otherwise the key won't be recognised. Example below.</p>
-<div class="highlight"><pre><span></span><code>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\sshcontrol
-0B60893C664F965058DFDE93F34199566A12C39A
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt; cat C:\Users\USER\AppData\Roaming\gnupg\sshcontrol
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>0B60893C664F965058DFDE93F34199566A12C39A
+</span></code></pre></div>
 <h2 id="restart-the-agent">Restart the agent<a class="headerlink" href="#restart-the-agent" title="Permanent link">&para;</a></h2>
 <p>Every time you change your configuration, you must restart the agent using the <code>gpg-connect-agent killagent /bye</code> and <code>gpg-connect-agent /bye</code>. Example below.</p>
-<div class="highlight"><pre><span></span><code>&gt; gpg-connect-agent killagent /bye
-OK closing connection
-
-&gt; gpg-connect-agent /bye
-gpg-connect-agent: no running gpg-agent - starting &#39;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin\gpg-agent.exe&#39;
-gpg-connect-agent: waiting for the agent to come up ... (5s)
-gpg-connect-agent: connection to agent established
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt; gpg-connect-agent killagent /bye
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>OK closing connection
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>&gt; gpg-connect-agent /bye
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>gpg-connect-agent: no running gpg-agent - starting &#39;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin\gpg-agent.exe&#39;
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>gpg-connect-agent: waiting for the agent to come up ... (5s)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>gpg-connect-agent: connection to agent established
+</span></code></pre></div>
 <h2 id="start-the-agent-on-startup">Start the agent on startup<a class="headerlink" href="#start-the-agent-on-startup" title="Permanent link">&para;</a></h2>
 <p>Make sure that the gpg agent starts on the startup. There are multiple ways to do that. The most simple solution is to create a shortcut of <code>C:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe</code> inside of <code>C:\Users\USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code>. Modify the shortcut, so that the "Target" ends with <code>/bye</code>, such as: <code>"C:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe" /bye</code>.</p>
 <p>The <code>/bye</code> is a necessary argument so that the command starts the agent and exits afterwards.</p>
@@ -2885,60 +2910,60 @@ gpg-connect-agent: connection to agent established
 <p>Download the <code>wsl-ssh-pageant-amd64-gui.exe</code> from <a href="https://github.com/benpye/wsl-ssh-pageant/releases">benpye/wsl-ssh-pageant releases</a>. (It's not a GUI, it only acts as one so you don't get a terminal window).</p>
 <p>There is no install wizard for this application. Simply create a folder <code>C:\wsl-ssh-pageant</code> and put the <code>wsl-ssh-pageant-amd64-gui.exe</code> inside of it. The location does not matter.</p>
 <p>Next, create a shortcut of <code>C:\wsl-ssh-pageant\wsl-ssh-pageant-amd64-gui.exe</code> inside of <code>C:\Users\USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code>. Modify the shortcut, adding some command line arguments, so that the "Target" looks like the following: </p>
-<div class="highlight"><pre><span></span><code>C:\wsl-ssh-pageant\wsl-ssh-pageant-amd64-gui.exe --wsl C:\wsl-ssh-pageant\ssh-agent.sock --winssh ssh-pageant --systray
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>C:\wsl-ssh-pageant\wsl-ssh-pageant-amd64-gui.exe --wsl C:\wsl-ssh-pageant\ssh-agent.sock --winssh ssh-pageant --systray
+</span></code></pre></div>
 <p>The <code>--wsl</code> will create a socket for you to use inside of Windows Subsystem for Linux. The <code>--winssh</code> will create a named pipe for OpenSSH on your host (Windows).</p>
 <p><strong>Finally, double click the shortcut.</strong> You should see a new icon for wsl-ssh-pageant in your system tray.</p>
 <h2 id="check-your-ssh-keys">Check your SSH keys<a class="headerlink" href="#check-your-ssh-keys" title="Permanent link">&para;</a></h2>
 <p>Run the following command:</p>
-<div class="highlight"><pre><span></span><code>&gt; ssh-add -L
-ssh-rsa AAAAB3NzaC1yc2EA[...]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&gt; ssh-add -L
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ssh-rsa AAAAB3NzaC1yc2EA[...]
+</span></code></pre></div>
 <p>This will print out all of the available keys that can be used by your ssh. You need to double check that one of the printed keys is actually coming from the GPG. Use the <code>gpg --export-ssh-key YOUR_KEY_ID</code> command to print the public part of your ssh key from the GPG. The <code>YOUR_KEY_ID</code> is the ID of your key, not an ID of your subkey! Example below.</p>
-<div class="highlight"><pre><span></span><code>&gt; gpg -k
-C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
-------------------------------------------------
-pub   rsa4096 2019-10-28 [SC] [expires: 2021-10-25]
-      9B0069EA5619486EB2A7E44392FC071FF37A93E5
-      [...]
-
-&gt; gpg --export-ssh-key 9B0069EA5619486EB2A7E44392FC071FF37A93E5
-ssh-rsa AAAAB3NzaC1yc2EA[...]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&gt; gpg -k
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>------------------------------------------------
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>pub   rsa4096 2019-10-28 [SC] [expires: 2021-10-25]
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>      9B0069EA5619486EB2A7E44392FC071FF37A93E5
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>      [...]
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>&gt; gpg --export-ssh-key 9B0069EA5619486EB2A7E44392FC071FF37A93E5
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>ssh-rsa AAAAB3NzaC1yc2EA[...]
+</span></code></pre></div>
 <p>If this matches your <code>ssh-add -L</code> then everything works fine for your OpenSSH!.</p>
 <h2 id="use-with-github-authentication">Use with GitHub (Authentication)<a class="headerlink" href="#use-with-github-authentication" title="Permanent link">&para;</a></h2>
 <p>Go to <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and add the exported ssh key (the key from <code>gpg --export-ssh-key</code>).</p>
 <p>Finally, test it out by connecting to <code>github.com</code> with <code>-T</code> using <code>ssh</code> as the <code>git</code> user. Example below.</p>
-<div class="highlight"><pre><span></span><code>&gt; ssh -T git@github.com
-Hi matusnovak! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&gt; ssh -T git@github.com
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Hi matusnovak! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</span></code></pre></div>
 <h2 id="use-with-github-signing">Use with GitHub (Signing)<a class="headerlink" href="#use-with-github-signing" title="Permanent link">&para;</a></h2>
 <p>First, list your GPG key with the long format:</p>
-<div class="highlight"><pre><span></span><code>&gt; gpg --list-secret-keys --keyid-format LONG
-C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
-------------------------------------------------
-sec#  rsa4096/92FC071FF37A93E5 2019-10-28 [SC] [expires: 2021-10-25]
-      9B0069EA5619486EB2A7E44392FC071FF37A93E5
-uid                 [ultimate] Matus Novak &lt;email@matusnovak.com&gt;
-ssb   rsa4096/272F40FED5170F30 2019-10-28 [E] [expires: 2021-10-25]
-ssb   rsa4096/FDB2A5741F89F17B 2019-10-28 [A] [expires: 2021-10-25]
-ssb   rsa4096/8DDB99690FB73F0A 2019-10-28 [S] [expires: 2021-10-25]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt; gpg --list-secret-keys --keyid-format LONG
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>C:/Users/Matus/AppData/Roaming/gnupg/pubring.kbx
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>------------------------------------------------
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>sec#  rsa4096/92FC071FF37A93E5 2019-10-28 [SC] [expires: 2021-10-25]
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>      9B0069EA5619486EB2A7E44392FC071FF37A93E5
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>uid                 [ultimate] Matus Novak &lt;email@matusnovak.com&gt;
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>ssb   rsa4096/272F40FED5170F30 2019-10-28 [E] [expires: 2021-10-25]
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>ssb   rsa4096/FDB2A5741F89F17B 2019-10-28 [A] [expires: 2021-10-25]
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>ssb   rsa4096/8DDB99690FB73F0A 2019-10-28 [S] [expires: 2021-10-25]
+</span></code></pre></div>
 <p>Next, export the [S]igning key in a readable format.</p>
-<div class="highlight"><pre><span></span><code>&gt; gpg --armor --export 8DDB99690FB73F0A
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mQINBF23fjMBEACy3dCCEIM9JxbIBhpciMPullyjiZAnWILbrB9jpLf1mUzo9l5U
-[...]
------END PGP PUBLIC KEY BLOCK-----
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&gt; gpg --armor --export 8DDB99690FB73F0A
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>-----BEGIN PGP PUBLIC KEY BLOCK-----
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>mQINBF23fjMBEACy3dCCEIM9JxbIBhpciMPullyjiZAnWILbrB9jpLf1mUzo9l5U
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>[...]
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>-----END PGP PUBLIC KEY BLOCK-----
+</span></code></pre></div>
 <p>Copy the output, including the <code>-----BEGIN ...</code> until the very end. Go to <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and add this public GPG key.</p>
 <p>Finally, tell your Git about the signing key. Use the ID of the master secret key, the line that starts with <code>sec</code> (in the long format).</p>
-<div class="highlight"><pre><span></span><code>&gt; git config --global user.signingkey 92FC071FF37A93E5
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&gt; git config --global user.signingkey 92FC071FF37A93E5
+</span></code></pre></div>
 <p>And configure git to auto-sign your commits.</p>
-<div class="highlight"><pre><span></span><code>&gt; git config --global commit.gpgsign true
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&gt; git config --global commit.gpgsign true
+</span></code></pre></div>
 <h2 id="use-with-windows-subsystem-for-linux">Use with Windows Subsystem for Linux<a class="headerlink" href="#use-with-windows-subsystem-for-linux" title="Permanent link">&para;</a></h2>
 <p>All you have to do is to add <code>export SSH_AUTH_SOCK=/mnt/c/wsl-ssh-pageant/ssh-agent.sock</code> into your <code>~/.bashrc</code> file. As long as the <code>wsl-ssh-pageant</code> is running you can use this socket.</p>
 <p>Running <code>ssh-add -L</code> will print out the same SSH key as on your host Windows.</p>
@@ -3019,6 +3044,8 @@ mQINBF23fjMBEACy3dCCEIM9JxbIBhpciMPullyjiZAnWILbrB9jpLf1mUzo9l5U
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -3050,7 +3077,7 @@ mQINBF23fjMBEACy3dCCEIM9JxbIBhpciMPullyjiZAnWILbrB9jpLf1mUzo9l5U
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>

@@ -1986,6 +1986,8 @@
       
         
       
+        
+      
     
     
     
@@ -2044,6 +2046,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2599,28 +2624,28 @@
 
 <p>If you try to build an over-complicated scheduler using <code>bash</code>, you may run into issues when it comes to Daylight Saving Time.  While it is a good idea to use Coordinated Universal Time (UTC), you might want to make sure you do not run into issues.  The examples will use the <code>date</code> with the <code>+"%H:%M"</code> format.</p>
 <p>Using <code>date</code> with the <code>-u</code> option:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">03</span>:59
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">03</span>:59
+</span></code></pre></div></p>
 <p>Using <code>date</code> after specifying the timezone with <code>TZ=</code>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">03</span>:59
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">03</span>:59
+</span></code></pre></div></p>
 <p>Here is a way to ensure you include the appropriate Daylight Saving Time and its dates of applicability. The example is from the <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html#TZ-Variable">21.5.6 Specifying the Time Zone with <code>TZ</code></a> page.</p>
 <p>In North American Eastern Standard Time (EST) and Eastern Daylight Time (EDT), the normal offset from UTC is 5 hours; since this is west of the prime meridian, the sign is positive. Summer time begins on March’s second Sunday at 2:00am, and ends on November’s first Sunday at 2:00am.</p>
 <blockquote>
 <p><code>EST+5EDT</code></p>
 </blockquote>
 <p>Here are some examples using <code>date +"%H:%M"</code> for timezones in the continental United States:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:EST+5EDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">22</span>:59
-$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:CST+6CDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">21</span>:59
-$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:MST+7MDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">20</span>:59
-$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:PST+8PDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-<span class="m">19</span>:59
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:EST+5EDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="m">22</span>:59
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:CST+6CDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="m">21</span>:59
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:MST+7MDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="m">20</span>:59
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:PST+8PDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="m">19</span>:59
+</span></code></pre></div></p>
 
 
 
@@ -2700,6 +2725,8 @@ $<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span
   </div>
 
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2731,7 +2758,7 @@ $<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.c8b220af.min.js"></script>

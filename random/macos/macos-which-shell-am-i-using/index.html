@@ -2116,6 +2116,8 @@
       
         
       
+        
+      
     
     
     
@@ -2174,6 +2176,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2736,28 +2761,28 @@
 <p>Each shell supports a configuration file in your macOS <a href="https://www.moncefbelyamani.com/home-is-where-the-heart-is/">Home</a> folder that gets read every time you open a new terminal window (or tab). This allows the shell environment to be set up properly with your preferences, and so that the tools you depend on are ready to use.</p>
 <p>In <code>zsh</code>, the configuration file is <code>~/.zshrc</code>. In <code>bash</code>, it’s <code>~/.bash_profile</code>. Some people might tell you to add things to your <code>~/.bashrc</code>. Thank them for their help, and teach them that <code>.bashrc</code> does not get read automatically on a Mac when you open up a new shell window.</p>
 <p>If you’re not sure which shell you’re using, there are a couple of ways to find out. One is to run this command:
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$0</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$0</span>
+</span></code></pre></div></p>
 <p>It works in <code>bash</code> and <code>zsh</code>, but not in <code>fish</code>. Here’s a trick I use that should work in all shells. Type any bogus command that you know doesn’t exist, for example:
-<div class="highlight"><pre><span></span><code>monfresh
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>monfresh
+</span></code></pre></div></p>
 <p>The first word in the error message should be the name of the shell. In bash, you would see this:
-<div class="highlight"><pre><span></span><code>bash:<span class="w"> </span>monfresh:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bash:<span class="w"> </span>monfresh:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
+</span></code></pre></div></p>
 <p>In zsh:
-<div class="highlight"><pre><span></span><code>zsh:<span class="w"> </span>monfresh:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>zsh:<span class="w"> </span>monfresh:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
+</span></code></pre></div></p>
 <p>And in fish:
-<div class="highlight"><pre><span></span><code>fish:<span class="w"> </span>Unknown<span class="w"> </span>command:<span class="w"> </span>monfresh
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fish:<span class="w"> </span>Unknown<span class="w"> </span>command:<span class="w"> </span>monfresh
+</span></code></pre></div></p>
 <h2 id="changing-shells">Changing shells<a class="headerlink" href="#changing-shells" title="Permanent link">&para;</a></h2>
 <p>If you want to switch between shells to explore the differences, or because you know you want one or the other, use these commands:</p>
 <h3 id="switch-to-bash">Switch to bash<a class="headerlink" href="#switch-to-bash" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>bash<span class="k">)</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>bash<span class="k">)</span>
+</span></code></pre></div>
 <h3 id="switch-to-zsh">Switch to zsh<a class="headerlink" href="#switch-to-zsh" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
+</span></code></pre></div>
 <blockquote>
 <p><strong>Note</strong>: What the <code>$()</code> syntax does is it runs what’s inside the parentheses (such as <code>which bash</code>), saves the output, and passes it to <code>chsh -s</code>. This is convenient when you don’t know the exact path to the <code>bash</code> or <code>zsh</code> command.</p>
 </blockquote>
@@ -2769,28 +2794,28 @@
 <p>If you get a message about a <code>non-standard shell</code>, that means that your shell is not listed in <code>/etc/shells</code>. This can happen after installing a shell with Homebrew, which is a reasonable thing to do because you can get a newer version than the one that came with macOS.</p>
 <p>To make macOS aware of the Homebrew version of a shell, it needs to be added to <code>/etc/shells</code>. Here’s how you would safely add Homebrew’s <code>zsh</code>:</p>
 <p>Find the path of the Homebrew <code>zsh</code>:
-<div class="highlight"><pre><span></span><code>which<span class="w"> </span>zsh
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>which<span class="w"> </span>zsh
+</span></code></pre></div></p>
 <p>Open <code>/etc/shells</code> in Sublime Text, or another code editor, but not TextEdit:
-<div class="highlight"><pre><span></span><code>open<span class="w"> </span>/etc/shells<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Sublime Text&quot;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>open<span class="w"> </span>/etc/shells<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Sublime Text&quot;</span>
+</span></code></pre></div></p>
 <p>Copy and paste the output of <code>which zsh</code> at the bottom of <code>/etc/shells</code> and save the file. This will prompt you for your macOS password. Run the <code>chsh -s</code> command again, and this time it should not complain. Remember to open a new tab to see the new shell.</p>
 <h2 id="alternative">Alternative<a class="headerlink" href="#alternative" title="Permanent link">&para;</a></h2>
 <p>Another way to change shells is via the Terminal app preferences, by selecting the “Command (complete path)” radio button in the “Shells open with:” section as shown in the screenshot below:</p>
 <p><img alt="alt_text" src="../macos-which-shell-screenshot-01.jpg" title="image_tooltip" /></p>
 <p>Note that this does not change your default login shell, which you can check by running <code>echo $SHELL</code>. You can test this by following these steps:</p>
 <p>Set your login shell to <code>zsh</code>:
-<div class="highlight"><pre><span></span><code>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
+</span></code></pre></div></p>
 <p>At the top of your <code>~/.zshrc</code>, add this line:
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello from zsh&quot;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello from zsh&quot;</span>
+</span></code></pre></div></p>
 <p>At the top of your <code>~/.bash_profile</code>, add this line:
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello from bash&quot;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello from bash&quot;</span>
+</span></code></pre></div></p>
 <p>If the file doesn’t exist, you can create it with <code>touch</code>:
-<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>~/.bash_profile
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>touch<span class="w"> </span>~/.bash_profile
+</span></code></pre></div></p>
 <p>Update your Terminal preferences to open the shell with the command <code>/bin/bash</code>, as shown in the screenshot above.</p>
 <p>Quit and restart Terminal.</p>
 <p>You should see “hello from bash”, but if you run <code>echo $SHELL</code>, you will see <code>/bin/zsh</code>.</p>
@@ -2868,6 +2893,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2899,7 +2926,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

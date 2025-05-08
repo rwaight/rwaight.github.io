@@ -2100,6 +2100,8 @@
       
         
       
+        
+      
     
     
     
@@ -2158,6 +2160,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2788,18 +2813,18 @@ Otherwise, add <code>-D qemu-debug.log</code> to the <code>qemu_args</code> or t
 </ul>
 <h3 id="testing-the-iso">Testing the ISO<a class="headerlink" href="#testing-the-iso" title="Permanent link">&para;</a></h3>
 <p>According to https://docs.fedoraproject.org/en-US/quick-docs/qemu/#testing-iso-images, we should be able to test an ISO by running:
-<div class="highlight"><pre><span></span><code>qemu-system-x86_64<span class="w"> </span>-m<span class="w"> </span>512M<span class="w"> </span>-cdrom<span class="w"> </span>./virtio-win-0.1.248.iso
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>qemu-system-x86_64<span class="w"> </span>-m<span class="w"> </span>512M<span class="w"> </span>-cdrom<span class="w"> </span>./virtio-win-0.1.248.iso
+</span></code></pre></div></p>
 <p>When attempting to run <code>qemu-system-x86_64 -m 512M -cdrom ./virtio-win-0.1.248.iso</code> in the runner, we get the following:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>gtk<span class="w"> </span>initialization<span class="w"> </span>failed
-<span class="w">  </span>Error:<span class="w"> </span>Process<span class="w"> </span>completed<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">1</span>.
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span>gtk<span class="w"> </span>initialization<span class="w"> </span>failed
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>Error:<span class="w"> </span>Process<span class="w"> </span>completed<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">1</span>.
+</span></code></pre></div></p>
 <p><strong>Links about testing an ISO</strong>
 - https://www.kubuntuforums.net/forum/general/documentation/knowledge-base/663368-test-a-bootable-iso-cdrom-or-usb-stick-using-qemu</p>
 <h4 id="error-gtk-initialization-failed">error: <code>gtk initialization failed</code><a class="headerlink" href="#error-gtk-initialization-failed" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="w">  </span>gtk<span class="w"> </span>initialization<span class="w"> </span>failed
-<span class="w">  </span>Error:<span class="w"> </span>Process<span class="w"> </span>completed<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">1</span>.
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span>gtk<span class="w"> </span>initialization<span class="w"> </span>failed
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>Error:<span class="w"> </span>Process<span class="w"> </span>completed<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">1</span>.
+</span></code></pre></div>
 <p>Issues related to the <code>gtk initialization failed</code> error:</p>
 <ul>
 <li>https://discuss.hashicorp.com/t/qemu-gtk-initialization-error-ubuntu-22-04/39397</li>
@@ -2926,6 +2951,8 @@ Otherwise, add <code>-D qemu-debug.log</code> to the <code>qemu_args</code> or t
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2957,7 +2984,7 @@ Otherwise, add <code>-D qemu-debug.log</code> to the <code>qemu_args</code> or t
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

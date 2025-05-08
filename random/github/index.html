@@ -2002,6 +2002,8 @@
       
         
       
+        
+      
     
     
     
@@ -2060,6 +2062,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2608,19 +2633,19 @@
 <p>this section is blank</p>
 <h2 id="show-git-commit-timeline-for-github-repos">Show Git Commit Timeline for GitHub Repos<a class="headerlink" href="#show-git-commit-timeline-for-github-repos" title="Permanent link">&para;</a></h2>
 <p>Template URL to list all commits of a specific committer on GitHub
-<div class="highlight"><pre><span></span><code>https://github.com/search?q<span class="o">=</span>committer:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
-https://github.com/search?q<span class="o">=</span>committer-name:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/search?q<span class="o">=</span>committer:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://github.com/search?q<span class="o">=</span>committer-name:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
+</span></code></pre></div></p>
 <p>Template URL to list all commits of a specific author on GitHub
-<div class="highlight"><pre><span></span><code>https://github.com/search?q<span class="o">=</span>author:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://github.com/search?q<span class="o">=</span>author:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
+</span></code></pre></div></p>
 <h5 id="author-commiter-or-committer-name">author, commiter, or committer-name<a class="headerlink" href="#author-commiter-or-committer-name" title="Permanent link">&para;</a></h5>
 <p>Template URL to list all commits of a specific (author, committer, or committer-name) on GitHub (this does not seem to work well)
-<div class="highlight"><pre><span></span><code>https://github.com/search?q<span class="o">=</span>%28committer:NAME%29+OR+%28author:NAME%29+OR+%28committer-name:NAME%29<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://github.com/search?q<span class="o">=</span>%28committer:NAME%29+OR+%28author:NAME%29+OR+%28committer-name:NAME%29<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
+</span></code></pre></div>
 the query
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">author</span><span class="p">:</span><span class="n">NAME</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">committer</span><span class="p">:</span><span class="n">NAME</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">committer</span><span class="o">-</span><span class="n">name</span><span class="p">:</span><span class="n">NAME</span><span class="p">)</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="n">author</span><span class="p">:</span><span class="n">NAME</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">committer</span><span class="p">:</span><span class="n">NAME</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">committer</span><span class="o">-</span><span class="n">name</span><span class="p">:</span><span class="n">NAME</span><span class="p">)</span>
+</span></code></pre></div></p>
 <p>reference: https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax</p>
 <h5 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h5>
 <ul>
@@ -2650,8 +2675,8 @@ the query
 </ul>
 <h4 id="template-url-to-list-all-commits-of-a-specific-committer-on-github">Template URL to list all commits of a specific committer on GitHub<a class="headerlink" href="#template-url-to-list-all-commits-of-a-specific-committer-on-github" title="Permanent link">&para;</a></h4>
 <p>Template URL to list all commits of a specific committer on GitHub
-<div class="highlight"><pre><span></span><code>https://github.com/search?q<span class="o">=</span>committer-name:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://github.com/search?q<span class="o">=</span>committer-name:NAME<span class="p">&amp;</span><span class="nv">type</span><span class="o">=</span>commits
+</span></code></pre></div>
 → Simply replace NAME with the specific committer name you are looking for.</p>
 <p>the above is from https://stackoverflow.com/questions/33926874/in-github-is-there-a-way-to-see-all-recent-commits-on-all-branches</p>
 <ul>
@@ -2659,8 +2684,8 @@ the query
 </ul>
 <h4 id="show-commits-on-a-specific-branch">Show commits on a specific branch<a class="headerlink" href="#show-commits-on-a-specific-branch" title="Permanent link">&para;</a></h4>
 <p>Not exactly the asked for question (to see commits on all branches), but to see a commit on a specific branch of a github repository -
-<div class="highlight"><pre><span></span><code>https://github.com/&lt;repository_name&gt;/commits/&lt;branch_name&gt;?author<span class="o">=</span>&lt;user_name&gt;
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://github.com/&lt;repository_name&gt;/commits/&lt;branch_name&gt;?author<span class="o">=</span>&lt;user_name&gt;
+</span></code></pre></div></p>
 <p>eg.</p>
 <ul>
 <li>Repository: langchain-ai/langchain</li>
@@ -2749,6 +2774,8 @@ the query
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2780,7 +2807,7 @@ the query
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>

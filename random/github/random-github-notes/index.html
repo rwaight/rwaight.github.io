@@ -2181,6 +2181,8 @@
       
         
       
+        
+      
     
     
     
@@ -2239,6 +2241,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2903,91 +2928,91 @@
 </ul>
 <h4 id="listing-secrets">Listing secrets<a class="headerlink" href="#listing-secrets" title="Permanent link">&para;</a></h4>
 <p>List secret keys for the current repository:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>list
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gh<span class="w"> </span>secret<span class="w"> </span>list
+</span></code></pre></div></p>
 <p>List secret keys for a specific organization:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--org<span class="w"> </span>organization
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gh<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--org<span class="w"> </span>organization
+</span></code></pre></div></p>
 <p>List secret keys for a specific repository:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--repo<span class="w"> </span>owner/repository
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gh<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--repo<span class="w"> </span>owner/repository
+</span></code></pre></div></p>
 <h4 id="setting-secrets">Setting secrets<a class="headerlink" href="#setting-secrets" title="Permanent link">&para;</a></h4>
 <p>Set a secret for the current repository (user will be prompted for the value):
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name
+</span></code></pre></div></p>
 <p>Set a secret from a file for the current repository:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span>&lt;<span class="w"> </span>/path/to/file
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span>&lt;<span class="w"> </span>/path/to/file
+</span></code></pre></div></p>
 <p>Set an organization secret for specific repositories:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span>--org<span class="w"> </span>organization<span class="w"> </span>--repos<span class="w"> </span>repository1,repository2
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span>--org<span class="w"> </span>organization<span class="w"> </span>--repos<span class="w"> </span>repository1,repository2
+</span></code></pre></div></p>
 <h4 id="removing-secrets">Removing secrets<a class="headerlink" href="#removing-secrets" title="Permanent link">&para;</a></h4>
 <p>Remove a secret for the current repository:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>remove<span class="w"> </span>name
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gh<span class="w"> </span>secret<span class="w"> </span>remove<span class="w"> </span>name
+</span></code></pre></div></p>
 <p>Remove a secret for a specific organization:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>secret<span class="w"> </span>remove<span class="w"> </span>name<span class="w"> </span>--org<span class="w"> </span>organization
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gh<span class="w"> </span>secret<span class="w"> </span>remove<span class="w"> </span>name<span class="w"> </span>--org<span class="w"> </span>organization
+</span></code></pre></div></p>
 <h3 id="using-bash-to-update-repos-in-bulk">Using bash to update repos in bulk<a class="headerlink" href="#using-bash-to-update-repos-in-bulk" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span><span class="s2">&quot;rwaight/actions&quot;</span><span class="w"> </span><span class="s2">&quot;rwaight/test-actions&quot;</span><span class="w"> </span><span class="s2">&quot;rwaight/rwaight.github.io&quot;</span><span class="o">)</span>
-<span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span>
-<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;rwaight/actions&quot;</span>
-<span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">&quot;rwaight/test-actions&quot;</span>
-<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;rwaight/rwaight.github.io&quot;</span>
-<span class="o">)</span>
-<span class="k">for</span><span class="w"> </span>str<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is </span><span class="nv">$str</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
-<span class="c1">#secretName=&quot;SECRET_NAME_HERE&quot;</span>
-<span class="c1">#tempSecretNameValue=&quot;VALUE_FOR_SECRET_HERE&quot;</span>
-
-<span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span>
-<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;actions&quot;</span>
-<span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">&quot;test-actions&quot;</span>
-<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;rwaight.github.io&quot;</span>
-<span class="o">)</span>
-
-<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is rwaight/</span><span class="nv">$i</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
-
-<span class="c1">## now loop through the above array</span>
-<span class="k">for</span><span class="w"> </span>repo<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">do</span>
-<span class="w">   </span><span class="c1">#echo &quot;updating secret ${secretName} in repo ${repo}&quot;</span>
-<span class="w">   </span><span class="c1"># or do whatever with individual element of the array</span>
-<span class="w">   </span><span class="c1">#gh secret set ${secretName} --repo ${repo} --body &quot;${tempSecretNameValue}&quot;</span>
-<span class="w">   </span><span class="c1">#</span>
-<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;updating secrets in repo </span><span class="si">${</span><span class="nv">repo</span><span class="si">}</span><span class="s2"> using the .env file &quot;</span>
-<span class="w">   </span><span class="c1"># use the &#39;.env&#39; file instead</span>
-<span class="w">   </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span>--repo<span class="w"> </span><span class="si">${</span><span class="nv">repo</span><span class="si">}</span>
-
-<span class="k">done</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span><span class="s2">&quot;rwaight/actions&quot;</span><span class="w"> </span><span class="s2">&quot;rwaight/test-actions&quot;</span><span class="w"> </span><span class="s2">&quot;rwaight/rwaight.github.io&quot;</span><span class="o">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;rwaight/actions&quot;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">&quot;rwaight/test-actions&quot;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;rwaight/rwaight.github.io&quot;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="o">)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">for</span><span class="w"> </span>str<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is </span><span class="nv">$str</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1">#secretName=&quot;SECRET_NAME_HERE&quot;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1">#tempSecretNameValue=&quot;VALUE_FOR_SECRET_HERE&quot;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span><span class="nv">myRepos</span><span class="o">=(</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="s2">&quot;actions&quot;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="o">[</span><span class="m">1</span><span class="o">]=</span><span class="s2">&quot;test-actions&quot;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;rwaight.github.io&quot;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="o">)</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is rwaight/</span><span class="nv">$i</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c1">## now loop through the above array</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="k">for</span><span class="w"> </span>repo<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="k">do</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">   </span><span class="c1">#echo &quot;updating secret ${secretName} in repo ${repo}&quot;</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">   </span><span class="c1"># or do whatever with individual element of the array</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">   </span><span class="c1">#gh secret set ${secretName} --repo ${repo} --body &quot;${tempSecretNameValue}&quot;</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">   </span><span class="c1">#</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;updating secrets in repo </span><span class="si">${</span><span class="nv">repo</span><span class="si">}</span><span class="s2"> using the .env file &quot;</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">   </span><span class="c1"># use the &#39;.env&#39; file instead</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">   </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span>--repo<span class="w"> </span><span class="si">${</span><span class="nv">repo</span><span class="si">}</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="k">done</span>
+</span></code></pre></div>
 <h2 id="managing-github-secrets-with-github-actions">Managing GitHub Secrets with GitHub Actions<a class="headerlink" href="#managing-github-secrets-with-github-actions" title="Permanent link">&para;</a></h2>
 <p>To add a GitHub secret to another repository using GitHub Actions, you'll need to follow these steps:</p>
 <ol>
 <li><strong>Create a secret in the source repository</strong>: Go to your source repository's Settings &gt; Secrets &gt; Actions and create a new secret with a name and value. This secret will be used to authenticate and authorize the addition of the target repository's secret.</li>
 <li>
 <p><strong>Use the <code>gh</code> CLI command</strong>: In your GitHub Actions workflow, use the <code>gh</code> CLI command to list the secrets in the target repository. You can do this using the following syntax:
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">List secrets in target repository</span>
-<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">    </span><span class="no">gh secret list --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt;</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">List secrets in target repository</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="no">gh secret list --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt;</span>
+</span></code></pre></div>
 Replace <code>&lt;target-repo-owner&gt;</code> and <code>&lt;target-repo-name&gt;</code> with the actual owner and name of the target repository.</p>
 </li>
 <li>
 <p><strong>Add the secret to the target repository</strong>: Use the <code>gh</code> CLI command again to add the secret to the target repository. You'll need to specify the secret name, value, and repository owner/name. Here's an example:
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add secret to target repository</span>
-<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">    </span><span class="no">gh secret set --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt; --name &lt;secret-name&gt; --value &lt;secret-value&gt;</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add secret to target repository</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="no">gh secret set --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt; --name &lt;secret-name&gt; --value &lt;secret-value&gt;</span>
+</span></code></pre></div>
 Replace <code>&lt;secret-name&gt;</code> and <code>&lt;secret-value&gt;</code> with the actual name and value of the secret you created in step 1.</p>
 </li>
 <li>
 <p><strong>Authorize the addition using the source repository's secret</strong>: To authenticate and authorize the addition of the target repository's secret, you'll need to pass the source repository's secret as an environment variable or as a workflow input. For example:
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add secret to target repository (authorized)</span>
-<span class="w">  </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">SOURCE_REPO_SECRET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.SOURCE_REPO_SECRET }}</span>
-<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">    </span><span class="no">gh secret set --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt; --name &lt;secret-name&gt; --value &lt;secret-value&gt; --auth-token $SOURCE_REPO_SECRET</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add secret to target repository (authorized)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">env</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">SOURCE_REPO_SECRET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.SOURCE_REPO_SECRET }}</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="no">gh secret set --repo &lt;target-repo-owner&gt;/&lt;target-repo-name&gt; --name &lt;secret-name&gt; --value &lt;secret-value&gt; --auth-token $SOURCE_REPO_SECRET</span>
+</span></code></pre></div>
 Make sure to replace <code>SOURCE_REPO_SECRET</code> with the actual name of the secret you created in step 1.</p>
 </li>
 <li>
@@ -3090,6 +3115,8 @@ Make sure to replace <code>SOURCE_REPO_SECRET</code> with the actual name of the
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -3121,7 +3148,7 @@ Make sure to replace <code>SOURCE_REPO_SECRET</code> with the actual name of the
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

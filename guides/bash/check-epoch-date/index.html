@@ -2151,6 +2151,8 @@
       
         
       
+        
+      
     
     
     
@@ -2212,6 +2214,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2797,12 +2822,12 @@
 ### Running an Ubuntu container to test bash commands
 
 Optionally, you can create an ubuntu container using:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-dt<span class="w"> </span>--name<span class="w"> </span>ubuntu-temp<span class="w"> </span>ubuntu:22.04
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-dt<span class="w"> </span>--name<span class="w"> </span>ubuntu-temp<span class="w"> </span>ubuntu:22.04
+</span></code></pre></div>
 
 Then you can access `bash` in the ubuntu container using:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ubuntu-temp<span class="w"> </span>/bin/bash
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ubuntu-temp<span class="w"> </span>/bin/bash
+</span></code></pre></div>
 
 --->
 
@@ -2813,72 +2838,72 @@ Then you can access `bash` in the ubuntu container using:
 </blockquote>
 <h4 id="using-bash-for-integer-division">using bash for integer division<a class="headerlink" href="#using-bash-for-integer-division" title="Permanent link">&para;</a></h4>
 <p>To perform integer division, you can use the shell:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="w"> </span><span class="nv">var1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">var2</span><span class="w"> </span><span class="k">))</span>
-<span class="m">0</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="w"> </span><span class="nv">var1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">var2</span><span class="w"> </span><span class="k">))</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="m">0</span>
+</span></code></pre></div></p>
 <p>The <code>$(( ... ))</code> syntax is known as an <em>arithmetic expansion</em>.</p>
 <h4 id="convert-millis-to-epoch">convert millis to epoch<a class="headerlink" href="#convert-millis-to-epoch" title="Permanent link">&para;</a></h4>
 <p>First, convert the millis to epoch time by dividing it by 1000:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span>
-<span class="m">1677628800</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="m">1677628800</span>
+</span></code></pre></div></p>
 <p>This returns <code>1677628800</code>, which is what we will use for our calculations.  You can also use <code>@$((1677628800000/1000))</code> instead, if you would prefer.</p>
 <h4 id="formatting-the-date">formatting the date<a class="headerlink" href="#formatting-the-date" title="Permanent link">&para;</a></h4>
 <p>Printing a date without any formatting:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800
-Wed<span class="w"> </span>Mar<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">00</span>:00:00<span class="w"> </span>UTC<span class="w"> </span><span class="m">2023</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Wed<span class="w"> </span>Mar<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">00</span>:00:00<span class="w"> </span>UTC<span class="w"> </span><span class="m">2023</span>
+</span></code></pre></div></p>
 <p>Format the date as mm-dd-yy:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%m-%d-%y&quot;</span>
-<span class="m">03</span>-01-23
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%m-%d-%y&quot;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="m">03</span>-01-23
+</span></code></pre></div></p>
 <p>Format the date as mm/dd/yy:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%D&quot;</span>
-<span class="m">03</span>/01/23
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%D&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="m">03</span>/01/23
+</span></code></pre></div></p>
 <p>Format the date as mm-dd-yyyy:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%m-%d-%Y&quot;</span>
-<span class="m">03</span>-01-2023
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%m-%d-%Y&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="m">03</span>-01-2023
+</span></code></pre></div></p>
 <p>Format the date as Month dd yyyy:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d %Y&quot;</span>
-March<span class="w"> </span><span class="m">01</span><span class="w"> </span><span class="m">2023</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d %Y&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>March<span class="w"> </span><span class="m">01</span><span class="w"> </span><span class="m">2023</span>
+</span></code></pre></div></p>
 <p>Format the date as Month dd, yyyy:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span>
-March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span>
+</span></code></pre></div></p>
 <p>Format the date as yyyymmdd:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%Y%m%d&quot;</span>
-<span class="m">20230301</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%Y%m%d&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="m">20230301</span>
+</span></code></pre></div></p>
 <h3 id="days-since-a-past-date">days since a past date<a class="headerlink" href="#days-since-a-past-date" title="Permanent link">&para;</a></h3>
 <p>The following command will print how long it has been since <code>1677628800</code>, which is <strong>Wednesday March 1, 2023</strong>:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days since </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
-<span class="m">484</span><span class="w"> </span>days<span class="w"> </span>since<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days since </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="m">484</span><span class="w"> </span>days<span class="w"> </span>since<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span>
+</span></code></pre></div></p>
 <p>Same as above, but using <code>@$((1677628800000/1000))</code> instead:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days since </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
-<span class="m">484</span><span class="w"> </span>days<span class="w"> </span>since<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days since </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="m">484</span><span class="w"> </span>days<span class="w"> </span>since<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span>
+</span></code></pre></div></p>
 <h3 id="days-until-a-date">days until a date<a class="headerlink" href="#days-until-a-date" title="Permanent link">&para;</a></h3>
 <p>The following command will print <strong>days until deadline</strong> against <code>1677628800</code>; it will return a negative number since this is in the past:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until deadline&quot;</span>
--482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>deadline
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until deadline&quot;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>-482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>deadline
+</span></code></pre></div></p>
 <p>Same as above, but using <code>@$((1677628800000/1000))</code> instead:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until deadline&quot;</span>
--482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>deadline
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until deadline&quot;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>-482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>deadline
+</span></code></pre></div></p>
 <h4 id="more-fancy">more fancy<a class="headerlink" href="#more-fancy" title="Permanent link">&para;</a></h4>
 <p>The following command will print both the <strong>days until deadline</strong> and the <strong>deadline date</strong> against <code>1677628800</code>; it will return a negative number since this is in the past:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until the </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2"> deadline&quot;</span>
--482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>the<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span><span class="w"> </span>deadline
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until the </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@1677628800<span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2"> deadline&quot;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>-482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>the<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span><span class="w"> </span>deadline
+</span></code></pre></div></p>
 <p>Same as above, but using <code>@$((1677628800000/1000))</code> instead:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until the </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2"> deadline&quot;</span>
--482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>the<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span><span class="w"> </span>deadline
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>+<span class="w"> </span><span class="m">86399</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"> </span>/<span class="w"> </span><span class="m">86400</span><span class="k">)</span><span class="w"> </span><span class="s2">&quot;days until the </span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span>@<span class="k">$((</span><span class="m">1677628800000</span><span class="o">/</span><span class="m">1000</span><span class="k">))</span><span class="w"> </span>+<span class="s2">&quot;%B %d, %Y&quot;</span><span class="k">)</span><span class="s2"> deadline&quot;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>-482<span class="w"> </span>days<span class="w"> </span><span class="k">until</span><span class="w"> </span>the<span class="w"> </span>March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><span class="m">2023</span><span class="w"> </span>deadline
+</span></code></pre></div></p>
 <h3 id="links-found-while-looking-up-this-topic">Links found while looking up this topic<a class="headerlink" href="#links-found-while-looking-up-this-topic" title="Permanent link">&para;</a></h3>
 <h4 id="links-about-checking-epoch-date-with-bash">Links about checking epoch date with bash<a class="headerlink" href="#links-about-checking-epoch-date-with-bash" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2982,6 +3007,8 @@ March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -3013,7 +3040,7 @@ March<span class="w"> </span><span class="m">01</span>,<span class="w"> </span><
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

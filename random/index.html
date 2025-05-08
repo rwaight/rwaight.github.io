@@ -1997,6 +1997,8 @@
       
         
       
+        
+      
     
     
     
@@ -2055,6 +2057,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2630,32 +2655,32 @@ Referenced from [How do I set Google Calendar to Dark Mode?](https://support.goo
 <!--- this section was created on 2024-06-25 --->
 
 <p>If you want to use a specific version of Linux to run <code>bash</code>, you can create a container (for example, ubuntu) using:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-dt<span class="w"> </span>--name<span class="w"> </span>ubuntu-temp<span class="w"> </span>ubuntu:22.04
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-dt<span class="w"> </span>--name<span class="w"> </span>ubuntu-temp<span class="w"> </span>ubuntu:22.04
+</span></code></pre></div></p>
 <p>Then you can access <code>bash</code> in the ubuntu container using:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ubuntu-temp<span class="w"> </span>/bin/bash
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ubuntu-temp<span class="w"> </span>/bin/bash
+</span></code></pre></div></p>
 <!--- the '### Reset a Cisco Switch' section was MOVED to a 'blog' on 2025-02-18 --->
 <!--- this section was created on 2024-09-05 --->
 
 <!---- 
 Here is a summary of the commands needed to [reset Cisco Catalyst Switches to factory defaults](https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html):
-<div class="highlight"><pre><span></span><code><span class="c1"># enter configuration mode</span>
-<span class="nb">enable</span>
-<span class="c1"># remove the startup configuration file</span>
-write<span class="w"> </span>erase
-<span class="c1"># remove the VLAN configuration</span>
-delete<span class="w"> </span>flash:vlan.dat
-<span class="c1"># then reboot the switch</span>
-reload
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># enter configuration mode</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">enable</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># remove the startup configuration file</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>write<span class="w"> </span>erase
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># remove the VLAN configuration</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>delete<span class="w"> </span>flash:vlan.dat
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># then reboot the switch</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>reload
+</span></code></pre></div>
 
 If there are other files that need to be deleted, run the following **before** issuing the `reload` command:
-<div class="highlight"><pre><span></span><code>show<span class="w"> </span>file<span class="w"> </span>information<span class="w"> </span>flash:?
-delete<span class="w"> </span>flash:config.text.backup
-delete<span class="w"> </span>flash:config.text.old
-delete<span class="w"> </span>flash:*.old
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>show<span class="w"> </span>file<span class="w"> </span>information<span class="w"> </span>flash:?
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>delete<span class="w"> </span>flash:config.text.backup
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>delete<span class="w"> </span>flash:config.text.old
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>delete<span class="w"> </span>flash:*.old
+</span></code></pre></div>
  ---->
 <!--- the '### Reset a Cisco Switch' section was MOVED to a 'blog' on 2025-02-18 --->
 
@@ -2774,6 +2799,8 @@ Hold down the &lt;&lt; button while connecting.  An MSC connection should be est
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2805,7 +2832,7 @@ Hold down the &lt;&lt; button while connecting.  An MSC connection should be est
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>

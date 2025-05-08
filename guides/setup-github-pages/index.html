@@ -2001,6 +2001,8 @@
       
         
       
+        
+      
     
     
     
@@ -2062,6 +2064,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2899,65 +2924,65 @@
 </ul>
 <h3 id="install-mkdocs-material-with-docker">Install MkDocs Material with Docker<a class="headerlink" href="#install-mkdocs-material-with-docker" title="Permanent link">&para;</a></h3>
 <p>Here are the steps from the <a href="https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker">installing with Docker</a> guide:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># pull the image</span>
-docker<span class="w"> </span>pull<span class="w"> </span>squidfunk/mkdocs-material
-
-<span class="c1"># navigate to the root directory of the repo</span>
-<span class="nb">cd</span><span class="w"> </span>/path/to/root/of/repo
-
-<span class="c1"># run the container and attach the current directory to /docs</span>
-docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs<span class="w"> </span>squidfunk/mkdocs-material
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># pull the image</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>pull<span class="w"> </span>squidfunk/mkdocs-material
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># navigate to the root directory of the repo</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">cd</span><span class="w"> </span>/path/to/root/of/repo
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># run the container and attach the current directory to /docs</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs<span class="w"> </span>squidfunk/mkdocs-material
+</span></code></pre></div>
 <h4 id="adding-plugins-to-the-docker-image">Adding plugins to the Docker image<a class="headerlink" href="#adding-plugins-to-the-docker-image" title="Permanent link">&para;</a></h4>
 <p>From https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker</p>
 <blockquote>
 <p>Material for MkDocs only bundles selected plugins in order to keep the size of the official image small. If the plugin you want to use is not included, create a new <code>Dockerfile</code> and extend the official Docker image:
-<div class="highlight"><pre><span></span><code>FROM<span class="w"> </span>squidfunk/mkdocs-material
-RUN<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>...
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>FROM<span class="w"> </span>squidfunk/mkdocs-material
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>RUN<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>...
+</span></code></pre></div>
 Next, you can build the image with the following command:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>.
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>.
+</span></code></pre></div>
 The new image can be used exactly like the official image.</p>
 </blockquote>
 <h3 id="creating-a-new-site-with-docker">Creating a new site with Docker<a class="headerlink" href="#creating-a-new-site-with-docker" title="Permanent link">&para;</a></h3>
 <p>After issuing the <code>docker run</code> command above, issue the following:
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>new<span class="w"> </span>.
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/docs<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>new<span class="w"> </span>.
+</span></code></pre></div></p>
 <h3 id="publish-the-site-with-github-actions">Publish the site with GitHub Actions<a class="headerlink" href="#publish-the-site-with-github-actions" title="Permanent link">&para;</a></h3>
 <p>From From https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker</p>
 <blockquote>
 <p>Using <a href="https://github.com/features/actions">GitHub Actions</a> you can automate the deployment of your project documentation. At the root of your repository, create a new GitHub Actions workflow, e.g. .github/workflows/ci.yml, and copy and paste the following contents:
-<div class="highlight"><pre><span></span><code>name: ci 
-on:
-  push:
-    branches:
-      - master 
-      - main
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - run: echo &quot;cache_id=$(date --utc &#39;+%V&#39;)&quot; &gt;&gt; $GITHUB_ENV 
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>name: ci 
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>on:
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  push:
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    branches:
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>      - master 
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>      - main
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>permissions:
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  contents: write
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>jobs:
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  deploy:
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    runs-on: ubuntu-latest
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    steps:
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>      - uses: actions/checkout@v4
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>      - name: Configure Git Credentials
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        run: |
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>          git config user.name github-actions[bot]
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>      - uses: actions/setup-python@v5
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        with:
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>          python-version: 3.x
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>      - run: echo &quot;cache_id=$(date --utc &#39;+%V&#39;)&quot; &gt;&gt; $GITHUB_ENV 
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>      - uses: actions/cache@v4
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        with:
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>          key: mkdocs-material-${{ env.cache_id }}
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>          path: .cache
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>          restore-keys: |
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>            mkdocs-material-
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>      - run: pip install mkdocs-material 
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>      - run: mkdocs gh-deploy --force
+</span></code></pre></div>
 Now, when a new commit is pushed to either the <code>master</code> or <code>main</code> branches, the static site is automatically built and deployed. Push your changes to see the workflow in action.</p>
 </blockquote>
 <h2 id="jekyll">Jekyll<a class="headerlink" href="#jekyll" title="Permanent link">&para;</a></h2>
@@ -2997,27 +3022,27 @@ Now, when a new commit is pushed to either the <code>master</code> or <code>main
 <p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#step-1-install-homebrew">Step 1: Install Homebrew</a></p>
 <blockquote>
 <p><a href="https://brew.sh/">Homebrew</a> makes it easy to install development tools on a Mac.
-<div class="highlight"><pre><span></span><code>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</span></code></pre></div></p>
 </blockquote>
 <h5 id="12-install-chruby-and-the-latest-ruby-with-ruby-install">1.2: Install chruby and the latest Ruby with ruby-install<a class="headerlink" href="#12-install-chruby-and-the-latest-ruby-with-ruby-install" title="Permanent link">&para;</a></h5>
 <p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#step-2-install-chruby-and-the-latest-ruby-with-ruby-install">Step 2: Install chruby and the latest Ruby with ruby-install</a></p>
 <blockquote>
 <p>Install <code>chruby</code> and <code>ruby-install</code> with Homebrew:
-<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>chruby<span class="w"> </span>ruby-install<span class="w"> </span>xz
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>brew<span class="w"> </span>install<span class="w"> </span>chruby<span class="w"> </span>ruby-install<span class="w"> </span>xz
+</span></code></pre></div></p>
 <p>Install the latest stable version of Ruby (supported by Jekyll):
-<div class="highlight"><pre><span></span><code>ruby-install<span class="w"> </span>ruby<span class="w"> </span><span class="m">3</span>.1.3
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ruby-install<span class="w"> </span>ruby<span class="w"> </span><span class="m">3</span>.1.3
+</span></code></pre></div></p>
 <p>This will take a few minutes, and once it’s done, configure your shell to automatically use <code>chruby</code>:
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/chruby/share/chruby/chruby.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/chruby/share/chruby/auto.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;chruby ruby-3.1.3&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># run &#39;chruby&#39; to see actual version</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/chruby/share/chruby/chruby.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/chruby/share/chruby/auto.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;chruby ruby-3.1.3&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># run &#39;chruby&#39; to see actual version</span>
+</span></code></pre></div></p>
 <p>If you’re using Bash, replace <code>.zshrc</code> with <code>.bash_profile</code>. If you’re not sure, read this external guide to <a href="https://www.moncefbelyamani.com/which-shell-am-i-using-how-can-i-switch/">find out which shell you’re using</a>.</p>
 <p>Quit and relaunch Terminal, then check that everything is working:
-<div class="highlight"><pre><span></span><code>ruby<span class="w"> </span>-v
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ruby<span class="w"> </span>-v
+</span></code></pre></div></p>
 <p>It should show ruby 3.1.3p185 (2022-11-24 revision 1a6b16756e) or a newer version.</p>
 <p>Next, read that same external guide for important notes about <a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/#how-to-install-different-versions-of-ruby-and-switch-between-them">setting and switching between Ruby versions with chruby</a>.</p>
 </blockquote>
@@ -3025,8 +3050,8 @@ Now, when a new commit is pushed to either the <code>master</code> or <code>main
 <p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#install-jekyll">Install Jekyll</a></p>
 <blockquote>
 <p>After installing Ruby with chruby, install the latest Jekyll gem:
-<div class="highlight"><pre><span></span><code>gem<span class="w"> </span>install<span class="w"> </span>jekyll
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gem<span class="w"> </span>install<span class="w"> </span>jekyll
+</span></code></pre></div></p>
 </blockquote>
 <h4 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h4>
 <p>Permalink: <a href="https://jekyllrb.com/docs/installation/macos/#troubleshooting">Jekyll on macOS Troubleshooting</a></p>
@@ -3110,6 +3135,8 @@ Now, when a new commit is pushed to either the <code>master</code> or <code>main
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -3141,7 +3168,7 @@ Now, when a new commit is pushed to either the <code>master</code> or <code>main
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>

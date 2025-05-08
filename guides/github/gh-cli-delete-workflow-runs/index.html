@@ -2089,6 +2089,8 @@
       
         
       
+        
+      
     
     
     
@@ -2150,6 +2152,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2679,26 +2704,26 @@
 <h1 id="delete-github-workflow-runs-using-the-gh-cli">Delete GitHub workflow runs using the gh cli<a class="headerlink" href="#delete-github-workflow-runs-using-the-gh-cli" title="Permanent link">&para;</a></h1>
 <h3 id="finding-the-workflow-runs-by-id">Finding the workflow runs by ID<a class="headerlink" href="#finding-the-workflow-runs-by-id" title="Permanent link">&para;</a></h3>
 <p>You can use the <code>gh</code> command line interface to list the workflow runs by ID:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
+</span></code></pre></div></p>
 <h4 id="workflow-runs-by-id-for-a-specific-workflow">Workflow runs by ID for a specific workflow<a class="headerlink" href="#workflow-runs-by-id-for-a-specific-workflow" title="Permanent link">&para;</a></h4>
 <p>You can also filter the workflow runs to a specific workflow using the <code>-w myworkflow.yml</code>, which would only list the workflow runs for the <code>.github/workflows/myworkflow.yml</code> workflow:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-w<span class="w"> </span>myworkflow.yml<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-w<span class="w"> </span>myworkflow.yml<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span>
+</span></code></pre></div></p>
 <h2 id="using-bash-or-zsh">Using bash or zsh<a class="headerlink" href="#using-bash-or-zsh" title="Permanent link">&para;</a></h2>
 <p>From <a href="https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/">https://blog.oddbit.com/post/2022-09-22-delete-workflow-runs/</a></p>
 <p>Hello, future me. This is for you next time you want to do this.</p>
 <p>When setting up the CI for a project I will sometimes end up with a tremendous clutter of workflow runs. Sometimes they have embarrassing mistakes. Who wants to show that to people? I was trying to figure out how to bulk delete workflow runs from the CLI, and I came up with something that works:
-<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span><span class="w"> </span><span class="p">|</span>
-<span class="w">  </span>xargs<span class="w"> </span>-IID<span class="w"> </span>gh<span class="w"> </span>api<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s2">&quot;repos/</span><span class="k">$(</span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--json<span class="w"> </span>nameWithOwner<span class="w"> </span>-q<span class="w"> </span>.nameWithOwner<span class="k">)</span><span class="s2">/actions/runs/ID&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-X<span class="w"> </span>DELETE
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gh<span class="w"> </span>run<span class="w"> </span>list<span class="w"> </span>--json<span class="w"> </span>databaseId<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;.[].databaseId&#39;</span><span class="w"> </span><span class="p">|</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>xargs<span class="w"> </span>-IID<span class="w"> </span>gh<span class="w"> </span>api<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="s2">&quot;repos/</span><span class="k">$(</span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--json<span class="w"> </span>nameWithOwner<span class="w"> </span>-q<span class="w"> </span>.nameWithOwner<span class="k">)</span><span class="s2">/actions/runs/ID&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>-X<span class="w"> </span>DELETE
+</span></code></pre></div></p>
 <p>This will delete <em>all</em> (well, up to 20, or whatever you set in <code>--limit</code>) your workflow runs. You can add flags to <code>gh run list</code> to filter runs by workflow or by triggering user.</p>
 <h2 id="using-powershell">Using PowerShell<a class="headerlink" href="#using-powershell" title="Permanent link">&para;</a></h2>
 <p>The same command as above, but in PowerShell</p>
-<div class="highlight"><pre><span></span><code><span class="n">gh</span> <span class="n">run</span> <span class="n">list</span> <span class="p">-</span><span class="n">-json</span> <span class="n">databaseId</span> <span class="n">-q</span> <span class="s1">&#39;.[].databaseId&#39;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">gh</span> <span class="n">api</span> <span class="s2">&quot;repos/</span><span class="p">$(</span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="p">-</span><span class="n">-json</span> <span class="n">nameWithOwner</span> <span class="n">-q</span> <span class="p">.</span><span class="n">nameWithOwner</span><span class="p">)</span><span class="s2">/actions/runs/$_&quot;</span> <span class="n">-X</span> <span class="n">DELETE</span> <span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">gh</span> <span class="n">run</span> <span class="n">list</span> <span class="p">-</span><span class="n">-json</span> <span class="n">databaseId</span> <span class="n">-q</span> <span class="s1">&#39;.[].databaseId&#39;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="n">gh</span> <span class="n">api</span> <span class="s2">&quot;repos/</span><span class="p">$(</span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="p">-</span><span class="n">-json</span> <span class="n">nameWithOwner</span> <span class="n">-q</span> <span class="p">.</span><span class="n">nameWithOwner</span><span class="p">)</span><span class="s2">/actions/runs/$_&quot;</span> <span class="n">-X</span> <span class="n">DELETE</span> <span class="p">}</span>
+</span></code></pre></div>
 
 
 
@@ -2776,6 +2801,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2807,7 +2834,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

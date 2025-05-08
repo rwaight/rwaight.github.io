@@ -1985,6 +1985,8 @@
       
         
       
+        
+      
     
     
     
@@ -2043,6 +2045,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Previewing as you write
     
   </span>
   
@@ -2533,21 +2558,21 @@
 <!--- this section was created on 2024-09-05 --->
 
 <p>Here is a summary of the commands needed to <a href="https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html">reset Cisco Catalyst Switches to factory defaults</a>:
-<div class="highlight"><pre><span></span><code><span class="c1"># enter configuration mode</span>
-<span class="nb">enable</span>
-<span class="c1"># remove the startup configuration file</span>
-write<span class="w"> </span>erase
-<span class="c1"># remove the VLAN configuration</span>
-delete<span class="w"> </span>flash:vlan.dat
-<span class="c1"># then reboot the switch</span>
-reload
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># enter configuration mode</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">enable</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># remove the startup configuration file</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>write<span class="w"> </span>erase
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># remove the VLAN configuration</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>delete<span class="w"> </span>flash:vlan.dat
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># then reboot the switch</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>reload
+</span></code></pre></div></p>
 <p>If there are other files that need to be deleted, run the following <strong>before</strong> issuing the <code>reload</code> command:
-<div class="highlight"><pre><span></span><code>show<span class="w"> </span>file<span class="w"> </span>information<span class="w"> </span>flash:?
-delete<span class="w"> </span>flash:config.text.backup
-delete<span class="w"> </span>flash:config.text.old
-delete<span class="w"> </span>flash:*.old
-</code></pre></div></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>show<span class="w"> </span>file<span class="w"> </span>information<span class="w"> </span>flash:?
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>delete<span class="w"> </span>flash:config.text.backup
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>delete<span class="w"> </span>flash:config.text.old
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>delete<span class="w"> </span>flash:*.old
+</span></code></pre></div></p>
 <!---  below are notes from the Cisco support docs:  https://www.cisco.com/c/en/us/support/docs/lan-switching/vlan/217969-reset-catalyst-switches-to-factory-defau.html  --->
 <!--- 
 ## Reset Catalyst Switches with Cisco IOS Software
@@ -2561,53 +2586,53 @@ To reset the switch to factory default, issue the `erase startup-config` or `wri
 You can alter the boot system parameters with the `boot` command. In Catalyst 4500/4000 and 6500/6000 series switches which run Cisco IOS Software, you can change the configuration register value with the `config-register`  command.
 
 This example shows how to reset a switch which runs Cisco IOS Software to factory defaults with the `write erase` command:
-<div class="highlight"><pre><span></span><code>Cat2950#<span class="w"> </span>write<span class="w"> </span>erase
-Erasing<span class="w"> </span>the<span class="w"> </span>nvram<span class="w"> </span>filesystem<span class="w"> </span>will<span class="w"> </span>remove<span class="w"> </span>all<span class="w"> </span>files!<span class="w"> </span>Continue?<span class="w"> </span><span class="o">[</span>confirm<span class="o">]</span>y<span class="o">[</span>OK<span class="o">]</span>
-Erase<span class="w"> </span>of<span class="w"> </span>nvram:<span class="w"> </span><span class="nb">complete</span>
-Cat2950#
-Cat2950#<span class="w"> </span>reload
-
-System<span class="w"> </span>configuration<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>modified.<span class="w"> </span>Save?<span class="w"> </span><span class="o">[</span>yes/no<span class="o">]</span>:<span class="w"> </span>n<span class="w">    </span>
-
-!---<span class="w"> </span>Do<span class="w"> </span>not<span class="w"> </span>save<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>at<span class="w"> </span>this<span class="w"> </span>prompt.<span class="w"> </span>Otherwise,<span class="w"> </span>the<span class="w"> </span>switch<span class="w"> </span>!---<span class="w"> </span>reloads<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>running<span class="w"> </span>configuration<span class="w"> </span>and<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>reset<span class="w"> </span>to<span class="w"> </span>default.<span class="w"> </span>
-
-Proceed<span class="w"> </span>with<span class="w"> </span>reload?<span class="w"> </span><span class="o">[</span>confirm<span class="o">]</span>y<span class="w">                              </span>
-
-2w0d:<span class="w"> </span>%SYS-5-RELOAD:<span class="w"> </span>Reload<span class="w"> </span>requested
-
-C2950<span class="w"> </span>Boot<span class="w"> </span>Loader<span class="w"> </span><span class="o">(</span>C2950-HBOOT-M<span class="o">)</span><span class="w"> </span>Version<span class="w"> </span><span class="m">12</span>.1<span class="o">(</span>11r<span class="o">)</span>EA1,<span class="w"> </span>RELEASE<span class="w"> </span>SOFTWARE<span class="w"> </span><span class="o">(</span>fc1<span class="o">)</span>
-Compiled<span class="w"> </span>Mon<span class="w"> </span><span class="m">22</span>-Jul-02<span class="w"> </span><span class="m">18</span>:57<span class="w"> </span>by<span class="w"> </span>antonino
-WS-C2950G-12-EI<span class="w"> </span>starting...
-
-
-!---<span class="w"> </span>Output<span class="w"> </span>suppressed.<span class="w"> </span>
-
-
-32K<span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>flash-simulated<span class="w"> </span>non-volatile<span class="w"> </span>configuration<span class="w"> </span>memory.
-Base<span class="w"> </span>ethernet<span class="w"> </span>MAC<span class="w"> </span>Address:<span class="w"> </span><span class="m">00</span>:05:DC:C9:79:00
-Motherboard<span class="w"> </span>assembly<span class="w"> </span>number:<span class="w"> </span><span class="m">73</span>-5781-08
-Motherboard<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span>FAB0515A069
-Model<span class="w"> </span>revision<span class="w"> </span>number:<span class="w"> </span><span class="m">02</span>
-Model<span class="w"> </span>number:<span class="w"> </span>WS-C2950-24
-System<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span>FAB0517Q00B
-
----<span class="w"> </span>System<span class="w"> </span>Configuration<span class="w"> </span>Dialog<span class="w"> </span>---
-
-Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span>initial<span class="w"> </span>configuration<span class="w"> </span>dialog?<span class="w"> </span><span class="o">[</span>yes/no<span class="o">]</span>:n<span class="w"> </span>
-<span class="m">00</span>:00:16:<span class="w"> </span>%SPANTREE-5-EXTENDED_SYSID:<span class="w"> </span>Extended<span class="w"> </span>SysId<span class="w"> </span>enabled<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span>vlan
-<span class="m">00</span>:00:21:<span class="w"> </span>%SYS-5-RESTART:<span class="w"> </span>System<span class="w"> </span>restarted<span class="w"> </span>--
-Cisco<span class="w"> </span>Internetwork<span class="w"> </span>Operating<span class="w"> </span>System<span class="w"> </span>Software<span class="w"> </span>
-Cisco<span class="w"> </span>IOS<span class="w"> </span><span class="o">(</span>tm<span class="o">)</span><span class="w"> </span>C2950<span class="w"> </span>Software<span class="o">(</span>C2950-I6Q4L2-M<span class="o">)</span>Version<span class="w"> </span><span class="m">12</span>.1<span class="o">(</span><span class="m">19</span><span class="o">)</span>EA1,<span class="w"> </span>RELEASE<span class="w"> </span>SOFTWARE<span class="w"> </span><span class="o">(</span>fc1<span class="o">)</span>
-Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">1986</span>-2003<span class="w"> </span>by<span class="w"> </span>cisco<span class="w"> </span>Systems,<span class="w"> </span>Inc.
-Compiled<span class="w"> </span>Tue<span class="w"> </span><span class="m">09</span>-Dec-03<span class="w"> </span><span class="m">00</span>:12<span class="w"> </span>by<span class="w"> </span>yenanh
-
-Press<span class="w"> </span>RETURN<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>started!
-
-<span class="m">00</span>:00:37:<span class="w"> </span>%LINK-5-CHANGED:<span class="w"> </span>Interface<span class="w"> </span>Vlan1,<span class="w"> </span>changed<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>administratively<span class="w"> </span>down
-<span class="m">00</span>:00:38:<span class="w"> </span>%LINEPROTO-5-UPDOWN:<span class="w"> </span>Line<span class="w"> </span>protocol<span class="w"> </span>on<span class="w"> </span>Interface<span class="w"> </span>Vlan1,<span class="w"> </span>changed<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>down
-Switch&gt;
-Switch&gt;
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Cat2950#<span class="w"> </span>write<span class="w"> </span>erase
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Erasing<span class="w"> </span>the<span class="w"> </span>nvram<span class="w"> </span>filesystem<span class="w"> </span>will<span class="w"> </span>remove<span class="w"> </span>all<span class="w"> </span>files!<span class="w"> </span>Continue?<span class="w"> </span><span class="o">[</span>confirm<span class="o">]</span>y<span class="o">[</span>OK<span class="o">]</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Erase<span class="w"> </span>of<span class="w"> </span>nvram:<span class="w"> </span><span class="nb">complete</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Cat2950#
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Cat2950#<span class="w"> </span>reload
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>System<span class="w"> </span>configuration<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>modified.<span class="w"> </span>Save?<span class="w"> </span><span class="o">[</span>yes/no<span class="o">]</span>:<span class="w"> </span>n<span class="w">    </span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>!---<span class="w"> </span>Do<span class="w"> </span>not<span class="w"> </span>save<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>at<span class="w"> </span>this<span class="w"> </span>prompt.<span class="w"> </span>Otherwise,<span class="w"> </span>the<span class="w"> </span>switch<span class="w"> </span>!---<span class="w"> </span>reloads<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>running<span class="w"> </span>configuration<span class="w"> </span>and<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>reset<span class="w"> </span>to<span class="w"> </span>default.<span class="w"> </span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>Proceed<span class="w"> </span>with<span class="w"> </span>reload?<span class="w"> </span><span class="o">[</span>confirm<span class="o">]</span>y<span class="w">                              </span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>2w0d:<span class="w"> </span>%SYS-5-RELOAD:<span class="w"> </span>Reload<span class="w"> </span>requested
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>C2950<span class="w"> </span>Boot<span class="w"> </span>Loader<span class="w"> </span><span class="o">(</span>C2950-HBOOT-M<span class="o">)</span><span class="w"> </span>Version<span class="w"> </span><span class="m">12</span>.1<span class="o">(</span>11r<span class="o">)</span>EA1,<span class="w"> </span>RELEASE<span class="w"> </span>SOFTWARE<span class="w"> </span><span class="o">(</span>fc1<span class="o">)</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>Compiled<span class="w"> </span>Mon<span class="w"> </span><span class="m">22</span>-Jul-02<span class="w"> </span><span class="m">18</span>:57<span class="w"> </span>by<span class="w"> </span>antonino
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>WS-C2950G-12-EI<span class="w"> </span>starting...
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>!---<span class="w"> </span>Output<span class="w"> </span>suppressed.<span class="w"> </span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>32K<span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>flash-simulated<span class="w"> </span>non-volatile<span class="w"> </span>configuration<span class="w"> </span>memory.
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>Base<span class="w"> </span>ethernet<span class="w"> </span>MAC<span class="w"> </span>Address:<span class="w"> </span><span class="m">00</span>:05:DC:C9:79:00
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>Motherboard<span class="w"> </span>assembly<span class="w"> </span>number:<span class="w"> </span><span class="m">73</span>-5781-08
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>Motherboard<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span>FAB0515A069
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>Model<span class="w"> </span>revision<span class="w"> </span>number:<span class="w"> </span><span class="m">02</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>Model<span class="w"> </span>number:<span class="w"> </span>WS-C2950-24
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>System<span class="w"> </span>serial<span class="w"> </span>number:<span class="w"> </span>FAB0517Q00B
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>---<span class="w"> </span>System<span class="w"> </span>Configuration<span class="w"> </span>Dialog<span class="w"> </span>---
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span>initial<span class="w"> </span>configuration<span class="w"> </span>dialog?<span class="w"> </span><span class="o">[</span>yes/no<span class="o">]</span>:n<span class="w"> </span>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="m">00</span>:00:16:<span class="w"> </span>%SPANTREE-5-EXTENDED_SYSID:<span class="w"> </span>Extended<span class="w"> </span>SysId<span class="w"> </span>enabled<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span>vlan
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="m">00</span>:00:21:<span class="w"> </span>%SYS-5-RESTART:<span class="w"> </span>System<span class="w"> </span>restarted<span class="w"> </span>--
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>Cisco<span class="w"> </span>Internetwork<span class="w"> </span>Operating<span class="w"> </span>System<span class="w"> </span>Software<span class="w"> </span>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>Cisco<span class="w"> </span>IOS<span class="w"> </span><span class="o">(</span>tm<span class="o">)</span><span class="w"> </span>C2950<span class="w"> </span>Software<span class="o">(</span>C2950-I6Q4L2-M<span class="o">)</span>Version<span class="w"> </span><span class="m">12</span>.1<span class="o">(</span><span class="m">19</span><span class="o">)</span>EA1,<span class="w"> </span>RELEASE<span class="w"> </span>SOFTWARE<span class="w"> </span><span class="o">(</span>fc1<span class="o">)</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">1986</span>-2003<span class="w"> </span>by<span class="w"> </span>cisco<span class="w"> </span>Systems,<span class="w"> </span>Inc.
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>Compiled<span class="w"> </span>Tue<span class="w"> </span><span class="m">09</span>-Dec-03<span class="w"> </span><span class="m">00</span>:12<span class="w"> </span>by<span class="w"> </span>yenanh
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>Press<span class="w"> </span>RETURN<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>started!
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="m">00</span>:00:37:<span class="w"> </span>%LINK-5-CHANGED:<span class="w"> </span>Interface<span class="w"> </span>Vlan1,<span class="w"> </span>changed<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>administratively<span class="w"> </span>down
+</span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a><span class="m">00</span>:00:38:<span class="w"> </span>%LINEPROTO-5-UPDOWN:<span class="w"> </span>Line<span class="w"> </span>protocol<span class="w"> </span>on<span class="w"> </span>Interface<span class="w"> </span>Vlan1,<span class="w"> </span>changed<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>down
+</span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>Switch&gt;
+</span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>Switch&gt;
+</span></code></pre></div>
 
 At this stage, the switch configuration has reset to the factory defaults, with the exclusion of the VLAN information.
 
@@ -2635,6 +2660,8 @@ At this stage, the switch configuration has reset to the factory defaults, with 
   </div>
 
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2666,7 +2693,7 @@ At this stage, the switch configuration has reset to the factory defaults, with 
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
