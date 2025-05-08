@@ -18,7 +18,7 @@ render_macros: true
 In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-you-write), you will first need to [run MkDocs locally with Docker](#install-with-docker).
 
 
-??? warning
+???+ warning
 
     The Docker container is intended for [local previewing purposes only and is **not suitable for deployment**](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
 
