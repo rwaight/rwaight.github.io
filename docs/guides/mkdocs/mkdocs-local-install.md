@@ -15,10 +15,10 @@ tags:
 render_macros: true
 ---
 
-In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-you-write), you will need to [run MkDocs locally with Docker](#install-with-docker) first.
+In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-you-write), you will first need to [run MkDocs locally with Docker](#install-with-docker).
 
 
-???+ warning
+??? warning
 
     The Docker container is intended for [local previewing purposes only and is **not suitable for deployment**](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
 
@@ -74,7 +74,13 @@ The following plugins are bundled with the Docker image:
     of the official image small. If the plugin you want to use is not included,
     you can add them easily following the [add plugins to the Docker image](#add-plugins-to-the-docker-image) section below.
 
-### Add plugins to the Docker image
+### Verify required plugins
+
+Be sure to include the plugins that are installed in the 'publish-pages' 
+workflow. Look in the repos `.github/workflows/publish-pages.yml` file
+for commands starting with `pip install` for needed MkDocs plugins.
+
+### Add plugins to the image
 
 Material for MkDocs only bundles selected plugins in order to keep the size
 of the official image small. If the plugin you want to use is not included,
@@ -110,6 +116,8 @@ you can add them easily:
     Be sure to include the plugins that are installed in the 'publish-pages' 
     workflow. Look in the repos `.github/workflows/publish-pages.yml` file
     for commands starting with `pip install` for needed MkDocs plugins.
+
+### Build the Docker image
 
 Next, build the image with the following command:
 
