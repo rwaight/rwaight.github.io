@@ -43,6 +43,14 @@ theme:
     - navigation.tabs
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit
+    # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#linked-content-tabs
+    - content.tabs.link
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+    - content.code.copy
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-selection-button
+    - content.code.select
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
+    - content.code.annotate
     #
   icon:
     # # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/?h=icon#favicon
@@ -135,6 +143,21 @@ markdown_extensions:
   - md_in_html
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
   - pymdownx.snippets
+  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
+  # `content tabs` use: 'pymdownx.tabbed' and 'pymdownx.superfences'
+  - pymdownx.tabbed:
+      alternate_style: true
+      # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#anchor-links
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+  # `code blocks` use: 'pymdownx.highlight', 'pymdownx.inlinehilite', 'pymdownx.snippets', and 'pymdownx.superfences'
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
 
 
 # https://www.mkdocs.org/user-guide/configuration/#plugins

@@ -3,7 +3,7 @@ title: Local installation
 description: Local installation of MkDocs
 date:
   created: 2024-05-28
-  updated: 2025-05-06
+  updated: 2025-05-08
 authors: [rwaight]
 categories:
   - MkDocs
@@ -11,13 +11,20 @@ tags:
   - MkDocs
   - MkDocs/Examples
   - NeedToStandardizeTags
+# https://mkdocs-macros-plugin.readthedocs.io/en/latest/rendering/#opt-in-with-the-markdown-pages-header
+render_macros: true
 ---
 
+In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-you-write), you will first need to [run MkDocs locally with Docker](#install-with-docker).
 
 
-!!! warning
+???+ warning
 
-    As mentioned in the [Material for MkDocs "getting started with docker" guide](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}, the Docker container is intended for local previewing purposes only and is not suitable for deployment. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
+    The Docker container is intended for [local previewing purposes only and is **not suitable for deployment**](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
+
+<!--- The Docker container warning is from:
+ https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker
+ --->
 
 ## Install with docker
 
@@ -61,39 +68,97 @@ The following plugins are bundled with the Docker image:
     MkDocs for live previews is not designed for production use and may have
     security vulnerabilities.
 
-??? question "How to add plugins to the Docker image?"
+???+ question "How to add plugins to the Docker image?"
 
     Material for MkDocs only bundles selected plugins in order to keep the size
     of the official image small. If the plugin you want to use is not included,
-    you can add them easily:
+    you can add them easily following the [add plugins to the Docker image](#add-plugins-to-the-docker-image) section below.
 
+### Verify required plugins
+
+Be sure to include the plugins that are installed in the 'publish-pages' 
+workflow. Look in the repos `.github/workflows/publish-pages.yml` file
+for commands starting with `pip install` for needed MkDocs plugins.
+
+### Add plugins to the image
+
+Material for MkDocs only bundles selected plugins in order to keep the size
+of the official image small. If the plugin you want to use is not included,
+you can add them easily:
+
+=== "Material for MkDocs"
+
+    Create a `Dockerfile` and extend the official image:
+
+    ```Dockerfile title="Dockerfile"
+    FROM squidfunk/mkdocs-material
+    RUN pip install mkdocs-awesome-nav
+    RUN pip install mkdocs-macros-plugin
+    RUN pip install mkdocs-git-revision-date-localized-plugin
+    RUN pip install mkdocs-git-committers-plugin-2
+    ```
+
+=== "Insiders"
+
+    Clone or fork the Insiders repository, and create a file called
+    `user-requirements.txt` in the root of the repository. Then, add the
+    plugins that should be installed to the file, e.g.:
+
+    ``` txt title="user-requirements.txt"
+    mkdocs-awesome-nav
+    mkdocs-macros-plugin
+    mkdocs-git-revision-date-localized-plugin
+    mkdocs-git-committers-plugin-2
+    ```
+
+!!! tip "Verify correct list of plugins"
+
+    Be sure to include the plugins that are installed in the 'publish-pages' 
+    workflow. Look in the repos `.github/workflows/publish-pages.yml` file
+    for commands starting with `pip install` for needed MkDocs plugins.
+
+### Build the Docker image
+
+Next, build the image with the following command:
+
+```shell
+docker build -t squidfunk/mkdocs-material .
+```
+
+The new image will have additional packages installed and can be used
+exactly like the official image.
+
+
+
+<!--- 
     === "Material for MkDocs"
 
-        Create a `Dockerfile` and extend the official image:
-
+  --- the below code block is from the MkDocs guide ---
+  --- 
         ``` Dockerfile title="Dockerfile"
         FROM squidfunk/mkdocs-material
         RUN pip install mkdocs-macros-plugin
         RUN pip install mkdocs-glightbox
         ```
-
-    === "Insiders"
-
-        Clone or fork the Insiders repository, and create a file called
-        `user-requirements.txt` in the root of the repository. Then, add the
-        plugins that should be installed to the file, e.g.:
-
-        ``` txt title="user-requirements.txt"
-        mkdocs-macros-plugin
-        mkdocs-glightbox
+ ---
+  --- the below code block is from this repo ---
+  --- the below 'include' code block is from this repo ---
+  ---         
+        ```Dockerfile title="Dockerfile"
+        {% include 'docker/mkdocs/Dockerfile' %}
         ```
-
-    Next, build the image with the following command:
-
-    ```shell
-    docker build -t squidfunk/mkdocs-material .
-    ```
-
-    The new image will have additional packages installed and can be used
-    exactly like the official image.
+ ---
+  --- the below code block is from this repo ---
+  ---         
+        ```Dockerfile title="Dockerfile"
+        FROM squidfunk/mkdocs-material
+        # be sure to include the plugins that are installed in the 'publish-pages' workflow
+        #     check the '.github/workflows/publish-pages.yml' file
+        RUN pip install mkdocs-awesome-nav
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-git-revision-date-localized-plugin
+        RUN pip install mkdocs-git-committers-plugin-2
+        ```
+ ---        
+ --->
 
