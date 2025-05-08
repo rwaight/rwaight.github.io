@@ -141,6 +141,10 @@ markdown_extensions:
   # `content tabs` use: 'pymdownx.tabbed' and 'pymdownx.superfences'
   - pymdownx.tabbed:
       alternate_style: true
+      # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#anchor-links
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 
 # https://www.mkdocs.org/user-guide/configuration/#plugins
