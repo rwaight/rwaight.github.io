@@ -75,16 +75,6 @@ The following plugins are bundled with the Docker image:
 
         Create a `Dockerfile` and extend the official image:
 
-<!--- the below code block is from the MkDocs guide --->
-<!--- 
-        ``` Dockerfile title="Dockerfile"
-        FROM squidfunk/mkdocs-material
-        RUN pip install mkdocs-macros-plugin
-        RUN pip install mkdocs-glightbox
-        ```
- --->
-
-<!--- the below code block is from this repo --->
         ```Dockerfile title="Dockerfile"
         FROM squidfunk/mkdocs-material
         # be sure to include the plugins that are installed in the 'publish-pages' workflow
@@ -94,14 +84,7 @@ The following plugins are bundled with the Docker image:
         RUN pip install mkdocs-git-revision-date-localized-plugin
         RUN pip install mkdocs-git-committers-plugin-2
         ```
-
-<!--- the below 'include' code block is from this repo --->
-<!--- 
-        ```Dockerfile title="Dockerfile"
-        {% include 'docker/mkdocs/Dockerfile' %}
-        ```
- --->
-
+        
     === "Insiders"
 
         Clone or fork the Insiders repository, and create a file called
@@ -122,3 +105,24 @@ The following plugins are bundled with the Docker image:
     The new image will have additional packages installed and can be used
     exactly like the official image.
 
+
+
+<!--- 
+    === "Material for MkDocs"
+
+  --- the below code block is from the MkDocs guide ---
+  --- 
+        ``` Dockerfile title="Dockerfile"
+        FROM squidfunk/mkdocs-material
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-glightbox
+        ```
+ ---
+  --- the below code block is from this repo ---
+  --- the below 'include' code block is from this repo ---
+  ---         
+        ```Dockerfile title="Dockerfile"
+        {% include 'docker/mkdocs/Dockerfile' %}
+        ```
+ ---
+ --->
