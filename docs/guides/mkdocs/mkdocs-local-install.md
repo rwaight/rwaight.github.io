@@ -69,45 +69,53 @@ The following plugins are bundled with the Docker image:
 
     Material for MkDocs only bundles selected plugins in order to keep the size
     of the official image small. If the plugin you want to use is not included,
-    you can add them easily:
+    you can add them easily following the [add plugins to the Docker image](#add-plugins-to-the-docker-image) section below.
 
-    === "Material for MkDocs"
+### Add plugins to the Docker image
 
-        Create a `Dockerfile` and extend the official image:
+Material for MkDocs only bundles selected plugins in order to keep the size
+of the official image small. If the plugin you want to use is not included,
+you can add them easily:
 
-        ```Dockerfile title="Dockerfile"
-        FROM squidfunk/mkdocs-material
-        RUN pip install mkdocs-awesome-nav
-        RUN pip install mkdocs-macros-plugin
-        RUN pip install mkdocs-git-revision-date-localized-plugin
-        RUN pip install mkdocs-git-committers-plugin-2
-        ```
+=== "Material for MkDocs"
 
-    === "Insiders"
+    Create a `Dockerfile` and extend the official image:
 
-        Clone or fork the Insiders repository, and create a file called
-        `user-requirements.txt` in the root of the repository. Then, add the
-        plugins that should be installed to the file, e.g.:
-
-        ``` txt title="user-requirements.txt"
-        mkdocs-macros-plugin
-        mkdocs-glightbox
-        ```
-
-    !!! tip "Verify correct list of plugins"
-
-        Be sure to include the plugins that are installed in the 'publish-pages' 
-        workflow. Look in the repos `.github/workflows/publish-pages.yml` file
-        for commands starting with `pip install` for needed MkDocs plugins.
-    
-    Next, build the image with the following command:
-
-    ```shell
-    docker build -t squidfunk/mkdocs-material .
+    ```Dockerfile title="Dockerfile"
+    FROM squidfunk/mkdocs-material
+    RUN pip install mkdocs-awesome-nav
+    RUN pip install mkdocs-macros-plugin
+    RUN pip install mkdocs-git-revision-date-localized-plugin
+    RUN pip install mkdocs-git-committers-plugin-2
     ```
 
-    The new image will have additional packages installed and can be used
-    exactly like the official image.
+=== "Insiders"
+
+    Clone or fork the Insiders repository, and create a file called
+    `user-requirements.txt` in the root of the repository. Then, add the
+    plugins that should be installed to the file, e.g.:
+
+    ``` txt title="user-requirements.txt"
+    mkdocs-awesome-nav
+    mkdocs-macros-plugin
+    mkdocs-git-revision-date-localized-plugin
+    mkdocs-git-committers-plugin-2
+    ```
+
+!!! tip "Verify correct list of plugins"
+
+    Be sure to include the plugins that are installed in the 'publish-pages' 
+    workflow. Look in the repos `.github/workflows/publish-pages.yml` file
+    for commands starting with `pip install` for needed MkDocs plugins.
+
+Next, build the image with the following command:
+
+```shell
+docker build -t squidfunk/mkdocs-material .
+```
+
+The new image will have additional packages installed and can be used
+exactly like the official image.
 
 
 
