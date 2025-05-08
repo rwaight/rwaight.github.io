@@ -3,7 +3,7 @@ title: Local installation
 description: Local installation of MkDocs
 date:
   created: 2024-05-28
-  updated: 2025-05-07
+  updated: 2025-05-08
 authors: [rwaight]
 categories:
   - MkDocs
@@ -20,8 +20,11 @@ In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-
 
 ???+ warning
 
-    As mentioned in the [Material for MkDocs "getting started with docker" guide](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}, the Docker container is intended for local previewing purposes only and is not suitable for deployment. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
+    The Docker container is intended for [local previewing purposes only and is **not suitable for deployment**](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
 
+<!--- The Docker container warning is from:
+ https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker
+ --->
 
 ## Install with docker
 
