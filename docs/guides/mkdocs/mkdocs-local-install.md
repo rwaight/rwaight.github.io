@@ -84,10 +84,23 @@ The following plugins are bundled with the Docker image:
         ```
  --->
 
- <!--- the below code block is from this repo --->
+<!--- the below code block is from this repo --->
+        ```Dockerfile title="Dockerfile"
+        FROM squidfunk/mkdocs-material
+        # be sure to include the plugins that are installed in the 'publish-pages' workflow
+        #     check the '.github/workflows/publish-pages.yml' file
+        RUN pip install mkdocs-awesome-nav
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-git-revision-date-localized-plugin
+        RUN pip install mkdocs-git-committers-plugin-2
+        ```
+
+<!--- the below 'include' code block is from this repo --->
+<!--- 
         ```Dockerfile title="Dockerfile"
         {% include 'docker/mkdocs/Dockerfile' %}
         ```
+ --->
 
     === "Insiders"
 
