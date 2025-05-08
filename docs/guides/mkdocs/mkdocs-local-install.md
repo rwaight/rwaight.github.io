@@ -18,7 +18,7 @@ render_macros: true
 In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-you-write), you will need to [run MkDocs locally with Docker](#install-with-docker) first.
 
 
-!!! warning
+???+ warning
 
     As mentioned in the [Material for MkDocs "getting started with docker" guide](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}, the Docker container is intended for local previewing purposes only and is not suitable for deployment. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
 
@@ -65,7 +65,7 @@ The following plugins are bundled with the Docker image:
     MkDocs for live previews is not designed for production use and may have
     security vulnerabilities.
 
-??? question "How to add plugins to the Docker image?"
+???+ question "How to add plugins to the Docker image?"
 
     Material for MkDocs only bundles selected plugins in order to keep the size
     of the official image small. If the plugin you want to use is not included,
@@ -77,14 +77,12 @@ The following plugins are bundled with the Docker image:
 
         ```Dockerfile title="Dockerfile"
         FROM squidfunk/mkdocs-material
-        # be sure to include the plugins that are installed in the 'publish-pages' workflow
-        #     check the '.github/workflows/publish-pages.yml' file
         RUN pip install mkdocs-awesome-nav
         RUN pip install mkdocs-macros-plugin
         RUN pip install mkdocs-git-revision-date-localized-plugin
         RUN pip install mkdocs-git-committers-plugin-2
         ```
-        
+
     === "Insiders"
 
         Clone or fork the Insiders repository, and create a file called
@@ -96,6 +94,12 @@ The following plugins are bundled with the Docker image:
         mkdocs-glightbox
         ```
 
+    !!! tip "Verify correct list of plugins"
+
+        Be sure to include the plugins that are installed in the 'publish-pages' 
+        workflow. Look in the repos `.github/workflows/publish-pages.yml` file
+        for commands starting with `pip install` for needed MkDocs plugins.
+    
     Next, build the image with the following command:
 
     ```shell
@@ -125,4 +129,17 @@ The following plugins are bundled with the Docker image:
         {% include 'docker/mkdocs/Dockerfile' %}
         ```
  ---
+  --- the below code block is from this repo ---
+  ---         
+        ```Dockerfile title="Dockerfile"
+        FROM squidfunk/mkdocs-material
+        # be sure to include the plugins that are installed in the 'publish-pages' workflow
+        #     check the '.github/workflows/publish-pages.yml' file
+        RUN pip install mkdocs-awesome-nav
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-git-revision-date-localized-plugin
+        RUN pip install mkdocs-git-committers-plugin-2
+        ```
+ ---        
  --->
+
