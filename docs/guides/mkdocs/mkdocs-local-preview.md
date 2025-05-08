@@ -66,4 +66,4 @@ Point your browser to [localhost:8000][live preview] and you should see:
 
   [--dirtyreload]: https://www.mkdocs.org/about/release-notes/#support-for-dirty-builds-990
   [live preview]: http://localhost:8000
-  [Creating your site]: assets/screenshots/mkdocs-creating-your-site.png
+  [Creating your site]: ../../assets/screenshots/mkdocs-creating-your-site.png
