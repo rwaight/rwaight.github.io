@@ -3,7 +3,7 @@
 nav:
     - index.md
     - munchkin-short-rules.md
-    - ... | setup-*.md
+    - "setup-*.md"
     - bash
     - docker
     #this did not work#- GitHub: 
