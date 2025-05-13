@@ -28,3 +28,7 @@ date:
     any random notes should be stored in the [resources](../../resources/) section. 
     The plan for this section is to include known working configurations for deploying MkDocs.
 
+
+### Using Material for MkDocs with GitHub Pages
+
+This site is hosted with GitHub Pages using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/){:target="_blank"}. The `frontmatter` is used for [YAML style meta-data](https://www.mkdocs.org/user-guide/writing-your-docs/#yaml-style-meta-data){:target="_blank"}.
