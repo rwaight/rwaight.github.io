@@ -6,7 +6,7 @@ nav:
     - docker
     # group any directories using the glob pattern
     - "*/"
-    - Not categorized:
+    - Uncategorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
 

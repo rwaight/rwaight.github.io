@@ -16,6 +16,6 @@ nav:
     - synology
     - Test: 
         - "test-*.md"
-    - Other: 
+    - Uncategorized: 
         # group the remainding '*.md' files using the glob pattern
         - "*.md"

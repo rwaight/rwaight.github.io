@@ -9,6 +9,8 @@ nav:
     - github
     - mkdocs
     - windows
-    - Not categorized:
+    - Uncategorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
+        # group any directories using the glob pattern
+        - "*/"
