@@ -4,11 +4,12 @@ nav:
     - Home: 
         - index.md
         - "index-*.md"
-        # group the remainding '*.md' files using the glob pattern
-        - "*.md"
         - Restructure:
             - random
             - guides
+        - Uncategorized:
+            # group the remainding '*.md' files using the glob pattern
+            - "*.md"
     - Blog: blog
     # - Blog:
         # - blog/index.md
