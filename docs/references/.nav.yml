@@ -3,6 +3,9 @@
 nav:
     - index.md
     - Games: games
+    - MkDocs:
+        - MkDocs: https://www.mkdocs.org/
+        - Material for MkDocs: https://squidfunk.github.io/mkdocs-material
     - Uncategorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
