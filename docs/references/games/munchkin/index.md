@@ -21,7 +21,7 @@ tags:
 
 ???+ quote "Source"
 
-    The official Munchkin website is [https://munchkin.game](https://munchkin.game/)
+    The official Munchkin website is [https://munchkin.game](https://munchkin.game/). 
     _No copyright infringement intended._
     _Rights to the Munchkin logo belong to Steve Jackson Games._
 
@@ -33,4 +33,4 @@ Read through the [getting started](https://munchkin.game/new-players/how-to-play
 
 ### Short Rules
 
-The [rules to the Munchkin Card Game in a shorter format](board-munchkin-short-rules.md) than the original rules are in the [Munchkin Short Rules page](board-munchkin-short-rules.md).
+The [rules to the Munchkin Card Game in a shorter format](short-rules.md) than the original rules are in the [Munchkin Short Rules page](short-rules.md).
