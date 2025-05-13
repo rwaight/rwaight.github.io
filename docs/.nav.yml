@@ -2,6 +2,7 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - Home: 
+        - index.md
         - "index-*.md"
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
