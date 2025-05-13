@@ -2,27 +2,37 @@
 title: Munchkin Short Rules
 date:
   created: 2015-05-17
-  updated: 2024-06-26
+  updated: 2025-05-13
 #authors:
 #  - andersfischernielsen
-#slug: munchkin-short-rules
+slug: munchkin-short-rules
 tags:
   - Munchkin
 # from https://github.com/andersfischernielsen/Munchkin-Short-Rules
 ---
 
-### Short Rules Info
 
-The rules to the Munchkin Card Game in a shorter format than the original rules. Written in Markdown.
-The short rules are from [`andersfischernielsen/Munchkin-Short-Rules`](https://github.com/andersfischernielsen/Munchkin-Short-Rules).
+???+ info "Short Rules Info"
 
-Official rules can be found [here](http://www.worldofmunchkin.com/rules/munchkin_rules.pdf).
-_No copyright infringement intended._
-_Rights to the Munchkin logo belong to Steve Jackson Games._
+    The rules to the Munchkin Card Game in a shorter format than the original rules. Written in Markdown.
+
+
+???+ quote "Source"
+
+    The short rules are from [`andersfischernielsen/Munchkin-Short-Rules`](https://github.com/andersfischernielsen/Munchkin-Short-Rules).
+    The official rules can be found [here](http://www.worldofmunchkin.com/rules/munchkin_rules.pdf).
+    _No copyright infringement intended._
+    _Rights to the Munchkin logo belong to Steve Jackson Games._
+
 
 -----
 
 # Munchkin Short Rules
+
+??? note "Official Rules"
+
+    The official rules can be found [here](http://www.worldofmunchkin.com/rules/munchkin_rules.pdf).
+
 
 ## Setup
 
