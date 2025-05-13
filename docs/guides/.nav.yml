@@ -6,16 +6,9 @@ nav:
     - "setup-*.md"
     - bash
     - docker
-    #this did not work#- GitHub: 
-    #this did not work#    - github/overview.md
-    #this did not work#    - ... | github
     - github
     - mkdocs
     - windows
-    #- ...
-    #this did not work#- Windows:
-    #this did not work#    - windows/overview.md
-    #this did not work#    - ... | windows
     - Not categorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
