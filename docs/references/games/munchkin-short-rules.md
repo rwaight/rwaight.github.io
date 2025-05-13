@@ -5,9 +5,10 @@ date:
   updated: 2025-05-13
 #authors:
 #  - andersfischernielsen
-slug: munchkin-short-rules
+# slugs are used in blog posts
+#slug: munchkin-short-rules
 tags:
-  - Board games
+  - Card games
 # from https://github.com/andersfischernielsen/Munchkin-Short-Rules
 ---
 
