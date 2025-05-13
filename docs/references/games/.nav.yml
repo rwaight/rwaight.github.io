@@ -2,7 +2,7 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - "munchkin-*.md"
+    - munchkin
     # Munchkin should 'always' be the first game on this list ;)
     - "card-*.md"
     - "board-*.md"
