@@ -5,3 +5,6 @@ nav:
     - "container-*.md"
     # group the remainding '*.md' files using the glob pattern
     - "*.md"
+
+# https://lukasgeiter.github.io/mkdocs-awesome-nav/features/hiding/#ignore-patterns
+ignore: "*.hidden.md"
