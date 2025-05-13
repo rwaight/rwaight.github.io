@@ -20,10 +20,12 @@ tags:
 ???+ quote "Source"
 
     The short rules are from [`andersfischernielsen/Munchkin-Short-Rules`](https://github.com/andersfischernielsen/Munchkin-Short-Rules).
-    The official rules can be found [here](http://www.worldofmunchkin.com/rules/munchkin_rules.pdf).
+    The official rules can be found at [https://munchkin.game/gameplay/rules/](https://munchkin.game/gameplay/rules/), specifically [here](https://munchkin.game/site-munchkin/assets/files/1138/munchkin_rules-1.pdf).
     _No copyright infringement intended._
     _Rights to the Munchkin logo belong to Steve Jackson Games._
 
+
+<!--- The official rules used to be published at http://www.worldofmunchkin.com/rules/munchkin_rules.pdf --->
 
 -----
 
@@ -31,7 +33,7 @@ tags:
 
 ??? note "Official Rules"
 
-    The official rules can be found [here](http://www.worldofmunchkin.com/rules/munchkin_rules.pdf).
+    The official rules can be found at [https://munchkin.game/gameplay/rules/](https://munchkin.game/gameplay/rules/), specifically [here](https://munchkin.game/site-munchkin/assets/files/1138/munchkin_rules-1.pdf).
 
 
 ## Setup
