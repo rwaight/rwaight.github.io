@@ -14,7 +14,7 @@ nav:
 
 append_unmatched: true
 
-## game sections - reservd for future use
+## game sections - reserved for future use
 ##     this would be under the 'index.md' entry, at the same level
     # maybe create separate sections in the future, but only if there are a lot of pages
     #   the sections would be: board games, video games, and uncategorized
