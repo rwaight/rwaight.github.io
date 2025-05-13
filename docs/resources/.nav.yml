@@ -2,13 +2,10 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - munchkin-short-rules.md
-    - "setup-*.md"
-    - bash
-    # moved to resources ##- docker
-    - github
-    - mkdocs
-    - windows
+    - coding
+    - docker
     - Not categorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
+
+append_unmatched: true

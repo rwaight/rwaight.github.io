@@ -2,13 +2,13 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - munchkin-short-rules.md
-    - "setup-*.md"
-    - bash
-    # moved to resources ##- docker
-    - github
-    - mkdocs
-    - windows
-    - Not categorized:
+    - Games: games
+    - coding
+    - MkDocs:
+        - MkDocs: https://www.mkdocs.org/
+        - Material for MkDocs: https://squidfunk.github.io/mkdocs-material
+    - Uncategorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
+
+append_unmatched: true
