@@ -2,9 +2,7 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - coding
-    - docker
-    - Not categorized:
+    - Uncategorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
 
