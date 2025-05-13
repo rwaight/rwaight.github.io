@@ -5,6 +5,8 @@ nav:
     - Games: games
     - coding
     - mkdocs
+    # group any directories using the glob pattern
+    - "*/"
     - Uncategorized:
         # group the remainding '*.md' files using the glob pattern
         - "*.md"
