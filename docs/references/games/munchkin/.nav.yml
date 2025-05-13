@@ -3,7 +3,7 @@
 nav:
     - index.md
     # The short rules should be immediately after the index page
-    - munchkin-short-rules.md
+    - short-rules.md
     # group the remainding '*.md' files using the glob pattern
     - "*.md"
 
