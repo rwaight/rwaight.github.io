@@ -15,6 +15,7 @@ nav:
         - random
         - guides
     - References: references
+    - Resources: resources
     #- Random: random
     #- MkDocs-Material: https://squidfunk.github.io/mkdocs-material/
     #- Other: 
