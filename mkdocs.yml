@@ -67,6 +67,7 @@ theme:
 docs_dir: 'docs'
 
 # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+# the edit_uri should include configuring the 'content.action.edit' plugin
 edit_uri: edit/main/docs/
 
 # # Reserved for future use, see https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/
