@@ -19,4 +19,5 @@ date:
 !!! abstract "Current section plans"
 
     The plan for this section is to include resources for anyone learning to code, including using version control software.
+    This 'resources' section is meant to include 'random notes'; coding 'best practices' be stored in the [coding references](../../references/coding/) section. 
 
