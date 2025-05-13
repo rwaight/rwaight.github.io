@@ -45,7 +45,19 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://rwaight.github.io/blog/2023/03/18/git-describe-with-git-tags/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rwaight.github.io/blog/2023/03/18/revert-commits-in-git/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://rwaight.github.io/blog/2024/09/05/dark-mode-in-chromium-browsers/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rwaight.github.io/blog/2024/03/20/encouraging-git-hygine-with-commitlint/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -277,6 +289,10 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://rwaight.github.io/references/coding/github-pull-requests/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://rwaight.github.io/references/games/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -285,7 +301,7 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
-         <loc>https://rwaight.github.io/references/games/munchkin/munchkin-short-rules/</loc>
+         <loc>https://rwaight.github.io/references/games/munchkin/short-rules/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -329,6 +345,10 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://rwaight.github.io/blog/archive/2023/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://rwaight.github.io/blog/archive/2019/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -366,6 +386,14 @@
     </url>
     <url>
          <loc>https://rwaight.github.io/blog/category/github/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rwaight.github.io/blog/category/coding/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://rwaight.github.io/blog/category/git/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>

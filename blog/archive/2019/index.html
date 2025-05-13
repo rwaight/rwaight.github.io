@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://rwaight.github.io/blog/archive/2019/">
       
       
-        <link rel="prev" href="../2024/">
+        <link rel="prev" href="../2023/">
       
       
         <link rel="next" href="../2018/">
@@ -2527,6 +2527,8 @@
       
         
       
+        
+      
     
     
     
@@ -2606,6 +2608,31 @@
   
   <span class="md-ellipsis">
     2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
     
   </span>
   
@@ -2783,6 +2810,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2887,6 +2918,31 @@
   
   <span class="md-ellipsis">
     Browsers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git
     
   </span>
   
@@ -3072,6 +3128,31 @@
 
               
             
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    coding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3098,8 +3179,6 @@
       
         
           
-        
-      
         
       
         
@@ -3280,7 +3359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../references/games/munchkin/munchkin-short-rules/" class="md-nav__link">
+      <a href="../../../references/games/munchkin/short-rules/" class="md-nav__link">
         
   
   
@@ -3318,18 +3397,86 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../references/coding/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Coding
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Coding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../references/coding/" class="md-nav__link">
+      <a href="../../../references/coding/github-pull-requests/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Coding References
+    GitHub Pull Requests
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3476,29 +3623,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Uncategorized
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -3517,8 +3641,6 @@
       
         
           
-        
-      
         
       
         
@@ -3709,29 +3831,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Uncategorized
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -3828,12 +3927,12 @@
     <h2 id="bash-timezone-checks"><a class="toclink" href="../../2019/10/14/bash-timezone-checks/">Bash timezone checks</a></h2>
 <p>If you try to build an over-complicated scheduler using <code>bash</code>, you may run into issues when it comes to Daylight Saving Time.  While it is a good idea to use Coordinated Universal Time (UTC), you might want to make sure you do not run into issues.  The examples will use the <code>date</code> with the <code>+"%H:%M"</code> format.</p>
 <p>Using <code>date</code> with the <code>-u</code> option:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="m">03</span>:59
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>date<span class="w"> </span>-u<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">03</span>:59
 </span></code></pre></div></p>
 <p>Using <code>date</code> after specifying the timezone with <code>TZ=</code>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="m">03</span>:59
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">03</span>:59
 </span></code></pre></div></p>
 <p>Here is a way to ensure you include the appropriate Daylight Saving Time and its dates of applicability. The example is from the <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html#TZ-Variable">21.5.6 Specifying the Time Zone with <code>TZ</code></a> page.</p>
 <p>In North American Eastern Standard Time (EST) and Eastern Daylight Time (EDT), the normal offset from UTC is 5 hours; since this is west of the prime meridian, the sign is positive. Summer time begins on March’s second Sunday at 2:00am, and ends on November’s first Sunday at 2:00am.</p>
@@ -3841,14 +3940,14 @@
 <p><code>EST+5EDT</code></p>
 </blockquote>
 <p>Here are some examples using <code>date +"%H:%M"</code> for timezones in the continental United States:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:EST+5EDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="m">22</span>:59
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:CST+6CDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="m">21</span>:59
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:MST+7MDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="m">20</span>:59
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:PST+8PDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="m">19</span>:59
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:EST+5EDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="m">22</span>:59
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:CST+6CDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="m">21</span>:59
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:MST+7MDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="m">20</span>:59
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;:PST+8PDT&quot;</span><span class="w"> </span>date<span class="w"> </span>+<span class="s2">&quot;%H:%M&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="m">19</span>:59
 </span></code></pre></div></p>
     
   </div>
