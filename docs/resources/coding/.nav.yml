@@ -2,8 +2,16 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - Uncategorized:
-        # group the remainding '*.md' files using the glob pattern
-        - "*.md"
+    - "*.md"
 
 append_unmatched: true
+
+## coding sections - reserved for future use
+##     this would be under the 'index.md' entry, at the same level
+    # maybe create separate sections in the future, but only if there are a lot of pages
+    #   the sections are still TBD, but currently include: git and uncategorized
+    #- Git:
+    #    - "git-*.md"
+    #- Uncategorized:
+    #    # group the remainding '*.md' files using the glob pattern
+    #    - "*.md"

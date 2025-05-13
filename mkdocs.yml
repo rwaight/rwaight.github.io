@@ -41,6 +41,8 @@ theme:
     - content.code.select
     # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
     - content.code.annotate
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#table-of-contents
+    - toc.follow
     #
   icon:
     # # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/?h=icon#favicon
@@ -65,6 +67,7 @@ theme:
 docs_dir: 'docs'
 
 # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+# the edit_uri should include configuring the 'content.action.edit' plugin
 edit_uri: edit/main/docs/
 
 # # Reserved for future use, see https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/

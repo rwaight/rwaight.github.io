@@ -3,9 +3,10 @@ title: Munchkin
 date:
   created: 2025-05-13
   updated: 2025-05-13
-slug: munchkin
+# slugs are used in blog posts
+#slug: munchkin
 tags:
-  - Board games
+  - Card games
 # from https://munchkin.game/
 ---
 

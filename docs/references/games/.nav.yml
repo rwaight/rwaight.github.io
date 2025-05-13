@@ -2,12 +2,26 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - Board games:
-        - "board-*.md"
-    - Video games:
-        - "video-*.md"
-    - Uncategorized:
-        # group the remainding '*.md' files using the glob pattern
-        - "*.md"
+    - munchkin
+    # Munchkin should 'always' be the first game on this list ;)
+    - "card-*.md"
+    - "board-*.md"
+    - "video-*.md"
+    # maybe create separate sections in the future, but only if there are a lot of pages
+    #   the sections would be: card games, board games, video games, and uncategorized
+    # group the remainding '*.md' files using the glob pattern
+    - "*.md"
 
 append_unmatched: true
+
+## game sections - reserved for future use
+##     this would be under the 'index.md' entry, at the same level
+    # maybe create separate sections in the future, but only if there are a lot of pages
+    #   the sections would be: board games, video games, and uncategorized
+    #- Board games:
+    #    - "board-*.md"
+    #- Video games:
+    #    - "video-*.md"
+    #- Uncategorized:
+    #    # group the remainding '*.md' files using the glob pattern
+    #    - "*.md"
