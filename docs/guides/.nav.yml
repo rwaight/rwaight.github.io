@@ -5,7 +5,7 @@ nav:
     - munchkin-short-rules.md
     - "setup-*.md"
     - bash
-    - docker
+    # moved to resources ##- docker
     - github
     - mkdocs
     - windows

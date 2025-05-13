@@ -1,5 +1,5 @@
 ---
-title: Docker index page
+title: Docker
 date:
   created: 2024-12-19
   updated: 2025-01-28
