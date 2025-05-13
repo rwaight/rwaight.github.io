@@ -7,7 +7,7 @@ date:
 #  - andersfischernielsen
 slug: munchkin-short-rules
 tags:
-  - Munchkin
+  - Board games
 # from https://github.com/andersfischernielsen/Munchkin-Short-Rules
 ---
 
