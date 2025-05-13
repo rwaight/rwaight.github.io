@@ -2,10 +2,14 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    #- Not categorized:
-    #    # group the remainding '*.md' files using the glob pattern
-    #    - "*.md"
+    # group any directories using the glob pattern
+    - "*/"
+    # group the remainding '*.md' files using the glob pattern
+    - "*.md"
 
 #append_unmatched: true
 
 # might need to review https://github.com/lukasgeiter/mkdocs-awesome-nav/issues/111 if the current config does not work
+# if the above configuration does not work, then will need to REMOVE this
+#   .nav.yml file and configure the 'blog' section to point to 'blog/index.md'
+#   as shown in https://squidfunk.github.io/mkdocs-material/plugins/blog/#navigation
