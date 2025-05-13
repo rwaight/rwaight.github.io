@@ -7,8 +7,7 @@ nav:
     - mkdocs
     # group any directories using the glob pattern
     - "*/"
-    - Uncategorized:
-        # group the remainding '*.md' files using the glob pattern
-        - "*.md"
+    # group the remainding '*.md' files using the glob pattern
+    - "*.md"
 
 append_unmatched: true
