@@ -4,7 +4,7 @@ description: >
   Using git describe for information about git tags
 date:
   created: 2023-03-18
-  updated: 2025-05-13
+  updated: 2025-05-20
 authors:
   - rwaight
 categories:
@@ -18,41 +18,49 @@ categories:
 
 Use `git describe --tags` to get the tags.
 
+### Using git describe
+
+<!--- switch from the details element to MkDocs admonitions --->
+<!--- https://squidfunk.github.io/mkdocs-material/reference/admonitions/?h=colla#collapsible-blocks --->
+<!--- also reference https://github.com/squidfunk/mkdocs-material/discussions/3944#discussioncomment-3199209 --->
+<!--- 
 #### Examples using git describe
 
 <details><summary>Examples using git describe (click to expand)</summary>
+ --->
 
-### Examples using git describe
+??? note "Examples using git describe"
 
-Using `git describe --tags`:
-```bash
-git describe --tags
-## output
-v0.2.1-15-g7a82bbe
-```
+    Using `git describe --tags`:
+    ```bash
+    git describe --tags
+    ## output
+    v0.2.1-15-g7a82bbe
+    ```
 
-Using `git describe`
-```bash
-git describe
-## output
-v0.1.2-39-g7a82bbe
-```
+    Using `git describe`
+    ```bash
+    git describe
+    ## output
+    v0.1.2-39-g7a82bbe
+    ```
 
-Using `git describe --abbrev=0 --tags` to get the tag from the current branch
-```bash
-git describe --abbrev=0 --tags
-## output
-v0.2.1
-```
+    Using `git describe --abbrev=0 --tags` to get the tag from the current branch
+    ```bash
+    git describe --abbrev=0 --tags
+    ## output
+    v0.2.1
+    ```
 
-Using `git describe` with `git rev-list` to get tags across all branches, not just the current branch
-```bash
-git describe --tags `git rev-list --tags --max-count=1`
-## output
-v0.2.1
-```
+    Using `git describe` with `git rev-list` to get tags across all branches, not just the current branch
+    ```bash
+    git describe --tags `git rev-list --tags --max-count=1`
+    ## output
+    v0.2.1
+    ```
 
-</details>
+<!--- switch from the details element to MkDocs admonitions --->
+<!--- </details> --->
 
 
 #### Other examples
