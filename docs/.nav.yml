@@ -23,3 +23,9 @@ nav:
     #- index-summary.md
 
 flatten_single_child_sections: true
+
+ignore:
+    # https://lukasgeiter.github.io/mkdocs-awesome-nav/features/hiding/
+    - "_template.md"
+    #- hidden/
+    - "*.hidden.md"
