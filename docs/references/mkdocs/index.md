@@ -4,7 +4,7 @@ description: >
   References related to configuring MkDocs
 date:
   created: 2025-05-13
-  updated: 2025-05-13
+  updated: 2025-05-30
 ---
 
 <!--- Do not use a H1 element when the title is set in the frontmatter --->
@@ -25,7 +25,7 @@ date:
 !!! abstract "Current section plans"
 
     This 'references' section is meant to include baseline configurations or 'best practices'; 
-    any random notes should be stored in the [resources](../../resources/) section. 
+    any random notes should be stored in the [MkDocs resources](../../resources/mkdocs/) section. 
     The plan for this section is to include known working configurations for deploying MkDocs.
 
 
