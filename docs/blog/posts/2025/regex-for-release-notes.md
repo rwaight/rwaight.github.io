@@ -21,9 +21,11 @@ tags:
 ---
 
 
+### Change formatting for Pull Request entries
+
 **Find**:
 ```shell
-by (@.*) in https://github.com/rwaight/tools/pull/(\d+)
+by (@.*) in https://github.com/rwaight/rwaight.github.io/pull/(\d+)
 ```
 
 **Replace**:
@@ -31,4 +33,19 @@ by (@.*) in https://github.com/rwaight/tools/pull/(\d+)
 (#$2) $1
 ```
 
-![regex-release-notes-vscode](images/regex-release-notes-vscode.png)
+![regex-release-notes-pr-entries-vscode](images/regex-release-notes-pr-entries-vscode.png)
+
+
+### Replace the commit message type
+
+**Find**:
+```shell
+^\* (\S+: )
+```
+
+**Replace**:
+```shell
+- 
+```
+
+![regex-release-notes-commit-message-vscode](images/regex-release-notes-commit-message-vscode.png)
