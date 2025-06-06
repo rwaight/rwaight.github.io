@@ -2317,8 +2317,6 @@
       
         
       
-        
-      
     
     
     
@@ -2354,29 +2352,6 @@
             Uncategorized
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../index-summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Summary
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3665,6 +3640,8 @@
       
         
       
+        
+      
     
     
     
@@ -3836,6 +3813,202 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../resources/mkdocs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Mkdocs
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Mkdocs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../references/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MkDocs (Local)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.mkdocs.org/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MkDocs (Official)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://squidfunk.github.io/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Material for MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4056,36 +4229,41 @@
 
 <h3 id="getting-tags-on-a-git-repository"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#getting-tags-on-a-git-repository">Getting tags on a git repository</a></h3>
 <p>Use <code>git describe --tags</code> to get the tags.</p>
-<h5 id="examples-using-git-describe"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#examples-using-git-describe">Examples using git describe</a></h5>
+<h4 id="using-git-describe"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#using-git-describe">Using git describe</a></h4>
+<!--- switch from the details element to MkDocs admonitions --->
+<!--- https://squidfunk.github.io/mkdocs-material/reference/admonitions/?h=colla#collapsible-blocks --->
+<!--- also reference https://github.com/squidfunk/mkdocs-material/discussions/3944#discussioncomment-3199209 --->
+<!--- 
+#### Examples using git describe
+
 <details><summary>Examples using git describe (click to expand)</summary>
+ --->
 
-### Examples using git describe
-
-Using `git describe --tags`:
+<details class="note">
+<summary>Examples using git describe</summary>
+<p>Using <code>git describe --tags</code>:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--tags
 </span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="c1">## output</span>
 </span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>v0.2.1-15-g7a82bbe
-</span></code></pre></div>
-
-Using `git describe`
+</span></code></pre></div></p>
+<p>Using <code>git describe</code>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>git<span class="w"> </span>describe
 </span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="c1">## output</span>
 </span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>v0.1.2-39-g7a82bbe
-</span></code></pre></div>
-
-Using `git describe --abbrev=0 --tags` to get the tag from the current branch
+</span></code></pre></div></p>
+<p>Using <code>git describe --abbrev=0 --tags</code> to get the tag from the current branch
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--abbrev<span class="o">=</span><span class="m">0</span><span class="w"> </span>--tags
 </span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="c1">## output</span>
 </span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>v0.2.1
-</span></code></pre></div>
-
-Using `git describe` with `git rev-list` to get tags across all branches, not just the current branch
+</span></code></pre></div></p>
+<p>Using <code>git describe</code> with <code>git rev-list</code> to get tags across all branches, not just the current branch
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--tags<span class="w"> </span><span class="sb">`</span>git<span class="w"> </span>rev-list<span class="w"> </span>--tags<span class="w"> </span>--max-count<span class="o">=</span><span class="m">1</span><span class="sb">`</span>
 </span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="c1">## output</span>
 </span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>v0.2.1
-</span></code></pre></div>
-
+</span></code></pre></div></p>
 </details>
+<!--- switch from the details element to MkDocs admonitions --->
+<!--- </details> --->
 
 <h5 id="other-examples"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#other-examples">Other examples</a></h5>
 <details><summary>Other git describe examples (click to expand)</summary>
