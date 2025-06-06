@@ -4,7 +4,7 @@ description: >
   Rob's GitHub Pages Site
 date:
   created: 2023-05-28
-  updated: 2025-05-13
+  updated: 2025-05-30
 ---
 
 ???+ info
@@ -15,20 +15,21 @@ date:
 !!! abstract "Site Update Plan"
 
     The site is being restructured to include the following document sections:
-    `blog`, `guides`, `random`, `references`, and `resources`.
+    [`blog`](./blog/index.md), `guides`, `random`, `references`, and `resources`.
 
 ### Site overview
 
 - [Blogs](./blog/index.md)
+- [References](./references/index.md)
+    - Useful information: Baseline configurations or 'best practices' about specific topics.
+- [Resources](./resources/index.md)
+    - Mostly refined data: Information and random notes about different topics.
 - Restructuring:
     - These pages _will most likely_ be migrated to a different document section.
     - [Guides](./guides/index.md)
     - [Random pages](./random/index.md)
     - Currently working on separating the pages based on [either the information or knowledge provided](https://keydifferences.com/difference-between-information-and-knowledge.html)
-- [References](./references/index.md)
-    - Useful information: Baseline configurations or 'best practices' about specific topics.
-- [Resources](./resources/index.md)
-    - Mostly refined data: Information and random notes about different topics.
+
 
 
 ## Other projects
