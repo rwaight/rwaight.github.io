@@ -3,7 +3,7 @@ title: Using Scrumban in a distributed team
 draft: false
 date:
   created: 2025-02-04
-  updated: 2025-02-18
+  updated: 2025-06-17
 authors:
   - rwaight
 categories:
@@ -25,6 +25,7 @@ Being flexible and efficient can make working in a distributed team a great expe
 Scrumban combines two leading Agile methodologies—Scrum and Kanban—into a single process for getting work done. But what is scrumban? And why should you consider its unique approach?
 
 These are notes based on the following resources:
+
 - [Understanding the 4 Agile ceremonies][10]
 - [Scrumban: Mastering two Agile methodologies][20]
 
@@ -79,13 +80,14 @@ The answer to the question of an effective stand-up is addressed in the [It's No
 #### Example status field settings
 
 Here is an example of **Status field settings** for a GitHub project:
-* **Triage**: Items to be triaged
-* **To do**: Triaged items up for grabs. Please choose based on determined priorities.
-* **In Progress**: Items actively being worked on
-* **Review Needed**: PRs and issues that require review
-* **Changes Requested**: Reviewed PRs and issues with changes requested
-* **Approved**: Approved PRs that need to be merged, or approved items that need to be completed
-* **Done**: Items that have been completed
+
+- **Triage**: Items to be triaged
+- **To do**: Triaged items up for grabs. Please choose based on determined priorities.
+- **In Progress**: Items actively being worked on
+- **Review Needed**: PRs and issues that require review
+- **Changes Requested**: Reviewed PRs and issues with changes requested
+- **Approved**: Approved PRs that need to be merged, or approved items that need to be completed
+- **Done**: Items that have been completed
 
 Here is what that would look like in the **Status field settings** page:
 
