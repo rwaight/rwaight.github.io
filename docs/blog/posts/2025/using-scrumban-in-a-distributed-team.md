@@ -89,7 +89,7 @@ Here is an example of **Status field settings** for a GitHub project:
 
 Here is what that would look like in the **Status field settings** page:
 
-![github-project-status-field-settings](./github-project-status-field-settings.png)
+![github-project-status-field-settings](./images/github-project-status-field-settings.png)
 
 
 ### Using GitHub project workflows to improve timeliness
