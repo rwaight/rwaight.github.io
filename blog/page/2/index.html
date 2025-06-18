@@ -16,7 +16,7 @@
         <link rel="prev" href="../../../test/">
       
       
-        <link rel="next" href="../../category/agile/">
+        <link rel="next" href="../../category/board-games/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -2780,31 +2780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/agile/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Agile
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
       <a href="../../category/board-games/" class="md-nav__link">
         
   
@@ -3030,6 +3005,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../../category/work-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work Tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../category/bash/" class="md-nav__link">
         
   
@@ -3097,6 +3097,8 @@
       
         
           
+        
+      
         
       
         
@@ -3541,6 +3543,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/agile-work-hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agile Work Hierarchy Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3618,18 +3643,86 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../resources/coding/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Coding
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Coding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../resources/coding/" class="md-nav__link">
+      <a href="../../../resources/coding/github-repo-management/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Coding Resources
+    GitHub Repo Management Resources
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3983,6 +4076,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#encouraging-git-hygine-with-commitlint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encouraging git hygine with commitlint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-describe-with-git-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git describe with git tags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#revert-commits-in-git" class="md-nav__link">
     <span class="md-ellipsis">
       Revert commits in git
@@ -4032,6 +4143,411 @@
       <header class="md-typeset">
         <h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-20 00:00:00+00:00">March 20, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/coding/" class="md-meta__link">coding</a>, 
+              <a href="../../category/git/" class="md-meta__link">Git</a>, 
+              <a href="../../category/github/" class="md-meta__link">GitHub</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="encouraging-git-hygine-with-commitlint"><a class="toclink" href="../../2024/03/20/encouraging-git-hygine-with-commitlint/">Encouraging git hygine with commitlint</a></h2>
+<!--- This page was moved from the 'rwaight/actions' repo --->
+<!--- original file: https://github.com/rwaight/actions/blob/main/docs/adding-commitlint.md --->
+
+<p>I added a <a href="https://github.com/rwaight/actions/blob/v0.2/.github/workflows/check-commits.yml">GitHub Action that uses commitlint</a> to my <a href="https://github.com/rwaight/actions">GitHub Actions Monorepo</a>.  The GitHub Action is based off of <a href="https://commitlint.js.org/"><strong>commitlint</strong></a> (<a href="https://github.com/conventional-changelog/commitlint">commitlint GitHub</a>) and has been added in an effort to encourage (enforce?) good <strong>git hygiene</strong>.  <em>Note</em>: The original <a href="https://github.com/rwaight/actions/blob/v0.1.12/.github/workflows/actions-ci.yml"><code>actions-ci</code> workflow</a> was added in the <a href="https://github.com/rwaight/actions/releases/tag/v0.1.12"><code>v0.1.12</code> release</a>.</p>
+<p>The workflow originated from <a href="https://commitlint.js.org/guides/ci-setup.html#github-actions">the <em>CI setup</em> <strong>GitHub Actions</strong> section</a> of the <a href="https://commitlint.js.org/guides/ci-setup.html">commitlint guides</a>.  The example workflow needed to be updated in order to run, but it should be working now.</p>
+<p>The default commitlint configuration:
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="s2">&quot;@commitlint/config-conventional&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h5 id="enforcing-good-git-hygiene"><a class="toclink" href="../../2024/03/20/encouraging-git-hygine-with-commitlint/#enforcing-good-git-hygiene">Enforcing good git hygiene</a></h5>
+<p>Part of ensuring proper commit messages (and pull requests) will help with automating releases.  For example, the <a href="https://github.com/semantic-release/semantic-release">semantic release</a> tool can be used in a GitHub action, via <a href="https://github.com/cycjimmy/semantic-release-action">this semantic-release-action</a>.</p>
+<p>Here are some other write-ups on the topic:</p>
+<ul>
+<li>https://www.vantage-ai.com/blog/how-to-enforce-good-pull-requests-on-github</li>
+<li>https://hugooodias.medium.com/the-anatomy-of-a-perfect-pull-request-567382bb6067</li>
+</ul>
+<h5 id="resources"><a class="toclink" href="../../2024/03/20/encouraging-git-hygine-with-commitlint/#resources">Resources</a></h5>
+<p>commitlint guide links:</p>
+<ul>
+<li><a href="https://commitlint.js.org/guides/getting-started.html">Guide: Getting started</a></li>
+<li><a href="https://commitlint.js.org/guides/local-setup.html">Guide: Local setup</a></li>
+<li><a href="https://commitlint.js.org/guides/ci-setup.html">Guide: CI Setup</a></li>
+</ul>
+<p>Actions that can be used with <code>commitlint</code>:</p>
+<ul>
+<li>https://github.com/webiny/action-conventional-commits</li>
+<li>https://github.com/wagoid/commitlint-github-action</li>
+<li>https://github.com/commitizen/conventional-commit-types</li>
+<li>https://github.com/amannn/action-semantic-pull-request</li>
+<li>(deprecated) https://github.com/squash-commit-app/squash-commit-app</li>
+<li>(deprecated) https://github.com/zeke/semantic-pull-requests</li>
+</ul>
+<p>Examples with a <code>semantic.yml</code> file within a GitHub repo:</p>
+<ul>
+<li>https://github.com/GoogleChrome/lighthouse-ci/blob/main/.github/semantic.yml</li>
+<li>https://github.com/minecrafthome/minecrafthome/blob/master/semantic.yml</li>
+<li>https://github.com/meltano/sdk/blob/main/.github/semantic.yml</li>
+<li>https://github.com/vectordotdev/vector/blob/master/.github/semantic.yml</li>
+</ul>
+<p>Here are links to other resources:</p>
+<ul>
+<li>https://github.blog/changelog/2022-05-11-default-to-pr-titles-for-squash-merge-commit-messages/</li>
+<li>https://semantic-release.gitbook.io/semantic-release/recipes/ci-configurations/github-actions</li>
+<li>https://jamiewen00.medium.com/integrate-commitlint-to-your-repository-67d6524d0d24</li>
+<li>https://ajcwebdev.com/semantic-github/</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-03-18 00:00:00+00:00">March 18, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/git/" class="md-meta__link">Git</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="git-describe-with-git-tags"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/">Git describe with git tags</a></h2>
+<!--- This page was moved from the 'rwaight/actions' repo --->
+<!--- original file: https://github.com/rwaight/actions/blob/main/docs/git-tags-examples.md --->
+
+<h3 id="getting-tags-on-a-git-repository"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#getting-tags-on-a-git-repository">Getting tags on a git repository</a></h3>
+<p>Use <code>git describe --tags</code> to get the tags.</p>
+<h4 id="using-git-describe"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#using-git-describe">Using git describe</a></h4>
+<!--- switch from the details element to MkDocs admonitions --->
+<!--- https://squidfunk.github.io/mkdocs-material/reference/admonitions/?h=colla#collapsible-blocks --->
+<!--- also reference https://github.com/squidfunk/mkdocs-material/discussions/3944#discussioncomment-3199209 --->
+<!--- 
+#### Examples using git describe
+
+<details><summary>Examples using git describe (click to expand)</summary>
+ --->
+
+<details class="note">
+<summary>Examples using git describe</summary>
+<p>Using <code>git describe --tags</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--tags
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="c1">## output</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>v0.2.1-15-g7a82bbe
+</span></code></pre></div></p>
+<p>Using <code>git describe</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>git<span class="w"> </span>describe
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="c1">## output</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>v0.1.2-39-g7a82bbe
+</span></code></pre></div></p>
+<p>Using <code>git describe --abbrev=0 --tags</code> to get the tag from the current branch
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--abbrev<span class="o">=</span><span class="m">0</span><span class="w"> </span>--tags
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="c1">## output</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>v0.2.1
+</span></code></pre></div></p>
+<p>Using <code>git describe</code> with <code>git rev-list</code> to get tags across all branches, not just the current branch
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--tags<span class="w"> </span><span class="sb">`</span>git<span class="w"> </span>rev-list<span class="w"> </span>--tags<span class="w"> </span>--max-count<span class="o">=</span><span class="m">1</span><span class="sb">`</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="c1">## output</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>v0.2.1
+</span></code></pre></div></p>
+</details>
+<!--- switch from the details element to MkDocs admonitions --->
+<!--- </details> --->
+
+<h5 id="other-examples"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#other-examples">Other examples</a></h5>
+<details><summary>Other git describe examples (click to expand)</summary>
+
+### Other examples using git describe
+
+Get the latest tagged version and remove the `v` prefix:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>committerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;[0-9]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-b<span class="w"> </span><span class="m">2</span>-7
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="c1">## output</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="m">0</span>.2.1
+</span></code></pre></div>
+
+Using `git describe` with `--abbrev` set to `0`
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>git<span class="w"> </span>describe<span class="w"> </span>--abbrev<span class="o">=</span><span class="m">0</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="c1">## output</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>v0.1.2
+</span></code></pre></div>
+
+</details>
+
+<h3 id="sorting-tags"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#sorting-tags">Sorting tags</a></h3>
+<h5 id="using-the-sort-option"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#using-the-sort-option">Using the <code>--sort</code> option</a></h5>
+<p>From https://stackoverflow.com/questions/14273531/how-to-sort-git-tags-by-version-string-order-of-form-rc-x-y-z-w?#answer-22634649</p>
+<blockquote>
+<p>With Git 2.0 (June 2014), you will be able to specify a sorting order!</p>
+</blockquote>
+<p>Using <code>--sort=&lt;type&gt;</code></p>
+<blockquote>
+<p><strong>Sort in a specific order.</strong>
+Supported type is:
+* "<code>refname</code>" (lexicographic order),
+* "<code>version:refname</code>" or "<code>v:refname</code>" (tag names are treated as versions).</p>
+<p>Prepend "<code>-</code>" to reverse sort order.</p>
+</blockquote>
+<p>So, if you have:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>git<span class="w"> </span>tag<span class="w"> </span>foo1.3<span class="w"> </span><span class="o">&amp;&amp;</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>git<span class="w"> </span>tag<span class="w"> </span>foo1.6<span class="w"> </span><span class="o">&amp;&amp;</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>git<span class="w"> </span>tag<span class="w"> </span>foo1.10
+</span></code></pre></div></p>
+<p>Here is what you would get:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="c1"># lexical sort</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>git<span class="w"> </span>tag<span class="w"> </span>-l<span class="w"> </span>--sort<span class="o">=</span>refname<span class="w"> </span><span class="s2">&quot;foo*&quot;</span>
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>foo1.10
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>foo1.3
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>foo1.6
+</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>
+</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a><span class="c1"># version sort</span>
+</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>git<span class="w"> </span>tag<span class="w"> </span>-l<span class="w"> </span>--sort<span class="o">=</span>version:refname<span class="w"> </span><span class="s2">&quot;foo*&quot;</span>
+</span><span id="__span-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>foo1.3
+</span><span id="__span-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a>foo1.6
+</span><span id="__span-53-11"><a id="__codelineno-53-11" name="__codelineno-53-11" href="#__codelineno-53-11"></a>foo1.10
+</span><span id="__span-53-12"><a id="__codelineno-53-12" name="__codelineno-53-12" href="#__codelineno-53-12"></a>
+</span><span id="__span-53-13"><a id="__codelineno-53-13" name="__codelineno-53-13" href="#__codelineno-53-13"></a><span class="c1"># reverse version sort</span>
+</span><span id="__span-53-14"><a id="__codelineno-53-14" name="__codelineno-53-14" href="#__codelineno-53-14"></a>git<span class="w"> </span>tag<span class="w"> </span>-l<span class="w"> </span>--sort<span class="o">=</span>-version:refname<span class="w"> </span><span class="s2">&quot;foo*&quot;</span>
+</span><span id="__span-53-15"><a id="__codelineno-53-15" name="__codelineno-53-15" href="#__codelineno-53-15"></a>foo1.10
+</span><span id="__span-53-16"><a id="__codelineno-53-16" name="__codelineno-53-16" href="#__codelineno-53-16"></a>foo1.6
+</span><span id="__span-53-17"><a id="__codelineno-53-17" name="__codelineno-53-17" href="#__codelineno-53-17"></a>foo1.3
+</span><span id="__span-53-18"><a id="__codelineno-53-18" name="__codelineno-53-18" href="#__codelineno-53-18"></a>
+</span><span id="__span-53-19"><a id="__codelineno-53-19" name="__codelineno-53-19" href="#__codelineno-53-19"></a><span class="c1"># reverse lexical sort</span>
+</span><span id="__span-53-20"><a id="__codelineno-53-20" name="__codelineno-53-20" href="#__codelineno-53-20"></a>git<span class="w"> </span>tag<span class="w"> </span>-l<span class="w"> </span>--sort<span class="o">=</span>-refname<span class="w"> </span><span class="s2">&quot;foo*&quot;</span>
+</span><span id="__span-53-21"><a id="__codelineno-53-21" name="__codelineno-53-21" href="#__codelineno-53-21"></a>foo1.6
+</span><span id="__span-53-22"><a id="__codelineno-53-22" name="__codelineno-53-22" href="#__codelineno-53-22"></a>foo1.3
+</span><span id="__span-53-23"><a id="__codelineno-53-23" name="__codelineno-53-23" href="#__codelineno-53-23"></a>foo1.10
+</span></code></pre></div></p>
+<h5 id="examples-using-git-tag-to-sort-tags"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#examples-using-git-tag-to-sort-tags">Examples using git tag to sort tags</a></h5>
+<p>Sort by <code>-taggerdate</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>-taggerdate
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="c1">## output</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>v0.1.2
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>v0.1.1
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>v0
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>v0.1.0
+</span><span id="__span-54-7"><a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a>v0.2
+</span><span id="__span-54-8"><a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a>v0.2.0
+</span><span id="__span-54-9"><a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a>v0.2.1
+</span></code></pre></div></p>
+<p>Sort by <code>taggerdate</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>taggerdate
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="c1">## output</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>v0
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>v0.1.0
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>v0.2
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>v0.2.0
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>v0.2.1
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>v0.1.1
+</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>v0.1.2
+</span></code></pre></div></p>
+<p>Sort by <code>-committerdate</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>-committerdate
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="c1">## output</span>
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>v0.2.1
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>v0
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>v0.2
+</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>v0.2.0
+</span><span id="__span-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a>v0.1.0
+</span><span id="__span-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>v0.1.1
+</span><span id="__span-56-9"><a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a>v0.1.2
+</span></code></pre></div></p>
+<p>Sort by <code>committerdate</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>committerdate
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="c1">## output</span>
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>v0.1.1
+</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>v0.1.2
+</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>v0.1.0
+</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>v0
+</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>v0.2
+</span><span id="__span-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>v0.2.0
+</span><span id="__span-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>v0.2.1
+</span></code></pre></div></p>
+<h3 id="getting-the-latest-tag"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#getting-the-latest-tag">Getting the latest tag</a></h3>
+<p>You can use any of the following commands to get the latest tag</p>
+<h5 id="using-git-ls-remote"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#using-git-ls-remote">Using <code>git ls-remote</code></a></h5>
+<p>Using <code>git ls-remote --tags --sort=committerdate</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>git<span class="w"> </span>ls-remote<span class="w"> </span>--tags<span class="w"> </span>--sort<span class="o">=</span>committerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;v.*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="c1">## output</span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>From<span class="w"> </span>https://github.com/rwaight/actions.git
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>v0.2.1
+</span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>v0.2.0
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a>v0.2
+</span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a>v0.1.2^<span class="o">{}</span>
+</span><span id="__span-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a>v0.1.2
+</span><span id="__span-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a>v0.1.1^<span class="o">{}</span>
+</span><span id="__span-58-10"><a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a>v0.1.1
+</span><span id="__span-58-11"><a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a>v0.1.0
+</span><span id="__span-58-12"><a id="__codelineno-58-12" name="__codelineno-58-12" href="#__codelineno-58-12"></a>v0
+</span></code></pre></div></p>
+<p>Using <code>git ls-remote --tags --sort=committerdate | grep -o 'v.*'</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>git<span class="w"> </span>ls-remote<span class="w"> </span>--tags<span class="w"> </span>--sort<span class="o">=</span>committerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;v.*&#39;</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="c1">## output</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>v0.1.1
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>v0.1.2
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a>v0.1.0
+</span><span id="__span-59-6"><a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a>v0.1.1^<span class="o">{}</span>
+</span><span id="__span-59-7"><a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a>v0.1.2^<span class="o">{}</span>
+</span><span id="__span-59-8"><a id="__codelineno-59-8" name="__codelineno-59-8" href="#__codelineno-59-8"></a>v0.2.0
+</span><span id="__span-59-9"><a id="__codelineno-59-9" name="__codelineno-59-9" href="#__codelineno-59-9"></a>v0
+</span><span id="__span-59-10"><a id="__codelineno-59-10" name="__codelineno-59-10" href="#__codelineno-59-10"></a>v0.2
+</span><span id="__span-59-11"><a id="__codelineno-59-11" name="__codelineno-59-11" href="#__codelineno-59-11"></a>v0.2.1
+</span></code></pre></div></p>
+<p>Using <code>git ls-remote --tags --sort=taggerdate | grep -o 'v.*' | sort -r</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>git<span class="w"> </span>ls-remote<span class="w"> </span>--tags<span class="w"> </span>--sort<span class="o">=</span>taggerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;v.*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="c1">## output</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>From<span class="w"> </span>https://github.com/rwaight/actions.git
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>v0.2.1
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>v0.2.0
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>v0.2
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a>v0.1.2^<span class="o">{}</span>
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a>v0.1.2
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a>v0.1.1^<span class="o">{}</span>
+</span><span id="__span-60-10"><a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a>v0.1.1
+</span><span id="__span-60-11"><a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a>v0.1.0
+</span><span id="__span-60-12"><a id="__codelineno-60-12" name="__codelineno-60-12" href="#__codelineno-60-12"></a>v0
+</span></code></pre></div></p>
+<h5 id="using-git-tag"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#using-git-tag">Using <code>git tag</code></a></h5>
+<p>Using <code>git tag --sort=-taggerdate | tail -1</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>-taggerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="c1">## output</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>v0.2.1
+</span></code></pre></div></p>
+<p>Using <code>git tag --sort=committerdate | grep -o 'v.*' | sort -r</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>committerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;v.*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="c1">## output</span>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>v0.2.1
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>v0.2.0
+</span><span id="__span-62-5"><a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>v0.2
+</span><span id="__span-62-6"><a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>v0.1.2
+</span><span id="__span-62-7"><a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a>v0.1.1
+</span><span id="__span-62-8"><a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a>v0.1.0
+</span><span id="__span-62-9"><a id="__codelineno-62-9" name="__codelineno-62-9" href="#__codelineno-62-9"></a>v0
+</span></code></pre></div></p>
+<p>Using <code>git tag --sort=committerdate | grep -o 'v.*' | sort -r | head -1</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>git<span class="w"> </span>tag<span class="w"> </span>--sort<span class="o">=</span>committerdate<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;v.*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="c1">## output</span>
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>v0.2.1
+</span></code></pre></div></p>
+<h5 id="using-git-for-each-ref"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#using-git-for-each-ref">Using <code>git for-each-ref</code></a></h5>
+<p>Using <code>git for-each-ref --sort=creatordate --format '%(refname) %(creatordate)' refs/tags</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>git<span class="w"> </span><span class="k">for</span>-each-ref<span class="w"> </span>--sort<span class="o">=</span>creatordate<span class="w"> </span>--format<span class="w"> </span><span class="s1">&#39;%(refname) %(creatordate)&#39;</span><span class="w"> </span>refs/tags
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="c1">## output</span>
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>refs/tags/v0.1.0<span class="w"> </span>Mon<span class="w"> </span>Mar<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span>:10:23<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>refs/tags/v0.1.1<span class="w"> </span>Mon<span class="w"> </span>Mar<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">13</span>:37:32<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span><span id="__span-64-5"><a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>refs/tags/v0.1.2<span class="w"> </span>Mon<span class="w"> </span>Mar<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">13</span>:50:12<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span><span id="__span-64-6"><a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a>refs/tags/v0<span class="w"> </span>Mon<span class="w"> </span>Mar<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">20</span>:00:06<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span><span id="__span-64-7"><a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a>refs/tags/v0.2<span class="w"> </span>Mon<span class="w"> </span>Mar<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">20</span>:00:06<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span><span id="__span-64-8"><a id="__codelineno-64-8" name="__codelineno-64-8" href="#__codelineno-64-8"></a>refs/tags/v0.2.0<span class="w"> </span>Mon<span class="w"> </span>Mar<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">20</span>:00:06<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span><span id="__span-64-9"><a id="__codelineno-64-9" name="__codelineno-64-9" href="#__codelineno-64-9"></a>refs/tags/v0.2.1<span class="w"> </span>Thu<span class="w"> </span>Mar<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">11</span>:39:55<span class="w"> </span><span class="m">2024</span><span class="w"> </span>-0500
+</span></code></pre></div></p>
+<h5 id="examples-using-git-tag"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#examples-using-git-tag">Examples using git tag</a></h5>
+<details><summary>Examples using git tag (click to expand)</summary>
+
+### Examples using git tag
+
+Using `git tag -l`:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>git<span class="w"> </span>tag<span class="w"> </span>-l
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="c1">## output</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>v0
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>v0.1.0
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>v0.1.1
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>v0.1.2
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a>v0.2
+</span><span id="__span-65-8"><a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a>v0.2.0
+</span><span id="__span-65-9"><a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a>v0.2.1
+</span></code></pre></div>
+
+Using `git tag -l | tail -1`:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>git<span class="w"> </span>tag<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1
+</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="c1">## output</span>
+</span><span id="__span-66-3"><a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>v0.2.1
+</span></code></pre></div>
+
+Using `git tag | sort -V`:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>git<span class="w"> </span>tag<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-V
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="c1">## output</span>
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>v0
+</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>v0.1.0
+</span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>v0.1.1
+</span><span id="__span-67-6"><a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>v0.1.2
+</span><span id="__span-67-7"><a id="__codelineno-67-7" name="__codelineno-67-7" href="#__codelineno-67-7"></a>v0.2
+</span><span id="__span-67-8"><a id="__codelineno-67-8" name="__codelineno-67-8" href="#__codelineno-67-8"></a>v0.2.0
+</span><span id="__span-67-9"><a id="__codelineno-67-9" name="__codelineno-67-9" href="#__codelineno-67-9"></a>v0.2.1
+</span></code></pre></div>
+
+</details>
+
+<h5 id="examples-using-git-rev-list"><a class="toclink" href="../../2023/03/18/git-describe-with-git-tags/#examples-using-git-rev-list">Examples using git rev-list</a></h5>
+<details><summary>Examples using git rev-list (click to expand)</summary>
+
+### Examples using git rev-list
+
+Using `git rev-list --tags --max-count=1`:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>git<span class="w"> </span>rev-list<span class="w"> </span>--tags<span class="w"> </span>--max-count<span class="o">=</span><span class="m">1</span>
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a><span class="c1">## output</span>
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>d702f1832400f86753094a219e8383ae817ade34
+</span></code></pre></div>
+
+</details>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">

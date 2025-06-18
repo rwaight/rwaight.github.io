@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles/style.css?v=29" />
+   <style>
+    .palettecontainerlist {
+        line-height: 1.4;
+        font-size: 0.8rem;
+        width: 100%;
+        min-height: 158px;
+    }
+    .palettecolordivcon {
+     margin-bottom: 10px;
+    }
+    .m5 {
+        margin:5px 5px 5px 0;
+    }
+    .content .navbar-collapse .nav>li>a {
+        text-align: left;
+    }
+    h4{font-weight: 500 !important;}
+    .pagination {font-size:15px}
+    .navbar-nav {margin: 5px;}
+    .content .navbar-collapse .nav>li>a {line-height: 1.5}
+    .platteimg {max-height: 480px; margin: 10px auto;}
+    .header{width:100%;height:auto;z-index:999;border:none;outline:0;background:#f8f8f8;margin-bottom:6px;-webkit-box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}.header .wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;flex-flow:row wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:10px;max-width:1024px;height:auto;padding:5px;margin:0 auto;position:relative}.header .navbar{max-width:100%;height:auto}.header .menu{margin:0}.header .menu>.menu-item{position:relative;display:inline-block;margin:0 .75rem}.header .menu>.menu-item>a{display:block;font-family:inherit;line-height:inherit;padding:5px 0;border:none;outline:0;color:#121212;text-rendering:optimizeLegibility;-webkit-transition:all .35s ease;-o-transition:all .35s ease;transition:all .35s ease}.header .menu>.menu-item>a .expand{position:relative;display:inline-block;height:.75rem;width:.75rem;margin-left:.35rem;border:none;outline:0;pointer-events:none}.header .menu>.menu-item>a .expand:after,.header .menu>.menu-item>a .expand:before{position:absolute;-webkit-box-sizing:inherit;box-sizing:inherit;content:'';left:50%;top:50%;width:100%;height:2px;background:#121212;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transition:all .35s ease;-o-transition:all .35s ease;transition:all .35s ease}.header .menu>.menu-item:hover>a{color:#e91e63}.header .menu>.menu-item:hover>a .expand::after,.header .menu>.menu-item:hover>a .expand::before{background:#e91e63}.header .menu>.menu-item>a .expand::after{-webkit-transform:translate(-50%,-50%) rotate(-90deg);-ms-transform:translate(-50%,-50%) rotate(-90deg);transform:translate(-50%,-50%) rotate(-90deg)}.header .menu>.menu-item>.sub-menu>.menu-item>a:hover{color:#e91e63}.sub-menu>.menu-item>a:hover{background-color:#f5f5f5}.header .menu .menu-item a:hover{text-decoration:none!important}.header .menu>.menu-item>.sub-menu{position:absolute;z-index:120;left:-1rem;top:100%;width:13rem;height:auto;padding:.75rem 0;border:none;outline:0;opacity:0;visibility:hidden;border-top:3px solid #e91e63;background:#fff;-webkit-box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);-webkit-transform:translateY(1rem);-ms-transform:translateY(1rem);transform:translateY(1rem);-webkit-transition:all .35s ease;-o-transition:all .35s ease;transition:all .35s ease}.header .menu>.menu-item>.sub-menu>.menu-item{display:block}.header .menu>.menu-item>.sub-menu>.menu-item>a{display:block;font-family:inherit;line-height:inherit;padding:10px;color:#121212;text-rendering:optimizeLegibility;-webkit-transition:all .35s ease;-o-transition:all .35s ease;transition:all .35s ease}.header .opened-menu{position:absolute;top:20px;display:none;cursor:pointer;width:32px;height:1rem;border:none;outline:0;opacity:0;visibility:hidden;background:0 0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:all .35s ease;-o-transition:all .35s ease;transition:all .35s ease}.header .opened-menu span{display:block;position:absolute;width:100%;height:2px;left:0;border:none;outline:0;opacity:1;border-radius:.25rem;background:#121212;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:all .25s ease;-o-transition:all .25s ease;transition:all .25s ease}.header .opened-menu span:nth-child(1){top:0}.header .opened-menu span:nth-child(2),.header .opened-menu span:nth-child(3){top:.5rem}.header .opened-menu span:nth-child(4){top:1rem}.header .mobile-logo{display:none;padding:1px 5px 0 10px}.header .closed-menu{display:none;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;cursor:pointer;width:2.5rem;height:2.5rem;border:none;outline:0;background:0 0;color:#555}.header .closed-menu img.closed-icon{display:block;width:1rem;height:auto}.header .overlay{position:fixed;left:0;top:0;height:100%;width:100%;z-index:999;opacity:0;visibility:hidden;background:rgba(0,0,0,.6);-webkit-transition:all .35s ease;-o-transition:all .35s ease;transition:all .35s ease}.menu-item .navbar-form{padding:0;margin:0;float:none!important;display:block}@media only screen and (min-width:993px){.header .menu>.menu-item-has-children:hover>.sub-menu{display:block;opacity:1;visibility:visible;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.header .menu>.menu-item-has-children:hover>a .expand::after{-webkit-transform:translate(-50%,-50%) rotate(0);-ms-transform:translate(-50%,-50%) rotate(0);transform:translate(-50%,-50%) rotate(0)}}@media only screen and (max-width:500px){.container{padding:0 5px}}@media only screen and (max-width:992px){.container{margin:0 auto;padding:0 10px}.navbar-brand{padding:3px;flex:0 0 90%;text-align:center;margin-left:40px!important}.header .wrapper{gap:1px}.navbar-form{padding:0;margin:0 auto;border:0}.navbar-form .form-control{display:inline-block}.header .overlay.active{display:block;opacity:1;visibility:visible}.header .navbar{position:fixed;top:0;left:-18rem;width:18rem;height:100%;padding:10px 0;z-index:999;opacity:0;overflow-y:auto;visibility:hidden;background:#fff;-webkit-box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);-webkit-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease}.header .navbar.active{left:0;opacity:1;visibility:visible}.header .navbar::-webkit-scrollbar{width:5px}.header .navbar::-webkit-scrollbar-thumb{border-radius:1rem;background:#e6e6e6;-webkit-box-shadow:inset 0 2px 6px rgba(0,0,0,.12);box-shadow:inset 0 2px 6px rgba(0,0,0,.12)}.header .menu{width:100%;height:auto;margin-top:60px;padding-left:10px}.header .menu>.menu-item{display:block;margin:0}.header .menu>.menu-item-has-children>a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.header .menu>.menu-item>a{padding:10px;color:#121212;border-bottom:1px solid #f2f2f2}.header .menu>.menu-item:first-child>a{border-top:1px solid #f2f2f2}.header .menu>.menu-item>a .expand::after,.header .menu>.menu-item>a .expand::before{background:#121212}.header .menu>.menu-item-has-children.active>a .expand:after{-webkit-transform:translate(-50%,-50%) rotate(0);-ms-transform:translate(-50%,-50%) rotate(0);transform:translate(-50%,-50%) rotate(0)}.header .menu>.menu-item>.sub-menu{position:relative;top:auto;left:auto;width:100%;max-height:0;padding:0;border:none;outline:0;opacity:1;overflow:hidden;visibility:visible;background:0 0;-webkit-box-shadow:none;box-shadow:none;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.header .menu>.menu-item>.sub-menu>.menu-item>a{padding:5px 25px;color:#121212;border-bottom:1px solid #f2f2f2}.header .mobile-logo,.header .opened-menu{display:block;opacity:1;visibility:visible}.header .closed-menu,.header .mobile-logo{position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;top:1rem}.header .mobile-logo{padding:1px 5px 0 10px}.header .closed-menu{right:.5rem}}
+</style>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84677098-10"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-84677098-10');
+      </script>
+
+      <style>
+          nav-pills{padding:5px 0}.nav-pills>li>a{font-size:.875rem;padding:10px}.sp-container{position:absolute;top:0;left:0;display:inline-block;z-index:9999994;overflow:hidden}.sp-original-input-container{position:relative;display:inline-flex}.sp-original-input-container input{margin:0!important}.sp-original-input-container .sp-add-on{width:40px;border-top-right-radius:0!important;border-bottom-right-radius:0!important}input.spectrum.with-add-on{border-top-left-radius:0;border-bottom-left-radius:0;border-left:0}.sp-original-input-container .sp-add-on .sp-colorize{height:100%;width:100%;border-radius:inherit}.sp-colorize-container{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='%23ccc' fill-opacity='1'%3E%3Crect x='0' y='0' width='6' height='6' /%3E%3Crect x='6' y='6' width='6' height='6' /%3E%3C/svg%3E")}.sp-container.sp-flat{position:relative}.sp-container,.sp-container *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}.sp-top{position:relative;width:100%;display:inline-block}.sp-top-inner{position:absolute;top:0;left:0;bottom:0;right:0}.sp-color{position:absolute;top:0;left:0;bottom:0;right:20px!important}.sp-hue{position:absolute;top:0;right:0;bottom:0;width:12px;height:100%;left:initial!important}.sp-clear-enabled .sp-hue{top:15%;height:85%}.sp-fill{padding-top:80%}.sp-sat,.sp-val{position:absolute;top:0;left:0;right:0;bottom:0}.sp-alpha-enabled .sp-top{margin-bottom:28px!important}.sp-alpha-enabled .sp-alpha{display:block}.sp-alpha-handle{position:absolute;top:-3px;cursor:pointer;height:16px;border-radius:50%;width:16px;margin-right:5px;left:-2px;right:0;background:#f9f9f9;box-shadow:0 0 2px 0 #3a3a3a}.sp-alpha{display:none;position:absolute;bottom:-18px;right:0;left:0;height:10px}.sp-alpha-inner{border-radius:4px}.sp-clear{display:none}.sp-clear.sp-clear-display{background-position:center}.sp-clear-enabled .sp-clear{display:block;position:absolute;top:3px;right:0;bottom:0;cursor:pointer;left:initial;height:14px;width:14px}.sp-alpha,.sp-alpha-handle,.sp-clear,.sp-container,.sp-container button,.sp-container.sp-dragging .sp-input,.sp-dragger,.sp-preview,.sp-replacer,.sp-slider{-webkit-user-select:none;-moz-user-select:-moz-none;-o-user-select:none;user-select:none}.sp-container.sp-input-disabled .sp-input-container{display:none}.sp-container.sp-buttons-disabled .sp-button-container{display:none}.sp-container.sp-palette-buttons-disabled .sp-palette-button-container{display:none}.sp-palette-only .sp-picker-container{display:none}.sp-palette-disabled .sp-palette-container{display:none}.sp-initial-disabled .sp-initial{display:none}.sp-sat{background-image:-webkit-gradient(linear,0 0,100% 0,from(#fff),to(rgba(204,154,129,0)));background-image:-webkit-linear-gradient(left,#fff,rgba(204,154,129,0));background-image:-moz-linear-gradient(left,#fff,rgba(204,154,129,0));background-image:-o-linear-gradient(left,#fff,rgba(204,154,129,0));background-image:-ms-linear-gradient(left,#fff,rgba(204,154,129,0));background-image:linear-gradient(to right,#fff,rgba(204,154,129,0))}.sp-val{border-radius:4px;background-image:-webkit-gradient(linear,0 100%,0 0,from(#000),to(rgba(204,154,129,0)));background-image:-webkit-linear-gradient(bottom,#000,rgba(204,154,129,0));background-image:-moz-linear-gradient(bottom,#000,rgba(204,154,129,0));background-image:-o-linear-gradient(bottom,#000,rgba(204,154,129,0));background-image:-ms-linear-gradient(bottom,#000,rgba(204,154,129,0));background-image:linear-gradient(to top,#000,rgba(204,154,129,0))}.sp-hue{background:-moz-linear-gradient(top,red 0,#ff0 17%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 83%,red 100%);background:-ms-linear-gradient(top,red 0,#ff0 17%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 83%,red 100%);background:-o-linear-gradient(top,red 0,#ff0 17%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 83%,red 100%);background:-webkit-gradient(linear,left top,left bottom,from(red),color-stop(.17,#ff0),color-stop(.33,#0f0),color-stop(.5,#0ff),color-stop(.67,#00f),color-stop(.83,#f0f),to(red));background:-webkit-linear-gradient(top,red 0,#ff0 17%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 83%,red 100%);background:linear-gradient(to bottom,red 0,#ff0 17%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 83%,red 100%)}.sp-1{height:17%}.sp-2{height:16%}.sp-3{height:17%}.sp-4{height:17%}.sp-5{height:16%}.sp-6{height:17%}.sp-hidden{display:none!important}.sp-cf:after,.sp-cf:before{content:"";display:table}.sp-cf:after{clear:both}@media (max-device-width:480px){.sp-color{right:40%}.sp-hue{left:63%}.sp-fill{padding-top:60%}}.sp-dragger{border-radius:5px;height:10px;width:10px;border:1px solid #fff;cursor:pointer;position:absolute;top:0;left:0;margin-left:3px;margin-top:3px;box-shadow:0 0 2px 1px rgba(0,0,0,.2)}.sp-slider{position:absolute;top:0;cursor:pointer;height:16px;border-radius:50%;width:16px;left:-2px;background:#f9f9f9;box-shadow:0 0 2px 0 #3a3a3a;margin-top:8px}.sp-container{display:inline-flex;border-radius:0;background-color:#fff;padding:0;border-radius:4px;color:#000;box-shadow:0 0 0 1px rgba(99,114,130,.16),0 8px 16px rgba(27,39,51,.08)}.sp-clear,.sp-color,.sp-container,.sp-container button,.sp-container input,.sp-hue{font-size:14px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.sp-top{margin-bottom:10px}.sp-clear,.sp-color,.sp-hue,.sp-sat,.sp-val{border-radius:3px}.sp-input-container{margin-top:-5px}.sp-button-container.sp-cf,.sp-initial.sp-thumb.sp-cf,.sp-input-container.sp-cf{height:25px}.sp-picker-container .sp-cf{margin-bottom:10px}.sp-palette-row-initial>span:first-child{cursor:pointer}.sp-initial-disabled .sp-input-container{width:100%}.sp-input{padding:0 5px!important;margin:0;width:100%;box-shadow:none!important;height:100%!important;background:0 0;color:#111111;border-radius:2px!important;border:1px solid #e0e0e0!important;text-align:center;font-family:monospace;font-size:inherit!important}.sp-input:focus{border:1px solid orange}.sp-input.sp-validation-error{border:1px solid red;background:#fdd}.sp-palette-container,.sp-picker-container{position:relative;padding:10px}.sp-picker-container{width:200px;padding-bottom:0}.sp-palette-container{border-right:solid 1px #ccc}.sp-palette-only .sp-palette-container{border:0}.sp-palette .sp-thumb-el{display:block;position:relative;float:left;width:24px;height:15px;margin:3px;cursor:pointer;border:solid 2px transparent}.sp-palette .sp-thumb-el.sp-thumb-active,.sp-palette .sp-thumb-el:hover{border-color:orange}.sp-thumb-el{position:relative}.sp-initial{float:left}.sp-initial span{width:30px;height:25px;border:none;display:block;float:left;margin:0}.sp-initial .spe-thumb-el.sp-thumb-active{border-radius:0 5px 5px 0}.sp-initial .spe-thumb-el{border-radius:5px 0 0 5px}.sp-initial .sp-clear-display{background-position:center}.sp-button-container{float:right}.sp-palette-button-container{margin-top:10px}.sp-replacer{position:relative;overflow:hidden;cursor:pointer;display:inline-block;border-radius:3px;border:1px solid #aaa;color:#666;transition:border-color .3s;vertical-align:middle;width:3rem;height:34px}.sp-replacer.sp-active,.sp-replacer:hover{border:1px solid #666;color:#000}.sp-replacer.sp-disabled{cursor:default;border-color:silver;color:silver}.sp-dd{position:absolute;font-size:10px;right:0;top:0;bottom:0;padding:0 2px;line-height:1.6rem;background-color:#fff}.sp-preview{position:relative;width:100%;height:100%;float:left;z-index:0}.sp-preview-inner{transition:background-color .2s}.sp-preview-inner.sp-clear-display{display:none}.sp-palette .sp-thumb-el{width:16px;height:16px;margin:3px;border:none;border-radius:3px}.sp-container button{border-radius:3px;border:none;background:0 0;line-height:1;padding:0 8px;height:25px;text-transform:capitalize;text-align:center;vertical-align:middle;cursor:pointer;color:#606c72;font-weight:700}.sp-container button.sp-choose{background-color:#3cab3b;color:#fff;margin-left:5px}.sp-container button:hover{opacity:.8}.sp-container button.sp-palette-toggle{width:100%;background-color:#f3f3f3;margin:0}.sp-palette span.sp-thumb-active,.sp-palette span:hover{border-color:#000}.sp-alpha,.sp-preview,.sp-thumb-el{position:relative;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='%23ccc' fill-opacity='1'%3E%3Crect x='0' y='0' width='6' height='6' /%3E%3Crect x='6' y='6' width='6' height='6' /%3E%3C/svg%3E")}.sp-alpha-inner,.sp-preview-inner,.sp-thumb-inner{display:block;position:absolute;top:0;left:0;bottom:0;right:0}.sp-palette .sp-thumb-inner{border-radius:3px;background-position:50% 50%;background-repeat:no-repeat}.sp-palette .sp-thumb-light.sp-thumb-active .sp-thumb-inner{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIVJREFUeNpiYBhsgJFMffxAXABlN5JruT4Q3wfi/0DsT64h8UD8HmpIPCWG/KemIfOJCUB+Aoacx6EGBZyHBqI+WsDCwuQ9mhxeg2A210Ntfo8klk9sOMijaURm7yc1UP2RNCMbKE9ODK1HM6iegYLkfx8pligC9lCD7KmRof0ZhjQACDAAceovrtpVBRkAAAAASUVORK5CYII=);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'%3E%3Cpath d='M9 16.172l10.594-10.594 1.406 1.406-12 12-5.578-5.578 1.406-1.406z' fill='%23000'%3E%3C/path%3E%3C/svg%3E")}.sp-palette .sp-thumb-dark.sp-thumb-active .sp-thumb-inner{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAMdJREFUOE+tkgsNwzAMRMugEAahEAahEAZhEAqlEAZhEAohEAYh81X2dIm8fKpEspLGvudPOsUYpxE2BIJCroJmEW9qJ+MKaBFhEMNabSy9oIcIPwrB+afvAUFoK4H0tMaQ3XtlrggDhOVVMuT4E5MMG0FBbCEYzjYT7OxLEvIHQLY2zWwQ3D+9luyOQTfKDiFD3iUIfPk8VqrKjgAiSfGFPecrg6HN6m/iBcwiDAo7WiBeawa+Kwh7tZoSCGLMqwlSAzVDhoK+6vH4G0P5wdkAAAAASUVORK5CYII=);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'%3E%3Cpath d='M9 16.172l10.594-10.594 1.406 1.406-12 12-5.578-5.578 1.406-1.406z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E")}.sp-clear-display{background-repeat:no-repeat;background-position:center;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABe0lEQVQokYXSsUtcQRTF4d8Jj+VhHSxkEQuLsEUKK0nhTBFTmLSSUhBCMCAWsmgIwWrBLk0akfwLCaSQKBJmtrIIISwpRFKIhViETScphGMzysMtvOVwvpm5d0bGNCuGWAOPgYdl6S8wSDn9b+bUhDHEKWAdeAFMANg+l/TV9ofcz6cjMIbYBvaBMds7QCqZ58CmpBNgPuV0DvAAIMyFGugWtJr7eTv38xEwkPRPErY7QDeG2LqFkjrAgu0dSd/KDVqSNmxvAZ8lfbS9AHRuYemnLWkv5XRVBrQMbAI/gTXgEzAJtJuwBVS2L2OIle03QA/4Lmkl5XQBXEqqbFcAVYFDYChpFngiqWf7l6TXKaezMt2Zkhk24THwG+jZriX9AFZvUAyxLbRke2D75O5zPAO+ADXwEtizjaRHwDvbTyUtppwOmicCHAJvbXcl9YA1SQDjtseA97YPRz7ATcUQp2y/kjRdevsjaTfldNrMjcDGBjXA3T96L7yvrgFzP69+0Ao/HAAAAABJRU5ErkJggg==);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='14' height='14'%3E%3Cpath d='M12 20.016q3.281 0 5.648-2.367t2.367-5.648q0-2.672-1.734-4.922l-11.203 11.203q2.25 1.734 4.922 1.734zM3.984 12q0 2.672 1.734 4.922l11.203-11.203q-2.25-1.734-4.922-1.734-3.281 0-5.648 2.367t-2.367 5.648zM12 2.016q4.125 0 7.055 2.93t2.93 7.055-2.93 7.055-7.055 2.93-7.055-2.93-2.93-7.055 2.93-7.055 7.055-2.93z' fill='%23000'%3E%3C/path%3E%3C/svg%3E")}
+      </style>
+
+      <!-- PLACE THIS SECTION INSIDE OF YOUR HEAD TAGS -->
+      <!-- Below is a recommended list of pre-connections, which allow the network to establish each connection quicker, speeding up response times and improving ad performance. -->
+      <link rel="preconnect" href="https://a.pub.network/" crossorigin />
+      <link rel="preconnect" href="https://b.pub.network/" crossorigin />
+      <link rel="preconnect" href="https://c.pub.network/" crossorigin />
+      <link rel="preconnect" href="https://d.pub.network/" crossorigin />
+      <link rel="preconnect" href="https://btloader.com/" crossorigin />
+      <link rel="preconnect" href="https://api.btloader.com/" crossorigin />
+      <link rel="preconnect" href="https://cdn.confiant-integrations.net" crossorigin />
+      <!-- Below is a link to a CSS file that accounts for Cumulative Layout Shift, a new Core Web Vitals subset that Google uses to help rank your site in search -->
+      <!-- The file is intended to eliminate the layout shifts that are seen when ads load into the page. If you don't want to use this, simply remove this file -->
+      <!-- To find out more about CLS, visit https://web.dev/vitals/ -->
+      <link rel="stylesheet" href="https://a.pub.network/color-hex-com/cls.css">
+      <script data-cfasync="false" type="text/javascript">
+          var freestar = freestar || {};
+          freestar.queue = freestar.queue || [];
+          freestar.config = freestar.config || {};
+          freestar.config.enabled_slots = [];
+          freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+      </script>
+      <script src="https://a.pub.network/color-hex-com/pubfig.min.js" data-cfasync="false" async></script>
+
+<meta name="description" content="#4dc9eb color hex, #4dc9eb color chart,rgb,hsl,hsv color number values, html css color codes and html code samples." />
+
+<title>#4dc9eb Color Hex</title>
+
+<style>
+    body { background-color: #4dc9eb !important;}
+</style>
+</head>
+
+<body>
+
+    <header class="header">
+    <div class="container">
+        <section class="wrapper">
+            <a class="navbar-brand" href="/" title="Color Hex Codes">
+                <img src="/logo.png" srcset="/logo.png 1x,/logo2x.png 2x" loading="lazy" alt="Color Hex Logo" width="118" height="40" />
+            </a>
+
+            <button type="button" class="opened-menu" aria-label="Toggle Menu" name="btnMenutop">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="overlay"></div>
+            <nav class="navbar">
+
+                <a href="/" class="mobile-logo" title="Color Hex Codes">
+                    <img src="/logo.png" srcset="/logo.png 1x,/logo2x.png 2x" loading="lazy" alt="Color Hex Logo" width="118" height="40" />
+                </a>
+                <button type="button" class="closed-menu">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <form class="navbar-form" action="/colorinfo.php" id="colorinfo">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name='colorvalue' id="colorvalue" value='' maxlength="21" placeholder="color hex, name, rgb, hsl or hsv" title="Examples: blue, ff0000, rgb 255 128 128, hsl(0, 75%, 64%), hsv 0, 100%, 34%" style="width:128px;" />
+                                <input type="color" name="color" id="colorpick" value="#4dc9eb" />
+                                <button type="submit" class="btn btn-default">Get Info</button>
+                            </div>
+                        </form>
+                    </li>
+
+                    <li class="menu-item"><a href="/color-palettes/" title="Latest Color Palettes">Latest Palettes</a></li>
+                    <li class="menu-item menu-item-has-children">
+                        <a href="#" data-toggle="sub-menu">Palettes <i class="expand"></i></a>
+                        <ul class="sub-menu"">
+                    <li class="menu-item">
+                        <a href="/color-palettes/popular.php" title="Popular Color Palettes">Popular Palettes</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/color-palettes/top-contributors.php" title="Top Contributors">Top Contributors</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/user/add-palette.php" title="Add New Palette">Add New Palette</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/random-color-palette" title="Random Color Palette Generator">Random Color Palette</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                    <a href="#" data-toggle="sub-menu">Colors <i class="expand"></i></a>
+                    <ul class="sub-menu">
+                        <li class="menu-item"><a href="/popular-colors.php" title="Popular Colors">Popular Colors</a></li>
+                        <li class="menu-item"><a href="/color-names.html" title="Color Names">Color Names</a></li>
+                        <li class="menu-item"><a href="/216-web-safe-colors/" title="216 Web safe colors">Web Safe Colors</a></li>
+                        <li class="menu-item"><a href="/random.php" title="Random colors">Random Colors</a></li>
+                        <li class="menu-item"><a href="/color-wheel/" title="Color Wheel">Color Wheel</a></li>
+                    </ul>
+                </li>
+                                <li class="menu-item"><a href="/user/login.php" title="Login">Login</a></li>
+                              </ul>
+            </nav>
+        </section>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="content">
+
+        
+        <div class="margin10 center" style="min-height:110px;">
+    <!-- Tag ID: color-hex-com_leaderboard_atf -->
+    <div class="center" data-freestar-ad="__240x400 __728x100" id="color-hex-com_leaderboard_atf">
+        <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "color-hex-com_leaderboard_atf", slotId: "color-hex-com_leaderboard_atf" });
+        </script>
+    </div>
+</div>
+
+        <a name="4dc9eb-color"></a>
+        <div class="row">
+            <div class="col-md-6">
+
+                <h1>#4dc9eb Color Hex</h1>
+
+                <div style="background-color:#4dc9eb;" class="colordivbig rounded">
+                    <div class="hexcolor">
+                #4DC9EB<br />
+(77,201,235)                    </div>
+                </div>
+
+                <div class="favcoms"><span class="glyphicon glyphicon-star"></span> 0 Favorites &nbsp; <a href="#comments"><span class="glyphicon glyphicon-comment"></span> 0 Comments</a>                <div class="addtofav pull-right" id="favlink" style="display:none">
+    <span class="glyphicon glyphicon-star-empty"></span>
+    In your <a href="/user/my-fav-colors.php">favorite colors</a>
+</div>
+                <div class="clearfix"></div>
+</div>
+
+            </div>
+            <div class="col-md-6">
+
+                <h2>Color spaces of #4dc9eb</h2>
+
+                <div class="rounded" style="border:3px solid #4dc9eb;">
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>RGB</th>
+                            <td>77</td><td>201</td><td>235</td>
+                        </tr>
+                        <tr>
+                            <th>HSL</th><td>0.54</td><td>0.80</td><td>0.61</td>
+                        </tr>
+                        <tr>
+                            <th>HSV</th><td>193&deg;</td><td>67&deg;</td><td>92&deg;</td>
+                        </tr>
+                        <tr>
+                            <th>CMYK</th>
+                            <td>0.67</td><td>0.14</td><td>0.00 &nbsp; 0.08</td>
+                        </tr>
+                        <tr>
+                            <th>XYZ</th><td>38.9426</td><td>49.3492</td><td>86.0701</td>
+                        </tr>
+                        <tr>
+                            <th>Yxy</th><td>49.3492</td><td>0.2233</td><td>0.2830</td>
+                        </tr>
+                        <tr>
+                            <th>Hunter Lab</th><td>70.2490</td><td>-23.9841</td><td>-23.4687</td>
+                        </tr>
+                        <tr>
+                            <th>CIE-Lab</th><td>75.6681</td><td>-23.7578</td><td>-26.8760</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="margin10 center" style="min-height:300px;">
+    <!-- Tag ID: color-hex-com_leaderboard_btf -->
+    <div class="center" data-freestar-ad="__336x280 __336x280" id="color-hex-com_leaderboard_btf">
+        <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "color-hex-com_leaderboard_btf", slotId: "color-hex-com_leaderboard_btf" });
+        </script>
+    </div>
+</div>
+  
+        <div>
+            <ul class="nav nav-pills">
+            <li><a href="#4dc9eb-color" title="#4dc9eb Color">#4dc9eb Color</a></li>
+            <li><a href="#shades-tints" title="Shades Tints">Shades Tints</a></li>
+            <li><a href="#rgb-cmyk" title="Rgb Cmyk Percentages">Rgb Cmyk %s</a></li>
+            <li><a href="#color-schemes" title="Color Schemes">Color Schemes</a></li>
+            <li><a href="#color-preview" title="Color Preview">Color Preview</a></li>
+            <li><a href="#css-codes" title="CSS Codes">CSS Codes</a></li>
+                        <li><a href="#color-palettes" title="#4dc9eb Color Palettes">Color Palettes</a></li>
+                            <li><a href="#related-colors" title="Related Colors">Related Colors</a></li>
+            </ul>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+            <p>
+                <div class="social">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.color-hex.com%2Fcolor%2F4dc9eb" rel="noopener" target="_blank" title="Share on Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 30 30">
+        <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h10v-9h-3v-3h3v-1.611C16,9.339,17.486,8,20.021,8 c1.214,0,1.856,0.09,2.16,0.131V11h-1.729C19.376,11,19,11.568,19,12.718V14h3.154l-0.428,3H19v9h5c1.105,0,2-0.895,2-2V6 C26,4.895,25.104,4,24,4z"></path>
+    </svg></a>
+<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.color-hex.com%2Fcolor%2F4dc9eb&amp;via=ColorHex" rel="noopener" target="_blank" title="Share on Twitter (X)"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 30 30">
+        <path d="M 6 4 C 4.895 4 4 4.895 4 6 L 4 24 C 4 25.105 4.895 26 6 26 L 24 26 C 25.105 26 26 25.105 26 24 L 26 6 C 26 4.895 25.105 4 24 4 L 6 4 z M 8.6484375 9 L 13.259766 9 L 15.951172 12.847656 L 19.28125 9 L 20.732422 9 L 16.603516 13.78125 L 21.654297 21 L 17.042969 21 L 14.056641 16.730469 L 10.369141 21 L 8.8945312 21 L 13.400391 15.794922 L 8.6484375 9 z M 10.878906 10.183594 L 17.632812 19.810547 L 19.421875 19.810547 L 12.666016 10.183594 L 10.878906 10.183594 z"></path>
+    </svg></a>
+</div>                
+                <p><strong>#4dc9eb color</strong> RGB value is (77,201,235). 
+                </p>
+
+                <p><em>#4dc9eb hex color</em> red value is 77, green value is 201 and the blue value of its RGB is 235. Cylindrical-coordinate representations (also known as HSL) of <em>color #4dc9eb</em>  hue: 0.54 ,  saturation: 0.80 and the lightness value of 4dc9eb is 0.61. </p>
+                <p>The process color (four color CMYK) of <strong>#4dc9eb color hex</strong> is 0.67, 0.14, 0.00, 0.08.  <em>Web safe color</em> of #4dc9eb is #<a href="/color/66ccff" title="66ccff">66ccff</a>. Color #4dc9eb <strong>contains mainly BLUE</strong> color.
+                </p>
+        </div>
+                <div class="col-md-6">
+<h3>Base Numbers</h3>
+            <table class="table table-condensed">
+                <tr>
+                    <th>Base</th><th>Red</th><th>Green</th><th>Blue</th>
+                </tr>
+                <tr>
+                    <th>Binary</th>                
+                    <td>01001101</td>
+                    <td>11001001</td>
+                    <td>11101011</td>                
+                </tr>
+                <tr>
+                    <th>Octal</th>                
+                    <td>115</td>
+                    <td>311</td>
+                    <td>353</td>                
+                </tr>
+                <tr>
+                    <th>Decimal</th>                
+                    <td>77</td>
+                    <td>201</td>
+                    <td>235</td>                
+                </tr>
+                <tr>
+                    <th>Hex</th>                
+                    <td>4D</td>
+                    <td>C9</td>
+                    <td>EB</td>                
+                </tr>
+            </table>
+    </div>
+        </div>
+        
+        
+        <a name="shades-tints"></a>
+        <div class="fullrow">
+            <h3>Shades of #4dc9eb</h3>
+<div class="colordvconline"><a href="/color/4dc9eb" title="#4dc9eb color"><div class="colordvaline" style="background-color:#4dc9eb;"> </div>
+#4dc9eb</a></div>
+<div class="colordvconline"><a href="/color/45b4d3" title="#45b4d3 color"><div class="colordvaline" style="background-color:#45b4d3;"> </div>
+#45b4d3</a></div>
+<div class="colordvconline"><a href="/color/3da0bc" title="#3da0bc color"><div class="colordvaline" style="background-color:#3da0bc;"> </div>
+#3da0bc</a></div>
+<div class="colordvconline"><a href="/color/358ca4" title="#358ca4 color"><div class="colordvaline" style="background-color:#358ca4;"> </div>
+#358ca4</a></div>
+<div class="colordvconline"><a href="/color/2e788d" title="#2e788d color"><div class="colordvaline" style="background-color:#2e788d;"> </div>
+#2e788d</a></div>
+<div class="colordvconline"><a href="/color/266475" title="#266475 color"><div class="colordvaline" style="background-color:#266475;"> </div>
+#266475</a></div>
+<div class="colordvconline"><a href="/color/1e505e" title="#1e505e color"><div class="colordvaline" style="background-color:#1e505e;"> </div>
+#1e505e</a></div>
+<div class="colordvconline"><a href="/color/173c46" title="#173c46 color"><div class="colordvaline" style="background-color:#173c46;"> </div>
+#173c46</a></div>
+<div class="colordvconline"><a href="/color/0f282f" title="#0f282f color"><div class="colordvaline" style="background-color:#0f282f;"> </div>
+#0f282f</a></div>
+<div class="colordvconline"><a href="/color/071417" title="#071417 color"><div class="colordvaline" style="background-color:#071417;"> </div>
+#071417</a></div>
+<div class="colordvconline"><a href="/color/000000" title="#000000 color"><div class="colordvaline" style="background-color:#000000;"> </div>
+#000000</a></div>
+       <div class="clearfix"></div>
+       <br />
+       
+        <h3>Tints of #4dc9eb</h3>
+<div class="colordvconline"><a href="/color/4dc9eb" title="#4dc9eb color"><div class="colordvaline" style="background-color:#4dc9eb;"> </div>
+#4dc9eb</a></div>
+<div class="colordvconline"><a href="/color/5eceed" title="#5eceed color"><div class="colordvaline" style="background-color:#5eceed;"> </div>
+#5eceed</a></div>
+<div class="colordvconline"><a href="/color/70d3ef" title="#70d3ef color"><div class="colordvaline" style="background-color:#70d3ef;"> </div>
+#70d3ef</a></div>
+<div class="colordvconline"><a href="/color/82d9f1" title="#82d9f1 color"><div class="colordvaline" style="background-color:#82d9f1;"> </div>
+#82d9f1</a></div>
+<div class="colordvconline"><a href="/color/94def3" title="#94def3 color"><div class="colordvaline" style="background-color:#94def3;"> </div>
+#94def3</a></div>
+<div class="colordvconline"><a href="/color/a6e4f5" title="#a6e4f5 color"><div class="colordvaline" style="background-color:#a6e4f5;"> </div>
+#a6e4f5</a></div>
+<div class="colordvconline"><a href="/color/b7e9f7" title="#b7e9f7 color"><div class="colordvaline" style="background-color:#b7e9f7;"> </div>
+#b7e9f7</a></div>
+<div class="colordvconline"><a href="/color/c9eef9" title="#c9eef9 color"><div class="colordvaline" style="background-color:#c9eef9;"> </div>
+#c9eef9</a></div>
+<div class="colordvconline"><a href="/color/dbf4fb" title="#dbf4fb color"><div class="colordvaline" style="background-color:#dbf4fb;"> </div>
+#dbf4fb</a></div>
+<div class="colordvconline"><a href="/color/edf9fd" title="#edf9fd color"><div class="colordvaline" style="background-color:#edf9fd;"> </div>
+#edf9fd</a></div>
+<div class="colordvconline"><a href="/color/ffffff" title="#ffffff color"><div class="colordvaline" style="background-color:#ffffff;"> </div>
+#ffffff</a></div>
+       <div class="clearfix"></div>
+       </div>
+       
+<a name="rgb-cmyk"></a>
+<div class="row fullrow">
+    <div class="col-md-6">
+        <h3>RGB Percentages of Color #4dc9eb</h3>
+            <div class="colorrow"><div class="red colordivb" style="width:15%">%15.01</div></div>
+            <div class="colorrow"><div class="green colordivb" style="width:39%">%39.18</div></div>
+            <div class="colorrow"><div class="blue colordivb" style="width:45%">%45.81</div></div>
+    </div>    
+    <div class="col-md-6">
+        <h3>CMYK Percentages of Color #4dc9eb</h3>
+            <div class="colorrow"><div class="cyan colordiv" style="width:67%">%67</div></div>
+            <div class="colorrow"><div class="magenta colordiv" style="width:14%">%14</div></div>
+            <div class="colorrow"><div class="yellow colordiv" style="width:0%">%0</div></div>
+            <div class="colorrow"><div class="key colordiv" style="width:8%">%8</div></div>
+    </div>    
+</div>
+
+<div class="margin10 center" style="min-height:300px;">
+    <!-- Tag ID: color-hex-com_incontent_reusable -->
+    <div class="center" data-freestar-ad="__240x400 __970x280" id="color-hex-com_incontent_reusable">
+        <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "color-hex-com_incontent_reusable", slotId: "color-hex-com_incontent_reusable" });
+        </script>
+    </div>
+</div>
+
+<a name="color-schemes"></a>
+<div class="row">
+    <div class="col-md-6">
+<h3>Triadic Colors of #4dc9eb</h3>
+<table class="table">
+<tr>
+<td style="height:60px;background-color:#4dc9eb"></td>
+<td style="background-color:#eb4dc9"></td>
+<td style="background-color:#c9eb4d"></td>
+</tr>
+<tr>
+<td>#4dc9eb</td>
+<td><a href="/color/eb4dc9" title="#eb4dc9">#eb4dc9</a></td>
+<td><a href="/color/c9eb4d" title="#c9eb4d">#c9eb4d</a></td>
+</tr>
+</table>
+    </div>
+    <div class="col-md-6">
+<h3>Analogous Colors of #4dc9eb</h3>
+<table class="table">
+<tr>
+<td style="height:60px;background-color:#4dc9eb"></td>
+<td style="background-color:#4d7aeb"></td>
+<td style="background-color:#4debbe"></td>
+</tr>
+<tr>
+<td>#4dc9eb</td>
+<td><a href="/color/4d7aeb" title="#4d7aeb">#4d7aeb</a></td>
+<td><a href="/color/4debbe" title="#4debbe">#4debbe</a></td>
+</tr>
+</table>
+        </div>
+</div>  
+<div class="row">
+    
+     <div class="col-md-8">
+<h3>Monochromatic Colors of #4dc9eb</h3>
+<div class="colordvconline"><a href="/color/18abd4" title="#18abd4 color"><div class="colordvaline" style="background-color:#18abd4;"> </div>
+#18abd4</a></div>
+<div class="colordvconline"><a href="/color/1fbbe6" title="#1fbbe6 color"><div class="colordvaline" style="background-color:#1fbbe6;"> </div>
+#1fbbe6</a></div>
+<div class="colordvconline"><a href="/color/36c2e8" title="#36c2e8 color"><div class="colordvaline" style="background-color:#36c2e8;"> </div>
+#36c2e8</a></div>
+<div class="colordvconline"><div class="colordvaline" style="background-color:#4dc9eb;"> </div>
+#4dc9eb</div>
+<div class="colordvconline"><a href="/color/64d0ee" title="#64d0ee color"><div class="colordvaline" style="background-color:#64d0ee;"> </div>
+#64d0ee</a></div>
+<div class="colordvconline"><a href="/color/7bd7f0" title="#7bd7f0 color"><div class="colordvaline" style="background-color:#7bd7f0;"> </div>
+#7bd7f0</a></div>
+<div class="colordvconline"><a href="/color/92def3" title="#92def3 color"><div class="colordvaline" style="background-color:#92def3;"> </div>
+#92def3</a></div>
+    </div>
+    <div class="col-md-4">
+<h3>Complementary Color</h3>
+<table class="table">
+<tr>
+<td style="height:60px;background-color:#4dc9eb"></td>
+<td style="background-color:#eb6f4d"></td>
+</tr>
+<tr>
+<td>#4dc9eb</td>
+<td><a href="/color/eb6f4d" title="#eb6f4d">#eb6f4d</a></td>
+</tr>
+</table>
+ 
+    </div>
+    
+</div>
+
+
+<a name="color-preview"></a>
+<div class="row fullrow">
+    <div class="col-md-6">
+         <h4>#4dc9eb Color Preview on Black Background</h4>
+        <div class="preview bgblack" style="color:#4dc9eb">
+            <div class="previewbox" style="background-color:#4dc9eb">
+            </div>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>#4dc9eb Color Preview on White Background</h4>
+        <div class="preview bgwhite" style="color:#4dc9eb">
+            <div class="previewbox" style="background-color:#4dc9eb">
+            </div>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+</div>
+
+<div class="margin10 center" style="min-height:300px;">
+    <!-- Tag ID: color-hex-com_incontent_reusable -->
+    <div class="center" data-freestar-ad="__240x400 __970x280" id="color-hex-com_incontent_reusable_3">
+        <script data-cfasync="false" type="text/javascript">
+            freestar.config.enabled_slots.push({ placementName: "color-hex-com_incontent_reusable", slotId: "color-hex-com_incontent_reusable_3" });
+        </script>
+    </div>
+</div>
+
+<a name="css-codes"></a>
+<div class="row fullrow">
+    <div class="col-md-6">
+        
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">#4dc9eb Color CSS Codes</h3>
+  </div>
+  <div class="panel-body">
+    
+      <pre>
+.mybgcolor {background-color:#4dc9eb; } 
+.myforecolor {color:#4dc9eb; }
+.mybordercolor {border:3px solid #4dc9eb; }
+</pre>
+<br />
+<h4>#4dc9eb Text Font Color</h4>
+<pre>
+&lt;p style="color:#4dc9eb"&gt;Text here&lt;/p&gt;
+</pre>
+<p style="color:#4dc9eb">
+This sample text font color is #4dc9eb <br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<br />
+<h4>#4dc9eb Background Color</h4>
+<pre>
+&lt;div style="background-color:#4dc9eb"&gt;<br />Div content here&lt;/div&gt;
+</pre>
+<div style="padding:10px;color:#fff;text-align:center;height:64px;background-color:#4dc9eb">
+<p>This div background color is #4dc9eb</p>
+</div>
+<br />
+<h4>#4dc9eb Border Color</h4>
+<pre>
+&lt;div style="border:3px solid #4dc9eb"&gt;<br />Div here&lt;/div&gt;
+</pre>
+<div style="padding:10px;color:#fff;text-align:center;height:64px;border:3px solid #4dc9eb">
+<p>This div border color is #4dc9eb</p>
+</div>
+      <br />
+  </div>
+</div>
+
+
+    </div>
+    <div class="col-md-6">
+        
+ <div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Css3 Examples</h3>
+  </div>
+  <div class="panel-body">
+    <pre>
+.textShadowRgb {
+  text-shadow: 4px 4px 2px rgba(77,201,235, 0.8); } 
+.textShadowHex { 
+  text-shadow: 4px 4px 2px #4dc9eb; }
+.divShadow { 
+  -moz-box-shadow: 1px 1px 3px 2px #4dc9eb;
+  -webkit-box-shadow: 1px 1px 3px 2px #4dc9eb;
+  box-shadow:         1px 1px 3px 2px #4dc9eb; }
+</pre>
+<br />
+<h4>Text Shadow with RGB Values</h4>
+<pre>
+&lt;p style="text-shadow: 4px 4px 2px rgba(77,201,235, 0.8);"&gt;Text here&lt;/p&gt;
+</pre>
+<p style="text-shadow: 4px 4px 2px rgba(77,201,235, 0.8);">
+This text has shadow with rgb values.</p>
+<br />
+<h4>Text Shadow with Hex Values</h4>
+<pre>
+&lt;p style="text-shadow: 4px 4px 2px #4dc9eb"&gt;Text here&lt;/p&gt;
+</pre>
+<p style="text-shadow: 4px 4px 2px #4dc9eb;">
+This text has shadow with hex values.</p>
+<br />
+<h4>Div Box Shadow</h4>
+<pre>
+&lt;div style="-moz-box-shadow: 1px 1px 3px 2px #4dc9eb;
+  -webkit-box-shadow: 1px 1px 3px 2px #4dc9eb;
+  box-shadow:         1px 1px 3px 2px #4dc9eb;"&gt;<br />Div content here&lt;/div&gt;
+</pre>
+<div style="padding:10px;height:64px;-moz-box-shadow: 1px 1px 3px 2px #4dc9eb;
+  -webkit-box-shadow: 1px 1px 3px 2px #4dc9eb;
+  box-shadow:         1px 1px 3px 2px #4dc9eb;">
+<p>This div box has shadow with color #4dc9eb</p>
+</div>
+  </div>
+</div>
+
+
+    </div>
+</div>
+
+<a name="related-colors"></a>
+<div class="fullrow">
+    <h4>Related Colors</h4>
+<div class="colordvcon"><a href="/color/52d3ec" title="#52d3ec color"><div class="colordva" style="background-color:#52d3ec;"> </div>
+#52d3ec</a></div>
+<div class="colordvcon"><a href="/color/5ddbe2" title="#5ddbe2 color"><div class="colordva" style="background-color:#5ddbe2;"> </div>
+#5ddbe2</a></div>
+<div class="colordvcon"><a href="/color/50c4e5" title="#50c4e5 color"><div class="colordva" style="background-color:#50c4e5;"> </div>
+#50c4e5</a></div>
+<div class="colordvcon"><a href="/color/41cef4" title="#41cef4 color"><div class="colordva" style="background-color:#41cef4;"> </div>
+#41cef4</a></div>
+<div class="colordvcon"><a href="/color/4ed2df" title="#4ed2df color"><div class="colordva" style="background-color:#4ed2df;"> </div>
+#4ed2df</a></div>
+<div class="colordvcon"><a href="/color/3fbde9" title="#3fbde9 color"><div class="colordva" style="background-color:#3fbde9;"> </div>
+#3fbde9</a></div>
+<div class="colordvcon"><a href="/color/5cb5e7" title="#5cb5e7 color"><div class="colordva" style="background-color:#5cb5e7;"> </div>
+#5cb5e7</a></div>
+</div>
+
+<a name="color-palettes"></a>
+        <div class="fullrow">
+        <h4>#4dc9eb Color Palettes</h4>
+<div class="row"><div class="col-xs-6 col-md-4"><div class="palettecontainerlist narrow">
+<a href="/color-palette/4969" title="Color palette Swimming Pool">
+<div class="palettecolordiv" style="background-color:#007994">
+                        </div>
+<div class="palettecolordiv" style="background-color:#08b0dd">
+                        </div>
+<div class="palettecolordiv" style="background-color:#4dc9eb">
+                        </div>
+<div class="palettecolordiv" style="background-color:#c1f6e5">
+                        </div>
+<div class="palettecolordiv" style="background-color:#a3a803">
+                        </div>
+<div class="clearfix"></div>
+Swimming Pool</a>
+</div></div></div>        <div class="clearfix"></div>
+        </div>
+        <br />
+
+
+<a name="comments"></a>
+<div class="fullrow">
+    <h3>Comments</h3>
+<p>No comments written yet.</p>
+<span class="txtgray">Please login to write comment.</span>
+
+</div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/blog" title="Blog">Blog</a> | 
+             <a href="/help.php" title="Help">Help</a> |
+    <a href="/credits.php" title="Credits">Credits</a> |
+    <a href="/privacy.php" title="Privacy">Privacy Policy</a> |
+    <a href="/contact.php" title="Contact Us">Contact Us</a>
+   <br />
+            <div class="center" style="padding:12px 0;">
+                <a href="https://www.facebook.com/Colorhexcom" target="_blank" rel="noopener" title="Color Hex on Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 30 30">
+                        <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h10v-9h-3v-3h3v-1.611C16,9.339,17.486,8,20.021,8 c1.214,0,1.856,0.09,2.16,0.131V11h-1.729C19.376,11,19,11.568,19,12.718V14h3.154l-0.428,3H19v9h5c1.105,0,2-0.895,2-2V6 C26,4.895,25.104,4,24,4z"></path>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/ColorHex" target="_blank" rel="noopener" title="Color Hex on Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 30 30">
+                        <path d="M 6 4 C 4.895 4 4 4.895 4 6 L 4 24 C 4 25.105 4.895 26 6 26 L 24 26 C 25.105 26 26 25.105 26 24 L 26 6 C 26 4.895 25.105 4 24 4 L 6 4 z M 8.6484375 9 L 13.259766 9 L 15.951172 12.847656 L 19.28125 9 L 20.732422 9 L 16.603516 13.78125 L 21.654297 21 L 17.042969 21 L 14.056641 16.730469 L 10.369141 21 L 8.8945312 21 L 13.400391 15.794922 L 8.6484375 9 z M 10.878906 10.183594 L 17.632812 19.810547 L 19.421875 19.810547 L 12.666016 10.183594 L 10.878906 10.183594 z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/colorhexcom/" target="_blank" rel="noopener" title="Color Hex on Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="36px" height="36px">    <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"/>
+                    </svg>
+                </a>
+            </div>
+
+    <span>&copy; 2010-2025 www.Color-Hex.com</span>
+        </div>
+    </div>
+</div>
+<div class="gototop rounded" id="scrollUp">
+    <a href="javascript:void(0);" id="gotoTop" title="Go to top"><span class="glyphicon glyphicon-arrow-up"></span> </a>
+</div>
+<div class="stickyAd">
+</div>
+<div class="stickyAdMobile center">
+</div>
+
+<script>function moveAds(){let e=document.getElementsByClassName("content")[0].offsetLeft-160;e>0&&(document.getElementsByClassName("stickyAd")[0].style.left=e+"px")}window.onresize=moveAds,window.onload=moveAds,document.addEventListener("scrollend",e=>{moveAds()});</script>
+
+<script>
+    const openedMenu = document.querySelector('.opened-menu');
+    const closedMenu = document.querySelector('.closed-menu');
+    const navbarMenu = document.querySelector('.navbar');
+    const menuOverlay = document.querySelector('.overlay');
+
+    openedMenu.addEventListener('click', toggleMenu);
+    closedMenu.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+        navbarMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('scrolling');
+    }
+
+    navbarMenu.addEventListener('click', (event) => {
+        if (event.target.hasAttribute('data-toggle') && window.innerWidth <= 992) {
+            event.preventDefault();
+            const menuItemHasChildren = event.target.parentElement;
+
+            if (menuItemHasChildren.classList.contains('active')) {
+                collapseSubMenu();
+            } else {
+                if (navbarMenu.querySelector('.menu-item-has-children.active')) {
+                    collapseSubMenu();
+                }
+                menuItemHasChildren.classList.add('active');
+                const subMenu = menuItemHasChildren.querySelector('.sub-menu');
+                subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+            }
+        }
+    });
+
+    function collapseSubMenu() {
+        navbarMenu.querySelector('.menu-item-has-children.active .sub-menu').removeAttribute('style');
+        navbarMenu.querySelector('.menu-item-has-children.active').classList.remove('active');
+    }
+
+    function resizeScreen() {
+        if (navbarMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+        if (navbarMenu.querySelector('.menu-item-has-children.active')) {
+            collapseSubMenu();
+        }
+    }
+    window.addEventListener('resize', () => {
+        if (this.innerWidth > 992) {
+            resizeScreen();
+        }
+    });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="/js/spectrum.min.js"></script>
+ <script>
+        $(document).ready(function() {
+
+            $("#colorpick").spectrum({
+                showInput: true,
+                showAlpha: false,
+                preferredFormat: "hex",
+                change: function (color) {
+                    let selectedcolor = color.toHexString();
+                    $("#colorvalue").val(selectedcolor);
+                    $("#colorpick").val(selectedcolor);
+                },
+                move: function(color) {
+                    let selectedcolor = color.toHexString();
+                    $("#colorvalue").val(selectedcolor);
+                },
+                show: function() {},
+                hide: function() {}
+            });
+            $("#colorvalue").on( 'click', function() {
+                $("#colorpick").spectrum("toggle");
+                return false;
+            });
+
+            $('#colorvalue').on('keyup', function(e) {
+                $("#colorpick").spectrum("set", $("#colorvalue").val());
+            });
+
+            $(window).scroll(function(){
+   if( $(document).scrollTop() > 50 ) {
+      $('#scrollUp').fadeIn();
+   } else {
+      $('#scrollUp').fadeOut();
+   }
+});
+
+$('#scrollUp').on('click', function() {
+                $("html, body").animate({ scrollTop: 0 }, 1000);
+                return false;
+                });
+
+
+
+var form = $('#frmcomment');
+  var submit = $('#sendcomment');
+
+  form.on('submit', function(e) {
+        e.preventDefault();
+
+     var commentstr = document.getElementById('commentText').value.trim();
+     if(commentstr === "")
+        {
+            return false;
+        }
+
+    $.ajax({
+      url: '/adct.php',
+      type: 'POST',
+      cache: false,
+      data: form.serialize(),
+      beforeSend: function(){
+        submit.attr('disabled', 'disabled');
+      },
+      success: function(data){
+
+        form.trigger('reset');
+        submit.removeAttr('disabled');
+
+        $('#commentmessage').removeClass('alert-success').removeClass('alert-danger').addClass('alert-success').html('Your comment send successfully.').slideDown('slow').delay(5000).slideUp();
+
+      },
+      error: function(e){
+        $('#commentmessage').removeClass('alert-success').removeClass('alert-danger').addClass('alert-danger').html('There was an error, try again later.').slideDown('slow').delay(5000).slideUp();
+
+      }
+    });
+  });
+
+            $('.navbar-toggle').on('click', function () {
+                $('#bs-example-navbar-collapse-1').toggle();
+            });
+
+        });
+
+ function validate(inputvl)
+ {
+    var searchkeyword = document.getElementById(inputvl).value.trim();
+    if(searchkeyword === "")
+        {
+            return false;
+        }
+}
+ </script>
+
+<script type="text/javascript">
+
+    function addUserFav() {
+
+        $.post("/usercolor.php", {formaction: 'favcolor', userid: '', color: '4dc9eb'},
+        function() {
+            $("#addtofav").slideUp();
+            $("#favlink").delay(500).slideDown();
+        });
+
+    }
+
+</script>
+
+</body>
+</html>
