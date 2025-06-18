@@ -1,6 +1,6 @@
 ---
 title: Work tracking in a distributed team
-draft: true
+draft: false
 date:
   created: 2025-06-17
   updated: 2025-06-18
@@ -18,12 +18,15 @@ links:
   - blog/posts/2025/distributed-team-using-scrumban.md
   - references/index.md
   #- resources/index.md
+  - references/agile-work-hierarchy.md
 ---
 
 
 ???+ note
 
-    While this document is ***not in draft mode*** it is definitely not complete...
+    This is meant to be a visual overview of how to manage 
+    issues as part of an overall work tracking process.
+
 
 <!--- ## Work Tracking --->
 
