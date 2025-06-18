@@ -7,12 +7,17 @@ date:
 authors:
   - rwaight
 categories:
-  - Agile
+  - Work Tracking
 #slug: work-tracking-in-a-distributed-team
 tags:
   - Agile
   - Kanban
   - Scrum
+links:
+  # All relative links are resolved from the docs directory.
+  - blog/posts/2025/distributed-team-using-scrumban.md
+  - references/index.md
+  #- resources/index.md
 ---
 
 
