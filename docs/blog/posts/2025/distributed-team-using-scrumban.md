@@ -13,6 +13,9 @@ tags:
   - Agile
   - Kanban
   - Scrum
+links:
+  # All relative links are resolved from the docs directory.
+  - references/agile-work-hierarchy.md
 ---
 
 
