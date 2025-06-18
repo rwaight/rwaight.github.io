@@ -62,7 +62,7 @@ Initiative → Epic → Story → Task
 
 <!---  ### 🧩 Work Item Hierarchy Overview  --->
 
-??? abstract Work Item Hierarchy Overview
+??? abstract "Work Item Hierarchy Overview"
 
     Here is the **Work Item Hierarchy Overview**:
 

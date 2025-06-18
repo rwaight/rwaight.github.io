@@ -1,6 +1,6 @@
 ---
 title: Work tracking in a distributed team
-draft: true
+draft: false
 date:
   created: 2025-06-17
   updated: 2025-06-18
@@ -18,12 +18,15 @@ links:
   - blog/posts/2025/distributed-team-using-scrumban.md
   - references/index.md
   #- resources/index.md
+  - references/agile-work-hierarchy.md
 ---
 
 
 ???+ note
 
-    While this document is ***not in draft mode*** it is definitely not complete...
+    This is meant to be a visual overview of how to manage 
+    issues as part of an overall work tracking process.
+
 
 <!--- ## Work Tracking --->
 
@@ -52,6 +55,7 @@ What are stories, epics, and initiatives? (from [`atlassian.com`][11])
 - [**Epics**][13] are large bodies of work that can be broken down into a number of smaller tasks (called stories).
 - **Initiatives** are collections of epics that drive toward a common goal.
 
+<!--- A visual overview of how we manage issues as part of our overall work tracking process. --->
 
 ```mermaid
 flowchart TD
