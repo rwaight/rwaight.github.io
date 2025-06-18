@@ -7,7 +7,7 @@ date:
 authors:
   - rwaight
 categories:
-  - Agile
+  - Work Tracking
 #slug: using-scrumban-in-a-distributed-team
 tags:
   - Agile
