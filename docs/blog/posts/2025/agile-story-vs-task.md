@@ -28,11 +28,18 @@ links:
 <!---  # Agile Story vs Task  --->
 <!---  from: https://search.brave.com/search?q=agile+scrumban+task+versus+story&source=web&conversation=9141f61c3f05360c35dc80&summary=1  --->
 
-When 
 
 ???+ note
 
+    This is meant to be way to help understand and develop 
+    a process for tracking work in a distributed team.
+
+<!--- 
+???+ note
+
     While this document is ***not in draft mode*** it is definitely not complete...
+
+--->
 
 ## Agile Story vs Task
 
