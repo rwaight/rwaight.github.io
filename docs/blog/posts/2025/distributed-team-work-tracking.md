@@ -55,6 +55,7 @@ What are stories, epics, and initiatives? (from [`atlassian.com`][11])
 - [**Epics**][13] are large bodies of work that can be broken down into a number of smaller tasks (called stories).
 - **Initiatives** are collections of epics that drive toward a common goal.
 
+<!--- A visual overview of how we manage issues as part of our overall work tracking process. --->
 
 ```mermaid
 flowchart TD
