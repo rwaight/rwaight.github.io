@@ -84,15 +84,25 @@ done
 array=()
 while read -r value; do
     array+=("$value")
-while> done < <(jq -r '.repo | to_entries[] | .value' ./repo-list.json)
+done < <(jq -r '.repo | to_entries[] | .value' ./repo-list.json)
 for str in "${array[@]}"; do echo "the repo is ${str} "; done
 
 # messy ways to sort by values within an array object
 jq --sort-keys .repo ./repo-list.json | jq 'sort'
 jq --sort-keys '.repo | sort' ./repo-list.json
 
-# this is how to sort by values within an array object
+# this is how to sort by values within an array of key/value pairs
 jq -r '.repo | to_entries | sort_by(.value)' ./repo-list.json
+
+# this is how to sort by values within an array of strings
+jq -r '.repo | to_entries | sort_by(.value) | .[].value' ./repo-list.json
+
+# create a sorted array with zsh
+array=()
+while read -r value; do
+    array+=("$value")
+done < <(jq -r '.repo | to_entries | sort_by(.value) | .[].value' ./repo-list.json)
+for str in "${array[@]}"; do echo "the repo is ${str} "; done
 
 --->
 
