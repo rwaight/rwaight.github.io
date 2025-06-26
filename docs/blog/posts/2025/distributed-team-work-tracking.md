@@ -3,7 +3,7 @@ title: Work tracking in a distributed team
 draft: false
 date:
   created: 2025-06-17
-  updated: 2025-06-18
+  updated: 2025-06-26
 authors:
   - rwaight
 categories:
@@ -16,6 +16,8 @@ tags:
 links:
   # All relative links are resolved from the docs directory.
   - blog/posts/2025/distributed-team-using-scrumban.md
+  - blog/posts/2025/agile-hierarchy.md
+  - blog/posts/2025/agile-story-vs-task.md
   - references/index.md
   #- resources/index.md
   - references/agile-work-hierarchy.md
@@ -84,6 +86,14 @@ flowchart TD
     Initiative2[Initiative 2] --> I2E1
     Initiative2 --> I2E2
 ```
+
+
+### Including Tasks to use with GitHub Projects
+
+We can build on the [Agile project management terminology](#agile-project-management-terminology) by adding [tasks](./agile-story-vs-task.md) as a subset of ***either*** a story or an epic.
+The differences are explained more in the [_Agile Story vs Task_ post](./agile-story-vs-task.md) and the [_Understanding Agile Work Hierarchy_ post](./agile-hierarchy.md).
+
+For a deeper, evolving reference guide, [see the **Agile Work Hierarchy Reference** page](../../../references/agile-work-hierarchy.md).
 
 
 <!--- ## End --->

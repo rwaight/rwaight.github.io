@@ -95,5 +95,5 @@ graph TD
 - 🎯 **Goal Alignment**: Connects daily work to strategic initiatives.
 - 🔍 **Traceability**: Tasks trace back to story requirements.
 
-For a deeper, evolving reference guide, [see the work hierarchy reference file](../../../references/agile-work-hierarchy.md).
+For a deeper, evolving reference guide, [see the **Agile Work Hierarchy Reference** page](../../../references/agile-work-hierarchy.md).
 
