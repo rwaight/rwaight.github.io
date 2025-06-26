@@ -29,3 +29,4 @@ tags:
     Our hard work pays off as we review the data we have collected in part 7 of the blog series. [https://lnkd.in/gJKH-SD](https://lnkd.in/gJKH-SD)
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-7-siem-overview?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->

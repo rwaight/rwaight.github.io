@@ -29,3 +29,4 @@ tags:
     Check out Part 3 of this blog series, which includes details on how to configure an ingest pipeline and a review of Beats configurations. [https://lnkd.in/gnc3F63](https://lnkd.in/gnc3F63)
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-3-geoip-data-and-beats-config-review?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->

@@ -29,3 +29,4 @@ tags:
     Learn how to use Elastic SIEM at home or for your small business.
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-1-getting-started?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->

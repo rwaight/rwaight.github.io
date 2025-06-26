@@ -29,3 +29,4 @@ tags:
     Learn how to install & configure Beats on CentOS in part 5 the blog series. [https://lnkd.in/eq8hBKE](https://lnkd.in/eq8hBKE)
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-5-beats-on-centos?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->

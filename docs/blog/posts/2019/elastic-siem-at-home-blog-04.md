@@ -29,3 +29,4 @@ tags:
     Check out Part 4 of this blog series, which includes details on how to install and configure Beats on Windows. [https://lnkd.in/gVmvB49](https://lnkd.in/gVmvB49)
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-4-beats-on-windows?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->

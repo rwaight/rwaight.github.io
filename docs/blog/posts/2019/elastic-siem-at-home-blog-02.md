@@ -29,3 +29,4 @@ tags:
     Check out Part 2 of this blog series, which includes step-by-step details on how to restrict privileges for users and Beats. [https://lnkd.in/erT-r4U](https://lnkd.in/erT-r4U)
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-2-securing-cluster-access?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->

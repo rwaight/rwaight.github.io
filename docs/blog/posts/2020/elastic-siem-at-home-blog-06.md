@@ -29,3 +29,4 @@ tags:
     Learn how to install & configure Beats on macOS in part 6 of the blog series. [https://lnkd.in/eRhz4P8](https://lnkd.in/eRhz4P8)
 
 <!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-6-beats-on-mac?blade=linkedin&hulk=social --->
+<!--- https://www.elastic.co/blog/author/rob-waight --->
