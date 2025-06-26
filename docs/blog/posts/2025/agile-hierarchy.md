@@ -9,7 +9,7 @@ status: new
 draft: false
 date:
   created: 2025-06-18
-  updated: 2025-06-18
+  updated: 2025-06-26
 authors:
   - rwaight
 categories:
@@ -21,7 +21,7 @@ tags:
   - Scrum
   - project-management
   - distributed-teams
-  - terminology
+  - Terminology
 links:
   # All relative links are resolved from the docs directory.
   - references/agile-work-hierarchy.md
@@ -77,12 +77,12 @@ graph TD
 
 ## 📝 Definitions
 
-| Level          | Description                                                                |
-|:--------------:|:---------------------------------------------------------------------------|
-| **Task**       | The **"how?"** – implementation-level steps proving stories are fulfilled. |
-| **Story**      | The **"what?"** and **"why?"** – user-centric requirements with criteria.  |
-| **Epic**       | A collection of related stories forming a larger feature.                  |
-| **Initiative** | Strategic objective spanning multiple epics.                               |
+| Level             | Description                                                                |
+|:-----------------:|:---------------------------------------------------------------------------|
+| 🧱 **Task**       | The **"how?"** – implementation-level steps proving stories are fulfilled. |
+| 📗 **Story**      | The **"what?"** and **"why?"** – user-centric requirements with criteria.  |
+| 📘 **Epic**       | A collection of related stories forming a larger feature.                  |
+| 🗂 **Initiative** | Strategic objective spanning multiple epics.                               |
 
 ### Quick Analogy:
 
