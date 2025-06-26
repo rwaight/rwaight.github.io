@@ -3,3 +3,14 @@ authors:
     name: Rob Waight
     description: Creator
     avatar: https://github.com/rwaight.png
+  mcmesser:
+    name: Marty Messer
+    description: Blog Author
+    # from https://www.elastic.co/blog/author/marty-messer
+    # > Articles by Marty Messer
+    # > VP, Customer Care
+    # > Marty Messer has spent 20 years in the open source world helping customers 
+    # >   get significant value from free software. Marty joined Elastic in April 
+    # >   2014, and is responsible for ensuring customer success and satisfaction. 
+    # >   Previously, he held similar roles at Red Hat, Hyperic, SpringSource, and VMware.
+    avatar: https://github.com/mcmesser.png

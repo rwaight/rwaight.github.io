@@ -1,5 +1,4 @@
 ---
-# page configuration
 title: Agile Story vs Task
 description: >
   In Agile frameworks like Scrumban, understanding the distinction 
@@ -10,7 +9,7 @@ status: new
 draft: false
 date:
   created: 2025-06-18
-  updated: 2025-06-18
+  updated: 2025-06-26
 authors:
   - rwaight
 categories:
@@ -20,6 +19,9 @@ tags:
   - Agile
   - Kanban
   - Scrum
+  #- project-management
+  #- distributed-teams
+  #- Terminology
 links:
   # All relative links are resolved from the docs directory.
   - references/agile-work-hierarchy.md

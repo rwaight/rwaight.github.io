@@ -67,6 +67,45 @@ jq --raw-output '.repo | to_entries | map("[\(.key)]=\(.value)")' ./repo-list.js
 ]
 ```
 
+<!--- other commands
+
+# use 'jq' to print the entries with the '.key' and '.value'
+jq -r '.repo | to_entries[]' ./repo-list.json
+
+# use 'jq' to print the entries with only the '.value'
+jq -r '.repo | to_entries[] | .value' ./repo-list.json
+
+# use 'for' and 'jq' to iterate through the '.value' entries and print them one by one
+for k in $(jq -r '.repo | to_entries[] | .value' ./repo-list.json); do
+    echo $k
+done
+
+# extra commands to create an array object that is not sorted
+array=()
+while read -r value; do
+    array+=("$value")
+done < <(jq -r '.repo | to_entries[] | .value' ./repo-list.json)
+for str in "${array[@]}"; do echo "the repo is ${str} "; done
+
+# messy ways to sort by values within an array object
+jq --sort-keys .repo ./repo-list.json | jq 'sort'
+jq --sort-keys '.repo | sort' ./repo-list.json
+
+# this is how to sort by values within an array of key/value pairs
+jq -r '.repo | to_entries | sort_by(.value)' ./repo-list.json
+
+# this is how to sort by values within an array of strings
+jq -r '.repo | to_entries | sort_by(.value) | .[].value' ./repo-list.json
+
+# create a sorted array with zsh
+array=()
+while read -r value; do
+    array+=("$value")
+done < <(jq -r '.repo | to_entries | sort_by(.value) | .[].value' ./repo-list.json)
+for str in "${array[@]}"; do echo "the repo is ${str} "; done
+
+--->
+
 #### 2. Create the inventory array
 
 Create the array using either `bash` or `zsh`

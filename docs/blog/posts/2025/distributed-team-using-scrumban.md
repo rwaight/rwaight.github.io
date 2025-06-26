@@ -1,9 +1,12 @@
 ---
 title: Using Scrumban in a distributed team
+description: >
+  Scrumban combines two leading Agile methodologies—Scrum 
+  and Kanban—into a single process for getting work done.
 draft: false
 date:
   created: 2025-02-04
-  updated: 2025-06-17
+  updated: 2025-06-26
 authors:
   - rwaight
 categories:
@@ -99,7 +102,10 @@ Here is what that would look like in the **Status field settings** page:
 
 ### Using GitHub project workflows to improve timeliness
 
-To be continued
+
+???+ note
+
+    This section is incomplete and should be in a separate blog post. It is "to be continued"...
 
 
 <!--- ## End --->
