@@ -103,6 +103,9 @@ jobs:
 
       - name: Run mkdocs gh-deploy
         run: mkdocs gh-deploy --force
+        env:
+          # https://github.com/ojacques/mkdocs-git-committers-plugin-2#setup
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
