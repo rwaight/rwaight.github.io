@@ -206,6 +206,9 @@ plugins:
       # https://github.com/ojacques/mkdocs-git-committers-plugin-2
       repository: rwaight/rwaight.github.io
       branch: main
+      # https://github.com/ojacques/mkdocs-git-committers-plugin-2/pull/79
+      exclude_committers:
+        - web-flow
       exclude:
         - index.md
         - test-*.md
