@@ -200,6 +200,7 @@ plugins:
       # type: iso_datetime              # default is 'date'
       exclude:
         - index.md
+        - blog/index.md
       fallback_to_build_date: true
   - git-committers:
       # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#document-contributors
