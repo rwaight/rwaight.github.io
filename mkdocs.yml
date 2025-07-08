@@ -211,7 +211,8 @@ plugins:
       exclude_committers:
         - web-flow
       exclude:
-        #- index.md
+        - index.md
+        - blog/index.md
         - test-*.md
   - meta:
       # https://squidfunk.github.io/mkdocs-material/plugins/meta/
