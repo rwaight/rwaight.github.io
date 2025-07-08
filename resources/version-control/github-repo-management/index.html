@@ -6,35 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Check out the sixth blog in the "SIEM at Home" blog series.
+        <meta name="description" content="Resources to assist managing GitHub Repos
 ">
       
       
         <meta name="author" content="rwaight">
       
       
-        <link rel="canonical" href="https://rwaight.github.io/blog/2022/01/22/update-siem-at-home-blog-06-published/">
+        <link rel="canonical" href="https://rwaight.github.io/resources/version-control/github-repo-management/">
       
       
-        <link rel="prev" href="../../../../2020/03/04/update-siem-at-home-blog-07-published/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../../../2023/03/18/revert-commits-in-git/">
+        <link rel="next" href="../../docker/">
       
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>The sixth 'SIEM at Home' blog - rwaight on GitHub pages</title>
+        <title>GitHub Repo Management Resources - rwaight on GitHub pages</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,12 +54,12 @@
         
         
         
-        <link rel="stylesheet" href="../../../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setting-up" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+    <a href="../../.." title="rwaight on GitHub pages" class="md-header__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -112,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The sixth 'SIEM at Home' blog
+              GitHub Repo Management Resources
             
           </span>
         </div>
@@ -199,7 +204,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -217,13 +222,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
   
@@ -245,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../references/" class="md-tabs__link">
+        <a href="../../../references/" class="md-tabs__link">
           
   
   
@@ -263,11 +266,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../resources/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -292,9 +297,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -305,7 +308,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
+    <a href="../../.." title="rwaight on GitHub pages" class="md-nav__button md-logo" aria-label="rwaight on GitHub pages" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -362,7 +365,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -487,7 +490,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/" class="md-nav__link ">
+            <a href="../../../random/" class="md-nav__link ">
               
   
   
@@ -522,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/git/" class="md-nav__link">
+      <a href="../../../random/git/" class="md-nav__link">
         
   
   
@@ -580,7 +583,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/github/" class="md-nav__link ">
+            <a href="../../../random/github/" class="md-nav__link ">
               
   
   
@@ -615,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-actions-fedora-libvirt/" class="md-nav__link">
+      <a href="../../../random/github/github-actions-fedora-libvirt/" class="md-nav__link">
         
   
   
@@ -638,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-actions-nested-virtualization/" class="md-nav__link">
+      <a href="../../../random/github/github-actions-nested-virtualization/" class="md-nav__link">
         
   
   
@@ -661,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-actions-notes/" class="md-nav__link">
+      <a href="../../../random/github/github-actions-notes/" class="md-nav__link">
         
   
   
@@ -684,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/github-ops-notes/" class="md-nav__link">
+      <a href="../../../random/github/github-ops-notes/" class="md-nav__link">
         
   
   
@@ -707,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/google-apps-and-github-actions/" class="md-nav__link">
+      <a href="../../../random/github/google-apps-and-github-actions/" class="md-nav__link">
         
   
   
@@ -730,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/github/random-github-notes/" class="md-nav__link">
+      <a href="../../../random/github/random-github-notes/" class="md-nav__link">
         
   
   
@@ -761,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/linux/" class="md-nav__link">
+      <a href="../../../random/linux/" class="md-nav__link">
         
   
   
@@ -784,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/macos/macos-which-shell-am-i-using/" class="md-nav__link">
+      <a href="../../../random/macos/macos-which-shell-am-i-using/" class="md-nav__link">
         
   
   
@@ -858,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/windows/build-win10-with-github-actions/" class="md-nav__link">
+      <a href="../../../random/windows/build-win10-with-github-actions/" class="md-nav__link">
         
   
   
@@ -881,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/windows/random-windows/" class="md-nav__link">
+      <a href="../../../random/windows/random-windows/" class="md-nav__link">
         
   
   
@@ -904,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/windows/windows-change-env-vars-as-user/" class="md-nav__link">
+      <a href="../../../random/windows/windows-change-env-vars-as-user/" class="md-nav__link">
         
   
   
@@ -962,7 +965,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/unifi/" class="md-nav__link ">
+            <a href="../../../random/unifi/" class="md-nav__link ">
               
   
   
@@ -1069,7 +1072,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../random/unifi/ubntwiki/" class="md-nav__link ">
+            <a href="../../../random/unifi/ubntwiki/" class="md-nav__link ">
               
   
   
@@ -1104,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/unifi/ubntwiki/unifi-controller-api/" class="md-nav__link">
+      <a href="../../../random/unifi/ubntwiki/unifi-controller-api/" class="md-nav__link">
         
   
   
@@ -1143,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/unifi/unifi-controller-management/" class="md-nav__link">
+      <a href="../../../random/unifi/unifi-controller-management/" class="md-nav__link">
         
   
   
@@ -1174,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/synology/" class="md-nav__link">
+      <a href="../../../random/synology/" class="md-nav__link">
         
   
   
@@ -1244,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/test-page-1/" class="md-nav__link">
+      <a href="../../../random/test-page-1/" class="md-nav__link">
         
   
   
@@ -1330,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/google-docs-from-markdown/" class="md-nav__link">
+      <a href="../../../random/google-docs-from-markdown/" class="md-nav__link">
         
   
   
@@ -1353,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/image-builder-notes/" class="md-nav__link">
+      <a href="../../../random/image-builder-notes/" class="md-nav__link">
         
   
   
@@ -1376,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/notes-network-packets/" class="md-nav__link">
+      <a href="../../../random/notes-network-packets/" class="md-nav__link">
         
   
   
@@ -1399,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/notes-truenas/" class="md-nav__link">
+      <a href="../../../random/notes-truenas/" class="md-nav__link">
         
   
   
@@ -1422,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../random/wireless-captive-portals/" class="md-nav__link">
+      <a href="../../../random/wireless-captive-portals/" class="md-nav__link">
         
   
   
@@ -1494,7 +1497,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../guides/" class="md-nav__link ">
+            <a href="../../../guides/" class="md-nav__link ">
               
   
   
@@ -1554,7 +1557,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../guides/bash/" class="md-nav__link ">
+            <a href="../../../guides/bash/" class="md-nav__link ">
               
   
   
@@ -1589,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/bash/check-epoch-date/" class="md-nav__link">
+      <a href="../../../guides/bash/check-epoch-date/" class="md-nav__link">
         
   
   
@@ -1675,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/overview/" class="md-nav__link">
+      <a href="../../../guides/github/overview/" class="md-nav__link">
         
   
   
@@ -1698,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/gh-cli-delete-workflow-runs/" class="md-nav__link">
+      <a href="../../../guides/github/gh-cli-delete-workflow-runs/" class="md-nav__link">
         
   
   
@@ -1721,7 +1724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/github-actions-enable-debug/" class="md-nav__link">
+      <a href="../../../guides/github/github-actions-enable-debug/" class="md-nav__link">
         
   
   
@@ -1744,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/github-approve-and-merge-prs/" class="md-nav__link">
+      <a href="../../../guides/github/github-approve-and-merge-prs/" class="md-nav__link">
         
   
   
@@ -1767,7 +1770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/github/github-use-gh-cli/" class="md-nav__link">
+      <a href="../../../guides/github/github-use-gh-cli/" class="md-nav__link">
         
   
   
@@ -1833,7 +1836,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../guides/mkdocs/" class="md-nav__link ">
+            <a href="../../../guides/mkdocs/" class="md-nav__link ">
               
   
   
@@ -1868,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-local-install/" class="md-nav__link">
+      <a href="../../../guides/mkdocs/mkdocs-local-install/" class="md-nav__link">
         
   
   
@@ -1891,7 +1894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
+      <a href="../../../guides/mkdocs/mkdocs-local-preview/" class="md-nav__link">
         
   
   
@@ -1914,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
+      <a href="../../../guides/mkdocs/mkdocs-embed-google-docs/" class="md-nav__link">
         
   
   
@@ -1937,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
+      <a href="../../../guides/mkdocs/mkdocs-embed-pdf/" class="md-nav__link">
         
   
   
@@ -1960,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-embed-youtube/" class="md-nav__link">
+      <a href="../../../guides/mkdocs/mkdocs-embed-youtube/" class="md-nav__link">
         
   
   
@@ -1983,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/mkdocs/mkdocs-iframe-full-width/" class="md-nav__link">
+      <a href="../../../guides/mkdocs/mkdocs-iframe-full-width/" class="md-nav__link">
         
   
   
@@ -2063,7 +2066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/windows/overview/" class="md-nav__link">
+      <a href="../../../guides/windows/overview/" class="md-nav__link">
         
   
   
@@ -2086,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/windows/fix-smartcard-reader-drivers/" class="md-nav__link">
+      <a href="../../../guides/windows/fix-smartcard-reader-drivers/" class="md-nav__link">
         
   
   
@@ -2172,7 +2175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/google-meeting-notes/" class="md-nav__link">
+      <a href="../../../guides/google-meeting-notes/" class="md-nav__link">
         
   
   
@@ -2195,7 +2198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/gpg-plus-git-ssh-auth-and-sign-on-win10/" class="md-nav__link">
+      <a href="../../../guides/gpg-plus-git-ssh-auth-and-sign-on-win10/" class="md-nav__link">
         
   
   
@@ -2218,7 +2221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/setup-auth-with-github-pages/" class="md-nav__link">
+      <a href="../../../guides/setup-auth-with-github-pages/" class="md-nav__link">
         
   
   
@@ -2241,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/setup-github-pages/" class="md-nav__link">
+      <a href="../../../guides/setup-github-pages/" class="md-nav__link">
         
   
   
@@ -2264,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../guides/wip-setup-gpg/" class="md-nav__link">
+      <a href="../../../guides/wip-setup-gpg/" class="md-nav__link">
         
   
   
@@ -2360,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../something/" class="md-nav__link">
+      <a href="../../../something/" class="md-nav__link">
         
   
   
@@ -2383,7 +2386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../test/" class="md-nav__link">
+      <a href="../../../test/" class="md-nav__link">
         
   
   
@@ -2418,8 +2421,6 @@
       
   
   
-    
-  
   
   
     
@@ -2437,23 +2438,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../blog/" class="md-nav__link ">
               
   
   
@@ -2466,13 +2464,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -2504,28 +2502,23 @@
       
         
       
-        
-      
     
     
     
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -2554,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2025/" class="md-nav__link">
+      <a href="../../../blog/archive/2025/" class="md-nav__link">
         
   
   
@@ -2579,7 +2572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2024/" class="md-nav__link">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
         
   
   
@@ -2604,7 +2597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2023/" class="md-nav__link">
+      <a href="../../../blog/archive/2023/" class="md-nav__link">
         
   
   
@@ -2629,32 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2022/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2022
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../archive/2020/" class="md-nav__link">
+      <a href="../../../blog/archive/2020/" class="md-nav__link">
         
   
   
@@ -2679,7 +2647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2019/" class="md-nav__link">
+      <a href="../../../blog/archive/2019/" class="md-nav__link">
         
   
   
@@ -2704,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2018/" class="md-nav__link">
+      <a href="../../../blog/archive/2018/" class="md-nav__link">
         
   
   
@@ -2729,7 +2697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2015/" class="md-nav__link">
+      <a href="../../../blog/archive/2015/" class="md-nav__link">
         
   
   
@@ -2794,20 +2762,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -2836,7 +2801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/board-games/" class="md-nav__link">
+      <a href="../../../blog/category/board-games/" class="md-nav__link">
         
   
   
@@ -2861,7 +2826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/browsers/" class="md-nav__link">
+      <a href="../../../blog/category/browsers/" class="md-nav__link">
         
   
   
@@ -2886,7 +2851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/git/" class="md-nav__link">
+      <a href="../../../blog/category/git/" class="md-nav__link">
         
   
   
@@ -2911,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/github/" class="md-nav__link">
+      <a href="../../../blog/category/github/" class="md-nav__link">
         
   
   
@@ -2936,7 +2901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/hardware/" class="md-nav__link">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
         
   
   
@@ -2961,7 +2926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/hello-world/" class="md-nav__link">
+      <a href="../../../blog/category/hello-world/" class="md-nav__link">
         
   
   
@@ -2986,7 +2951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/knowledge-management/" class="md-nav__link">
+      <a href="../../../blog/category/knowledge-management/" class="md-nav__link">
         
   
   
@@ -3011,7 +2976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/mermaid/" class="md-nav__link">
+      <a href="../../../blog/category/mermaid/" class="md-nav__link">
         
   
   
@@ -3036,7 +3001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/mkdocs/" class="md-nav__link">
+      <a href="../../../blog/category/mkdocs/" class="md-nav__link">
         
   
   
@@ -3061,7 +3026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/publications/" class="md-nav__link">
+      <a href="../../../blog/category/publications/" class="md-nav__link">
         
   
   
@@ -3086,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/work-tracking/" class="md-nav__link">
+      <a href="../../../blog/category/work-tracking/" class="md-nav__link">
         
   
   
@@ -3111,7 +3076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/bash/" class="md-nav__link">
+      <a href="../../../blog/category/bash/" class="md-nav__link">
         
   
   
@@ -3136,7 +3101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/coding/" class="md-nav__link">
+      <a href="../../../blog/category/coding/" class="md-nav__link">
         
   
   
@@ -3188,6 +3153,8 @@
       
         
       
+        
+      
     
     
     
@@ -3205,7 +3172,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../references/" class="md-nav__link ">
+            <a href="../../../references/" class="md-nav__link ">
               
   
   
@@ -3265,7 +3232,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../references/games/" class="md-nav__link ">
+            <a href="../../../references/games/" class="md-nav__link ">
               
   
   
@@ -3325,7 +3292,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../references/games/munchkin/" class="md-nav__link ">
+            <a href="../../../references/games/munchkin/" class="md-nav__link ">
               
   
   
@@ -3360,7 +3327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../references/games/munchkin/short-rules/" class="md-nav__link">
+      <a href="../../../references/games/munchkin/short-rules/" class="md-nav__link">
         
   
   
@@ -3398,6 +3365,29 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../references/coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -3420,16 +3410,16 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../references/coding/" class="md-nav__link ">
+            <a href="../../../references/version-control/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Coding
+    Version control
     
   </span>
   
@@ -3437,16 +3427,16 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Coding
+            Version control
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3459,7 +3449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../references/coding/github-pull-requests/" class="md-nav__link">
+      <a href="../../../references/version-control/github-pull-requests/" class="md-nav__link">
         
   
   
@@ -3515,11 +3505,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../references/mkdocs/" class="md-nav__link ">
+            <a href="../../../references/mkdocs/" class="md-nav__link ">
               
   
   
@@ -3532,14 +3522,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Mkdocs
           </label>
@@ -3600,7 +3590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -3631,7 +3621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../references/agile-work-hierarchy/" class="md-nav__link">
+      <a href="../../../references/agile-work-hierarchy/" class="md-nav__link">
         
   
   
@@ -3658,6 +3648,8 @@
       
   
   
+    
+  
   
   
     
@@ -3673,24 +3665,29 @@
       
         
       
+        
+      
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../resources/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -3703,13 +3700,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Resources
@@ -3724,6 +3721,31 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
     
     
       
@@ -3739,23 +3761,26 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../resources/coding/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Coding
+    Version control
     
   </span>
   
@@ -3763,16 +3788,16 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Coding
+            Version control
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3782,10 +3807,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../resources/coding/github-repo-management/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    GitHub Repo Management Resources
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3796,6 +3841,149 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repo-inventory-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repo Inventory File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventory array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inventory array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-verify-inventory-output-from-jq" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Verify inventory output from jq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-the-inventory-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create the inventory array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Create the inventory array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-inventory-array-using-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the inventory array using bash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-inventory-array-using-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the inventory array using zsh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-test-the-inventory-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Test the inventory array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Test the inventory array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-the-inventory-array-using-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the inventory array using bash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-inventory-array-using-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the inventory array using zsh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3832,18 +4020,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../resources/docker/" class="md-nav__link ">
+            <a href="../../docker/" class="md-nav__link ">
               
   
   
@@ -3856,14 +4047,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             Docker
           </label>
@@ -3878,7 +4069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../resources/docker/container-ansible/" class="md-nav__link">
+      <a href="../../docker/container-ansible/" class="md-nav__link">
         
   
   
@@ -3901,7 +4092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../resources/docker/container-mkdocs/" class="md-nav__link">
+      <a href="../../docker/container-mkdocs/" class="md-nav__link">
         
   
   
@@ -3946,18 +4137,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../resources/mkdocs/" class="md-nav__link ">
+            <a href="../../mkdocs/" class="md-nav__link ">
               
   
   
@@ -3970,14 +4164,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Mkdocs
           </label>
@@ -4013,10 +4207,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
             
   
   
@@ -4029,8 +4223,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_2">
             <span class="md-nav__icon md-icon"></span>
             References
           </label>
@@ -4043,7 +4237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../../references/mkdocs/" class="md-nav__link">
+      <a href="../../../../../references/mkdocs/" class="md-nav__link">
         
   
   
@@ -4136,8 +4330,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -4150,6 +4342,137 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repo-inventory-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repo Inventory File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventory array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inventory array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-verify-inventory-output-from-jq" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Verify inventory output from jq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-the-inventory-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create the inventory array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Create the inventory array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-inventory-array-using-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the inventory array using bash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-inventory-array-using-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the inventory array using zsh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-test-the-inventory-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Test the inventory array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Test the inventory array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-the-inventory-array-using-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the inventory array using bash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-inventory-array-using-zsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the inventory array using zsh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4157,129 +4480,14 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    Back to index
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="../../../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          Rob Waight
-                        
-                      </strong>
-                      <br>
-                      Creator
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    Metadata
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2022-01-22 00:00:00+00:00" class="md-ellipsis">January 22, 2022</time>
-                      </div>
-                    </li>
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2025-06-26 00:00:00+00:00" class="md-ellipsis">June 26, 2025</time>
-                        </div>
-                      </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/publications/">Publications</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              1 min read
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
-  
-
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <a href="../../../../../plugins/tags/#tag:blog-updates" class="md-tag">Blog Updates</a>
-      
-    
-      
-      
-      
-        <a href="../../../../../plugins/tags/#tag:elastic" class="md-tag">Elastic</a>
-      
-    
-      
-      
-      
-        <a href="../../../../../plugins/tags/#tag:security" class="md-tag">Security</a>
-      
-    
-  </nav>
+                  
 
 
   
-    <a href="https://github.com/rwaight/rwaight.github.io/edit/main/docs/blog/posts/2020/elastic-siem-at-home-blog-06.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/rwaight/rwaight.github.io/edit/main/docs/resources/version-control/github-repo-management.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -4287,18 +4495,144 @@
   
 
 
-  <h1>The sixth 'SIEM at Home' blog</h1>
+  <h1>GitHub Repo Management Resources</h1>
 
-<!--- https://www.linkedin.com/posts/waight_elastic-siem-for-small-business-and-home-activity-6625813184034979841-g__B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAax-g8BYMrLGPf5bJj2GY-2yGmSnbPhzzY --->
+<!--- Do not use a H1 element when the title is set in the frontmatter --->
+<!--- # Coding Resources --->
 
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>Check out the <a href="https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-6-beats-on-mac?blade=linkedin&amp;hulk=social">sixth blog in my SIEM-at-Home series</a>!
-Elastic SIEM is a powerful enterprise tool for security analytics &amp; monitoring that can also be used in small businesses and at home. 
-Learn how to install &amp; configure Beats on macOS in part 6 of the blog series. <a href="https://lnkd.in/eRhz4P8">https://lnkd.in/eRhz4P8</a></p>
-</div>
-<!--- https://www.elastic.co/blog/elastic-siem-for-small-business-and-home-6-beats-on-mac?blade=linkedin&hulk=social --->
-<!--- https://www.elastic.co/blog/author/rob-waight --->
+<p>This page might be better off as a blog...</p>
+<h2 id="setting-up">Setting Up<a class="headerlink" href="#setting-up" title="Permanent link">&para;</a></h2>
+<p>The following items can be helpful when managing multiple GitHub repos:</p>
+<ul>
+<li>A <code>.json</code> repo inventory file</li>
+<li>Variables or an <code>.env</code> file</li>
+<li>An inventory array, sourced from the <code>.json</code> repo inventory file</li>
+</ul>
+<h3 id="repo-inventory-file">Repo Inventory File<a class="headerlink" href="#repo-inventory-file" title="Permanent link">&para;</a></h3>
+<p>In this case, we are using a <code>.json</code> file to keep track of the GitHub repos that will be managed.
+Here are the contents of the <code>repo-list.json</code> file:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="s2">&quot;actions&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="s2">&quot;test-actions&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="s2">&quot;rwaight.github.io&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>Set variables and "reset" the secrets inventory list:</p>
+<ol>
+<li>Set the <code>repoOwner</code> variable to <code>yourusername</code>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">repoOwner</span><span class="o">=</span>yourusername
+</span></code></pre></div></li>
+</ol>
+<h3 id="inventory-array">Inventory array<a class="headerlink" href="#inventory-array" title="Permanent link">&para;</a></h3>
+<p>We will first create an array of repos from the <code>./repo-list.json</code> file</p>
+<h4 id="1-verify-inventory-output-from-jq">1. Verify inventory output from <code>jq</code><a class="headerlink" href="#1-verify-inventory-output-from-jq" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Run the following <code>jq</code> command to test the format of the JSON file:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>jq<span class="w"> </span>--raw-output<span class="w"> </span><span class="s1">&#39;.repo | to_entries | map(&quot;[\(.key)]=\(.value)&quot;)&#39;</span><span class="w"> </span>./repo-list.json
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Review the output from the command to make sure the repos output the proper format:
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="s2">&quot;[0]=actions&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="s2">&quot;[1]=test-actions&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s2">&quot;[2]=rwaight.github.io&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">]</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<!--- other commands
+
+# use 'jq' to print the entries with the '.key' and '.value'
+jq -r '.repo | to_entries[]' ./repo-list.json
+
+# use 'jq' to print the entries with only the '.value'
+jq -r '.repo | to_entries[] | .value' ./repo-list.json
+
+# use 'for' and 'jq' to iterate through the '.value' entries and print them one by one
+for k in $(jq -r '.repo | to_entries[] | .value' ./repo-list.json); do
+    echo $k
+done
+
+# extra commands to create an array object that is not sorted
+array=()
+while read -r value; do
+    array+=("$value")
+done < <(jq -r '.repo | to_entries[] | .value' ./repo-list.json)
+for str in "${array[@]}"; do echo "the repo is ${str} "; done
+
+# messy ways to sort by values within an array object
+jq --sort-keys .repo ./repo-list.json | jq 'sort'
+jq --sort-keys '.repo | sort' ./repo-list.json
+
+# this is how to sort by values within an array of key/value pairs
+jq -r '.repo | to_entries | sort_by(.value)' ./repo-list.json
+
+# this is how to sort by values within an array of strings
+jq -r '.repo | to_entries | sort_by(.value) | .[].value' ./repo-list.json
+
+# create a sorted array with zsh
+array=()
+while read -r value; do
+    array+=("$value")
+done < <(jq -r '.repo | to_entries | sort_by(.value) | .[].value' ./repo-list.json)
+for str in "${array[@]}"; do echo "the repo is ${str} "; done
+
+--->
+
+<h4 id="2-create-the-inventory-array">2. Create the inventory array<a class="headerlink" href="#2-create-the-inventory-array" title="Permanent link">&para;</a></h4>
+<p>Create the array using either <code>bash</code> or <code>zsh</code></p>
+<!--- Resources about creating an array from JQ in either bash or zsh
+
+- https://unix.stackexchange.com/questions/681354/using-jq-to-parse-json-string-with-multi-word-values-into-an-associative-array
+- https://unix.stackexchange.com/questions/771700/how-to-persistently-store-associative-arrays-dictionaries-in-bash
+- https://unix.stackexchange.com/questions/708130/how-can-i-create-a-json-object-from-an-associative-array-in-shell-using-jo
+
+--->
+
+<h5 id="create-the-inventory-array-using-bash">Create the inventory array using <code>bash</code><a class="headerlink" href="#create-the-inventory-array-using-bash" title="Permanent link">&para;</a></h5>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create the variable that contains the array:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">arrayAsString</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>--raw-output<span class="w"> </span><span class="s1">&#39;.repo | to_entries | map(&quot;[\(.key)]=\(.value)&quot;) | reduce .[] as $item (&quot;myRepos=(&quot;; . + $item + &quot; &quot;) + &quot;)&quot;&#39;</span><span class="w"> </span>./repo-list.json<span class="k">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Declare the array:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">declare</span><span class="w"> </span>-A<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$arrayAsString</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<!--- Resources specific to bash
+
+- https://phoenixnap.com/kb/bash-associative-array
+- https://stackoverflow.com/questions/19742062/why-are-declare-f-and-declare-a-needed-in-bash-scripts/19742842#19742842
+
+--->
+
+<h5 id="create-the-inventory-array-using-zsh">Create the inventory array using <code>zsh</code><a class="headerlink" href="#create-the-inventory-array-using-zsh" title="Permanent link">&para;</a></h5>
+<div class="language-zsh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Declare the array:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">typeset</span><span class="w"> </span>-A<span class="w"> </span>myRepos
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Create the variable that contains the array:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nv">arrayAssignments</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.repo | to_entries[] | &quot;myRepos[\(.key)]=\(.value)&quot;&#39;</span><span class="w"> </span>./repo-list.json<span class="k">)</span>
+</span></code></pre></div>
+<!--- Resources specific to zsh
+
+- ZSH CheatSheet: https://gist.github.com/ClementNerma/1dd94cb0f1884b9c20d1ba0037bdcde2
+- Associative arrays in zsh: https://scriptingosx.com/2019/11/associative-arrays-in-zsh/
+- https://unix.stackexchange.com/questions/606070/how-to-iterate-over-array-indices-in-zsh
+- https://unix.stackexchange.com/questions/702295/zsh-how-to-set-an-associative-array-name-and-content-dynamically
+- https://www.reddit.com/r/zsh/comments/ijk0j5/join_key_and_values_of_associative_arrays_with/
+- https://stackoverflow.com/questions/55615410/using-declare-in-zsh
+
+
+--->
+
+<h4 id="3-test-the-inventory-array">3. Test the inventory array<a class="headerlink" href="#3-test-the-inventory-array" title="Permanent link">&para;</a></h4>
+<p>Test the array using either <code>bash</code> or <code>zsh</code>:</p>
+<h5 id="test-the-inventory-array-using-bash">Test the inventory array using <code>bash</code><a class="headerlink" href="#test-the-inventory-array-using-bash" title="Permanent link">&para;</a></h5>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span>str<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is </span><span class="si">${</span><span class="nv">str</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
+<h5 id="test-the-inventory-array-using-zsh">Test the inventory array using <code>zsh</code><a class="headerlink" href="#test-the-inventory-array-using-zsh" title="Permanent link">&para;</a></h5>
+<div class="language-zsh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span><span class="w"> </span>str<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">myRepos</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the repo is &#39;</span><span class="si">${</span><span class="nv">repoOwner</span><span class="si">}</span><span class="s2">/</span><span class="nv">$myRepos</span><span class="s2">[</span><span class="nv">$str</span><span class="s2">]&#39; &quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
 
 
 
@@ -4321,7 +4655,7 @@ Learn how to install &amp; configure Beats on macOS in part 6 of the blog series
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 26, 2025 19:39:03 UTC">June 26, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2025 17:27:29 UTC">July 8, 2025</span>
   </span>
 
     
@@ -4331,7 +4665,7 @@ Learn how to install &amp; configure Beats on macOS in part 6 of the blog series
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 26, 2025 19:39:03 UTC">June 26, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 18, 2025 19:32:35 UTC">June 18, 2025</span>
   </span>
 
     
@@ -4351,7 +4685,7 @@ Learn how to install &amp; configure Beats on macOS in part 6 of the blog series
       
         <a href="https://github.com/rwaight" class="md-author" title="@rwaight">
           
-          <img src="../../../../../assets/external/avatars.githubusercontent.com/u/43173714.fe356448.jpg" alt="rwaight">
+          <img src="../../../assets/external/avatars.githubusercontent.com/u/43173714.fe356448.jpg" alt="rwaight">
         </a>
       
       
@@ -4364,14 +4698,12 @@ Learn how to install &amp; configure Beats on macOS in part 6 of the blog series
 
 
 
-  
 
 
-
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -4406,10 +4738,10 @@ Learn how to install &amp; configure Beats on macOS in part 6 of the blog series
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
