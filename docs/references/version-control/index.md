@@ -53,7 +53,8 @@ Version control, also known as _source control_, is the practice of tracking and
 
 The following pages cover one of the version-control practices in depth:
 
-- None at this time
+- Pull Request Workflow
+    - [Standard Pull Requests in GitHub](github-pull-requests.md)
 
 ---
 
