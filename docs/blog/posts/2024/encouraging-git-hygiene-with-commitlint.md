@@ -4,13 +4,17 @@ description: >
   Using commitlint 
 date:
   created: 2024-03-20
-  updated: 2025-05-13
+  updated: 2025-07-07
 authors:
   - rwaight
 categories:
   - coding
   - Git
   - GitHub
+links:
+  # All relative links are resolved from the docs directory.
+  - references/version-control/index.md
+  - resources/version-control/index.md
 ---
 
 <!--- This page was moved from the 'rwaight/actions' repo --->
