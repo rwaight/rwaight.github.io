@@ -2,12 +2,13 @@
 ## https://lukasgeiter.github.io/mkdocs-awesome-nav/features/nav/
 nav:
     - index.md
-    - coding
-    - version-control
-    - docker
-    # group any directories using the glob pattern
-    - "*/"
     # group the remainding '*.md' files using the glob pattern
     - "*.md"
+
+ignore:
+    # https://lukasgeiter.github.io/mkdocs-awesome-nav/features/hiding/
+    - "_template.md"
+    #- hidden/
+    - "*.hidden.md"
 
 append_unmatched: true

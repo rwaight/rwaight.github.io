@@ -9,7 +9,7 @@ status: new
 draft: false
 date:
   created: 2025-02-18
-  updated: 2025-02-18
+  updated: 2025-07-07
 authors:
   - rwaight
 categories:
@@ -18,6 +18,10 @@ slug: blog-post-template
 tags:
   - MkDocs
   - Template
+links:
+  # All relative links are resolved from the docs directory.
+  - references/index.md
+  - resources/index.md
 ---
 
 <!---  # Blog post template  --->
