@@ -4,6 +4,7 @@ nav:
     - index.md
     - Games: games
     - coding
+    - version-control
     - mkdocs
     # group any directories using the glob pattern
     - "*/"
