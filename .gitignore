@@ -1,6 +1,9 @@
 # General
 .DS_Store
 
+# the '.venv' directory is used for python virtual environments
+.venv
+
 # directories used when running MkDocs locally
 .cache/plugin/
 
