@@ -13,10 +13,14 @@ tags:
   - Resource
 ---
 
+!!! note
+
+    This page was originally posted in the [_Multi-line strings in YAML_ blog](blog/posts/2025/multi-line-strings-in-YAML.md).
+
 <!---  # Multi-line strings in YAML  --->
 <!---  do not put an actual 'heading 1' if it is the same as the title  --->
 
-!!! quote "Content Source" 
+!!! quote "Content Source"
 
     This content is from [this _wonderful answer_ from stackoverflow](https://stackoverflow.com/a/21699210).
 
