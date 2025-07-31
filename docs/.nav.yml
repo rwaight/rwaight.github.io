@@ -3,7 +3,7 @@
 nav:
     - Home: 
         - index.md
-        - "index-*.md"
+        - about-my-docs.md
         - Restructure:
             - random
             - guides
