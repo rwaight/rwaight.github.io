@@ -5,6 +5,7 @@ nav:
     - coding
     - version-control
     - docker
+    - github
     # group any directories using the glob pattern
     - "*/"
     # group the remainding '*.md' files using the glob pattern
