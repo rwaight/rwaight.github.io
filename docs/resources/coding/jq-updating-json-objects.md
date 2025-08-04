@@ -20,6 +20,8 @@ tags:
 <!---  # Updating JSON objects with JQ  --->
 <!---  do not put an actual 'heading 1' if it is the same as the title  --->
 
+## Parsing entires in a JSON array
+
 Given the following array containing directory paths:
 
 ```json
@@ -38,9 +40,9 @@ paths='[
 ]'
 ```
 
-## Removing the prefix
+### Removing the prefix
 
-### Removing the prefix with `gsub`
+#### Removing the prefix with `gsub`
 
 We can use `gsub` to remove the `/home/user/` directory prefix:
 
@@ -55,7 +57,7 @@ Which produces:
 ["project/file1.txt","project/subdir/file2.log"]
 ```
 
-### Removing the prefix with JQ `map`
+#### Removing the prefix with JQ `map`
 
 We can also use JQ `map` to remove the `/home/user/` directory prefix:
 
@@ -73,9 +75,9 @@ Which produces:
 ```
 
 
-## Selecting entries based on a pattern
+### Selecting entries based on a pattern
 
-### Selecting entries that match a pattern
+#### Selecting entries that match a pattern
 
 Use `select(test(...))` to create a new array containing only paths that end in `.txt`:
 
@@ -90,7 +92,7 @@ Which produces:
 ["/home/user/project/file1.txt"]
 ```
 
-### Selecting entries that do not match a pattern
+#### Selecting entries that do not match a pattern
 
 Use `select(test(... | not))` to create a new array _excluding_ paths that end in `.log`:
 
@@ -105,7 +107,7 @@ Which produces:
 ["/home/user/project/file1.txt"]
 ```
 
-## Putting it all together
+### Putting it all together
 
 We now have an updated array stored as the `paths` variable:
 
