@@ -2,24 +2,20 @@
 title: Updating JSON objects with JQ
 description: >
   How to update a JSON array using JQ and bash.
-icon: simple/json
-status: new
-draft: false
 date:
   created: 2025-08-04
   updated: 2025-08-04
 authors:
   - rwaight
-categories:
-  - coding
-slug: updating-JSON-objects-with-JQ
 tags:
-  - coding
   - JSON
-links:
-  # All relative links are resolved from the docs directory.
-  - resources/coding/jq-updating-json-objects.md
+  - coding
+  - Resource
 ---
+
+!!! note
+
+    This page was originally posted in the [_Updating JSON objects with JQ_ blog](blog/posts/2025/jq-updating-json-objects.md).
 
 <!---  # Updating JSON objects with JQ  --->
 <!---  do not put an actual 'heading 1' if it is the same as the title  --->
