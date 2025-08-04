@@ -3,13 +3,14 @@
 title: Blog post template
 description: >
   This is a template file for blog posts in MkDocs.
-icon: octicons/repo-template-24
+# icon: octicons/repo-template-24
+# https://squidfunk.github.io/mkdocs-material/reference#setting-the-page-icon
 status: new
 # page metadata
 draft: false
 date:
   created: 2025-02-18
-  updated: 2025-07-07
+  updated: 2025-08-04
 authors:
   - rwaight
 categories:
@@ -54,6 +55,7 @@ When creating a new blog post, determine the following [page configuration](http
 When creating a new blog post, determine the following [page metadata](https://squidfunk.github.io/mkdocs-material/plugins/blog/#metadata):
 
 - the post [`draft` option](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.draft)
+    - if set to `true` the page will **not be rendered** when published to GitHub Pages
 - the post [`date`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date)
     - can be just `date: 2025-02-18`
     - can also include [**date created** and **date updated**](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date-update-date)
@@ -74,10 +76,11 @@ The front-matter consists of [YAML Style Meta-Data](https://www.mkdocs.org/user-
 title: Blog post template
 description: >
   This is a template file for blog posts in MkDocs.
-icon: octicons/repo-template-24
+# icon: octicons/repo-template-24
+# https://squidfunk.github.io/mkdocs-material/reference#setting-the-page-icon
 status: new
 # page metadata
-draft: false
+draft: true
 date:
   created: 2025-02-18
   updated: 2025-02-18
