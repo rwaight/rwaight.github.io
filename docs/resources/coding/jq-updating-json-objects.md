@@ -316,6 +316,44 @@ Which produces:
 {"projects":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
 ```
 
+**or** if you want it more readable issue `echo $matrix | jq`:
+
+```bash
+~ echo $matrix | jq
+{
+  "projects": [
+    "dev-jkl",
+    "my-test-abc",
+    "primary-test-project-xyz"
+  ],
+  "include": [
+    {
+      "project": "dev-jkl",
+      "files": [
+        "dev-jkl/foo.txt",
+        "dev-jkl/bar.log",
+        "dev-jkl/baz.log"
+      ]
+    },
+    {
+      "project": "my-test-abc",
+      "files": [
+        "my-test-abc/foo.txt",
+        "my-test-abc/bar.log"
+      ]
+    },
+    {
+      "project": "primary-test-project-xyz",
+      "files": [
+        "primary-test-project-xyz/foo.txt",
+        "primary-test-project-xyz/bar.log",
+        "primary-test-project-xyz/baz.txt"
+      ]
+    }
+  ]
+}
+```
+
 ### Other changes or improvements
 
 The following changes or improvements can be made:
