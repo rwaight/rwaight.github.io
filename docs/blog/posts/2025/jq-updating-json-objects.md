@@ -287,6 +287,15 @@ Which produces:
 {"projects":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
 ```
 
+### Other changes or improvements
+
+The following changes or improvements can be made:
+
+- The sort order (e.g. alphabetical) can be updated by changing or removing `sort_by(.project)`
+- We can rename the project slugs by inserting a `| gsub("^(my-|dev-|primary-test-project-)";"")` on `.project` 
+    - This could be helpful if we need to drop prefixes
+    - Would probably make sense to parse the directory name prefix to a variable like `env`
+
 <!--- another example comment --->
 
 <!---  ...  --->
