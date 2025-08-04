@@ -278,16 +278,21 @@ Some information about the key filters:
     - `projects` becomes a flat array of each group’s name.
     - `include` is an array of `{ project, files }` objects.
 
-  ```jq
-  {
-    projects: map(.[0].project),
-    include:  map({
-                project: .[0].project,
-                files:   map(.file)
-              })
-  }
-  ```
+    ``` { .bash .annotate }
+    {
+      projects: map(.[0].project), # (1)!
+      include:  map({ # (2)!
+                  project: .[0].project,
+                  files:   map(.file)
+                })
+    }
+    ```
 
+    1.  `projects` becomes a flat array of each group’s name.
+    2.  `include` is an array of `{ project, files }` objects.
+
+<!--- the above is a code annotation --->
+<!--- https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#adding-annotations --->
 
 ### Storing the output as a variable
 
