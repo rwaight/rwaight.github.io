@@ -237,18 +237,18 @@ I want the output to be usable by a GitHub actions matrix, so it should be:
 ```bash
 jq -c '
   # 1) Strip off the the '/home/user/projects' directory prefix
-  map(sub("^/home/user/projects/";""))  
+  map(sub("^/home/user/projects/";""))
 
   # 2) Turn each element into an object with 'project' and 'file' keys
-  | map({ project: (split("/")[0]), file: . })     
+  | map({ project: (split("/")[0]), file: . })
 
   # 3) (Optional) Sort by project so group_by will work predictably
-  | sort_by(.project)                               
+  | sort_by(.project)
 
   # 4) Group into arrays by project name
-  | group_by(.project)                              
+  | group_by(.project)
 
-  # 5) Build the final object:
+  # 5) Build the final output object:
   | {
       projects:   map(.[0].project),                # a simple list of project names
       include:    map({
