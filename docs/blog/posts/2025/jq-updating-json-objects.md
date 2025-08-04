@@ -265,7 +265,35 @@ Which produces:
 {"projects":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
 ```
 
-#### Storing the output as a variable
+#### About the key filters
+
+Some information about the key filters:
+
+- **`map(sub("^/home/user/projects/";""))`**
+    - Removes the fixed leading path so you are left with `"my-test-abc/foo.txt"`, etc.
+
+- **`map({ project: (split("/")[0]), file: . })`**
+    - Splits each string on `/` and uses the first segment as `project`, the whole string as `file`.
+
+- **`sort_by(.project) | group_by(.project)`**
+    - Ensures identical projects are adjacent, then buckets them into arrays.
+
+- Building the **output object**
+    - `projects` becomes a flat array of each group’s name.
+    - `include` is an array of `{ project, files }` objects.
+
+  ```jq
+  {
+    projects: map(.[0].project),
+    include:  map({
+                project: .[0].project,
+                files:   map(.file)
+              })
+  }
+  ```
+
+
+### Storing the output as a variable
 
 ```bash
 matrix=$(jq -c '
