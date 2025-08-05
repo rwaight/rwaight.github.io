@@ -354,7 +354,7 @@ Which produces:
 }
 ```
 
-### Other changes or improvements
+## Other changes or improvements
 
 The following changes or improvements can be made:
 
@@ -362,6 +362,42 @@ The following changes or improvements can be made:
 - We can rename the project slugs by inserting a `| gsub("^(my-|dev-|primary-test-project-)";"")` on `.project` 
     - This could be helpful if we need to drop prefixes
     - Would probably make sense to parse the directory name prefix to a variable like `env`
+
+### Validating the paths variable
+
+If there is a situtation where the `paths` variable is set to a single path that **is not** formatted properly as an array, we can check it and fix it using `jq`:
+
+**Checking the `paths` variable**:
+
+We can evaluate the 'type' using `jq`:
+
+```bash
+jq -e 'type == "array"' <<<"$paths"
+```
+
+**Fixing the `paths` variable**:
+
+We can evaludate the 'type' using `jq`:
+
+```bash
+jq -nc --arg p "$paths" '[$p]'
+```
+
+**Putting it together**:
+
+```bash
+paths='/home/user/projects/my-test-abc/foo.txt'
+
+# 1) if it's not already a JSON array, wrap it in one
+if ! jq -e 'type == "array"' <<<"$paths" >/dev/null 2>&1; then
+    paths=$(jq -nc --arg p "$paths" '[$p]')
+    #
+    # now $paths is guaranteed to be a JSON array
+    echo "Normalized paths: $paths"
+    # → ["\/home\/user\/projects\/my-test-abc\/foo.txt"]
+fi
+```
+
 
 <!--- another example comment --->
 
