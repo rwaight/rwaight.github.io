@@ -30,6 +30,27 @@ links:
 
 Resource: https://www.freecodecamp.org/news/how-make-a-windows-10-usb-using-your-mac-build-a-bootable-iso-from-your-macs-terminal/
 
+
+```shell
+brew install wimlib
+```
+
+```shell
+win_usb=/dev/disk5
+win_iso=~/Downloads/Win10_22H2_English_x64v1.iso
+w10_vol=WIN10
+
+diskutil eraseDisk MS-DOS "${w10_vol}" GPT ${win_usb}
+
+hdiutil mount ~/Downloads/${win_iso}
+
+rsync -vha --exclude=sources/install.wim /Volumes/CCCOMA_X64FRE_EN-US_DV9/* /Volumes/${w10_vol}
+
+mkdir /Volumes/${w10_vol}/sources
+
+wimlib-imagex split /Volumes/CCCOMA_X64FRE_EN-US_DV9/sources/install.wim /Volumes/${w10_vol}/sources/install.swm 3800
+```
+
 ## Example section
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
