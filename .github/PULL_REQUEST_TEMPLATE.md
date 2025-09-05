@@ -1,4 +1,4 @@
-# rwaight.github.io - Pull Request
+# GitHub pages site - Pull Request
 <!--- Please remove all comments prior to opening the pull request with this template --->
 
 ## Items required before submitting the pull request
