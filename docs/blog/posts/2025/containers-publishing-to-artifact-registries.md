@@ -1,5 +1,6 @@
 ---
-title: Publishing containers to the GitHub Container Registry
+title: Publishing container images to artifact registries
+#title: Publishing containers to the GitHub Container Registry
 description: >
   Notes about publishing containers to ghcr.io, the GitHub Container Registry.
 # icon: octicons/repo-template-24
@@ -9,12 +10,13 @@ status: new
 draft: true
 date:
   created: 2025-08-19
-  updated: 2025-08-19
+  updated: 2025-09-09
 authors:
   - rwaight
 categories:
   - Containers
-slug: publishing-containers-to-ghcr-dot-io
+#slug: publishing-containers-to-ghcr-dot-io
+slug: publishing-container-images-to-artifact-registries
 tags:
   - Image Builds
   - Docker
@@ -36,7 +38,7 @@ I wanted to find out how to publish a container to the GitHub Container Registry
 $ docker images
 ```
 
-### Authenticating to the Container registry
+### Authenticating to the GitHub Container registry
 
 The [GitHub docs state]() you should export your token:
 
