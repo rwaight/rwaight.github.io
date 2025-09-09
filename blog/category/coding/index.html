@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -3217,6 +3217,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#updating-json-objects-with-jq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating JSON objects with JQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multi-line-strings-in-yaml" class="md-nav__link">
     <span class="md-ellipsis">
       Multi-line strings in YAML
@@ -3853,6 +3862,8 @@
       
         
       
+        
+      
     
     
     
@@ -3896,6 +3907,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/coding/jq-updating-json-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Updating JSON objects with JQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -4391,6 +4425,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#updating-json-objects-with-jq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating JSON objects with JQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multi-line-strings-in-yaml" class="md-nav__link">
     <span class="md-ellipsis">
       Multi-line strings in YAML
@@ -4422,6 +4465,354 @@
       <header class="md-typeset">
         <h1 id="coding">coding<a class="headerlink" href="#coding" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-08-04 00:00:00+00:00">August 4, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">coding</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="updating-json-objects-with-jq"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/">Updating JSON objects with JQ</a></h2>
+<!---  # Updating JSON objects with JQ  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
+<h3 id="parsing-entires-in-a-json-array"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#parsing-entires-in-a-json-array">Parsing entires in a JSON array</a></h3>
+<p>Given the following array containing directory paths:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">[</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="w">    </span><span class="s2">&quot;/home/user/project/file1.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="w">    </span><span class="s2">&quot;/home/user/project/subdir/file2.log&quot;</span>
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Now stored as the <code>paths</code> variable:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;[</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="s1">    &quot;/home/user/project/file1.txt&quot;,</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="s1">    &quot;/home/user/project/subdir/file2.log&quot;</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="s1">]&#39;</span>
+</span></code></pre></div>
+<h4 id="removing-the-prefix"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#removing-the-prefix">Removing the prefix</a></h4>
+<h5 id="removing-the-prefix-with-gsub"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#removing-the-prefix-with-gsub">Removing the prefix with <code>gsub</code></a></h5>
+<p>We can use <code>gsub</code> to remove the <code>/home/user/</code> directory prefix:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nv">gsub_no_prefix</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;.[] |= gsub(&quot;^/home/user/&quot;;&quot;&quot;)&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$gsub_no_prefix</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="o">[</span><span class="s2">&quot;project/file1.txt&quot;</span>,<span class="s2">&quot;project/subdir/file2.log&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h5 id="removing-the-prefix-with-jq-map"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#removing-the-prefix-with-jq-map">Removing the prefix with JQ <code>map</code></a></h5>
+<p>We can also use JQ <code>map</code> to remove the <code>/home/user/</code> directory prefix:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nv">map_no_prefix</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="w">  </span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(gsub(&quot;^/home/user/&quot;;&quot;&quot;))&#39;</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$map_no_prefix</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="o">[</span><span class="s2">&quot;project/file1.txt&quot;</span>,<span class="s2">&quot;project/subdir/file2.log&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h4 id="selecting-entries-based-on-a-pattern"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#selecting-entries-based-on-a-pattern">Selecting entries based on a pattern</a></h4>
+<h5 id="selecting-entries-that-match-a-pattern"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#selecting-entries-that-match-a-pattern">Selecting entries that match a pattern</a></h5>
+<p>Use <code>select(test(...))</code> to create a new array containing only paths that end in <code>.txt</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nv">dot_txt</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.txt$&quot;)))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$dot_txt</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="o">[</span><span class="s2">&quot;/home/user/project/file1.txt&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h5 id="selecting-entries-that-do-not-match-a-pattern"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#selecting-entries-that-do-not-match-a-pattern">Selecting entries that do not match a pattern</a></h5>
+<p>Use <code>select(test(... | not))</code> to create a new array <em>excluding</em> paths that end in <code>.log</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nv">no_dot_log</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.log$&quot;) | not))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$no_dot_log</span>
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="o">[</span><span class="s2">&quot;/home/user/project/file1.txt&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h4 id="putting-it-all-together"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#putting-it-all-together">Putting it all together</a></h4>
+<p>We now have an updated array stored as the <code>paths</code> variable:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="ch">#!/usr/bin/env bash</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="c1"># updated array</span>
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;[</span>
+</span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="s1">    &quot;/home/user/project/file1.txt&quot;,</span>
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="s1">    &quot;/home/user/project/subdir/file2.log&quot;,</span>
+</span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a><span class="s1">    &quot;/home/user/data/foo.txt&quot;,</span>
+</span><span id="__span-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a><span class="s1">    &quot;/home/user/data/bar.log&quot;,</span>
+</span><span id="__span-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a><span class="s1">    &quot;/home/user/data/baz.txt&quot;</span>
+</span><span id="__span-58-10"><a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a><span class="s1">]&#39;</span>
+</span><span id="__span-58-11"><a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a>
+</span><span id="__span-58-12"><a id="__codelineno-58-12" name="__codelineno-58-12" href="#__codelineno-58-12"></a><span class="c1"># 1) remove the &#39;/home/user/&#39; prefix</span>
+</span><span id="__span-58-13"><a id="__codelineno-58-13" name="__codelineno-58-13" href="#__codelineno-58-13"></a><span class="nv">no_prefix</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;.[] |= gsub(&quot;^/home/user/&quot;;&quot;&quot;)&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-58-14"><a id="__codelineno-58-14" name="__codelineno-58-14" href="#__codelineno-58-14"></a>
+</span><span id="__span-58-15"><a id="__codelineno-58-15" name="__codelineno-58-15" href="#__codelineno-58-15"></a><span class="c1"># 2) keep only &#39;.txt&#39; files</span>
+</span><span id="__span-58-16"><a id="__codelineno-58-16" name="__codelineno-58-16" href="#__codelineno-58-16"></a><span class="nv">only_txt_files</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.txt$&quot;)))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$no_prefix</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-58-17"><a id="__codelineno-58-17" name="__codelineno-58-17" href="#__codelineno-58-17"></a>
+</span><span id="__span-58-18"><a id="__codelineno-58-18" name="__codelineno-58-18" href="#__codelineno-58-18"></a><span class="c1"># 3) exclude &#39;.txt&#39; files</span>
+</span><span id="__span-58-19"><a id="__codelineno-58-19" name="__codelineno-58-19" href="#__codelineno-58-19"></a><span class="nv">no_txt_files</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.txt$&quot;) | not))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$no_prefix</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-58-20"><a id="__codelineno-58-20" name="__codelineno-58-20" href="#__codelineno-58-20"></a>
+</span><span id="__span-58-21"><a id="__codelineno-58-21" name="__codelineno-58-21" href="#__codelineno-58-21"></a><span class="c1"># 4) print the results</span>
+</span><span id="__span-58-22"><a id="__codelineno-58-22" name="__codelineno-58-22" href="#__codelineno-58-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Only &#39;.txt&#39; files: &quot;</span>
+</span><span id="__span-58-23"><a id="__codelineno-58-23" name="__codelineno-58-23" href="#__codelineno-58-23"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  </span><span class="si">${</span><span class="nv">only_txt_files</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-58-24"><a id="__codelineno-58-24" name="__codelineno-58-24" href="#__codelineno-58-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-58-25"><a id="__codelineno-58-25" name="__codelineno-58-25" href="#__codelineno-58-25"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Exclude &#39;.txt&#39; files: &quot;</span>
+</span><span id="__span-58-26"><a id="__codelineno-58-26" name="__codelineno-58-26" href="#__codelineno-58-26"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  </span><span class="si">${</span><span class="nv">no_txt_files</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Only<span class="w"> </span><span class="s1">&#39;.txt&#39;</span><span class="w"> </span>files:
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">  </span><span class="o">[</span><span class="s2">&quot;project/file1.txt&quot;</span>,<span class="s2">&quot;data/foo.txt&quot;</span>,<span class="s2">&quot;data/baz.txt&quot;</span><span class="o">]</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>Exclude<span class="w"> </span><span class="s1">&#39;.txt&#39;</span><span class="w"> </span>files:
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="w">  </span><span class="o">[</span><span class="s2">&quot;project/subdir/file2.log&quot;</span>,<span class="s2">&quot;data/bar.log&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<!--  example comment here  -->
+
+<h3 id="updating-the-json-object"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#updating-the-json-object">Updating the JSON object</a></h3>
+<h4 id="updated-json-array"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#updated-json-array">Updated JSON array</a></h4>
+<p>Now we have a more unique set of data in our JSON array</p>
+<p>Given the following array containing directory paths:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="p">[</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/my-test-abc/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/my-test-abc/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/dev-jkl/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/dev-jkl/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/dev-jkl/baz.log&quot;</span><span class="p">,</span>
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/primary-test-project-xyz/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/primary-test-project-xyz/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-60-10"><a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Now stored as the <code>paths</code> variable:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;[</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="s1">    &quot;/home/user/projects/my-test-abc/foo.txt&quot;,</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="s1">    &quot;/home/user/projects/my-test-abc/bar.log&quot;,</span>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="s1">    &quot;/home/user/projects/dev-jkl/foo.txt&quot;,</span>
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a><span class="s1">    &quot;/home/user/projects/dev-jkl/bar.log&quot;,</span>
+</span><span id="__span-61-6"><a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="s1">    &quot;/home/user/projects/dev-jkl/baz.log&quot;,</span>
+</span><span id="__span-61-7"><a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a><span class="s1">    &quot;/home/user/projects/primary-test-project-xyz/foo.txt&quot;,</span>
+</span><span id="__span-61-8"><a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a><span class="s1">    &quot;/home/user/projects/primary-test-project-xyz/bar.log&quot;,</span>
+</span><span id="__span-61-9"><a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a><span class="s1">    &quot;/home/user/projects/primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-61-10"><a id="__codelineno-61-10" name="__codelineno-61-10" href="#__codelineno-61-10"></a><span class="s1">]&#39;</span>
+</span></code></pre></div>
+<h4 id="the-planned-output"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#the-planned-output">The planned output</a></h4>
+<p>I want the output to be usable by a GitHub actions matrix, so it should be:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="p">{</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="w">    </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="w">        </span><span class="s2">&quot;test-abc&quot;</span><span class="p">,</span>
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="w">        </span><span class="s2">&quot;test-jkl&quot;</span><span class="p">,</span>
+</span><span id="__span-62-5"><a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a><span class="w">        </span><span class="s2">&quot;test-xyz&quot;</span>
+</span><span id="__span-62-6"><a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-62-7"><a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a><span class="w">    </span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-62-8"><a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-62-9"><a id="__codelineno-62-9" name="__codelineno-62-9" href="#__codelineno-62-9"></a><span class="w">            </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-abc&quot;</span><span class="p">,</span>
+</span><span id="__span-62-10"><a id="__codelineno-62-10" name="__codelineno-62-10" href="#__codelineno-62-10"></a><span class="w">            </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-62-11"><a id="__codelineno-62-11" name="__codelineno-62-11" href="#__codelineno-62-11"></a><span class="w">                </span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-62-12"><a id="__codelineno-62-12" name="__codelineno-62-12" href="#__codelineno-62-12"></a><span class="w">                </span><span class="s2">&quot;my-test-abc/bar.log&quot;</span>
+</span><span id="__span-62-13"><a id="__codelineno-62-13" name="__codelineno-62-13" href="#__codelineno-62-13"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-62-14"><a id="__codelineno-62-14" name="__codelineno-62-14" href="#__codelineno-62-14"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-62-15"><a id="__codelineno-62-15" name="__codelineno-62-15" href="#__codelineno-62-15"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-62-16"><a id="__codelineno-62-16" name="__codelineno-62-16" href="#__codelineno-62-16"></a><span class="w">            </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dev-jkl&quot;</span><span class="p">,</span>
+</span><span id="__span-62-17"><a id="__codelineno-62-17" name="__codelineno-62-17" href="#__codelineno-62-17"></a><span class="w">            </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-62-18"><a id="__codelineno-62-18" name="__codelineno-62-18" href="#__codelineno-62-18"></a><span class="w">                </span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-62-19"><a id="__codelineno-62-19" name="__codelineno-62-19" href="#__codelineno-62-19"></a><span class="w">                </span><span class="s2">&quot;dev-jkl/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-62-20"><a id="__codelineno-62-20" name="__codelineno-62-20" href="#__codelineno-62-20"></a><span class="w">                </span><span class="s2">&quot;dev-jkl/baz.log&quot;</span>
+</span><span id="__span-62-21"><a id="__codelineno-62-21" name="__codelineno-62-21" href="#__codelineno-62-21"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-62-22"><a id="__codelineno-62-22" name="__codelineno-62-22" href="#__codelineno-62-22"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-62-23"><a id="__codelineno-62-23" name="__codelineno-62-23" href="#__codelineno-62-23"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-62-24"><a id="__codelineno-62-24" name="__codelineno-62-24" href="#__codelineno-62-24"></a><span class="w">            </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="p">,</span>
+</span><span id="__span-62-25"><a id="__codelineno-62-25" name="__codelineno-62-25" href="#__codelineno-62-25"></a><span class="w">            </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-62-26"><a id="__codelineno-62-26" name="__codelineno-62-26" href="#__codelineno-62-26"></a><span class="w">                </span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-62-27"><a id="__codelineno-62-27" name="__codelineno-62-27" href="#__codelineno-62-27"></a><span class="w">                </span><span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-62-28"><a id="__codelineno-62-28" name="__codelineno-62-28" href="#__codelineno-62-28"></a><span class="w">                </span><span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-62-29"><a id="__codelineno-62-29" name="__codelineno-62-29" href="#__codelineno-62-29"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-62-30"><a id="__codelineno-62-30" name="__codelineno-62-30" href="#__codelineno-62-30"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-62-31"><a id="__codelineno-62-31" name="__codelineno-62-31" href="#__codelineno-62-31"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-62-32"><a id="__codelineno-62-32" name="__codelineno-62-32" href="#__codelineno-62-32"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="building-the-new-json-object"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#building-the-new-json-object">Building the new JSON object</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="s1">  # 1) Strip off the the &#39;</span>/home/user/projects<span class="s1">&#39; directory prefix</span>
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="s1">  map(sub(&quot;^/home/user/projects/&quot;;&quot;&quot;))</span>
+</span><span id="__span-63-4"><a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a>
+</span><span id="__span-63-5"><a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a><span class="s1">  # 2) Turn each element into an object with &#39;</span>project<span class="s1">&#39; and &#39;</span>file<span class="s1">&#39; keys</span>
+</span><span id="__span-63-6"><a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a><span class="s1">  | map({ project: (split(&quot;/&quot;)[0]), file: . })</span>
+</span><span id="__span-63-7"><a id="__codelineno-63-7" name="__codelineno-63-7" href="#__codelineno-63-7"></a>
+</span><span id="__span-63-8"><a id="__codelineno-63-8" name="__codelineno-63-8" href="#__codelineno-63-8"></a><span class="s1">  # 3) (Optional) Sort by project so group_by will work predictably</span>
+</span><span id="__span-63-9"><a id="__codelineno-63-9" name="__codelineno-63-9" href="#__codelineno-63-9"></a><span class="s1">  | sort_by(.project)</span>
+</span><span id="__span-63-10"><a id="__codelineno-63-10" name="__codelineno-63-10" href="#__codelineno-63-10"></a>
+</span><span id="__span-63-11"><a id="__codelineno-63-11" name="__codelineno-63-11" href="#__codelineno-63-11"></a><span class="s1">  # 4) Group into arrays by project name</span>
+</span><span id="__span-63-12"><a id="__codelineno-63-12" name="__codelineno-63-12" href="#__codelineno-63-12"></a><span class="s1">  | group_by(.project)</span>
+</span><span id="__span-63-13"><a id="__codelineno-63-13" name="__codelineno-63-13" href="#__codelineno-63-13"></a>
+</span><span id="__span-63-14"><a id="__codelineno-63-14" name="__codelineno-63-14" href="#__codelineno-63-14"></a><span class="s1">  # 5) Build the final output object:</span>
+</span><span id="__span-63-15"><a id="__codelineno-63-15" name="__codelineno-63-15" href="#__codelineno-63-15"></a><span class="s1">  | {</span>
+</span><span id="__span-63-16"><a id="__codelineno-63-16" name="__codelineno-63-16" href="#__codelineno-63-16"></a><span class="s1">      projects:   map(.[0].project),                # a simple list of project names</span>
+</span><span id="__span-63-17"><a id="__codelineno-63-17" name="__codelineno-63-17" href="#__codelineno-63-17"></a><span class="s1">      include:    map({</span>
+</span><span id="__span-63-18"><a id="__codelineno-63-18" name="__codelineno-63-18" href="#__codelineno-63-18"></a><span class="s1">                     project: .[0].project,         # the project name</span>
+</span><span id="__span-63-19"><a id="__codelineno-63-19" name="__codelineno-63-19" href="#__codelineno-63-19"></a><span class="s1">                     files:   map(.file)            # all files in that project</span>
+</span><span id="__span-63-20"><a id="__codelineno-63-20" name="__codelineno-63-20" href="#__codelineno-63-20"></a><span class="s1">                 })</span>
+</span><span id="__span-63-21"><a id="__codelineno-63-21" name="__codelineno-63-21" href="#__codelineno-63-21"></a><span class="s1">    }</span>
+</span><span id="__span-63-22"><a id="__codelineno-63-22" name="__codelineno-63-22" href="#__codelineno-63-22"></a><span class="s1">&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="p">{</span><span class="nt">&quot;projects&quot;</span><span class="p">:[</span><span class="s2">&quot;dev-jkl&quot;</span><span class="p">,</span><span class="s2">&quot;my-test-abc&quot;</span><span class="p">,</span><span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="p">],</span><span class="nt">&quot;include&quot;</span><span class="p">:[{</span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;dev-jkl&quot;</span><span class="p">,</span><span class="nt">&quot;files&quot;</span><span class="p">:[</span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;dev-jkl/bar.log&quot;</span><span class="p">,</span><span class="s2">&quot;dev-jkl/baz.log&quot;</span><span class="p">]},{</span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;my-test-abc&quot;</span><span class="p">,</span><span class="nt">&quot;files&quot;</span><span class="p">:[</span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;my-test-abc/bar.log&quot;</span><span class="p">]},{</span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="p">,</span><span class="nt">&quot;files&quot;</span><span class="p">:[</span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span><span class="p">,</span><span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span><span class="p">]}]}</span>
+</span></code></pre></div>
+<h5 id="about-the-key-filters"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#about-the-key-filters">About the key filters</a></h5>
+<p>Some information about the key filters:</p>
+<ul>
+<li>
+<p><strong><code>map(sub("^/home/user/projects/";""))</code></strong></p>
+<ul>
+<li>Removes the fixed leading path so you are left with <code>"my-test-abc/foo.txt"</code>, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>map({ project: (split("/")[0]), file: . })</code></strong></p>
+<ul>
+<li>Splits each string on <code>/</code> and uses the first segment as <code>project</code>, the whole string as <code>file</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>sort_by(.project) | group_by(.project)</code></strong></p>
+<ul>
+<li>Ensures identical projects are adjacent, then buckets them into arrays.</li>
+</ul>
+</li>
+<li>
+<p>Building the <strong>output object</strong></p>
+<ul>
+<li><code>projects</code> becomes a flat array of each group’s name.</li>
+<li><code>include</code> is an array of <code>{ project, files }</code> objects.</li>
+</ul>
+<div class="language-bash annotate highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="o">{</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="w">  </span>projects:<span class="w"> </span>map<span class="o">(</span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.project<span class="o">)</span>,<span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="w">  </span>include:<span class="w">  </span>map<span class="o">({</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="w">              </span>project:<span class="w"> </span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.project,
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="w">              </span>files:<span class="w">   </span>map<span class="o">(</span>.file<span class="o">)</span>
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a><span class="w">            </span><span class="o">})</span>
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a><span class="o">}</span>
+</span></code></pre></div>
+<ol>
+<li><code>projects</code> becomes a flat array of each group’s name.</li>
+<li><code>include</code> is an array of <code>{ project, files }</code> objects.</li>
+</ol>
+</li>
+</ul>
+<!--- the above is a code annotation --->
+<!--- https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#adding-annotations --->
+
+<h4 id="storing-the-output-as-a-variable"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#storing-the-output-as-a-variable">Storing the output as a variable</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="nv">matrix</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="s1">  map(sub(&quot;^/home/user/projects/&quot;;&quot;&quot;))</span>
+</span><span id="__span-66-3"><a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="s1">  | map({ project: (split(&quot;/&quot;)[0]), file: . })</span>
+</span><span id="__span-66-4"><a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a><span class="s1">  | sort_by(.project)</span>
+</span><span id="__span-66-5"><a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a><span class="s1">  | group_by(.project)</span>
+</span><span id="__span-66-6"><a id="__codelineno-66-6" name="__codelineno-66-6" href="#__codelineno-66-6"></a><span class="s1">  | {</span>
+</span><span id="__span-66-7"><a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a><span class="s1">      projects: map(.[0].project),</span>
+</span><span id="__span-66-8"><a id="__codelineno-66-8" name="__codelineno-66-8" href="#__codelineno-66-8"></a><span class="s1">      include:  map({ project: .[0].project, files: map(.file) })</span>
+</span><span id="__span-66-9"><a id="__codelineno-66-9" name="__codelineno-66-9" href="#__codelineno-66-9"></a><span class="s1">    }</span>
+</span><span id="__span-66-10"><a id="__codelineno-66-10" name="__codelineno-66-10" href="#__codelineno-66-10"></a><span class="s1">&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$matrix</span>
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="o">{</span><span class="s2">&quot;projects&quot;</span>:<span class="o">[</span><span class="s2">&quot;dev-jkl&quot;</span>,<span class="s2">&quot;my-test-abc&quot;</span>,<span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="o">]</span>,<span class="s2">&quot;include&quot;</span>:<span class="o">[{</span><span class="s2">&quot;project&quot;</span>:<span class="s2">&quot;dev-jkl&quot;</span>,<span class="s2">&quot;files&quot;</span>:<span class="o">[</span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span>,<span class="s2">&quot;dev-jkl/bar.log&quot;</span>,<span class="s2">&quot;dev-jkl/baz.log&quot;</span><span class="o">]}</span>,<span class="o">{</span><span class="s2">&quot;project&quot;</span>:<span class="s2">&quot;my-test-abc&quot;</span>,<span class="s2">&quot;files&quot;</span>:<span class="o">[</span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span>,<span class="s2">&quot;my-test-abc/bar.log&quot;</span><span class="o">]}</span>,<span class="o">{</span><span class="s2">&quot;project&quot;</span>:<span class="s2">&quot;primary-test-project-xyz&quot;</span>,<span class="s2">&quot;files&quot;</span>:<span class="o">[</span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span>,<span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span>,<span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span><span class="o">]}]}</span>
+</span></code></pre></div>
+<p><strong>or</strong> if you want it more readable issue <code>echo $matrix | jq</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$matrix</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a><span class="o">{</span>
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="w">  </span><span class="s2">&quot;projects&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-68-4"><a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="w">    </span><span class="s2">&quot;dev-jkl&quot;</span>,
+</span><span id="__span-68-5"><a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a><span class="w">    </span><span class="s2">&quot;my-test-abc&quot;</span>,
+</span><span id="__span-68-6"><a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a><span class="w">    </span><span class="s2">&quot;primary-test-project-xyz&quot;</span>
+</span><span id="__span-68-7"><a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a><span class="w">  </span><span class="o">]</span>,
+</span><span id="__span-68-8"><a id="__codelineno-68-8" name="__codelineno-68-8" href="#__codelineno-68-8"></a><span class="w">  </span><span class="s2">&quot;include&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-68-9"><a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-68-10"><a id="__codelineno-68-10" name="__codelineno-68-10" href="#__codelineno-68-10"></a><span class="w">      </span><span class="s2">&quot;project&quot;</span>:<span class="w"> </span><span class="s2">&quot;dev-jkl&quot;</span>,
+</span><span id="__span-68-11"><a id="__codelineno-68-11" name="__codelineno-68-11" href="#__codelineno-68-11"></a><span class="w">      </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-68-12"><a id="__codelineno-68-12" name="__codelineno-68-12" href="#__codelineno-68-12"></a><span class="w">        </span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span>,
+</span><span id="__span-68-13"><a id="__codelineno-68-13" name="__codelineno-68-13" href="#__codelineno-68-13"></a><span class="w">        </span><span class="s2">&quot;dev-jkl/bar.log&quot;</span>,
+</span><span id="__span-68-14"><a id="__codelineno-68-14" name="__codelineno-68-14" href="#__codelineno-68-14"></a><span class="w">        </span><span class="s2">&quot;dev-jkl/baz.log&quot;</span>
+</span><span id="__span-68-15"><a id="__codelineno-68-15" name="__codelineno-68-15" href="#__codelineno-68-15"></a><span class="w">      </span><span class="o">]</span>
+</span><span id="__span-68-16"><a id="__codelineno-68-16" name="__codelineno-68-16" href="#__codelineno-68-16"></a><span class="w">    </span><span class="o">}</span>,
+</span><span id="__span-68-17"><a id="__codelineno-68-17" name="__codelineno-68-17" href="#__codelineno-68-17"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-68-18"><a id="__codelineno-68-18" name="__codelineno-68-18" href="#__codelineno-68-18"></a><span class="w">      </span><span class="s2">&quot;project&quot;</span>:<span class="w"> </span><span class="s2">&quot;my-test-abc&quot;</span>,
+</span><span id="__span-68-19"><a id="__codelineno-68-19" name="__codelineno-68-19" href="#__codelineno-68-19"></a><span class="w">      </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-68-20"><a id="__codelineno-68-20" name="__codelineno-68-20" href="#__codelineno-68-20"></a><span class="w">        </span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span>,
+</span><span id="__span-68-21"><a id="__codelineno-68-21" name="__codelineno-68-21" href="#__codelineno-68-21"></a><span class="w">        </span><span class="s2">&quot;my-test-abc/bar.log&quot;</span>
+</span><span id="__span-68-22"><a id="__codelineno-68-22" name="__codelineno-68-22" href="#__codelineno-68-22"></a><span class="w">      </span><span class="o">]</span>
+</span><span id="__span-68-23"><a id="__codelineno-68-23" name="__codelineno-68-23" href="#__codelineno-68-23"></a><span class="w">    </span><span class="o">}</span>,
+</span><span id="__span-68-24"><a id="__codelineno-68-24" name="__codelineno-68-24" href="#__codelineno-68-24"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-68-25"><a id="__codelineno-68-25" name="__codelineno-68-25" href="#__codelineno-68-25"></a><span class="w">      </span><span class="s2">&quot;project&quot;</span>:<span class="w"> </span><span class="s2">&quot;primary-test-project-xyz&quot;</span>,
+</span><span id="__span-68-26"><a id="__codelineno-68-26" name="__codelineno-68-26" href="#__codelineno-68-26"></a><span class="w">      </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-68-27"><a id="__codelineno-68-27" name="__codelineno-68-27" href="#__codelineno-68-27"></a><span class="w">        </span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span>,
+</span><span id="__span-68-28"><a id="__codelineno-68-28" name="__codelineno-68-28" href="#__codelineno-68-28"></a><span class="w">        </span><span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span>,
+</span><span id="__span-68-29"><a id="__codelineno-68-29" name="__codelineno-68-29" href="#__codelineno-68-29"></a><span class="w">        </span><span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-68-30"><a id="__codelineno-68-30" name="__codelineno-68-30" href="#__codelineno-68-30"></a><span class="w">      </span><span class="o">]</span>
+</span><span id="__span-68-31"><a id="__codelineno-68-31" name="__codelineno-68-31" href="#__codelineno-68-31"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-68-32"><a id="__codelineno-68-32" name="__codelineno-68-32" href="#__codelineno-68-32"></a><span class="w">  </span><span class="o">]</span>
+</span><span id="__span-68-33"><a id="__codelineno-68-33" name="__codelineno-68-33" href="#__codelineno-68-33"></a><span class="o">}</span>
+</span></code></pre></div>
+<h3 id="other-changes-or-improvements"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#other-changes-or-improvements">Other changes or improvements</a></h3>
+<p>The following changes or improvements can be made:</p>
+<ul>
+<li>The sort order (e.g. alphabetical) can be updated by changing or removing <code>sort_by(.project)</code></li>
+<li>We can rename the project slugs by inserting a <code>| gsub("^(my-|dev-|primary-test-project-)";"")</code> on <code>.project</code> <ul>
+<li>This could be helpful if we need to drop prefixes</li>
+<li>Would probably make sense to parse the directory name prefix to a variable like <code>env</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="validating-the-paths-variable"><a class="toclink" href="../../2025/08/04/updating-JSON-objects-with-JQ/#validating-the-paths-variable">Validating the paths variable</a></h4>
+<p>If there is a situtation where the <code>paths</code> variable is set to a single path that <strong>is not</strong> formatted properly as an array, we can check it and fix it using <code>jq</code>:</p>
+<p><strong>Checking the <code>paths</code> variable</strong>:</p>
+<p>We can evaluate the 'type' using <code>jq</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>jq<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;type == &quot;array&quot;&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p><strong>Fixing the <code>paths</code> variable</strong>:</p>
+<p>We can evaludate the 'type' using <code>jq</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>jq<span class="w"> </span>-nc<span class="w"> </span>--arg<span class="w"> </span>p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span><span class="s1">&#39;[$p]&#39;</span>
+</span></code></pre></div>
+<p><strong>Putting it together</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;/home/user/projects/my-test-abc/foo.txt&#39;</span>
+</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>
+</span><span id="__span-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="c1"># 1) if it&#39;s not already a JSON array, wrap it in one</span>
+</span><span id="__span-71-4"><a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>jq<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;type == &quot;array&quot;&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-71-5"><a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a><span class="w">    </span><span class="nv">paths</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-nc<span class="w"> </span>--arg<span class="w"> </span>p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span><span class="s1">&#39;[$p]&#39;</span><span class="k">)</span>
+</span><span id="__span-71-6"><a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a><span class="w">    </span><span class="c1">#</span>
+</span><span id="__span-71-7"><a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a><span class="w">    </span><span class="c1"># now $paths is guaranteed to be a JSON array</span>
+</span><span id="__span-71-8"><a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Normalized paths: </span><span class="nv">$paths</span><span class="s2">&quot;</span>
+</span><span id="__span-71-9"><a id="__codelineno-71-9" name="__codelineno-71-9" href="#__codelineno-71-9"></a><span class="w">    </span><span class="c1"># → [&quot;\/home\/user\/projects\/my-test-abc\/foo.txt&quot;]</span>
+</span><span id="__span-71-10"><a id="__codelineno-71-10" name="__codelineno-71-10" href="#__codelineno-71-10"></a><span class="k">fi</span>
+</span></code></pre></div>
+<!--- another example comment --->
+
+<!---  ...  --->
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -4893,11 +5284,11 @@ turns every newline within the string into a literal newline, and adds one at th
 <p>I added a <a href="https://github.com/rwaight/actions/blob/v0.2/.github/workflows/check-commits.yml">GitHub Action that uses commitlint</a> to my <a href="https://github.com/rwaight/actions">GitHub Actions Monorepo</a>.  The GitHub Action is based off of <a href="https://commitlint.js.org/"><strong>commitlint</strong></a> (<a href="https://github.com/conventional-changelog/commitlint">commitlint GitHub</a>) and has been added in an effort to encourage (enforce?) good <strong>git hygiene</strong>.  <em>Note</em>: The original <a href="https://github.com/rwaight/actions/blob/v0.1.12/.github/workflows/actions-ci.yml"><code>actions-ci</code> workflow</a> was added in the <a href="https://github.com/rwaight/actions/releases/tag/v0.1.12"><code>v0.1.12</code> release</a>.</p>
 <p>The workflow originated from <a href="https://commitlint.js.org/guides/ci-setup.html#github-actions">the <em>CI setup</em> <strong>GitHub Actions</strong> section</a> of the <a href="https://commitlint.js.org/guides/ci-setup.html">commitlint guides</a>.  The example workflow needed to be updated in order to run, but it should be working now.</p>
 <p>The default commitlint configuration:
-<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="s2">&quot;@commitlint/config-conventional&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="s2">&quot;@commitlint/config-conventional&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <h5 id="enforcing-good-git-hygiene"><a class="toclink" href="../../2024/03/20/encouraging-git-hygine-with-commitlint/#enforcing-good-git-hygiene">Enforcing good git hygiene</a></h5>
 <p>Part of ensuring proper commit messages (and pull requests) will help with automating releases.  For example, the <a href="https://github.com/semantic-release/semantic-release">semantic release</a> tool can be used in a GitHub action, via <a href="https://github.com/cycjimmy/semantic-release-action">this semantic-release-action</a>.</p>
@@ -4988,10 +5379,10 @@ turns every newline within the string into a literal newline, and adds one at th
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

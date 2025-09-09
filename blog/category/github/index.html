@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -2992,6 +2992,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#references-in-github-workflows-and-composite-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      References in GitHub workflows and composite actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enable-debug-for-verbose-github-actions" class="md-nav__link">
     <span class="md-ellipsis">
       Enable debug for verbose GitHub Actions
@@ -3853,6 +3862,8 @@
       
         
       
+        
+      
     
     
     
@@ -3896,6 +3907,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/coding/jq-updating-json-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Updating JSON objects with JQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -4391,6 +4425,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#references-in-github-workflows-and-composite-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      References in GitHub workflows and composite actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enable-debug-for-verbose-github-actions" class="md-nav__link">
     <span class="md-ellipsis">
       Enable debug for verbose GitHub Actions
@@ -4422,6 +4465,102 @@
       <header class="md-typeset">
         <h1 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../../../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-08-05 00:00:00+00:00">August 5, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">GitHub</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="references-in-github-workflows-and-composite-actions"><a class="toclink" href="../../2025/08/05/github-reusable-workflow-references/">References in GitHub workflows and composite actions</a></h2>
+<!---  # Blog post template  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
+<p>Enabling a GitHub <a href="https://docs.github.com/en/actions/creating-actions/creating-a-composite-action">composite action</a> to call another action in the same repo.</p>
+<p>This <strong>can be done</strong> with <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">reusable workflows</a>, but 
+not yet composite actions: <a href="https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/">github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally</a></p>
+<h4 id="the-problem"><a class="toclink" href="../../2025/08/05/github-reusable-workflow-references/#the-problem">The problem</a></h4>
+<p>When running a <a href="https://docs.github.com/en/actions/creating-actions/creating-a-composite-action">composite action</a> 
+(even in a <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">reusable workflow</a>), I want to be 
+able to use the same GitHub <code>ref</code> for the actions that exist within the remote repo. For instance, I have 
+an <a href="https://github.com/rwaight/actions">actions monorepo</a> and would like to have some of my composite actions 
+be able to call another action within the actions monorepo using the version (<code>ref</code>) that the action is using.</p>
+<p>For example, the <code>check-semver-labels</code> action calls the <code>label-checker</code> action:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    - name: Check for semantic version labels
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>      uses: rwaight/actions/github/label-checker@main  # can use version specific or main
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>      #uses: rwaight/actions/github/label-checker@v1
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>      id: semver-labels-check
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>      with:
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        prefix_mode: true
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        one_of: ${{ inputs.semver-prefix }}
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        #none_of: &quot;skip-changelog&quot;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        allow_failure: ${{ inputs.allow-failure }}
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        repo_token: ${{ inputs.gh-token }}
+</span></code></pre></div>
+<h4 id="references"><a class="toclink" href="../../2025/08/05/github-reusable-workflow-references/#references">References</a></h4>
+<ul>
+<li>GitHub <code>actions/toolkit</code><ul>
+<li><a href="https://github.com/actions/toolkit/issues/1264"><code>#1264</code> make reference accessible in reusable workflow</a></li>
+</ul>
+</li>
+<li>GitHub <code>actions/runner</code><ul>
+<li><a href="https://github.com/actions/runner/issues/2417"><code>#2417</code> Property job_workflow_sha in context github is not available</a></li>
+</ul>
+</li>
+<li>GitHub Community Discussions<ul>
+<li><a href="https://github.com/orgs/community/discussions/18601"><code>#18601</code> Accessing Composite Action within Reusable Workflow from called workflow repo</a></li>
+<li><a href="https://github.com/orgs/community/discussions/41927"><code>#41927</code> Calling a sibling composite action using the same ref</a></li>
+<li><a href="https://github.com/orgs/community/discussions/111928"><code>#111928</code> Calling a composite action from an external workflow using the same ref used in the caller workflow</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="potential-solutions"><a class="toclink" href="../../2025/08/05/github-reusable-workflow-references/#potential-solutions">Potential solutions</a></h4>
+<p>Here are some potential solutions:</p>
+<ul>
+<li><strong>Get reusable workflow version</strong> action<ul>
+<li><a href="https://github.com/canonical/get-workflow-version-action"><code>canonical/get-workflow-version-action</code></a><blockquote>
+<p>GitHub composite action to get commit SHA that GitHub Actions reusable workflow was called with
+Workaround for <a href="https://github.com/actions/toolkit/issues/1264"><code>actions/toolkit#1264</code></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<!--  example comment here  -->
+<!--- another example comment --->
+
+<!---  ...  --->
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -4570,11 +4709,11 @@
 <p>I added a <a href="https://github.com/rwaight/actions/blob/v0.2/.github/workflows/check-commits.yml">GitHub Action that uses commitlint</a> to my <a href="https://github.com/rwaight/actions">GitHub Actions Monorepo</a>.  The GitHub Action is based off of <a href="https://commitlint.js.org/"><strong>commitlint</strong></a> (<a href="https://github.com/conventional-changelog/commitlint">commitlint GitHub</a>) and has been added in an effort to encourage (enforce?) good <strong>git hygiene</strong>.  <em>Note</em>: The original <a href="https://github.com/rwaight/actions/blob/v0.1.12/.github/workflows/actions-ci.yml"><code>actions-ci</code> workflow</a> was added in the <a href="https://github.com/rwaight/actions/releases/tag/v0.1.12"><code>v0.1.12</code> release</a>.</p>
 <p>The workflow originated from <a href="https://commitlint.js.org/guides/ci-setup.html#github-actions">the <em>CI setup</em> <strong>GitHub Actions</strong> section</a> of the <a href="https://commitlint.js.org/guides/ci-setup.html">commitlint guides</a>.  The example workflow needed to be updated in order to run, but it should be working now.</p>
 <p>The default commitlint configuration:
-<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="s2">&quot;@commitlint/config-conventional&quot;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">extends</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="s2">&quot;@commitlint/config-conventional&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <h5 id="enforcing-good-git-hygiene"><a class="toclink" href="../../2024/03/20/encouraging-git-hygine-with-commitlint/#enforcing-good-git-hygiene">Enforcing good git hygiene</a></h5>
 <p>Part of ensuring proper commit messages (and pull requests) will help with automating releases.  For example, the <a href="https://github.com/semantic-release/semantic-release">semantic release</a> tool can be used in a GitHub action, via <a href="https://github.com/cycjimmy/semantic-release-action">this semantic-release-action</a>.</p>
@@ -4665,10 +4804,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

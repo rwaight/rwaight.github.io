@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -3787,6 +3787,8 @@
       
         
       
+        
+      
     
     
     
@@ -3830,6 +3832,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/coding/jq-updating-json-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Updating JSON objects with JQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -4325,6 +4350,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#references-in-github-workflows-and-composite-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      References in GitHub workflows and composite actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-json-objects-with-jq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating JSON objects with JQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multi-line-strings-in-yaml" class="md-nav__link">
     <span class="md-ellipsis">
       Multi-line strings in YAML
@@ -4396,24 +4439,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#using-scrumban-in-a-distributed-team" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Scrumban in a distributed team
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dark-mode-in-chromium-browsers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dark mode in chromium browsers
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4428,6 +4453,450 @@
       <header class="md-typeset">
         <h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-08-05 00:00:00+00:00">August 5, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/github/" class="md-meta__link">GitHub</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="references-in-github-workflows-and-composite-actions"><a class="toclink" href="2025/08/05/github-reusable-workflow-references/">References in GitHub workflows and composite actions</a></h2>
+<!---  # Blog post template  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
+<p>Enabling a GitHub <a href="https://docs.github.com/en/actions/creating-actions/creating-a-composite-action">composite action</a> to call another action in the same repo.</p>
+<p>This <strong>can be done</strong> with <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">reusable workflows</a>, but 
+not yet composite actions: <a href="https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/">github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally</a></p>
+<h4 id="the-problem"><a class="toclink" href="2025/08/05/github-reusable-workflow-references/#the-problem">The problem</a></h4>
+<p>When running a <a href="https://docs.github.com/en/actions/creating-actions/creating-a-composite-action">composite action</a> 
+(even in a <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">reusable workflow</a>), I want to be 
+able to use the same GitHub <code>ref</code> for the actions that exist within the remote repo. For instance, I have 
+an <a href="https://github.com/rwaight/actions">actions monorepo</a> and would like to have some of my composite actions 
+be able to call another action within the actions monorepo using the version (<code>ref</code>) that the action is using.</p>
+<p>For example, the <code>check-semver-labels</code> action calls the <code>label-checker</code> action:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    - name: Check for semantic version labels
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      uses: rwaight/actions/github/label-checker@main  # can use version specific or main
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      #uses: rwaight/actions/github/label-checker@v1
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      id: semver-labels-check
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      with:
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        prefix_mode: true
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        one_of: ${{ inputs.semver-prefix }}
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        #none_of: &quot;skip-changelog&quot;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        allow_failure: ${{ inputs.allow-failure }}
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        repo_token: ${{ inputs.gh-token }}
+</span></code></pre></div>
+<h4 id="references"><a class="toclink" href="2025/08/05/github-reusable-workflow-references/#references">References</a></h4>
+<ul>
+<li>GitHub <code>actions/toolkit</code><ul>
+<li><a href="https://github.com/actions/toolkit/issues/1264"><code>#1264</code> make reference accessible in reusable workflow</a></li>
+</ul>
+</li>
+<li>GitHub <code>actions/runner</code><ul>
+<li><a href="https://github.com/actions/runner/issues/2417"><code>#2417</code> Property job_workflow_sha in context github is not available</a></li>
+</ul>
+</li>
+<li>GitHub Community Discussions<ul>
+<li><a href="https://github.com/orgs/community/discussions/18601"><code>#18601</code> Accessing Composite Action within Reusable Workflow from called workflow repo</a></li>
+<li><a href="https://github.com/orgs/community/discussions/41927"><code>#41927</code> Calling a sibling composite action using the same ref</a></li>
+<li><a href="https://github.com/orgs/community/discussions/111928"><code>#111928</code> Calling a composite action from an external workflow using the same ref used in the caller workflow</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="potential-solutions"><a class="toclink" href="2025/08/05/github-reusable-workflow-references/#potential-solutions">Potential solutions</a></h4>
+<p>Here are some potential solutions:</p>
+<ul>
+<li><strong>Get reusable workflow version</strong> action<ul>
+<li><a href="https://github.com/canonical/get-workflow-version-action"><code>canonical/get-workflow-version-action</code></a><blockquote>
+<p>GitHub composite action to get commit SHA that GitHub Actions reusable workflow was called with
+Workaround for <a href="https://github.com/actions/toolkit/issues/1264"><code>actions/toolkit#1264</code></a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<!--  example comment here  -->
+<!--- another example comment --->
+
+<!---  ...  --->
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-08-04 00:00:00+00:00">August 4, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/coding/" class="md-meta__link">coding</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="updating-json-objects-with-jq"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/">Updating JSON objects with JQ</a></h2>
+<!---  # Updating JSON objects with JQ  --->
+<!---  do not put an actual 'heading 1' if it is the same as the title  --->
+
+<h3 id="parsing-entires-in-a-json-array"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#parsing-entires-in-a-json-array">Parsing entires in a JSON array</a></h3>
+<p>Given the following array containing directory paths:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s2">&quot;/home/user/project/file1.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="s2">&quot;/home/user/project/subdir/file2.log&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Now stored as the <code>paths</code> variable:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;[</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s1">    &quot;/home/user/project/file1.txt&quot;,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s1">    &quot;/home/user/project/subdir/file2.log&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s1">]&#39;</span>
+</span></code></pre></div>
+<h4 id="removing-the-prefix"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#removing-the-prefix">Removing the prefix</a></h4>
+<h5 id="removing-the-prefix-with-gsub"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#removing-the-prefix-with-gsub">Removing the prefix with <code>gsub</code></a></h5>
+<p>We can use <code>gsub</code> to remove the <code>/home/user/</code> directory prefix:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">gsub_no_prefix</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;.[] |= gsub(&quot;^/home/user/&quot;;&quot;&quot;)&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$gsub_no_prefix</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">[</span><span class="s2">&quot;project/file1.txt&quot;</span>,<span class="s2">&quot;project/subdir/file2.log&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h5 id="removing-the-prefix-with-jq-map"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#removing-the-prefix-with-jq-map">Removing the prefix with JQ <code>map</code></a></h5>
+<p>We can also use JQ <code>map</code> to remove the <code>/home/user/</code> directory prefix:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">map_no_prefix</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(gsub(&quot;^/home/user/&quot;;&quot;&quot;))&#39;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$map_no_prefix</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">[</span><span class="s2">&quot;project/file1.txt&quot;</span>,<span class="s2">&quot;project/subdir/file2.log&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h4 id="selecting-entries-based-on-a-pattern"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#selecting-entries-based-on-a-pattern">Selecting entries based on a pattern</a></h4>
+<h5 id="selecting-entries-that-match-a-pattern"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#selecting-entries-that-match-a-pattern">Selecting entries that match a pattern</a></h5>
+<p>Use <code>select(test(...))</code> to create a new array containing only paths that end in <code>.txt</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">dot_txt</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.txt$&quot;)))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$dot_txt</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span><span class="s2">&quot;/home/user/project/file1.txt&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h5 id="selecting-entries-that-do-not-match-a-pattern"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#selecting-entries-that-do-not-match-a-pattern">Selecting entries that do not match a pattern</a></h5>
+<p>Use <code>select(test(... | not))</code> to create a new array <em>excluding</em> paths that end in <code>.log</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">no_dot_log</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.log$&quot;) | not))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$no_dot_log</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">[</span><span class="s2">&quot;/home/user/project/file1.txt&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<h4 id="putting-it-all-together"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#putting-it-all-together">Putting it all together</a></h4>
+<p>We now have an updated array stored as the <code>paths</code> variable:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="ch">#!/usr/bin/env bash</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># updated array</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;[</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="s1">    &quot;/home/user/project/file1.txt&quot;,</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="s1">    &quot;/home/user/project/subdir/file2.log&quot;,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s1">    &quot;/home/user/data/foo.txt&quot;,</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="s1">    &quot;/home/user/data/bar.log&quot;,</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="s1">    &quot;/home/user/data/baz.txt&quot;</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s1">]&#39;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1"># 1) remove the &#39;/home/user/&#39; prefix</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="nv">no_prefix</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;.[] |= gsub(&quot;^/home/user/&quot;;&quot;&quot;)&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1"># 2) keep only &#39;.txt&#39; files</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="nv">only_txt_files</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.txt$&quot;)))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$no_prefix</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="c1"># 3) exclude &#39;.txt&#39; files</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="nv">no_txt_files</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;map(select(test(&quot;\\.txt$&quot;) | not))&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$no_prefix</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="c1"># 4) print the results</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Only &#39;.txt&#39; files: &quot;</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  </span><span class="si">${</span><span class="nv">only_txt_files</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Exclude &#39;.txt&#39; files: &quot;</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  </span><span class="si">${</span><span class="nv">no_txt_files</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Only<span class="w"> </span><span class="s1">&#39;.txt&#39;</span><span class="w"> </span>files:
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="o">[</span><span class="s2">&quot;project/file1.txt&quot;</span>,<span class="s2">&quot;data/foo.txt&quot;</span>,<span class="s2">&quot;data/baz.txt&quot;</span><span class="o">]</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Exclude<span class="w"> </span><span class="s1">&#39;.txt&#39;</span><span class="w"> </span>files:
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="o">[</span><span class="s2">&quot;project/subdir/file2.log&quot;</span>,<span class="s2">&quot;data/bar.log&quot;</span><span class="o">]</span>
+</span></code></pre></div>
+<!--  example comment here  -->
+
+<h3 id="updating-the-json-object"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#updating-the-json-object">Updating the JSON object</a></h3>
+<h4 id="updated-json-array"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#updated-json-array">Updated JSON array</a></h4>
+<p>Now we have a more unique set of data in our JSON array</p>
+<p>Given the following array containing directory paths:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">[</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/my-test-abc/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/my-test-abc/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/dev-jkl/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/dev-jkl/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/dev-jkl/baz.log&quot;</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/primary-test-project-xyz/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/primary-test-project-xyz/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="s2">&quot;/home/user/projects/primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Now stored as the <code>paths</code> variable:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;[</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s1">    &quot;/home/user/projects/my-test-abc/foo.txt&quot;,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="s1">    &quot;/home/user/projects/my-test-abc/bar.log&quot;,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s1">    &quot;/home/user/projects/dev-jkl/foo.txt&quot;,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="s1">    &quot;/home/user/projects/dev-jkl/bar.log&quot;,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="s1">    &quot;/home/user/projects/dev-jkl/baz.log&quot;,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="s1">    &quot;/home/user/projects/primary-test-project-xyz/foo.txt&quot;,</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="s1">    &quot;/home/user/projects/primary-test-project-xyz/bar.log&quot;,</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="s1">    &quot;/home/user/projects/primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="s1">]&#39;</span>
+</span></code></pre></div>
+<h4 id="the-planned-output"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#the-planned-output">The planned output</a></h4>
+<p>I want the output to be usable by a GitHub actions matrix, so it should be:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="s2">&quot;test-abc&quot;</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">        </span><span class="s2">&quot;test-jkl&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="s2">&quot;test-xyz&quot;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">            </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-abc&quot;</span><span class="p">,</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">            </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">                </span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">                </span><span class="s2">&quot;my-test-abc/bar.log&quot;</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">            </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dev-jkl&quot;</span><span class="p">,</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">            </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">                </span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">                </span><span class="s2">&quot;dev-jkl/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">                </span><span class="s2">&quot;dev-jkl/baz.log&quot;</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">            </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="p">,</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="w">            </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">                </span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span><span class="p">,</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="w">                </span><span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span><span class="p">,</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="w">                </span><span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="building-the-new-json-object"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#building-the-new-json-object">Building the new JSON object</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="s1">  # 1) Strip off the the &#39;</span>/home/user/projects<span class="s1">&#39; directory prefix</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="s1">  map(sub(&quot;^/home/user/projects/&quot;;&quot;&quot;))</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="s1">  # 2) Turn each element into an object with &#39;</span>project<span class="s1">&#39; and &#39;</span>file<span class="s1">&#39; keys</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="s1">  | map({ project: (split(&quot;/&quot;)[0]), file: . })</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="s1">  # 3) (Optional) Sort by project so group_by will work predictably</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="s1">  | sort_by(.project)</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="s1">  # 4) Group into arrays by project name</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="s1">  | group_by(.project)</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="s1">  # 5) Build the final output object:</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="s1">  | {</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="s1">      projects:   map(.[0].project),                # a simple list of project names</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="s1">      include:    map({</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="s1">                     project: .[0].project,         # the project name</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="s1">                     files:   map(.file)            # all files in that project</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="s1">                 })</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="s1">    }</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="s1">&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span><span class="nt">&quot;projects&quot;</span><span class="p">:[</span><span class="s2">&quot;dev-jkl&quot;</span><span class="p">,</span><span class="s2">&quot;my-test-abc&quot;</span><span class="p">,</span><span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="p">],</span><span class="nt">&quot;include&quot;</span><span class="p">:[{</span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;dev-jkl&quot;</span><span class="p">,</span><span class="nt">&quot;files&quot;</span><span class="p">:[</span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;dev-jkl/bar.log&quot;</span><span class="p">,</span><span class="s2">&quot;dev-jkl/baz.log&quot;</span><span class="p">]},{</span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;my-test-abc&quot;</span><span class="p">,</span><span class="nt">&quot;files&quot;</span><span class="p">:[</span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;my-test-abc/bar.log&quot;</span><span class="p">]},{</span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="p">,</span><span class="nt">&quot;files&quot;</span><span class="p">:[</span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span><span class="p">,</span><span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span><span class="p">]}]}</span>
+</span></code></pre></div>
+<h5 id="about-the-key-filters"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#about-the-key-filters">About the key filters</a></h5>
+<p>Some information about the key filters:</p>
+<ul>
+<li>
+<p><strong><code>map(sub("^/home/user/projects/";""))</code></strong></p>
+<ul>
+<li>Removes the fixed leading path so you are left with <code>"my-test-abc/foo.txt"</code>, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>map({ project: (split("/")[0]), file: . })</code></strong></p>
+<ul>
+<li>Splits each string on <code>/</code> and uses the first segment as <code>project</code>, the whole string as <code>file</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>sort_by(.project) | group_by(.project)</code></strong></p>
+<ul>
+<li>Ensures identical projects are adjacent, then buckets them into arrays.</li>
+</ul>
+</li>
+<li>
+<p>Building the <strong>output object</strong></p>
+<ul>
+<li><code>projects</code> becomes a flat array of each group’s name.</li>
+<li><code>include</code> is an array of <code>{ project, files }</code> objects.</li>
+</ul>
+<div class="language-bash annotate highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span>projects:<span class="w"> </span>map<span class="o">(</span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.project<span class="o">)</span>,<span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span>include:<span class="w">  </span>map<span class="o">({</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">              </span>project:<span class="w"> </span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.project,
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">              </span>files:<span class="w">   </span>map<span class="o">(</span>.file<span class="o">)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">            </span><span class="o">})</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="o">}</span>
+</span></code></pre></div>
+<ol>
+<li><code>projects</code> becomes a flat array of each group’s name.</li>
+<li><code>include</code> is an array of <code>{ project, files }</code> objects.</li>
+</ol>
+</li>
+</ul>
+<!--- the above is a code annotation --->
+<!--- https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#adding-annotations --->
+
+<h4 id="storing-the-output-as-a-variable"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#storing-the-output-as-a-variable">Storing the output as a variable</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">matrix</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="s1">  map(sub(&quot;^/home/user/projects/&quot;;&quot;&quot;))</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="s1">  | map({ project: (split(&quot;/&quot;)[0]), file: . })</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="s1">  | sort_by(.project)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="s1">  | group_by(.project)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="s1">  | {</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="s1">      projects: map(.[0].project),</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="s1">      include:  map({ project: .[0].project, files: map(.file) })</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="s1">    }</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="s1">&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="k">)</span>
+</span></code></pre></div>
+<p>Which produces:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$matrix</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="o">{</span><span class="s2">&quot;projects&quot;</span>:<span class="o">[</span><span class="s2">&quot;dev-jkl&quot;</span>,<span class="s2">&quot;my-test-abc&quot;</span>,<span class="s2">&quot;primary-test-project-xyz&quot;</span><span class="o">]</span>,<span class="s2">&quot;include&quot;</span>:<span class="o">[{</span><span class="s2">&quot;project&quot;</span>:<span class="s2">&quot;dev-jkl&quot;</span>,<span class="s2">&quot;files&quot;</span>:<span class="o">[</span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span>,<span class="s2">&quot;dev-jkl/bar.log&quot;</span>,<span class="s2">&quot;dev-jkl/baz.log&quot;</span><span class="o">]}</span>,<span class="o">{</span><span class="s2">&quot;project&quot;</span>:<span class="s2">&quot;my-test-abc&quot;</span>,<span class="s2">&quot;files&quot;</span>:<span class="o">[</span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span>,<span class="s2">&quot;my-test-abc/bar.log&quot;</span><span class="o">]}</span>,<span class="o">{</span><span class="s2">&quot;project&quot;</span>:<span class="s2">&quot;primary-test-project-xyz&quot;</span>,<span class="s2">&quot;files&quot;</span>:<span class="o">[</span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span>,<span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span>,<span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span><span class="o">]}]}</span>
+</span></code></pre></div>
+<p><strong>or</strong> if you want it more readable issue <code>echo $matrix | jq</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>~<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$matrix</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="o">{</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="s2">&quot;projects&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="s2">&quot;dev-jkl&quot;</span>,
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="s2">&quot;my-test-abc&quot;</span>,
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="s2">&quot;primary-test-project-xyz&quot;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="o">]</span>,
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span><span class="s2">&quot;include&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">      </span><span class="s2">&quot;project&quot;</span>:<span class="w"> </span><span class="s2">&quot;dev-jkl&quot;</span>,
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">      </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="s2">&quot;dev-jkl/foo.txt&quot;</span>,
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">        </span><span class="s2">&quot;dev-jkl/bar.log&quot;</span>,
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">        </span><span class="s2">&quot;dev-jkl/baz.log&quot;</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">      </span><span class="o">]</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="o">}</span>,
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">      </span><span class="s2">&quot;project&quot;</span>:<span class="w"> </span><span class="s2">&quot;my-test-abc&quot;</span>,
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">      </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">        </span><span class="s2">&quot;my-test-abc/foo.txt&quot;</span>,
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">        </span><span class="s2">&quot;my-test-abc/bar.log&quot;</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">      </span><span class="o">]</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">    </span><span class="o">}</span>,
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">      </span><span class="s2">&quot;project&quot;</span>:<span class="w"> </span><span class="s2">&quot;primary-test-project-xyz&quot;</span>,
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">      </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">        </span><span class="s2">&quot;primary-test-project-xyz/foo.txt&quot;</span>,
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="w">        </span><span class="s2">&quot;primary-test-project-xyz/bar.log&quot;</span>,
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="w">        </span><span class="s2">&quot;primary-test-project-xyz/baz.txt&quot;</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="w">      </span><span class="o">]</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="w">  </span><span class="o">]</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="o">}</span>
+</span></code></pre></div>
+<h3 id="other-changes-or-improvements"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#other-changes-or-improvements">Other changes or improvements</a></h3>
+<p>The following changes or improvements can be made:</p>
+<ul>
+<li>The sort order (e.g. alphabetical) can be updated by changing or removing <code>sort_by(.project)</code></li>
+<li>We can rename the project slugs by inserting a <code>| gsub("^(my-|dev-|primary-test-project-)";"")</code> on <code>.project</code> <ul>
+<li>This could be helpful if we need to drop prefixes</li>
+<li>Would probably make sense to parse the directory name prefix to a variable like <code>env</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="validating-the-paths-variable"><a class="toclink" href="2025/08/04/updating-JSON-objects-with-JQ/#validating-the-paths-variable">Validating the paths variable</a></h4>
+<p>If there is a situtation where the <code>paths</code> variable is set to a single path that <strong>is not</strong> formatted properly as an array, we can check it and fix it using <code>jq</code>:</p>
+<p><strong>Checking the <code>paths</code> variable</strong>:</p>
+<p>We can evaluate the 'type' using <code>jq</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>jq<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;type == &quot;array&quot;&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p><strong>Fixing the <code>paths</code> variable</strong>:</p>
+<p>We can evaludate the 'type' using <code>jq</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>jq<span class="w"> </span>-nc<span class="w"> </span>--arg<span class="w"> </span>p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span><span class="s1">&#39;[$p]&#39;</span>
+</span></code></pre></div>
+<p><strong>Putting it together</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">paths</span><span class="o">=</span><span class="s1">&#39;/home/user/projects/my-test-abc/foo.txt&#39;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1"># 1) if it&#39;s not already a JSON array, wrap it in one</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>jq<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;type == &quot;array&quot;&#39;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nv">paths</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-nc<span class="w"> </span>--arg<span class="w"> </span>p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$paths</span><span class="s2">&quot;</span><span class="w"> </span><span class="s1">&#39;[$p]&#39;</span><span class="k">)</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="c1">#</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="c1"># now $paths is guaranteed to be a JSON array</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Normalized paths: </span><span class="nv">$paths</span><span class="s2">&quot;</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="c1"># → [&quot;\/home\/user\/projects\/my-test-abc\/foo.txt&quot;]</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="k">fi</span>
+</span></code></pre></div>
+<!--- another example comment --->
+
+<!---  ...  --->
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -5402,7 +5871,10 @@ The differences are explained more in the <a href="2025/06/18/agile-story-versus
 <h4 id="page-metadata"><a class="toclink" href="2025/02/18/blog-post-template/#page-metadata">Page metadata</a></h4>
 <p>When creating a new blog post, determine the following <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#metadata">page metadata</a>:</p>
 <ul>
-<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.draft"><code>draft</code> option</a></li>
+<li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.draft"><code>draft</code> option</a><ul>
+<li>if set to <code>true</code> the page will <strong>not be rendered</strong> when published to GitHub Pages</li>
+</ul>
+</li>
 <li>the post <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date"><code>date</code></a><ul>
 <li>can be just <code>date: 2025-02-18</code></li>
 <li>can also include <a href="https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date-update-date"><strong>date created</strong> and <strong>date updated</strong></a></li>
@@ -5421,22 +5893,23 @@ The differences are explained more in the <a href="2025/06/18/agile-story-versus
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Blog post template</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="no">This is a template file for blog posts in MkDocs.</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/repo-template-24</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># page metadata</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">date</span><span class="p">:</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-18</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-18</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nt">authors</span><span class="p">:</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rwaight</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nt">categories</span><span class="p">:</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkDocs</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog-post-template</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nt">tags</span><span class="p">:</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkDocs</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nn">---</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># icon: octicons/repo-template-24</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># https://squidfunk.github.io/mkdocs-material/reference#setting-the-page-icon</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># page metadata</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">date</span><span class="p">:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-18</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-18</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rwaight</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nt">categories</span><span class="p">:</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkDocs</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog-post-template</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MkDocs</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nn">---</span>
 </span></code></pre></div></p>
 <h3 id="example-section"><a class="toclink" href="2025/02/18/blog-post-template/#example-section">Example section</a></h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
@@ -5615,167 +6088,6 @@ massa, nec semper lorem quam in massa.</p>
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-02-04 00:00:00+00:00">February 4, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/work-tracking/" class="md-meta__link">Work Tracking</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-scrumban-in-a-distributed-team"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/">Using Scrumban in a distributed team</a></h2>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>While this document is <strong><em>not in draft mode</em></strong> it is definitely not complete...</p>
-</details>
-<p>Being flexible and efficient can make working in a distributed team a great experience; sometimes though, you have to be the agent of change to help your team get there.  While trying to understand what Scrumban actually is, it seemed best to type it up myself to reinforce what I have learned so far.</p>
-<p>Scrumban combines two leading Agile methodologies—Scrum and Kanban—into a single process for getting work done. But what is scrumban? And why should you consider its unique approach?</p>
-<p>These are notes based on the following resources:</p>
-<ul>
-<li><a href="https://asana.com/resources/agile-scrum-ceremonies" title="Understanding the 4 Agile ceremonies">Understanding the 4 Agile ceremonies</a></li>
-<li><a href="https://www.atlassian.com/agile/project-management/scrumban" title="Scrumban: Mastering two Agile methodologies">Scrumban: Mastering two Agile methodologies</a></li>
-</ul>
-<h4 id="what-is-scrumban"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#what-is-scrumban">What is Scrumban?</a></h4>
-<!--- https://www.atlassian.com/agile/project-management/scrumban --->
-<p>The <a href="https://www.atlassian.com/agile/project-management/scrumban" title="Scrumban: Mastering two Agile methodologies">Scrumban methodology</a> combines the best features of Scrum and Kanban into a hybrid project management framework. It uses Scrum's stable structure of sprints, standups, and retrospectives. Then it adds Kanban's visual workflow and work-in-progress limitations. The result is a truly flexible method for managing projects of any size.</p>
-<h3 id="agile-ceremonies"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#agile-ceremonies">Agile Ceremonies</a></h3>
-<!--- https://asana.com/resources/agile-scrum-ceremonies --->
-<p>An <a href="https://asana.com/resources/agile-scrum-ceremonies" title="Understanding the 4 Agile ceremonies">Agile ceremony</a> is an event in the <a href="https://asana.com/resources/agile-methodology">Agile process</a> when your team meets to discuss what their next course of action is.</p>
-<p>There are four major Agile ceremonies that happen during every sprint cycle. Before starting each ceremony, your team members should understand the purpose of each meeting and how it impacts the sprint.</p>
-<h4 id="the-4-agile-ceremonies"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#the-4-agile-ceremonies">The 4 Agile ceremonies</a></h4>
-<ol>
-<li>The sprint planning meeting</li>
-<li>The daily <a href="https://en.wikipedia.org/wiki/Stand-up_meeting">stand-up meeting</a></li>
-<li>The sprint review meeting</li>
-<li>The sprint retrospective meeting</li>
-</ol>
-<h3 id="intentionally-timely"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#intentionally-timely">Intentionally timely</a></h3>
-<h4 id="timeboxed-meetings"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#timeboxed-meetings">Timeboxed meetings</a></h4>
-<p>As mentioned in the <a href="https://en.wikipedia.org/wiki/Stand-up_meeting">stand-up meeting</a> wikipedia page, the <a href="https://en.wikipedia.org/wiki/Stand-up_meeting">stand-up meetings</a> are intentionally timeboxed:</p>
-<blockquote>
-<p>The meetings are usually <a href="https://en.wikipedia.org/wiki/Timeboxing">timeboxed</a> to between 5 and 15 minutes, and take place with participants standing up to remind people to keep the meeting short and to-the-point.<a href="https://www.martinfowler.com/articles/itsNotJustStandingUp.html">6</a></p>
-</blockquote>
-<h4 id="keep-the-meeting-short"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#keep-the-meeting-short">Keep the meeting short</a></h4>
-<blockquote>
-<p>The daily stand-up meeting (also known as a “daily scrum”, a “daily huddle”, “morning roll-call”, etc.) is simple to describe:</p>
-<p>The whole team meets every day for a quick status update. We stand up to keep the meeting short.</p>
-<p>That's it.</p>
-<p>But this short definition does not really tell you the subtle details that distinguish an effective stand-up from a waste of time.</p>
-<p>So how can you tell?</p>
-</blockquote>
-<p>The answer to the question of an effective stand-up is addressed in the <a href="https://www.martinfowler.com/articles/itsNotJustStandingUp.html">It's Not Just Standing Up: Patterns for Daily Standup Meetings</a> article, which is linked from the <a href="https://en.wikipedia.org/wiki/Stand-up_meeting">stand-up meeting</a> wikipedia page.</p>
-<h3 id="the-kanban-board"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#the-kanban-board">The Kanban board</a></h3>
-<p><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects">GitHub projects</a> offers one way to use a Kanban board, this is accomplished using <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project">custom views in your GitHub project</a>, specifically the <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects#adding-a-board-layout">board layout</a>, which is based on the <strong>status field</strong>.</p>
-<h5 id="example-status-field-settings"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#example-status-field-settings">Example status field settings</a></h5>
-<p>Here is an example of <strong>Status field settings</strong> for a GitHub project:</p>
-<ul>
-<li><strong>Triage</strong>: Items to be triaged</li>
-<li><strong>To do</strong>: Triaged items up for grabs. Please choose based on determined priorities.</li>
-<li><strong>In Progress</strong>: Items actively being worked on</li>
-<li><strong>Review Needed</strong>: PRs and issues that require review</li>
-<li><strong>Changes Requested</strong>: Reviewed PRs and issues with changes requested</li>
-<li><strong>Approved</strong>: Approved PRs that need to be merged, or approved items that need to be completed</li>
-<li><strong>Done</strong>: Items that have been completed</li>
-</ul>
-<p>Here is what that would look like in the <strong>Status field settings</strong> page:</p>
-<p><img alt="github-project-status-field-settings" src="2025/images/github-project-status-field-settings.png" /></p>
-<h4 id="using-github-project-workflows-to-improve-timeliness"><a class="toclink" href="2025/02/04/using-scrumban-in-a-distributed-team/#using-github-project-workflows-to-improve-timeliness">Using GitHub project workflows to improve timeliness</a></h4>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>This section is incomplete and should be in a separate blog post. It is "to be continued"...</p>
-</details>
-<!--- ## End --->
-
-<!--- [999]: https://asana.com/resources/what-is-scrum --->
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../assets/external/github.com/rwaight.png.jpg" alt="Rob Waight">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-09-05 00:00:00+00:00">September 5, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/browsers/" class="md-meta__link">Browsers</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="dark-mode-in-chromium-browsers"><a class="toclink" href="2024/09/05/dark-mode-in-chromium-browsers/">Dark mode in chromium browsers</a></h2>
-<!---  # Dark mode in chromium browsers  --->
-<!---  do not put an actual 'heading 1' if it is the same as the title  --->
-
-<p>If you use a chromium browser and love dark mode, then keep reading.</p>
-<!--- this section was created on 2024-09-05 --->
-
-<h3 id="setting-dark-mode-for-everything"><a class="toclink" href="2024/09/05/dark-mode-in-chromium-browsers/#setting-dark-mode-for-everything">Setting dark mode for everything</a></h3>
-<p>If you love dark mode for everything... you can enable <strong>Auto Dark Mode for Web Contents</strong> by setting <code>chrome://flags/#enable-force-dark</code>. If that does not work, then go to <code>chrome://flags/</code> and search for <strong>Dark Mode</strong>.</p>
-<p>Referenced from <a href="https://support.google.com/calendar/thread/9762643?hl=en&amp;msgid=37038653">How do I set Google Calendar to Dark Mode?</a></p>
-<blockquote>
-<p>turn on the flag <strong>Force Dark Mode for Web Contents</strong>
-you can do this by going to <code>chrome://flags/</code> and searching for it</p>
-</blockquote>
-<h4 id="browser-dark-mode-extensions"><a class="toclink" href="2024/09/05/dark-mode-in-chromium-browsers/#browser-dark-mode-extensions">Browser dark mode extensions</a></h4>
-<ul>
-<li><a href="https://darkreader.org/">Dark Reader</a><ul>
-<li><a href="https://github.com/darkreader/darkreader"><code>darkreader/darkreader</code> on GitHub</a></li>
-</ul>
-</li>
-</ul>
-    
-  </div>
-</article>
-      
       
         
           
@@ -5824,10 +6136,10 @@ you can do this by going to <code>chrome://flags/</code> and searching for it</p
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
