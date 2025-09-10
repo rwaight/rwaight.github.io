@@ -136,6 +136,20 @@ jobs:
         uses: docker/setup-buildx-action@b5ca514318bd6ebac0fb2aedd5d36ec1b5c232a2 # v3.10.0
         id: setup-buildx
 
+      - name: Set variables to use to build the container
+        id: set-container-variables
+        run: |
+          echo "setting custom variables used to build the container"
+          ## Lowercase repository name
+          echo "REPOSITORY_NAME=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+          ## create a tag with either the full tag name (i.e., 'v1.2.2') 
+          ##   or the output from 'git describe' (i.e., 'v1.0-183-g806a325')
+          ##
+          ## ## possibly use '${{ github.event.release.tag_name }}' to build the container when the release is published
+          ## ## otherwise use the ref_name if (github.ref_type == 'tag')
+          echo "this job is not complete yet"
+        shell: bash
+
       - name: Login to the GitHub Container Registry
         # Uses the `docker/login-action` action to log in to the Container registry registry using the account and password that will publish the packages. Once published, the packages are scoped to the account defined here.
         if: matrix.registry == 'ghcr.io'
@@ -187,18 +201,23 @@ jobs:
             type=semver,priority=900,enable=${{ env.IS_REF_TAG }},pattern=v{{major}}.{{minor}}
             type=semver,priority=900,enable=${{ env.IS_REF_TAG }},pattern=v{{major}}
           labels: |
-            org.opencontainers.image.title=${{ matrix.name }}
-            org.opencontainers.image.description=${{ matrix.description }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.title=${{ matrix.name }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.description=${{ matrix.description }}
             org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/blob/main/${{ matrix.dir }}/README.md
             org.opencontainers.image.revision=${{ steps.get-version.outputs.build-version }}
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.url=https://github.com/${{ github.repository }}/tree/main/${{ matrix.dir }}
             org.opencontainers.image.version=${{ steps.get-version.outputs.build-version }}
+            io.github.rwaight.app.name=${{ matrix.name }}
+            io.github.rwaight.app.version=${{ matrix.version_source || 'latest' }}
+            io.github.rwaight.repository=${{ env.REPOSITORY_NAME || github.repository }}
+            io.github.rwaight.build.version=${{ steps.get-version.outputs.build-version }}
+          ##  io.github.rwaight.repository=${{ github.repository }}
           ##  org.opencontainers.image.version={{version}}
           ## https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
           annotations: |
-            org.opencontainers.image.title=${{ matrix.name }}
-            org.opencontainers.image.description=${{ matrix.description }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.title=${{ matrix.name }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.description=${{ matrix.description }}
             org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/blob/main/${{ matrix.dir }}/README.md
             org.opencontainers.image.url=https://github.com/${{ github.repository }}/tree/main/${{ matrix.dir }}
         id: metadata
