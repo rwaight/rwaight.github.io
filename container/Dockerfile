@@ -23,6 +23,7 @@ RUN pip install mkdocs-git-committers-plugin-2
 LABEL name="mkdocs-material"
 LABEL repository="http://github.com/rwaight/rwaight.github.io"
 LABEL homepage="http://github.com/rwaight/rwaight.github.io"
+LABEL source_version="$VERSION_SOURCE"
 
 # Set working directory
 WORKDIR /docs
