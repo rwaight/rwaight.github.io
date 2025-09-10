@@ -187,8 +187,8 @@ jobs:
             type=semver,priority=900,enable=${{ env.IS_REF_TAG }},pattern=v{{major}}.{{minor}}
             type=semver,priority=900,enable=${{ env.IS_REF_TAG }},pattern=v{{major}}
           labels: |
-            org.opencontainers.image.title=${{ matrix.name }}
-            org.opencontainers.image.description=${{ matrix.description }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.title=${{ matrix.name }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.description=${{ matrix.description }}
             org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/blob/main/${{ matrix.dir }}/README.md
             org.opencontainers.image.revision=${{ steps.get-version.outputs.build-version }}
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
@@ -197,8 +197,8 @@ jobs:
           ##  org.opencontainers.image.version={{version}}
           ## https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
           annotations: |
-            org.opencontainers.image.title=${{ matrix.name }}
-            org.opencontainers.image.description=${{ matrix.description }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.title=${{ matrix.name }} version ${{ matrix.version_source || 'latest' }}
+            org.opencontainers.image.description=${{ matrix.description }}
             org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/blob/main/${{ matrix.dir }}/README.md
             org.opencontainers.image.url=https://github.com/${{ github.repository }}/tree/main/${{ matrix.dir }}
         id: metadata
