@@ -194,6 +194,10 @@ jobs:
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.url=https://github.com/${{ github.repository }}/tree/main/${{ matrix.dir }}
             org.opencontainers.image.version=${{ steps.get-version.outputs.build-version }}
+            io.github.rwaight.app.name=${{ matrix.name }}
+            io.github.rwaight.app.version=${{ matrix.version_source || 'latest' }}
+            io.github.rwaight.repository=${{ github.repository }}
+            io.github.rwaight.build.version=${{ steps.get-version.outputs.build-version }}
           ##  org.opencontainers.image.version={{version}}
           ## https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
           annotations: |
