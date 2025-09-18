@@ -9,7 +9,7 @@ status: new
 draft: true
 date:
   created: 2025-07-31
-  updated: 2025-07-31
+  updated: 2025-09-18
 authors:
   - rwaight
 categories:
@@ -39,6 +39,7 @@ This is a template file for blog posts in MkDocs.  In order to keep it simple to
         - https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#status-check-functions
     - https://github.com/orgs/community/discussions/26639
     - https://github.com/orgs/community/discussions/25364
+    - [`26822` - Status check for a matrix jobs](https://github.com/orgs/community/discussions/26822)
 
 ### Download multiple (filtered) Artifacts to the same directory
 <!--- from https://github.com/actions/download-artifact#download-multiple-filtered-artifacts-to-the-same-directory --->
@@ -73,70 +74,64 @@ jobs:
     - run: ls -R my-artifact
 ```
 
-## This is a draft page
 
-<!--- 
-- The page **front-matter** section, which includes:
-    - Page configuration
-    - Page metadata
-- Standard category (or categories)
-- Standard tag(s)
- --->
+### Status Checks for Matrix Jobs
 
-### Page configuration
+Example from [`26822` - Status check for a matrix jobs](https://github.com/orgs/community/discussions/26822), provided in [this comment](https://github.com/orgs/community/discussions/26822#discussioncomment-3305794)":
 
-When creating a new blog post, determine the following [page configuration](https://squidfunk.github.io/mkdocs-material/reference/) options:
+> late to the party but looks like `result` of matrix now works as expected when using: `needs.<job_id>.result`
+> 
+> so I can have just one single additional job which I can set as required
 
-- the page [`title`](https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-title)
-- the page [`description`](https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-description) (**optional**)
-- the page [`icon`](https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-icon) (**optional**)
-- the page [`status`](https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-status) (**optional**)
-- the page [`subtitle`](https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-subtitle) (**optional**)
-- the page [`template`](https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-template) (**optional**)
-
-
-### Page metadata
-
-When creating a new blog post, determine the following [page metadata](https://squidfunk.github.io/mkdocs-material/plugins/blog/#metadata):
-
-- the post [`draft` option](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.draft)
-- the post [`date`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date)
-    - can be just `date: 2025-02-18`
-    - can also include [**date created** and **date updated**](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.date-update-date)
-- the post [`authors`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.authors)
-- the post [`categories`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.categories)
-- the post [`slug`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.slug)
-- the post [`tags`](https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags)
+```yaml
+results:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    name: Final Results
+    needs: [build]
+    steps:
+      - run: |
+          result="${{ needs.build.result }}"
+          if [[ $result == "success" || $result == "skipped" ]]; then
+            exit 0
+          else
+            exit 1
+          fi
+```
 
 
-## Putting it all together
+#### Testing in a build workflow
 
-### Front-matter
+```yaml
+  final-checks:
+    needs: [changes, run-build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
 
-The front-matter consists of [YAML Style Meta-Data](https://www.mkdocs.org/user-guide/writing-your-docs/#yaml-style-meta-data) to define the [page configuration settings](https://squidfunk.github.io/mkdocs-material/reference/):
-````yaml
----
-# page configuration
-title: Blog post template
-description: >
-  This is a template file for blog posts in MkDocs.
-icon: octicons/repo-template-24
-status: new
-# page metadata
-draft: false
-date:
-  created: 2025-02-18
-  updated: 2025-02-18
-authors:
-  - rwaight
-categories:
-  - MkDocs
-slug: blog-post-template
-tags:
-  - MkDocs
-  - Template
----
-````
+      - name: Check if 'run-build' job succeeded or was skipped
+        id: check-build
+        if: needs.run-build.result != 'skipped'
+        run: |
+          echo "Checking the result of the 'run-build' job... "
+          ##
+          result="${{ needs.run-build.result }}"
+          ##
+          ##if [[ $result == "success" || $result == "skipped" ]]; then
+          if [[ $result == "success" ]]; then
+              echo "Setting my_var to 'true' since the 'run-build' job succeeded... "
+              my_var=true
+          else
+              echo "Setting my_var to 'false' since the 'run-build' job did not succeed... "
+              my_var=false
+          fi
+          echo "My var: ${my_var} "
+          echo "my-var=${my_var}" >> $GITHUB_OUTPUT
+          ##
+          echo "end of the 'check-build' step... "
+        shell: bash
+```
+
 
 ## Example section
 
