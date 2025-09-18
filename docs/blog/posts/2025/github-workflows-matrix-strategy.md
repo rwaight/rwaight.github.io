@@ -23,7 +23,7 @@ links:
   - resources/index.md
 ---
 
-<!---  # Blog post template  --->
+<!---  # Using GitHub Matrix Strategy in Workflows  --->
 <!---  do not put an actual 'heading 1' if it is the same as the title  --->
 
 This is a template file for blog posts in MkDocs.  In order to keep it simple to create new posts, the template file should have the following:
