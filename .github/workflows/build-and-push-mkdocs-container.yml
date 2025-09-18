@@ -25,7 +25,7 @@ on:
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
   build-container-image:
-    name: Build and push ${{ matrix.name }} image
+    name: Build and push ${{ matrix.container }} image
     runs-on: ubuntu-latest
     # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
     permissions:
