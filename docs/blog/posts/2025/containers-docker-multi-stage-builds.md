@@ -34,6 +34,11 @@ I wanted to find out how to use multi-stage builds when building containers with
 
 Docker supports [multi-stage builds](https://docs.docker.com/build/building/multi-stage/), which means a [stage can be created](https://docs.docker.com/build/building/multi-stage/#name-your-build-stages) and then a [previous stage can be used as a new stage](https://docs.docker.com/build/building/multi-stage/#use-a-previous-stage-as-a-new-stage)
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ## Resources
 
 - [Docker Docs: Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)

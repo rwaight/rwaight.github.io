@@ -28,6 +28,11 @@ links:
 
 Using GitHub Actions to authenticate to the GitHub CLI as either a user or a bot.
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### References
 
 - [`actions/create-github-app-token`](https://github.com/actions/create-github-app-token)
