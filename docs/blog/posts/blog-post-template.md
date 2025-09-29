@@ -63,6 +63,7 @@ When creating a new blog post, determine the following [page metadata](https://s
 - the post [`categories`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.categories)
 - the post [`slug`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.slug)
 - the post [`tags`](https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags)
+- the post [`links`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.links)
 
 
 ## Putting it all together
@@ -92,6 +93,10 @@ slug: blog-post-template
 tags:
   - MkDocs
   - Template
+links:
+  # All relative links are resolved from the docs directory.
+  - references/index.md
+  - resources/index.md
 ---
 ````
 
