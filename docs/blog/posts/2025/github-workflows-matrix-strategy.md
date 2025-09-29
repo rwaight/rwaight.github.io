@@ -26,7 +26,13 @@ links:
 <!---  # Using GitHub Matrix Strategy in Workflows  --->
 <!---  do not put an actual 'heading 1' if it is the same as the title  --->
 
-This is a template file for blog posts in MkDocs.  In order to keep it simple to create new posts, the template file should have the following:
+This is a template file for blog posts in MkDocs.  
+
+<!-- more -->
+
+<!--- https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
+In order to keep it simple to create new posts, the template file should have the following:
 
 ### References
 

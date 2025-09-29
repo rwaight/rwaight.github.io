@@ -30,6 +30,11 @@ How to put (in markdown) an inline code block that only contains a backtick char
     - [https://stackoverflow.com/a/55587012](https://stackoverflow.com/a/55587012)
     - [https://stackoverflow.com/a/71150969](https://stackoverflow.com/a/71150969)
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 <!--  example comment here  -->
 <!--- another example comment --->
 

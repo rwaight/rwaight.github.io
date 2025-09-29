@@ -35,6 +35,11 @@ Given the following array containing directory paths:
 ]
 ```
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 Now stored as the `paths` variable:
 
 ```shell
