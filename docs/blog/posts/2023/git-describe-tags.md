@@ -18,6 +18,11 @@ categories:
 
 Use `git describe --tags` to get the tags.
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### Using git describe
 
 <!--- switch from the details element to MkDocs admonitions --->
