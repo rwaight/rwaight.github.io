@@ -38,6 +38,11 @@ As I continue to build out this wiki, I thought it would be helpful to provide a
 
 Reference docs explain what a tool is and why it's used, while guides provide step-by-step instructions for completing specific tasks once you're ready to take action.
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 <!--- 
 - **Services and Overview Docs** provide high-level information and context about an application or tool. They explain what the tool is, its purpose, and how it fits into the broader system or workflow. These docs are ideal for users who are trying to understand or learn about the tool at a conceptual level.
 - **Guides** focus on action-oriented, step-by-step instructions to accomplish specific tasks. They assume the reader already understands the basics of the tool from the overview docs and is ready to perform a particular operation or workflow.

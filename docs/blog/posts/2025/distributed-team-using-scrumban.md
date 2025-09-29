@@ -30,6 +30,11 @@ Being flexible and efficient can make working in a distributed team a great expe
 
 Scrumban combines two leading Agile methodologies—Scrum and Kanban—into a single process for getting work done. But what is scrumban? And why should you consider its unique approach?
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 These are notes based on the following resources:
 
 - [Understanding the 4 Agile ceremonies][10]
