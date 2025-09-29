@@ -23,6 +23,11 @@ links:
 
 I added a [GitHub Action that uses commitlint](https://github.com/rwaight/actions/blob/v0.2/.github/workflows/check-commits.yml) to my [GitHub Actions Monorepo](https://github.com/rwaight/actions).  The GitHub Action is based off of [**commitlint**](https://commitlint.js.org/) ([commitlint GitHub](https://github.com/conventional-changelog/commitlint)) and has been added in an effort to encourage (enforce?) good **git hygiene**.  _Note_: The original [`actions-ci` workflow](https://github.com/rwaight/actions/blob/v0.1.12/.github/workflows/actions-ci.yml) was added in the [`v0.1.12` release](https://github.com/rwaight/actions/releases/tag/v0.1.12).
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 
 The workflow originated from [the _CI setup_ **GitHub Actions** section](https://commitlint.js.org/guides/ci-setup.html#github-actions) of the [commitlint guides](https://commitlint.js.org/guides/ci-setup.html).  The example workflow needed to be updated in order to run, but it should be working now.
 

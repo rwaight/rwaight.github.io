@@ -24,6 +24,11 @@ tags:
 
 If you are using composite actions that support their own **verbose mode**, you may find you only want to enable **verbose mode** when the GitHub runner is in **debug mode**.  The variable we need to know is `runner.debug`, which is also stored as `RUNNER_DEBUG`.
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### Understanding when variables are available
 
 In a GitHub workflow there are three different situations where different environmental variables are available, GitHub calls this "context".  There is `workflow` context, `job` context, and `step` context.  The `runner.*` and `RUNNER_*` variables are available in the `STEP` environmental context, **but not** in the `workflow` or `job` environmental context.

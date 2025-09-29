@@ -28,6 +28,11 @@ If you use a chromium browser and love dark mode, then keep reading.
 
 ## Setting dark mode for everything
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 If you love dark mode for everything... you can enable **Auto Dark Mode for Web Contents** by setting `chrome://flags/#enable-force-dark`. If that does not work, then go to `chrome://flags/` and search for **Dark Mode**.
 
 Referenced from [How do I set Google Calendar to Dark Mode?](https://support.google.com/calendar/thread/9762643?hl=en&msgid=37038653)
