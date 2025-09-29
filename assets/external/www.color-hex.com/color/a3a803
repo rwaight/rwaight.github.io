@@ -56,7 +56,7 @@
       <!-- Below is a link to a CSS file that accounts for Cumulative Layout Shift, a new Core Web Vitals subset that Google uses to help rank your site in search -->
       <!-- The file is intended to eliminate the layout shifts that are seen when ads load into the page. If you don't want to use this, simply remove this file -->
       <!-- To find out more about CLS, visit https://web.dev/vitals/ -->
-      <link rel="stylesheet" href="https://a.pub.network/color-hex-com/cls.css">
+      <link rel="stylesheet" href="https://a.pub.network/color-hex-com/cls.css"> <meta name="google-adsense-account" content="ca-pub-0076284559750022">
       <script data-cfasync="false" type="text/javascript">
           var freestar = freestar || {};
           freestar.queue = freestar.queue || [];
@@ -567,20 +567,20 @@ This text has shadow with hex values.</p>
 <a name="related-colors"></a>
 <div class="fullrow">
     <h4>Related Colors</h4>
-<div class="colordvcon"><a href="/color/b3ac14" title="#b3ac14 color"><div class="colordva" style="background-color:#b3ac14;"> </div>
-#b3ac14</a></div>
-<div class="colordvcon"><a href="/color/95b812" title="#95b812 color"><div class="colordva" style="background-color:#95b812;"> </div>
-#95b812</a></div>
-<div class="colordvcon"><a href="/color/a1ac12" title="#a1ac12 color"><div class="colordva" style="background-color:#a1ac12;"> </div>
-#a1ac12</a></div>
-<div class="colordvcon"><a href="/color/aa9714" title="#aa9714 color"><div class="colordva" style="background-color:#aa9714;"> </div>
-#aa9714</a></div>
-<div class="colordvcon"><a href="/color/a5a911" title="#a5a911 color"><div class="colordva" style="background-color:#a5a911;"> </div>
-#a5a911</a></div>
-<div class="colordvcon"><a href="/color/999411" title="#999411 color"><div class="colordva" style="background-color:#999411;"> </div>
-#999411</a></div>
-<div class="colordvcon"><a href="/color/9c9f15" title="#9c9f15 color"><div class="colordva" style="background-color:#9c9f15;"> </div>
-#9c9f15</a></div>
+<div class="colordvcon"><a href="/color/949911" title="#949911 color"><div class="colordva" style="background-color:#949911;"> </div>
+#949911</a></div>
+<div class="colordvcon"><a href="/color/afb714" title="#afb714 color"><div class="colordva" style="background-color:#afb714;"> </div>
+#afb714</a></div>
+<div class="colordvcon"><a href="/color/a1ba14" title="#a1ba14 color"><div class="colordva" style="background-color:#a1ba14;"> </div>
+#a1ba14</a></div>
+<div class="colordvcon"><a href="/color/b59c13" title="#b59c13 color"><div class="colordva" style="background-color:#b59c13;"> </div>
+#b59c13</a></div>
+<div class="colordvcon"><a href="/color/b69b16" title="#b69b16 color"><div class="colordva" style="background-color:#b69b16;"> </div>
+#b69b16</a></div>
+<div class="colordvcon"><a href="/color/aeb012" title="#aeb012 color"><div class="colordva" style="background-color:#aeb012;"> </div>
+#aeb012</a></div>
+<div class="colordvcon"><a href="/color/b09613" title="#b09613 color"><div class="colordva" style="background-color:#b09613;"> </div>
+#b09613</a></div>
 </div>
 
 <a name="color-palettes"></a>

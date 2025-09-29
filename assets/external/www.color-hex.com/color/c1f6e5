@@ -56,7 +56,7 @@
       <!-- Below is a link to a CSS file that accounts for Cumulative Layout Shift, a new Core Web Vitals subset that Google uses to help rank your site in search -->
       <!-- The file is intended to eliminate the layout shifts that are seen when ads load into the page. If you don't want to use this, simply remove this file -->
       <!-- To find out more about CLS, visit https://web.dev/vitals/ -->
-      <link rel="stylesheet" href="https://a.pub.network/color-hex-com/cls.css">
+      <link rel="stylesheet" href="https://a.pub.network/color-hex-com/cls.css"> <meta name="google-adsense-account" content="ca-pub-0076284559750022">
       <script data-cfasync="false" type="text/javascript">
           var freestar = freestar || {};
           freestar.queue = freestar.queue || [];
@@ -567,16 +567,14 @@ This text has shadow with hex values.</p>
 <a name="related-colors"></a>
 <div class="fullrow">
     <h4>Related Colors</h4>
-<div class="colordvcon"><a href="/color/ceecd4" title="#ceecd4 color"><div class="colordva" style="background-color:#ceecd4;"> </div>
-#ceecd4</a></div>
-<div class="colordvcon"><a href="/color/adebf0" title="#adebf0 color"><div class="colordva" style="background-color:#adebf0;"> </div>
-#adebf0</a></div>
-<div class="colordvcon"><a href="/color/d5fbd1" title="#d5fbd1 color"><div class="colordva" style="background-color:#d5fbd1;"> </div>
-#d5fbd1</a></div>
-<div class="colordvcon"><a href="/color/b6e4d7" title="#b6e4d7 color"><div class="colordva" style="background-color:#b6e4d7;"> </div>
-#b6e4d7</a></div>
-<div class="colordvcon"><a href="/color/d5e6ef" title="#d5e6ef color"><div class="colordva" style="background-color:#d5e6ef;"> </div>
-#d5e6ef</a></div>
+<div class="colordvcon"><a href="/color/c3f4d8" title="#c3f4d8 color"><div class="colordva" style="background-color:#c3f4d8;"> </div>
+#c3f4d8</a></div>
+<div class="colordvcon"><a href="/color/affbe5" title="#affbe5 color"><div class="colordva" style="background-color:#affbe5;"> </div>
+#affbe5</a></div>
+<div class="colordvcon"><a href="/color/bdebe8" title="#bdebe8 color"><div class="colordva" style="background-color:#bdebe8;"> </div>
+#bdebe8</a></div>
+<div class="colordvcon"><a href="/color/ceffe2" title="#ceffe2 color"><div class="colordva" style="background-color:#ceffe2;"> </div>
+#ceffe2</a></div>
 </div>
 
 <a name="color-palettes"></a>
