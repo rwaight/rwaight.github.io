@@ -35,6 +35,11 @@ Resource: https://www.freecodecamp.org/news/how-make-a-windows-10-usb-using-your
 brew install wimlib
 ```
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ```shell
 win_usb=/dev/disk5
 win_iso=~/Downloads/Win10_22H2_English_x64v1.iso

@@ -36,6 +36,11 @@ by (@.*) in https://github.com/rwaight/rwaight.github.io/pull/(\d+)
 ![regex-release-notes-pr-entries-vscode](images/regex-release-notes-pr-entries-vscode.png)
 
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### Replace the commit message type
 
 **Find**:

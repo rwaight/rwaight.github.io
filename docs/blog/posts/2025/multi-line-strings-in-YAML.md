@@ -34,6 +34,11 @@ There are <s>5</s> *<s>6</s>* ***NINE*** (or 63\*, depending how you count) diff
 
 ### TL;DR
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 - Use `>` if you want to break a string up for readability but for it to still be treated as a single-line string: interior line breaks will be stripped out, there will only be one line break at the end:
 
 ```yml
