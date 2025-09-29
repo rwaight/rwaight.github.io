@@ -214,6 +214,9 @@ plugins:
         - index.md
         - blog/index.md
         - test-*.md
+      # allow the plugin to be disabled locally by setting the environment variable 'ENABLE_GIT_COMMITTERS' to 'false'
+      # use 'ENABLE_GIT_COMMITTERS=false mkdocs serve' to run mkdocs and disable the plugin locally
+      enabled: !ENV [ENABLE_GIT_COMMITTERS, true]   # defaults to true
   - meta:
       # https://squidfunk.github.io/mkdocs-material/plugins/meta/
       # settings: https://squidfunk.github.io/mkdocs-material/plugins/meta/#general
