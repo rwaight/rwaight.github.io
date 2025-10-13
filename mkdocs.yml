@@ -59,9 +59,30 @@ theme:
     annotation: material/plus-circle-outline
     #
   language: en    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language
+  # # use the other 'palette' configuration to set light and dark mode color schemes
+  # palette:
+  #   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette
+  #   scheme: slate
+  # # use the other 'palette' configuration to set light and dark mode color schemes
   palette:
-    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette
-    scheme: slate
+    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#automatic-light-dark-mode
+    - media: "(prefers-color-scheme)"
+      # Palette toggle for automatic mode
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      # Palette toggle for light mode
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      # Palette toggle for dark mode
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 # https://www.mkdocs.org/user-guide/configuration/#docs_dir
 docs_dir: 'docs'
