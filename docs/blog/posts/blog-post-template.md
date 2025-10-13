@@ -28,7 +28,13 @@ links:
 <!---  # Blog post template  --->
 <!---  do not put an actual 'heading 1' if it is the same as the title  --->
 
-This is a template file for blog posts in MkDocs.  In order to keep it simple to create new posts, the template file should have the following:
+This is a template file for blog posts in MkDocs.  
+
+<!-- more -->
+
+<!--- https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
+In order to keep it simple to create new posts, the template file should have the following:
 
 <!--- 
 - The page **front-matter** section, which includes:
@@ -63,7 +69,12 @@ When creating a new blog post, determine the following [page metadata](https://s
 - the post [`categories`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.categories)
 - the post [`slug`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.slug)
 - the post [`tags`](https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags)
+- the post [`links`](https://squidfunk.github.io/mkdocs-material/plugins/blog/#meta.links)
 
+
+### Excerpt
+
+An excerpt can be created by adding a `<!-- more -->` separator after the first few paragraphs of a post.
 
 ## Putting it all together
 
@@ -92,6 +103,10 @@ slug: blog-post-template
 tags:
   - MkDocs
   - Template
+links:
+  # All relative links are resolved from the docs directory.
+  - references/index.md
+  - resources/index.md
 ---
 ````
 

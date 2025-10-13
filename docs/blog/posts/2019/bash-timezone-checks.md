@@ -16,6 +16,11 @@ tags:
 
 If you try to build an over-complicated scheduler using `bash`, you may run into issues when it comes to Daylight Saving Time.  While it is a good idea to use Coordinated Universal Time (UTC), you might want to make sure you do not run into issues.  The examples will use the `date` with the `+"%H:%M"` format.
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 Using `date` with the `-u` option:
 ```bash
 $ date -u +"%H:%M"

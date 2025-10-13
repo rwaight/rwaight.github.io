@@ -36,6 +36,11 @@ As mentioned in the [_Using Scrumban in a distributed team_](./distributed-team-
 There _should be_ a formally established process to follow in order to help everyone understand expectations. 
 In this scenario, we can find out how we can use [GitHub issues to plan and track work][01] which can be helpful given the [recent changes the GitHub team is making to issues and projects][02].
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 <!--- 
 References for later:
 

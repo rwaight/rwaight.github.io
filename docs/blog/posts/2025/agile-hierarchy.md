@@ -29,6 +29,11 @@ links:
 
 In distributed teams, having a shared understanding of Agile terminology is essential to working effectively. This post explains the hierarchy of Agile work items and how they fit together to support clarity, alignment, and execution.
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ## 🧩 Work Item Hierarchy Overview
 
 ```mermaid

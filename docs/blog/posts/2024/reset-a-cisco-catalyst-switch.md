@@ -36,6 +36,11 @@ delete flash:vlan.dat
 reload
 ```
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 If there are other files that need to be deleted, run the following **before** issuing the `reload` command:
 ```shell
 show file information flash:?

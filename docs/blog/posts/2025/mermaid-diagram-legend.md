@@ -28,6 +28,11 @@ It might be helpful to add a legend to graphs using [Mermaid](https://github.com
 Here are some examples to test workarounds for legends in a graph from [mermaid-js/mermaid#2110](https://github.com/mermaid-js/mermaid/issues/2110)
 
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### Legends in a Graph Example 1
 
 <!--- source https://github.com/mermaid-js/mermaid/issues/2110#issuecomment-1057895108 --->

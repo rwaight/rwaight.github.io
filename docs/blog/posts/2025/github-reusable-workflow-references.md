@@ -32,6 +32,11 @@ Enabling a GitHub [composite action](https://docs.github.com/en/actions/creating
 This **can be done** with [reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows), but 
 not yet composite actions: [github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally](https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/)
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### The problem
 
 When running a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) 

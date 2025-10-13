@@ -40,6 +40,11 @@ The actual query would be:
 from:@SlackUsername before:2025-02-08 after:2025-02-02
 ```
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ### Review GitHub commits during the week
 
 [GitHub Docs - Searching commits](https://docs.github.com/en/search-github/searching-on-github/searching-commits)

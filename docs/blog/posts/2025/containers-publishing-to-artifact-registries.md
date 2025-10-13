@@ -38,6 +38,11 @@ I wanted to find out how to [publish container images to both][01] the GitHub Co
 $ docker images
 ```
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ## GitHub Container Registry
 
 The `ghcr.io` domain name is used for GitHub's built-in container registry, known as [GitHub Container Registry (GHCR)][11].

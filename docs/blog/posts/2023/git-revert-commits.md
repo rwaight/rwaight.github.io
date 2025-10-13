@@ -20,6 +20,11 @@ Examples to revert changes in a repo, primarily using `git revert`.  These examp
 - https://stackoverflow.com/questions/3293531/how-to-permanently-remove-few-commits-from-remote-branch
 - https://christoph.ruegg.name/blog/git-howto-revert-a-commit-already-pushed-to-a-remote-reposit
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 ## Revert an already pushed commit
 
 **Important**: Make sure you specify which branches on `git push -f` or you might inadvertently modify other branches![*]

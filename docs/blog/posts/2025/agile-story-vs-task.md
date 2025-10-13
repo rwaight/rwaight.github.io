@@ -47,6 +47,11 @@ links:
 
 In Agile frameworks like Scrumban, understanding the distinction between a task and a story is crucial for effective project management. A user story is typically functionality that will be visible to end users and captures requirements and acceptance criteria from the user's perspective. Developing a user story usually involves multiple roles such as a programmer, tester, user interface designer, or analyst, indicating that it contains multiple types of work. [03][03]
 
+<!-- more -->
+
+<!--- keep the 'more' entry above in place, the text above will become an 'excerpt' on the blog site
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt --->
+
 On the other hand, a task is a unit of work that is generally worked on by one person and is restricted to a single type of work. Tasks are implementation activities designed to prove that the requirements and acceptance criteria of user stories have been met. They are often technical in nature, such as implementing a class, setting up a virtual machine, writing a script, or conducting UI testing. [02][02]
 
 In the context of Jira, a popular tool for Agile project management, a Story is a more specific version of a Task. Both are work requests, but a Story was created to help people tracking User Stories in Jira. Tasks in Jira are considered "units" of work and are often used for activities that are not testable, whereas stories are for functionalities that can be tested and potentially shipped. [04][04]
