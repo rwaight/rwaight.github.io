@@ -255,7 +255,7 @@ jq -c '
 
   # 5) Build the final output object:
   | {
-      project:   map(.[0].project),                # a simple list of project names
+      project:   map(.[0].project),                 # a simple list of project names
       include:    map({
                      project: .[0].project,         # the project name
                      files:   map(.file)            # all files in that project
@@ -284,7 +284,7 @@ Some information about the key filters:
     - Ensures identical projects are adjacent, then buckets them into arrays.
 
 - Building the **output object**
-    - `projects` becomes a flat array of each group’s name.
+    - `project` becomes a flat array of each group’s name.
     - `include` is an array of `{ project, files }` objects.
 
     ``` { .bash .annotate }
@@ -297,7 +297,7 @@ Some information about the key filters:
     }
     ```
 
-    1.  `projects` becomes a flat array of each group’s name.
+    1.  `project` becomes a flat array of each group’s name.
     2.  `include` is an array of `{ project, files }` objects.
 
 <!--- the above is a code annotation --->
