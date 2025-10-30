@@ -3,11 +3,11 @@ title: Updating JSON objects with JQ
 description: >
   How to update a JSON array using JQ and bash.
 icon: simple/json
-status: new
+#status: new
 draft: false
 date:
   created: 2025-08-04
-  updated: 2025-08-04
+  updated: 2025-10-30
 authors:
   - rwaight
 categories:
@@ -205,13 +205,13 @@ I want the output to be usable by a GitHub actions matrix, so it should be:
 ```json
 {
     "projects": [
-        "test-abc",
+        "my-test-abc",
         "test-jkl",
         "test-xyz"
     ],
     "include": [
         {
-            "project": "test-abc",
+            "project": "my-test-abc",
             "files": [
                 "my-test-abc/foo.txt",
                 "my-test-abc/bar.log"
