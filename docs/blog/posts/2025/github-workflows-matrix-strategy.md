@@ -9,7 +9,7 @@ status: new
 draft: true
 date:
   created: 2025-07-31
-  updated: 2025-09-18
+  updated: 2025-10-30
 authors:
   - rwaight
 categories:
@@ -19,7 +19,7 @@ tags:
   - GitHub
 links:
   # All relative links are resolved from the docs directory.
-  - references/index.md
+  - blog/posts/2025/json-objects-with-github-matrix.md
   - resources/index.md
 ---
 
