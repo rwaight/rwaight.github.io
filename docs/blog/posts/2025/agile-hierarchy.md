@@ -82,6 +82,9 @@ graph TD
 
 ## 📝 Definitions
 
+
+<!--- center table idea: https://github.com/squidfunk/mkdocs-material/issues/3430#issuecomment-1005905949 --->
+
 | Level             | Description                                                                |
 |:-----------------:|:---------------------------------------------------------------------------|
 | 🧱 **Task**       | The **"how?"** – implementation-level steps proving stories are fulfilled. |

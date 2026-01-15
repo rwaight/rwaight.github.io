@@ -3,11 +3,11 @@ title: Updating JSON objects with JQ
 description: >
   How to update a JSON array using JQ and bash.
 icon: simple/json
-status: new
+#status: new
 draft: false
 date:
   created: 2025-08-04
-  updated: 2025-08-04
+  updated: 2025-10-30
 authors:
   - rwaight
 categories:
@@ -204,14 +204,14 @@ I want the output to be usable by a GitHub actions matrix, so it should be:
 
 ```json
 {
-    "projects": [
-        "test-abc",
+    "project": [
+        "my-test-abc",
         "test-jkl",
         "test-xyz"
     ],
     "include": [
         {
-            "project": "test-abc",
+            "project": "my-test-abc",
             "files": [
                 "my-test-abc/foo.txt",
                 "my-test-abc/bar.log"
@@ -255,7 +255,7 @@ jq -c '
 
   # 5) Build the final output object:
   | {
-      projects:   map(.[0].project),                # a simple list of project names
+      project:   map(.[0].project),                 # a simple list of project names
       include:    map({
                      project: .[0].project,         # the project name
                      files:   map(.file)            # all files in that project
@@ -267,7 +267,7 @@ jq -c '
 Which produces:
 
 ```json
-{"projects":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
+{"project":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
 ```
 
 #### About the key filters
@@ -284,12 +284,12 @@ Some information about the key filters:
     - Ensures identical projects are adjacent, then buckets them into arrays.
 
 - Building the **output object**
-    - `projects` becomes a flat array of each group’s name.
+    - `project` becomes a flat array of each group’s name.
     - `include` is an array of `{ project, files }` objects.
 
     ``` { .bash .annotate }
     {
-      projects: map(.[0].project), # (1)!
+      project: map(.[0].project), # (1)!
       include:  map({ # (2)!
                   project: .[0].project,
                   files:   map(.file)
@@ -297,7 +297,7 @@ Some information about the key filters:
     }
     ```
 
-    1.  `projects` becomes a flat array of each group’s name.
+    1.  `project` becomes a flat array of each group’s name.
     2.  `include` is an array of `{ project, files }` objects.
 
 <!--- the above is a code annotation --->
@@ -312,7 +312,7 @@ matrix=$(jq -c '
   | sort_by(.project)
   | group_by(.project)
   | {
-      projects: map(.[0].project),
+      project: map(.[0].project),
       include:  map({ project: .[0].project, files: map(.file) })
     }
 ' <<<"$paths")
@@ -322,7 +322,7 @@ Which produces:
 
 ```bash
 ~ echo $matrix
-{"projects":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
+{"project":["dev-jkl","my-test-abc","primary-test-project-xyz"],"include":[{"project":"dev-jkl","files":["dev-jkl/foo.txt","dev-jkl/bar.log","dev-jkl/baz.log"]},{"project":"my-test-abc","files":["my-test-abc/foo.txt","my-test-abc/bar.log"]},{"project":"primary-test-project-xyz","files":["primary-test-project-xyz/foo.txt","primary-test-project-xyz/bar.log","primary-test-project-xyz/baz.txt"]}]}
 ```
 
 **or** if you want it more readable issue `echo $matrix | jq`:
@@ -330,7 +330,7 @@ Which produces:
 ```bash
 ~ echo $matrix | jq
 {
-  "projects": [
+  "project": [
     "dev-jkl",
     "my-test-abc",
     "primary-test-project-xyz"
