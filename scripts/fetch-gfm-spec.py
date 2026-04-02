@@ -44,6 +44,12 @@ tags:
 <!--- Source: {url} --->
 <!--- Re-generate this file by running: python scripts/fetch-gfm-spec.py --->
 
+!!! info "Imported content"
+
+    This page was imported from the official GitHub Flavored Markdown specification at
+    [{url}]({url}){{:target="_blank"}} on {today}.
+    To refresh it, run `python scripts/fetch-gfm-spec.py` from the repository root.
+
 """
 
 
