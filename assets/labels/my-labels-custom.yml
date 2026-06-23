@@ -1,0 +1,32 @@
+## Custom GitHub Labels
+##
+## Conditionals control which labels appear in which repos.
+## The 'repo:managed' label appears in ALL repos to prevent empty files.
+##
+## Note: When planning to migrate an old label to a new label,
+##       you should first add the old label to the 'aliases'
+##       section of the new label, then run label sync, and then
+##       you can comment out the old label. Once the old label
+##       has been migrated to the new label, across all repos,
+##       it can then be deleted in this file.
+#
+
+##### Universal labels (ALL repos)
+-
+  name: 'repo:managed'
+  color: '0E8A16'
+  description: 'This repo is managed by the infra-updater'
+  aliases: []
+
+
+
+
+##### GitHub Pages repo labels
+-
+  name: 'group:github'
+  color: '50790C'
+  description: 'Actions in the ''github'' group'
+  aliases: []
+
+
+#
