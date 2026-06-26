@@ -18,15 +18,11 @@
   description: 'This repo is managed by the infra-updater'
   aliases: []
 
-
-
-
 ##### GitHub Pages repo labels
 -
   name: 'group:github'
   color: '50790C'
   description: 'Actions in the ''github'' group'
   aliases: []
-
 
 #
