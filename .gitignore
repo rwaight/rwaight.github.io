@@ -9,3 +9,15 @@
 
 # files generated when running MkDocs locally
 docs/blog/index.md
+
+# the '.wolf/' directory is used by OpenWolf
+# OpenWolf is an open-source middleware that gives Claude Code persistent project memory and file-read optimization via Claude Code hooks.
+#   It creates a .wolf/ directory in your project containing auto-generated file summaries, learned preferences, and session history.
+# Machine-specific / generated files are ignored; shared knowledge files are tracked in git.
+.wolf/*
+!.wolf/OPENWOLF.md
+!.wolf/cerebrum.md
+!.wolf/memory.md
+!.wolf/buglog.json
+!.wolf/identity.md
+!.wolf/reframe-frameworks.md
