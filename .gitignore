@@ -1,6 +1,9 @@
 # General
 .DS_Store
 
+# Agent git worktrees
+/.worktrees/
+
 # the '.venv' directory is used for python virtual environments
 .venv
 
