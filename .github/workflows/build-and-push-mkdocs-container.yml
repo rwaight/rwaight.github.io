@@ -33,7 +33,6 @@ jobs:
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}/mkdocs-material
-      MATERIAL_VERSION: '9.7.7'
     defaults:
       run:
         # https://docs.github.com/en/actions/using-jobs/setting-default-values-for-jobs#setting-default-shell-and-working-directory
@@ -65,12 +64,26 @@ jobs:
         run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
         shell: bash
 
+      - name: Read Material version
+        id: material-version
+        shell: bash
+        run: |
+          # Single source of truth: container/requirements.txt (not a workflow env pin).
+          version="$(sed -n 's/^mkdocs-material==//p' requirements.txt)"
+          if [[ -z "${version}" ]]; then
+            echo "::error::mkdocs-material pin not found in container/requirements.txt"
+            exit 1
+          fi
+          echo "MATERIAL_VERSION=${version}" >> "$GITHUB_ENV"
+          echo "MATERIAL_VERSION=${version}" >> "$GITHUB_OUTPUT"
+
       - name: Set image flavor
         id: flavor
         shell: bash
         run: |
-          # Production tags: latest + semver aliases. Feature branches: branch + sha.
+          # Production tags: latest + semver aliases. Feature branches: branch-<name> + sha.
           # Dispatch from main or a non-semver tag: sha only.
+          # Branch tags use prefix=branch- so a branch named latest/v0.1 cannot overwrite production aliases.
           prod=false
           branch_tag=false
           major_alias=false
@@ -116,6 +129,10 @@ jobs:
         with:
           # https://github.com/docker/metadata-action#images-input
           images: ghcr.io/${{ env.IMAGE_NAME }}
+          # Disable auto-latest so latest can only come from the explicit raw tag below.
+          # https://github.com/docker/metadata-action#flavor-input
+          flavor: |
+            latest=false
           # https://github.com/docker/metadata-action#latest-tag
           # https://github.com/docker/metadata-action#typesha
           # https://github.com/docker/metadata-action#typeref
@@ -125,7 +142,7 @@ jobs:
             type=semver,pattern={{version}},value=${{ github.ref_name }},enable=${{ steps.flavor.outputs.IS_PRODUCTION == 'true' }}
             type=semver,pattern=v{{major}}.{{minor}},value=${{ github.ref_name }},enable=${{ steps.flavor.outputs.IS_PRODUCTION == 'true' }}
             type=semver,pattern=v{{major}},value=${{ github.ref_name }},enable=${{ steps.flavor.outputs.ENABLE_MAJOR_ALIAS == 'true' }}
-            type=ref,event=branch,enable=${{ steps.flavor.outputs.ENABLE_BRANCH_TAG == 'true' }}
+            type=ref,event=branch,prefix=branch-,enable=${{ steps.flavor.outputs.ENABLE_BRANCH_TAG == 'true' }}
             type=sha,prefix=sha-,format=short
           # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
           labels: |
@@ -193,6 +210,11 @@ jobs:
             fi
           done <<< "${{ steps.metadata.outputs.tags }}"
           docker run --rm mkdocs-material:ci-smoke --version
+          # Entrypoint is mkdocs; --version reports the MkDocs CLI, not Material.
+          # Override entrypoint to confirm the requirements.txt pin is in the image.
+          docker run --rm --entrypoint pip mkdocs-material:ci-smoke show mkdocs-material
+          docker run --rm --entrypoint pip mkdocs-material:ci-smoke show mkdocs-material \
+            | grep -F "Version: ${MATERIAL_VERSION}"
 
       - name: Push the smoke-tested image
         if: github.repository == 'rwaight/rwaight.github.io' && github.actor != 'dependabot[bot]'

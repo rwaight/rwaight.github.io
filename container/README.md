@@ -22,7 +22,7 @@ Git tags in this repository look like `v0.1.13`. Those git tags are not also pub
 | --- | --- |
 | Production git tag `v0.x.y` (push or manual dispatch) | `0.x.y`, `v0.x`, `latest`, `sha-<short>` |
 | Production git tag `v1.x.y` or later | `X.Y.Z`, `vX.Y`, `vX`, `latest`, `sha-<short>` |
-| Feature branch (path-filtered) | sanitized branch name, `sha-<short>` |
+| Feature branch (path-filtered) | `branch-<sanitized-name>`, `sha-<short>` |
 | Manual dispatch from `main` | `sha-<short>` only |
 
 While the image is in the `0.x` series, a moving `v0` tag is **not** published.
