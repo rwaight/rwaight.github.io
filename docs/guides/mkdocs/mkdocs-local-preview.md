@@ -3,7 +3,7 @@ title: Previewing as you write
 description: How to preview MkDocs as you write
 date:
   created: 2025-05-06
-  updated: 2025-05-08
+  updated: 2026-08-19
 authors: [rwaight]
 categories:
   - MkDocs
@@ -41,13 +41,13 @@ the `--detach` (`-d`) flag, but it is included below --->
 === "Unix, Powershell"
 
     ```shell
-    docker run --rm -d -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+    docker run --rm -d -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
     ```
 
 === "Windows"
 
     ```shell
-    docker run --rm -d -it -p 8000:8000 -v "%cd%":/docs squidfunk/mkdocs-material
+    docker run --rm -d -it -p 8000:8000 -v "%cd%":/docs ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
     ```
 
 Point your browser to [localhost:8000][live preview] and you should see:
