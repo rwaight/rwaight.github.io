@@ -2,7 +2,7 @@
 
 Public image: `ghcr.io/rwaight/rwaight.github.io/mkdocs-material`
 
-This image is built in this repository from a public Python Alpine base and pinned PyPI packages. It is intended for **local preview** of this site. The MkDocs development server is not suitable for production deployment.
+This image is built in this repository from a public Python Alpine base and pinned PyPI packages. It does not wrap the upstream `squidfunk/mkdocs-material` image. It is intended for **local preview** of this site. The MkDocs development server is not suitable for production deployment.
 
 Plugin versions for the image are pinned in [`requirements.txt`](requirements.txt). The root `mkdocs-requirements.txt` file is a separate local lockfile and is not used by this image or by the GitHub Pages deploy workflow.
 

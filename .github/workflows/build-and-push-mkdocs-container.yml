@@ -1,15 +1,23 @@
+# from https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages
 # Publish the public MkDocs Material image to GHCR.
 name: Build MkDocs container image
 run-name: Build and publish MkDocs container image
 
+# Feature-branch pushes rebuild when the image context or this workflow changes.
+# Production publishes run on semver git tags. GitHub does not evaluate `paths`
+# for tag pushes, which is the intended behavior for a tagged production build.
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
 on:
   push:
     tags:
+      # match one or more digits in each semver component
+      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
       - 'v[0-9]+.[0-9]+.[0-9]+'
     branches-ignore:
       - main
       - gh-pages
     paths:
+      # all image inputs live under container/ (Dockerfile, requirements, docs)
       - 'container/**'
       - '.github/workflows/build-and-push-mkdocs-container.yml'
   workflow_dispatch:
@@ -18,6 +26,7 @@ jobs:
   build-container-image:
     name: Build and push mkdocs-material image
     runs-on: ubuntu-latest
+    # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
     permissions:
       contents: read
       packages: write
@@ -27,10 +36,13 @@ jobs:
       MATERIAL_VERSION: '9.7.7'
     defaults:
       run:
+        # https://docs.github.com/en/actions/using-jobs/setting-default-values-for-jobs#setting-default-shell-and-working-directory
         working-directory: ./container
     steps:
 
       - name: Checkout repository
+        # Verified creator: https://github.com/marketplace/actions/checkout
+        # GitHub Action for checking out a repo
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0
@@ -57,12 +69,15 @@ jobs:
         id: flavor
         shell: bash
         run: |
+          # Production tags: latest + semver aliases. Feature branches: branch + sha.
+          # Dispatch from main or a non-semver tag: sha only.
           prod=false
           branch_tag=false
           major_alias=false
           if [[ "${GITHUB_REF_TYPE}" == "tag" && "${GITHUB_REF_NAME}" =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
             prod=true
             major="${BASH_REMATCH[1]}"
+            # Do not publish a moving v0 tag while the image is in the 0.x series.
             if (( major > 0 )); then
               major_alias=true
             fi
@@ -74,11 +89,16 @@ jobs:
           echo "ENABLE_MAJOR_ALIAS=${major_alias}" >> "$GITHUB_OUTPUT"
 
       - name: Setup Docker Buildx
+        # Verified creator: https://github.com/marketplace/actions/docker-setup-buildx
+        # GitHub Action to set up Docker Buildx
         uses: docker/setup-buildx-action@b5ca514318bd6ebac0fb2aedd5d36ec1b5c232a2 # v3.10.0
         id: setup-buildx
 
       - name: Login to the GitHub Container Registry
+        # Skip forks or Dependabot since neither has access to packages write.
         if: github.repository == 'rwaight/rwaight.github.io' && github.actor != 'dependabot[bot]'
+        # Verified creator: https://github.com/marketplace/actions/docker-login
+        # GitHub Action to login against a Docker registry
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
         with:
           registry: ghcr.io
@@ -86,10 +106,20 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
         id: docker-login-ghcr
 
+      # Extract tags and labels with docker/metadata-action.
+      # https://github.com/docker/metadata-action#about
+      # value=${{ github.ref_name }} makes dispatch-on-tag match push-of-tag.
       - name: Extract metadata (tags, labels) for Docker
+        # Verified creator: https://github.com/marketplace/actions/docker-metadata-action
+        # GitHub Action to extract metadata (tags, labels) from Git reference and GitHub events for Docker
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
         with:
+          # https://github.com/docker/metadata-action#images-input
           images: ghcr.io/${{ env.IMAGE_NAME }}
+          # https://github.com/docker/metadata-action#latest-tag
+          # https://github.com/docker/metadata-action#typesha
+          # https://github.com/docker/metadata-action#typeref
+          # https://github.com/docker/metadata-action#typesemver
           tags: |
             type=raw,value=latest,enable=${{ steps.flavor.outputs.IS_PRODUCTION == 'true' }}
             type=semver,pattern={{version}},value=${{ github.ref_name }},enable=${{ steps.flavor.outputs.IS_PRODUCTION == 'true' }}
@@ -97,6 +127,7 @@ jobs:
             type=semver,pattern=v{{major}},value=${{ github.ref_name }},enable=${{ steps.flavor.outputs.ENABLE_MAJOR_ALIAS == 'true' }}
             type=ref,event=branch,enable=${{ steps.flavor.outputs.ENABLE_BRANCH_TAG == 'true' }}
             type=sha,prefix=sha-,format=short
+          # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
           labels: |
             org.opencontainers.image.title=mkdocs-material
             org.opencontainers.image.description=Material for MkDocs with site plugins
@@ -121,13 +152,21 @@ jobs:
           echo "${{ steps.metadata.outputs.tags }}"
         shell: bash
 
+      # Build once, load locally, then push the same image ID after the smoke test.
+      # Never push the ci-smoke tag. Never run a second build-push-action.
+      # https://github.com/docker/build-push-action#usage
       - name: Build and load the container image
+        # Skip forks or Dependabot since neither has access to packages write.
         if: github.repository == 'rwaight/rwaight.github.io' && github.actor != 'dependabot[bot]'
+        # Verified creator: https://github.com/marketplace/actions/build-and-push-docker-images
+        # GitHub Action to build and push Docker images with Buildx
         uses: docker/build-push-action@14487ce63c7a62a4a324b0bfb37086795e31c6c1 # v6.16.0
         with:
           context: "{{defaultContext}}:container"
           load: true
           push: false
+          # do not specify multiple platforms, otherwise multiple images will be created without tags
+          # https://github.com/docker/build-push-action/issues/894
           platforms: linux/amd64
           provenance: false
           tags: |

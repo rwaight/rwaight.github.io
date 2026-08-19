@@ -22,7 +22,17 @@ In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-
 
     The Docker container is intended for [local previewing purposes only and is **not suitable for deployment**](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker){:target="_blank"}. This is because the web server used by MkDocs for live previews is not designed for production use and may have security vulnerabilities.
 
+<!--- The Docker container warning is from:
+ https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker
+ --->
+
 ## Install with docker
+
+<!--- This section was originally adapted from
+ https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/docs/getting-started.md
+ and now documents this repository's published image.
+ --->
+
 
 This repository publishes a public image that already includes the plugins used by the site. Pull it without logging in to GHCR:
 
