@@ -6,9 +6,11 @@ This image is built in this repository from a public Python Alpine base and pinn
 
 Plugin versions for the image are pinned in [`requirements.txt`](requirements.txt). The root `mkdocs-requirements.txt` file is a separate local lockfile and is not used by this image or by the GitHub Pages deploy workflow.
 
+The image is **linux/amd64** only. On Apple Silicon, Docker Desktop will emulate it.
+
 ## Pull
 
-The package is public. After a production publish, pull without logging in to GHCR:
+After a production `vX.Y.Z` git tag, GHCR publishes `latest`. A new package can start **private** even from a public repository; set `ghcr.io/rwaight/rwaight.github.io/mkdocs-material` to Public in GitHub Packages once, then pull without logging in:
 
 ```shell
 docker pull ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
@@ -16,7 +18,7 @@ docker pull ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
 
 ## Tags
 
-Git tags in this repository look like `v0.1.13`. Those git tags are not also published as GHCR tags.
+Git tags in this repository look like `v0.1.13`. The literal `v`-prefixed patch tag (for example `v0.1.13`) is not also a GHCR tag.
 
 | Event | GHCR tags |
 | --- | --- |
@@ -34,10 +36,10 @@ Feature-branch and other test images never receive `latest` or production semver
 From the repository root:
 
 ```shell
-docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
+docker run --rm -it -p 8000:8000 -e ENABLE_GIT_COMMITTERS=false -v ${PWD}:/docs ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
 ```
 
-Then open [http://localhost:8000](http://localhost:8000).
+Then open [http://localhost:8000](http://localhost:8000). `ENABLE_GIT_COMMITTERS=false` skips unauthenticated GitHub API calls from the git-committers plugin during local preview.
 
 ## Included packages
 

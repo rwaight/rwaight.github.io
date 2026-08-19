@@ -145,11 +145,12 @@ jobs:
             type=ref,event=branch,prefix=branch-,enable=${{ steps.flavor.outputs.ENABLE_BRANCH_TAG == 'true' }}
             type=sha,prefix=sha-,format=short
           # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
+          # Leave org.opencontainers.image.revision to metadata-action (git SHA).
+          # Build version is io.github.rwaight.build.version.
           labels: |
             org.opencontainers.image.title=mkdocs-material
             org.opencontainers.image.description=Material for MkDocs with site plugins
             org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/blob/main/container/README.md
-            org.opencontainers.image.revision=${{ steps.get-version.outputs.build-version }}
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.url=https://github.com/${{ github.repository }}/tree/main/container
             org.opencontainers.image.version=${{ steps.get-version.outputs.build-version }}
@@ -211,10 +212,15 @@ jobs:
           done <<< "${{ steps.metadata.outputs.tags }}"
           docker run --rm mkdocs-material:ci-smoke --version
           # Entrypoint is mkdocs; --version reports the MkDocs CLI, not Material.
-          # Override entrypoint to confirm the requirements.txt pin is in the image.
-          docker run --rm --entrypoint pip mkdocs-material:ci-smoke show mkdocs-material
-          docker run --rm --entrypoint pip mkdocs-material:ci-smoke show mkdocs-material \
-            | grep -F "Version: ${MATERIAL_VERSION}"
+          docker run --rm --entrypoint pip mkdocs-material:ci-smoke check
+          while IFS= read -r line || [[ -n "${line}" ]]; do
+            [[ "${line}" =~ ^[[:space:]]*# ]] && continue
+            [[ -z "${line// }" ]] && continue
+            pkg="${line%%==*}"
+            ver="${line#*==}"
+            docker run --rm --entrypoint pip mkdocs-material:ci-smoke show "${pkg}" \
+              | grep -F "Version: ${ver}"
+          done < requirements.txt
 
       - name: Push the smoke-tested image
         if: github.repository == 'rwaight/rwaight.github.io' && github.actor != 'dependabot[bot]'

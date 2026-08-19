@@ -33,7 +33,7 @@ In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-
  --->
 
 
-This repository publishes a public image that already includes the plugins used by the site. Pull it without logging in to GHCR:
+This repository publishes an image that already includes the plugins used by the site. After a production tag, and after the GHCR package is set to Public, pull without logging in:
 
 === "Latest"
 
