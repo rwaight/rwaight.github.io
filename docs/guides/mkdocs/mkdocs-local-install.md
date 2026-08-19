@@ -28,9 +28,8 @@ In order to [preview MkDocs as you write](mkdocs-local-preview.md#previewing-as-
 
 ## Install with docker
 
-<!--- This section was originally adapted from
+<!--- The content from this section is directly from 
  https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/docs/getting-started.md
- and now documents this repository's published image.
  --->
 
 
@@ -85,3 +84,37 @@ RUN pip install mkdocs-glightbox
 ```shell
 docker build -t mkdocs-material-local .
 ```
+
+
+
+<!--- 
+    === "Material for MkDocs"
+
+  --- the below code block is from the MkDocs guide ---
+  --- 
+        ``` Dockerfile title="Dockerfile"
+        FROM squidfunk/mkdocs-material
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-glightbox
+        ```
+ ---
+  --- the below code block is from this repo ---
+  --- the below 'include' code block is from this repo ---
+  ---         
+        ```Dockerfile title="Dockerfile"
+        {% include 'docker/mkdocs/Dockerfile' %}
+        ```
+ ---
+  --- the below code block is from this repo ---
+  ---         
+        ```Dockerfile title="Dockerfile"
+        FROM ghcr.io/rwaight/rwaight.github.io/mkdocs-material
+        # be sure to include the plugins that are installed in the 'publish-pages' workflow
+        #     check the '.github/workflows/publish-pages.yml' file
+        RUN pip install mkdocs-awesome-nav
+        RUN pip install mkdocs-macros-plugin
+        RUN pip install mkdocs-git-revision-date-localized-plugin
+        RUN pip install mkdocs-git-committers-plugin-2
+        ```
+ ---        
+ --->
