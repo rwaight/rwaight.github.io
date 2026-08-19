@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5451,7 +5451,7 @@
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>--disk<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">50</span>,format<span class="o">=</span>qcow2<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>--virt-type<span class="w"> </span>kvm<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>--console<span class="w"> </span>pty,target_type<span class="o">=</span>serial<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>--extra-args<span class="w"> </span><span class="s2">&quot;console=ttyS0,115200n8&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>--extra-args<span class="w"> </span><span class="s2">"console=ttyS0,115200n8"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>--graphics<span class="w"> </span>none
 </span></code></pre></div>
 <p>The <code>vcpus</code>, <code>memory</code>, and <code>disk</code> options will vary. The <a href="https://fishshell.com/docs/current/cmds/math.html"><code>math</code> command</a> is specific to <a href="https://fishshell.com"><code>fish</code></a> so you will need to supply actual numbers or use <code>$(( $(nproc) / 2 ))</code>/<code>$(( $(nproc) * 2))</code> for <code>bash</code>/<code>zsh</code>. For my use case, I allocated half of the threads/cores of the host system to the virtual machine, 2GB of memory for each vCPU, and a 50GB disk image. The <code>memory</code> parameter is in <code>MiB</code>, so multiply how many gigabytes of memory you want by 1024.</p>
@@ -5464,11 +5464,11 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>--cpu<span class="w"> </span>host-passthrough<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>--network<span class="w"> </span><span class="nv">network</span><span class="o">=</span>default<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>--boot<span class="w"> </span>uefi<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>--location<span class="w"> </span>https://download.fedoraproject.org/pub/fedora/linux/releases/36/Server/<span class="s2">&quot;</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">&quot;</span>/os<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>--location<span class="w"> </span>https://download.fedoraproject.org/pub/fedora/linux/releases/36/Server/<span class="s2">"</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">"</span>/os<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>--disk<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">50</span>,format<span class="o">=</span>qcow2<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>--virt-type<span class="w"> </span>kvm<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>--console<span class="w"> </span>pty,target_type<span class="o">=</span>serial<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>--extra-args<span class="w"> </span><span class="s2">&quot;console=ttyAMA0,115200&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>--extra-args<span class="w"> </span><span class="s2">"console=ttyAMA0,115200"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>--graphics<span class="w"> </span>none
 </span></code></pre></div>
 <ul>
@@ -5493,7 +5493,7 @@
 <h3 id="configuring-fedora-for-github-actions">Configuring Fedora for GitHub Actions<a class="headerlink" href="#configuring-fedora-for-github-actions" title="Permanent link">&para;</a></h3>
 <p>Once you are at the login screen, log into the <code>root</code> account. We are going change a few <code>sshd</code> configuration options to allow us to log into the virtual machine via <code>ssh</code> for administration, as the serial console is not so nice to work with.</p>
 <p>We need to change the setting of logging into the <code>root</code> account via <code>ssh</code>. To start, we will allow logging into the <code>root</code> account via either password or private key:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># sed -i &#39;s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g&#39; /etc/ssh/sshd_config</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># sed -i 's/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># systemctl restart sshd</span>
 </span></code></pre></div>
 <p>To get the virtual machine's IP address, use <code>virsh net-dhcp-leases default</code>:</p>
@@ -5503,24 +5503,24 @@
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w"> </span><span class="m">2022</span>-05-27<span class="w"> </span><span class="m">15</span>:58:37<span class="w">   </span><span class="m">52</span>:54:00:5c:24:6c<span class="w">   </span>ipv4<span class="w">       </span><span class="m">192</span>.168.122.104/24<span class="w">   </span>fedora-github-actions-vm<span class="w">   </span><span class="m">01</span>:52:54:00:5c:24:6c
 </span></code></pre></div>
 <p>If you have a private <code>ssh</code> key, you can now use <code>ssh-copy-id</code> to add your key to <code>authorized_keys</code> then change the <code>PermitRootLogin</code> value to <code>prohibit-password</code>. Otherwise, ignore this step and just rely on logging in via the <code>root</code> password.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># sed -i &#39;s/PermitRootLogin yes/PermitRootLogin prohibit-password/g&#39; /etc/ssh/sshd_config</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># sed -i 's/PermitRootLogin yes/PermitRootLogin prohibit-password/g' /etc/ssh/sshd_config</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># systemctl restart sshd</span>
 </span></code></pre></div>
 <p>Now you can press <code>Ctrl + ]</code> to exit the <code>virsh</code> console and log into the virtual machine via <code>ssh</code>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>root@...
 </span></code></pre></div>
 <p>If you did not assign a password to your <code>runner</code> account, you need to allow logging in no password via <code>ssh</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># sed -i &#39;s/^#PermitEmptyPasswords no/PermitEmptyPasswords yes/g&#39; /etc/ssh/sshd_config</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># sed -i 's/^#PermitEmptyPasswords no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># systemctl restart sshd</span>
 </span></code></pre></div>
 <p>If you have a private <code>ssh</code> key, you can now authorize it via <code>ssh-copy-id</code> to the <code>runner</code> account then flip the value you changed above; otherwise, ignore this step.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># sed -i &#39;s/^PermitEmptyPasswords yes/#PermitEmptyPasswords yes/g&#39; /etc/ssh/sshd_config</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># sed -i 's/^PermitEmptyPasswords yes/#PermitEmptyPasswords yes/g' /etc/ssh/sshd_config</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># systemctl restart sshd</span>
 </span></code></pre></div>
 <p>If you stuck with the default partitioning scheme during setup, we need to expand the root partition of our virtual machine, as for some reason, <a href="https://unix.stackexchange.com/questions/616780/fedora-server-32-install-does-not-claim-full-disk">the Fedora Server installer only allocates 15GB</a>.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># dev_mapper=$(df -H | grep /dev/mapper/ | cut -d &#39; &#39; -f 1)</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># lvextend -l +100%FREE &quot;$dev_mapper&quot;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># xfs_growfs &quot;$dev_mapper&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># dev_mapper=$(df -H | grep /dev/mapper/ | cut -d ' ' -f 1)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># lvextend -l +100%FREE "$dev_mapper"</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># xfs_growfs "$dev_mapper"</span>
 </span></code></pre></div>
 <p>To use actions that use Docker containers, we need to actually install and configure Docker:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo</span>
@@ -5547,34 +5547,34 @@
 </span></code></pre></div>
 <p>For the second step, we are not going to use <code>./run.sh</code>; instead, we are going to configure the systemd service that is generated from the <code>./config.sh</code> step.</p>
 <p>First, we need to install the service. I am assuming that you did not add the <code>runner</code> account to the <code>wheel</code> group so <code>sudo</code> will not work; we will use <code>su -c</code> + the <code>root</code> password instead, as this is a one-time setup steup.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;./svc.sh install runner&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">"./svc.sh install runner"</span>
 </span></code></pre></div>
 <p>Next, I recommend <a href="https://docs.github.com/en/actions/hosting-your-own-runners/running-scripts-before-or-after-a-job">installing a "clean up" script</a> to match the hosted GitHub Actions workflow, where every workflow run is completely clean. We do this before the service is actually started to ensure the variable is added to the environment.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt;&#39;EOF&#39; &gt;&quot;$HOME&quot;/cleanup.sh</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt;'EOF' &gt;"$HOME"/cleanup.sh</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="s">#!/usr/bin/env bash</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="s">rm -frv &quot;${GITHUB_WORKSPACE%/*}&quot;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="s">rm -frv "${GITHUB_WORKSPACE%/*}"</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="s">EOF</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/cleanup.sh
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span>/cleanup.sh
 </span></code></pre></div>
 <p>SELinux is enabled on Fedora, which makes the GitHub Actions service <a href="https://github.com/actions/runner/issues/1606">unhappy</a>; this impact this script as well, since it is running under the GitHub Actions service context.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;semanage fcontext --add --type initrc_exec_t </span><span class="nv">$HOME</span><span class="s2">/cleanup.sh&quot;</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span>restorecon<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/cleanup.sh
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">"semanage fcontext --add --type initrc_exec_t </span><span class="nv">$HOME</span><span class="s2">/cleanup.sh"</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span>restorecon<span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span>/cleanup.sh
 </span></code></pre></div>
 <p>Add the script to the environment of the runner:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ACTIONS_RUNNER_HOOK_JOB_COMPLETED=</span><span class="nv">$HOME</span><span class="s2">/cleanup.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/actions-runner/.env
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"ACTIONS_RUNNER_HOOK_JOB_COMPLETED=</span><span class="nv">$HOME</span><span class="s2">/cleanup.sh"</span><span class="w"> </span>&gt;&gt;<span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span>/actions-runner/.env
 </span></code></pre></div>
 <p>We need to do the same SELinux workaround for the service script:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;semanage fcontext --add --type initrc_exec_t </span><span class="nv">$HOME</span><span class="s2">/actions-runner/runsvc.sh&quot;</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>restorecon<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">&quot;</span>/actions-runner/runsvc.sh
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">"semanage fcontext --add --type initrc_exec_t </span><span class="nv">$HOME</span><span class="s2">/actions-runner/runsvc.sh"</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>restorecon<span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span>/actions-runner/runsvc.sh
 </span></code></pre></div>
 <p>Finally, we start the runner!</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;./svc.sh start&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>su<span class="w"> </span>-c<span class="w"> </span><span class="s2">"./svc.sh start"</span>
 </span></code></pre></div>
 <p>With any luck, you will now see the service started and you should be able to refresh the Runner setup screen on GitHub to see your runner in an idle status.</p>
 <p>At this point, if you want your runner to be available after a reboot of the host machine, mark it for autostart:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>virsh<span class="w"> </span>autostart<span class="w"> </span>fedora
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Domain<span class="w"> </span><span class="s1">&#39;fedora&#39;</span><span class="w"> </span>marked<span class="w"> </span>as<span class="w"> </span>autostarted
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Domain<span class="w"> </span><span class="s1">'fedora'</span><span class="w"> </span>marked<span class="w"> </span>as<span class="w"> </span>autostarted
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
 </span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>$<span class="w"> </span>virsh<span class="w"> </span>dominfo<span class="w"> </span>fedora
@@ -5702,7 +5702,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

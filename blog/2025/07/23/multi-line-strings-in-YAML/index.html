@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5507,18 +5507,18 @@ https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-e
 <ul>
 <li>Use <code>&gt;</code> if you want to break a string up for readability but for it to still be treated as a single-line string: interior line breaks will be stripped out, there will only be one line break at the end:</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        key: &gt;
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>          Your long
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>          string here.
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">          </span><span class="no">Your long</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">          </span><span class="no">string here.</span>
 </span></code></pre></div>
 <ul>
 <li>Use <code>|</code> if you want those line breaks to be preserved as <code>\n</code> (for instance, embedded markdown with paragraphs).</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        key: |
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>          ### Heading
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">          </span><span class="no">### Heading</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>          * Bullet
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>          * Points
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">          </span><span class="no">* Bullet</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">          </span><span class="no">* Points</span>
 </span></code></pre></div>
 <ul>
 <li>
@@ -5528,8 +5528,8 @@ https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-e
 <p>Use <code>""</code> if you need to split lines in the middle of words or want to literally type line breaks as <code>\n</code>:</p>
 </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>        key: &quot;Antidisestab\
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>         lishmentarianism.\n\nGet on it.&quot;
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">"Antidisestab\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">         </span><span class="s">lishmentarianism.\n\nGet</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">it."</span>
 </span></code></pre></div>
 <ul>
 <li>YAML is crazy.</li>
@@ -5537,18 +5537,18 @@ https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-e
 <h3 id="block-scalar-styles">Block scalar styles (<code>&gt;</code>, <code>|</code>)<a class="headerlink" href="#block-scalar-styles" title="Permanent link">&para;</a></h3>
 <p>These allow characters such as <code>\</code> and <code>"</code> without escaping, and add a new line (<code>\n</code>) to the end of your string.</p>
 <p><code>&gt;</code> <a href="https://yaml.org/spec/1.2.2/#813-folded-style"><em>Folded style</em></a> removes single newlines within the string (but adds one at the end, and converts double newlines to singles):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    Key: &gt;
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      this is my very very very
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      long string
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">      </span><span class="no">this is my very very very</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="no">long string</span>
 </span></code></pre></div>
 <p>→ <code>this is my very very very long string\n</code></p>
 <p>Extra leading space is retained and causes extra newlines. See note below.</p>
 <p>Advice: Use this. Usually this is what you want.</p>
 <p><code>|</code> <a href="https://yaml.org/spec/1.2.2/#literal-style"><em>Literal style</em></a>
 turns every newline within the string into a literal newline, and adds one at the end:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    Key: |
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      this is my very very very 
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      long string
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">      </span><span class="no">this is my very very very </span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="no">long string</span>
 </span></code></pre></div>
 <p>→ <code>this is my very very very\nlong string\n</code></p>
 <p>Here's the official definition from the <a href="https://yaml.org/spec/1.2.2/#23-scalars">YAML Spec 1.2.2</a></p>
@@ -5566,45 +5566,45 @@ turns every newline within the string into a literal newline, and adds one at th
 <h3 id="flow-scalar-styles">"Flow" scalar styles (<code></code>, <code>"</code>, <code>'</code>)<a class="headerlink" href="#flow-scalar-styles" title="Permanent link">&para;</a></h3>
 <p>These have limited escaping, and construct a single-line string with no new line characters. They can begin on the same line as the key, or with additional newlines first, which are stripped. Doubled newline characters become one newline.</p>
 <p><a href="https://yaml.org/spec/1.2.2/#733-plain-style"><em>plain style</em></a> (no escaping, no <code>#</code> or <code>:</code> combinations, first character can't be <code>"</code>, <code>'</code> or many other punctuation characters ):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    Key: this is my very very very 
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>      long string
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this is my very very very</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">long string</span>
 </span></code></pre></div>
 <p>Advice: Avoid. May look convenient, but you're liable to shoot yourself in the foot by accidentally using forbidden punctuation and triggering a syntax error.</p>
 <p><a href="https://yaml.org/spec/1.2.2/#double-quoted-style"><em>double-quoted style</em></a> (<code>\</code> and <code>"</code> must be escaped by <code>\</code>, newlines can be inserted with a literal <code>\n</code> sequence, lines can be concatenated without spaces with trailing <code>\</code>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    Key: &quot;this is my very very \&quot;very\&quot; loooo\
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>      ng string.\n\nLove, YAML.&quot;
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">"this</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">my</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">\"very\"</span><span class="nv"> </span><span class="s">loooo\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">      </span><span class="s">ng</span><span class="nv"> </span><span class="s">string.\n\nLove,</span><span class="nv"> </span><span class="s">YAML."</span>
 </span></code></pre></div>
 <p>→ <code>"this is my very very \"very\" loooong string.\n\nLove, YAML."</code></p>
 <p>Advice: Use in very specific situations. This is the only way you can break a very long token (like a URL) across lines without adding spaces. And maybe adding newlines mid-line is conceivably useful.</p>
 <p><a href="https://yaml.org/spec/1.2.2/#single-quoted-style"><em>single-quoted style</em></a> (literal <code>'</code> must be doubled, no special characters, possibly useful for expressing strings starting with double quotes):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    Key: &#39;this is my very very &quot;very&quot;
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>      long string, isn&#39;&#39;t it.&#39;
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">'this</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">my</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">very</span><span class="nv"> </span><span class="s">"very"</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">      </span><span class="s">long</span><span class="nv"> </span><span class="s">string,</span><span class="nv"> </span><span class="s">isn</span><span class="se">''</span><span class="s">t</span><span class="nv"> </span><span class="s">it.'</span>
 </span></code></pre></div>
 <p>→ <code>"this is my very very \"very\" long string, isn't it."</code></p>
 <p>Advice: Avoid. Very few benefits, mostly inconvenience.</p>
 <h3 id="block-styles-with-indentation-indicators">Block styles with indentation indicators<a class="headerlink" href="#block-styles-with-indentation-indicators" title="Permanent link">&para;</a></h3>
 <p>Just in case the above isn't enough for you, you can add a "<a href="https://yaml.org/spec/1.2.2/#8111-block-indentation-indicator">block indentation indicator</a>" (after your block chomping indicator, if you have one):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    - &gt;8
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>            My long string
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>            starts over here
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    - |+1
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>     This one
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>     starts here
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;8</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">            </span><span class="no">My long string</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">            </span><span class="no">starts over here</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|+1</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">     </span><span class="no">This one</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">     </span><span class="no">starts here</span>
 </span></code></pre></div>
 <h3 id="note-leading-spaces-in-folded-style">Note: Leading spaces in Folded style (<code>&gt;</code>)<a class="headerlink" href="#note-leading-spaces-in-folded-style" title="Permanent link">&para;</a></h3>
 <p>If you insert extra spaces at the start of not-the-first lines in Folded style, they will be kept, with a bonus newline. (This doesn't happen with flow styles.) <a href="https://yaml.org/spec/1.2.2/#65-line-folding">Section 6.5</a> says:</p>
 <blockquote>
 <p>In addition, folding does not apply to line breaks surrounding text lines that contain leading white space. Note that such a more-indented line may consist only of such leading white space.</p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    - &gt;
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        my long
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>          string
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">        </span><span class="no">my long</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">          </span><span class="no">string</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        many spaces above
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    - my long
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>          string
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="no">many spaces above</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my long</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">          </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        many spaces above
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">many spaces above</span>
 </span></code></pre></div>
 <p>→ <code>["my long\n  string\n                \nmany spaces above\n","my long string\nmany spaces above"]</code></p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
@@ -5833,53 +5833,53 @@ turns every newline within the string into a literal newline, and adds one at th
 </table>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p><em>Note the trailing spaces on the line before "spaces."</em></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>    - &gt;
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>      very &quot;long&quot;
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>      &#39;string&#39; with
+<div class="language-yml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">      </span><span class="no">very "long"</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="no">'string' with</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>      paragraph gap, \n and        
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>      spaces.
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    - | 
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>      very &quot;long&quot;
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>      &#39;string&#39; with
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="no">paragraph gap, \n and        </span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="no">spaces.</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"> </span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">      </span><span class="no">very "long"</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="no">'string' with</span>
 </span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>      paragraph gap, \n and        
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>      spaces.
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    - very &quot;long&quot;
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>      &#39;string&#39; with
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="no">paragraph gap, \n and        </span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">      </span><span class="no">spaces.</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">very "long"</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">'string' with</span>
 </span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>      paragraph gap, \n and        
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>      spaces.
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    - &quot;very \&quot;long\&quot;
-</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>      &#39;string&#39; with
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">paragraph gap, \n and</span><span class="w">        </span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">spaces.</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">      </span><span class="s">'string'</span><span class="nv"> </span><span class="s">with</span>
 </span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>      paragraph gap, \n and        
-</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>      s\
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>      p\
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>      a\
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>      c\
-</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>      e\
-</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>      s.&quot;
-</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>    - &#39;very &quot;long&quot;
-</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>      &#39;&#39;string&#39;&#39; with
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">      </span><span class="s">paragraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\n</span><span class="nv"> </span><span class="s">and</span><span class="w">        </span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">      </span><span class="s">s\</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">      </span><span class="s">p\</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">      </span><span class="s">a\</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">      </span><span class="s">c\</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">      </span><span class="s">e\</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">      </span><span class="s">s."</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'very</span><span class="nv"> </span><span class="s">"long"</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">      </span><span class="se">''</span><span class="s">string</span><span class="se">''</span><span class="nv"> </span><span class="s">with</span>
 </span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
-</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>      paragraph gap, \n and        
-</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>      spaces.&#39;
-</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>    - &gt;- 
-</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>      very &quot;long&quot;
-</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>      &#39;string&#39; with
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">      </span><span class="s">paragraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\n</span><span class="nv"> </span><span class="s">and</span><span class="w">        </span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">      </span><span class="s">spaces.'</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span><span class="w"> </span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">      </span><span class="no">very "long"</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">      </span><span class="no">'string' with</span>
 </span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
-</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>      paragraph gap, \n and        
-</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>      spaces.
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">      </span><span class="no">paragraph gap, \n and        </span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">      </span><span class="no">spaces.</span>
 </span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
-</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>    [
-</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>      &quot;very \&quot;long\&quot; &#39;string&#39; with\nparagraph gap, \\n and         spaces.\n&quot;, 
-</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>      &quot;very \&quot;long\&quot;\n&#39;string&#39; with\n\nparagraph gap, \\n and        \nspaces.\n&quot;, 
-</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>      &quot;very \&quot;long\&quot; &#39;string&#39; with\nparagraph gap, \\n and spaces.&quot;, 
-</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>      &quot;very \&quot;long\&quot; &#39;string&#39; with\nparagraph gap, \n and spaces.&quot;, 
-</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>      &quot;very \&quot;long\&quot; &#39;string&#39; with\nparagraph gap, \\n and spaces.&quot;, 
-</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>      &quot;very \&quot;long\&quot; &#39;string&#39; with\nparagraph gap, \\n and         spaces.&quot;
-</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>    ]
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">    </span><span class="p p-Indicator">[</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">      </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"</span><span class="nv"> </span><span class="s">'string'</span><span class="nv"> </span><span class="s">with\nparagraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\\n</span><span class="nv"> </span><span class="s">and</span><span class="nv">         </span><span class="s">spaces.\n"</span><span class="p p-Indicator">,</span><span class="w"> </span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">      </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"\n'string'</span><span class="nv"> </span><span class="s">with\n\nparagraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\\n</span><span class="nv"> </span><span class="s">and</span><span class="nv">        </span><span class="s">\nspaces.\n"</span><span class="p p-Indicator">,</span><span class="w"> </span>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">      </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"</span><span class="nv"> </span><span class="s">'string'</span><span class="nv"> </span><span class="s">with\nparagraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\\n</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">spaces."</span><span class="p p-Indicator">,</span><span class="w"> </span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">      </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"</span><span class="nv"> </span><span class="s">'string'</span><span class="nv"> </span><span class="s">with\nparagraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\n</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">spaces."</span><span class="p p-Indicator">,</span><span class="w"> </span>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="w">      </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"</span><span class="nv"> </span><span class="s">'string'</span><span class="nv"> </span><span class="s">with\nparagraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\\n</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">spaces."</span><span class="p p-Indicator">,</span><span class="w"> </span>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="w">      </span><span class="s">"very</span><span class="nv"> </span><span class="s">\"long\"</span><span class="nv"> </span><span class="s">'string'</span><span class="nv"> </span><span class="s">with\nparagraph</span><span class="nv"> </span><span class="s">gap,</span><span class="nv"> </span><span class="s">\\n</span><span class="nv"> </span><span class="s">and</span><span class="nv">         </span><span class="s">spaces."</span>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="w">    </span><span class="p p-Indicator">]</span>
 </span></code></pre></div>
 <p><em><code>*</code>2 block styles, each with 2 possible block chomping indicators (or none), and with 9 possible indentation indicators (or none), 1 plain style and 2 quoted styles: 2 x (2 + 1) x (9 + 1) + 1 + 2 = 63</em></p>
 <p>Some of this information has also been summarised <a href="https://yaml-multiline.info/">here</a>.</p>
@@ -5994,7 +5994,7 @@ turns every newline within the string into a literal newline, and adds one at th
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["header.autohide", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.tabs", "content.action.edit", "content.tabs.link", "content.code.copy", "content.code.select", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
