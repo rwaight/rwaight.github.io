@@ -587,18 +587,18 @@ This text has shadow with hex values.</p>
 <a name="related-colors"></a>
 <div class="fullrow">
     <h4>Related Colors</h4>
-<div class="colordvcon"><a href="/color/ccfcf0" title="#ccfcf0 color"><div class="colordva" style="background-color:#ccfcf0;"> </div>
-#ccfcf0</a></div>
-<div class="colordvcon"><a href="/color/c2e4e6" title="#c2e4e6 color"><div class="colordva" style="background-color:#c2e4e6;"> </div>
-#c2e4e6</a></div>
-<div class="colordvcon"><a href="/color/b9f6d5" title="#b9f6d5 color"><div class="colordva" style="background-color:#b9f6d5;"> </div>
-#b9f6d5</a></div>
-<div class="colordvcon"><a href="/color/d2f7d8" title="#d2f7d8 color"><div class="colordva" style="background-color:#d2f7d8;"> </div>
-#d2f7d8</a></div>
-<div class="colordvcon"><a href="/color/cff4f7" title="#cff4f7 color"><div class="colordva" style="background-color:#cff4f7;"> </div>
-#cff4f7</a></div>
-<div class="colordvcon"><a href="/color/b2ecd4" title="#b2ecd4 color"><div class="colordva" style="background-color:#b2ecd4;"> </div>
-#b2ecd4</a></div>
+<div class="colordvcon"><a href="/color/b0f4dd" title="#b0f4dd color"><div class="colordva" style="background-color:#b0f4dd;"> </div>
+#b0f4dd</a></div>
+<div class="colordvcon"><a href="/color/b0ffde" title="#b0ffde color"><div class="colordva" style="background-color:#b0ffde;"> </div>
+#b0ffde</a></div>
+<div class="colordvcon"><a href="/color/cbf8e7" title="#cbf8e7 color"><div class="colordva" style="background-color:#cbf8e7;"> </div>
+#cbf8e7</a></div>
+<div class="colordvcon"><a href="/color/b3e7df" title="#b3e7df color"><div class="colordva" style="background-color:#b3e7df;"> </div>
+#b3e7df</a></div>
+<div class="colordvcon"><a href="/color/cae9e0" title="#cae9e0 color"><div class="colordva" style="background-color:#cae9e0;"> </div>
+#cae9e0</a></div>
+<div class="colordvcon"><a href="/color/bbfbe2" title="#bbfbe2 color"><div class="colordva" style="background-color:#bbfbe2;"> </div>
+#bbfbe2</a></div>
 </div>
 
 <a name="color-palettes"></a>
@@ -837,5 +837,5 @@ var form = $('#frmcomment');
 
 </script>
 
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2dc7b56caac8aac',t:'MTc4NzE3NzM1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2dc7d1678067314',t:'MTc4NzE3NzQyOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

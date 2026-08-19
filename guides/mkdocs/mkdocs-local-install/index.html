@@ -2307,10 +2307,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build-the-docker-image" class="md-nav__link">
+  <a href="#build-an-extended-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build the Docker image
+        Build an extended image
       
     </span>
   </a>
@@ -5300,10 +5300,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build-the-docker-image" class="md-nav__link">
+  <a href="#build-an-extended-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build the Docker image
+        Build an extended image
       
     </span>
   </a>
@@ -5381,28 +5381,27 @@
  https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/docs/getting-started.md
  --->
 
-<p>The official <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/">Docker image</a> is a great way to get up and running in a few
-minutes, as it comes with all dependencies pre-installed. Open up a terminal
-and pull the image with:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="latest" name="__tabbed_1" type="radio" /><input id="9x" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="latest">Latest</label><label for="9x">9.x</label></div>
+<p>This repository publishes an image that already includes the plugins used by the site. After a production tag, and after the GHCR package is set to Public, pull without logging in:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="latest" name="__tabbed_1" type="radio" /><input id="0x" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="latest">Latest</label><label for="0x">0.x</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>squidfunk/mkdocs-material
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/rwaight/rwaight.github.io/mkdocs-material:latest
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>squidfunk/mkdocs-material:9
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/rwaight/rwaight.github.io/mkdocs-material:v0.1
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<p>The <code>mkdocs</code> executable is provided as an entry point and <code>serve</code> is the
-default command. If you're not familiar with Docker don't worry, we have you
-covered in the following sections.</p>
-<p>The following plugins are bundled with the Docker image:</p>
+<p>The <code>mkdocs</code> executable is the entrypoint and <code>serve</code> is the default command. See the <a href="https://github.com/rwaight/rwaight.github.io/blob/main/container/README.md">container README</a> for the full tag policy. While the image is in the <code>0.x</code> series, there is no moving <code>v0</code> tag.</p>
+<p>The image includes:</p>
 <ul>
-<li><a href="https://github.com/byrnereese/mkdocs-minify-plugin">mkdocs-minify-plugin</a></li>
-<li><a href="https://github.com/datarobot/mkdocs-redirects">mkdocs-redirects</a></li>
+<li>mkdocs-material</li>
+<li>mkdocs-awesome-nav</li>
+<li>mkdocs-macros-plugin</li>
+<li>mkdocs-git-revision-date-localized-plugin</li>
+<li>mkdocs-git-committers-plugin-2</li>
 </ul>
 <details class="warning" open="open">
 <summary>Warning</summary>
@@ -5411,63 +5410,29 @@ is not suitable for deployment. This is because the web server used by
 MkDocs for live previews is not designed for production use and may have
 security vulnerabilities.</p>
 </details>
-<details class="question" open="open">
-<summary>How to add plugins to the Docker image?</summary>
-<p>Material for MkDocs only bundles selected plugins in order to keep the size
-of the official image small. If the plugin you want to use is not included,
-you can add them easily following the <a href="#add-plugins-to-the-docker-image">add plugins to the Docker image</a> section below.</p>
-</details>
 <h3 id="verify-required-plugins">Verify required plugins<a class="headerlink" href="#verify-required-plugins" title="Permanent link">&para;</a></h3>
-<p>Be sure to include the plugins that are installed in the 'publish-pages' 
-workflow. Look in the repos <code>.github/workflows/publish-pages.yml</code> file
-for commands starting with <code>pip install</code> for needed MkDocs plugins.</p>
+<p>The published image is pinned in <a href="https://github.com/rwaight/rwaight.github.io/blob/main/container/requirements.txt"><code>container/requirements.txt</code></a>. Site deploy in <code>.github/workflows/publish-pages.yml</code> still installs packages with <code>pip</code> and does not use this image.</p>
 <h3 id="add-plugins-to-the-image">Add plugins to the image<a class="headerlink" href="#add-plugins-to-the-image" title="Permanent link">&para;</a></h3>
-<p>Material for MkDocs only bundles selected plugins in order to keep the size
-of the official image small. If the plugin you want to use is not included,
-you can add them easily:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="material-for-mkdocs" name="__tabbed_2" type="radio" /><input id="insiders" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="material-for-mkdocs">Material for MkDocs</label><label for="insiders">Insiders</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Create a <code>Dockerfile</code> and extend the official image:</p>
-<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-awesome-nav
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-revision-date-localized-plugin
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-committers-plugin-2
+<p>If you need extra plugins beyond what this repository publishes, extend the public image:</p>
+<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/rwaight/rwaight.github.io/mkdocs-material</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c"># be sure to include the plugins that are installed in the 'publish-pages' workflow</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c">#     check the '.github/workflows/publish-pages.yml' file</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c"># Plugins used by this site are already in the published image (container/requirements.txt).</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c"># Site deploy in .github/workflows/publish-pages.yml still pip-installs and does not use this image.</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>Clone or fork the Insiders repository, and create a file called
-<code>user-requirements.txt</code> in the root of the repository. Then, add the
-plugins that should be installed to the file, e.g.:</p>
-<div class="language-text highlight"><span class="filename">user-requirements.txt</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs-awesome-nav
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mkdocs-macros-plugin
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>mkdocs-git-revision-date-localized-plugin
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>mkdocs-git-committers-plugin-2
+<h3 id="build-an-extended-image">Build an extended image<a class="headerlink" href="#build-an-extended-image" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>mkdocs-material-local<span class="w"> </span>.
 </span></code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Verify correct list of plugins</p>
-<p>Be sure to include the plugins that are installed in the 'publish-pages' 
-workflow. Look in the repos <code>.github/workflows/publish-pages.yml</code> file
-for commands starting with <code>pip install</code> for needed MkDocs plugins.</p>
-</div>
-<h3 id="build-the-docker-image">Build the Docker image<a class="headerlink" href="#build-the-docker-image" title="Permanent link">&para;</a></h3>
-<p>Next, build the image with the following command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>squidfunk/mkdocs-material<span class="w"> </span>.
-</span></code></pre></div>
-<p>The new image will have additional packages installed and can be used
-exactly like the official image.</p>
 <!--- 
     === "Material for MkDocs"
 
   --- the below code block is from the MkDocs guide ---
   --- 
-        <div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
+        <div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
 </span></code></pre></div>
  ---
   --- the below code block is from this repo ---
@@ -5475,24 +5440,22 @@ exactly like the official image.</p>
   ---         
         ```Dockerfile title="Dockerfile"
         # https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker
-FROM squidfunk/mkdocs-material
+FROM ghcr.io/rwaight/rwaight.github.io/mkdocs-material
 # be sure to include the plugins that are installed in the 'publish-pages' workflow
 #     check the '.github/workflows/publish-pages.yml' file
-RUN pip install mkdocs-awesome-nav
-RUN pip install mkdocs-macros-plugin
-RUN pip install mkdocs-git-revision-date-localized-plugin
-RUN pip install mkdocs-git-committers-plugin-2
+# Plugins used by this site are already in the published image (container/requirements.txt).
+# Site deploy in .github/workflows/publish-pages.yml still pip-installs and does not use this image.
         ```
  ---
   --- the below code block is from this repo ---
   ---         
-        <div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c"># be sure to include the plugins that are installed in the 'publish-pages' workflow</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c">#     check the '.github/workflows/publish-pages.yml' file</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-awesome-nav
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-revision-date-localized-plugin
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-committers-plugin-2
+        <div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/rwaight/rwaight.github.io/mkdocs-material</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c"># be sure to include the plugins that are installed in the 'publish-pages' workflow</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c">#     check the '.github/workflows/publish-pages.yml' file</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-awesome-nav
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-revision-date-localized-plugin
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-committers-plugin-2
 </span></code></pre></div>
  ---        
  --->
@@ -5518,7 +5481,7 @@ RUN pip install mkdocs-git-committers-plugin-2
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 8, 2025 19:47:24 UTC">May 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 19, 2026 22:09:24 UTC">August 19, 2026</span>
   </span>
 
     

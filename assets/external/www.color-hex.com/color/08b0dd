@@ -587,20 +587,20 @@ This text has shadow with hex values.</p>
 <a name="related-colors"></a>
 <div class="fullrow">
     <h4>Related Colors</h4>
-<div class="colordvcon"><a href="/color/11adee" title="#11adee color"><div class="colordva" style="background-color:#11adee;"> </div>
-#11adee</a></div>
-<div class="colordvcon"><a href="/color/19accd" title="#19accd color"><div class="colordva" style="background-color:#19accd;"> </div>
-#19accd</a></div>
-<div class="colordvcon"><a href="/color/0cb3d9" title="#0cb3d9 color"><div class="colordva" style="background-color:#0cb3d9;"> </div>
-#0cb3d9</a></div>
-<div class="colordvcon"><a href="/color/0fb7d6" title="#0fb7d6 color"><div class="colordva" style="background-color:#0fb7d6;"> </div>
-#0fb7d6</a></div>
-<div class="colordvcon"><a href="/color/109cf0" title="#109cf0 color"><div class="colordva" style="background-color:#109cf0;"> </div>
-#109cf0</a></div>
-<div class="colordvcon"><a href="/color/11bce0" title="#11bce0 color"><div class="colordva" style="background-color:#11bce0;"> </div>
-#11bce0</a></div>
-<div class="colordvcon"><a href="/color/0fb2d4" title="#0fb2d4 color"><div class="colordva" style="background-color:#0fb2d4;"> </div>
-#0fb2d4</a></div>
+<div class="colordvcon"><a href="/color/15c4e0" title="#15c4e0 color"><div class="colordva" style="background-color:#15c4e0;"> </div>
+#15c4e0</a></div>
+<div class="colordvcon"><a href="/color/13bbe1" title="#13bbe1 color"><div class="colordva" style="background-color:#13bbe1;"> </div>
+#13bbe1</a></div>
+<div class="colordvcon"><a href="/color/1cb0df" title="#1cb0df color"><div class="colordva" style="background-color:#1cb0df;"> </div>
+#1cb0df</a></div>
+<div class="colordvcon"><a href="/color/1a9dda" title="#1a9dda color"><div class="colordva" style="background-color:#1a9dda;"> </div>
+#1a9dda</a></div>
+<div class="colordvcon"><a href="/color/14aed7" title="#14aed7 color"><div class="colordva" style="background-color:#14aed7;"> </div>
+#14aed7</a></div>
+<div class="colordvcon"><a href="/color/11a2ed" title="#11a2ed color"><div class="colordva" style="background-color:#11a2ed;"> </div>
+#11a2ed</a></div>
+<div class="colordvcon"><a href="/color/14aaf0" title="#14aaf0 color"><div class="colordva" style="background-color:#14aaf0;"> </div>
+#14aaf0</a></div>
 </div>
 
 <a name="color-palettes"></a>
@@ -839,5 +839,5 @@ var form = $('#frmcomment');
 
 </script>
 
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2dc7b557aa7d143',t:'MTc4NzE3NzM1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2dc7d1429b9ddb3',t:'MTc4NzE3NzQyOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
