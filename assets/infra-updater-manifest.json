@@ -1,30 +1,18 @@
 {
-  "source_sha": "8d32b3a",
-  "source_run_id": "29306284772",
-  "generated_at": "2026-07-14T04:38:04Z",
-  "file_count": 4,
+  "source_sha": "4d6119f",
+  "source_run_id": "32874293709",
+  "generated_at": "2026-08-25T16:52:13Z",
+  "file_count": 2,
   "deleted_count": 0,
   "files": [
     {
       "path": ".github/workflows/pr-labeler.yml",
-      "sha256": "4ee074744c3eb769d8a3c33705883c5a9544d0a8ffb00bd1ac3bcb9d8190ed65"
-    },
-    {
-      "path": ".github/workflows/publish-pages.yml",
-      "sha256": "8219c50a56342a83eb83327ae7bd4edd27d8c4faf3662733266fb1af4da6bf78"
-    },
-    {
-      "path": ".github/workflows/triage-stale.yml",
-      "sha256": "e24b768a4bfcd68b950d1356b78e4daab14e76bf2d9983207fe52d3c5746b6b5"
+      "sha256": "8b4569b30399cde319add6737a692767cf2c920c0d85e2f77f7625ee103fc34a"
     },
     {
       "path": "assets/last-updated.txt",
-      "sha256": "c53bdde4852a6f2ca0e82724af2147d9152fa31401ee047e84c5159e93882f3c"
+      "sha256": "03c60a64e05cc6ab808688d9a2ea0c53d5f73ce8e599b4c115e76d0747a0a2bb"
     }
   ],
-  "updater_version": "2.1.4",
-  "breaking_change_ids": [
-    "pages-actions-v5-202607"
-  ],
-  "suppress_auto_merge": true
+  "updater_version": "2.1.5"
 }
